@@ -70,7 +70,11 @@ export default async function getQueenSingleData(
             .map((i) => `${i}.`)
             .join(" \\ ");
 
-          return `${trackIndex} ${trackData.name}`;
+          const name = `${trackData.name}${
+            rest.comment ? ` (${rest.comment})` : ""
+          }`;
+
+          return { index: trackIndex, name };
         }),
         releases: Array.isArray(releases) ? releases : [releases],
       })

@@ -89,9 +89,12 @@ const TrackList = ({
 }: SingleEntryData["trackLists"][number]) => (
   <div>
     <ul style={{ marginBottom: "5px" }}>
-      {tracks.map((t, idx) => (
-        <li key={idx} style={{ fontSize: "1.1em" }}>
-          {t}
+      {tracks.map(({ index, name }, idx) => (
+        <li key={idx} style={{ fontSize: "1.1em", display: "table-row" }}>
+          <span style={{ display: "table-cell", paddingRight: "5px" }}>
+            {index}
+          </span>
+          <span style={{ display: "table-cell" }}>{name}</span>
         </li>
       ))}
     </ul>

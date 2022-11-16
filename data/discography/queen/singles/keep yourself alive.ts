@@ -7,10 +7,24 @@ const data: DiscographyEntryData = {
     {
       name: "Keep Yourself Alive",
       versions: [
-        { id: "kya", releases: "not Electra 75 re-releases" },
+        { id: "kya", releases: "not Electra 75 reissue" },
         {
           id: "kya-mono",
           releases: 'Electra 73 stereo/mono 7" promo',
+        },
+        { id: "kya-edit", releases: "Electra 75 reissue" },
+        {
+          id: "kya-edit-mono",
+          releases: 'Electra 75 stereo/mono 7" promo',
+        },
+        { id: "kya-llrt", releases: "1998 HR promo CD" },
+        {
+          id: "kya-bbc-1-stereo-swap",
+          releases: "1998 HR promo CD",
+        },
+        {
+          id: "kya-lk-hr-98",
+          releases: "1998 HR promo CD",
         },
       ],
     },
@@ -20,7 +34,7 @@ const data: DiscographyEntryData = {
         {
           id: "sad",
           releases:
-            'not Electra 73 stereo/mono promos, Electra 75 re-releases, Australian/New Zealand 74 7" or 98 US promo CD',
+            'not Electra 73 stereo/mono promos, Electra 75 reissue, Australian/New Zealand 74 7" or 98 US promo CD',
         },
         {
           id: "sad-censored",
@@ -28,9 +42,27 @@ const data: DiscographyEntryData = {
         },
       ],
     },
+    {
+      name: "Lily Of The Valley",
+      versions: [
+        {
+          id: "lov-stand-along-electra",
+          releases: "Electra 75 reissue, except for stereo/mono promos",
+        },
+      ],
+    },
+    {
+      name: "God Save The Queen",
+      versions: [
+        {
+          id: "gstq-single-version",
+          releases: "Electra 75 reissue, except for stereo/mono promos",
+        },
+      ],
+    },
 
-    //      - not Electra 75 re-releases
-    // Son and daughter - not Electra 75 re-releases, Electra stereo/mono promos, Australian and New Zealand 74 7" or 1998 US promo CD
+    //      - not Electra 75 reissue
+    // Son and daughter - not Electra 75 reissue, Electra stereo/mono promos, Australian and New Zealand 74 7" or 1998 US promo CD
     // Keep yourself alive (mono) - Electra 73 stereo/mono promos
     // Son and daughter (censored) - Australian and New Zealand 74 7"s
     // Keep yourself alive (US 75 edit) - Electra 75 reissue.
@@ -68,6 +100,49 @@ const data: DiscographyEntryData = {
         { index: "A", track: "kya-mono" },
       ],
       releases: 'Electra 1973 promo 7"',
+    },
+    {
+      tracks: [
+        {
+          index: "A",
+          track: "kya",
+        },
+        { index: "B", track: "sad-censored" },
+      ],
+      releases: 'Australian / New Zealand 1974 7"',
+    },
+    {
+      tracks: [
+        {
+          index: "A",
+          track: "kya-edit",
+        },
+        { index: "B1", track: "lov-stand-along-electra" },
+        { index: "B2", track: "gstq-single-version" },
+      ],
+      releases: 'Electra 1975 7" reissue',
+    },
+    {
+      tracks: [
+        {
+          index: "A",
+          track: "kya-edit",
+        },
+        { index: "A", track: "kya-edit-mono" },
+      ],
+      releases: 'Electra 1975 reissue promo 7"',
+    },
+    {
+      tracks: [
+        {
+          track: "kya-llrt",
+        },
+        { track: "kya-bbc-1-stereo-swap" },
+        { track: "kya-lk-hr-98" },
+        { track: "kya", comment: "album version - 1991 remaster" },
+        { track: "kya", comment: "album version - 1998 remaster" },
+      ],
+      releases: 'HR 1998 "25 Anniversary" Promo Sampler CD single',
     },
   ],
 };

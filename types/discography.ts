@@ -12,10 +12,11 @@ export interface Composition {
 }
 
 type TrackIndex = string | number;
-type TrackIndexes = { index: TrackIndex } | { indexes: TrackIndex[] };
+type TrackIndexes = { indexes: TrackIndex[] } | { index?: TrackIndex };
 
 type Track = TrackIndexes & {
   track: string;
+  comment?: string;
 };
 
 export interface TrackList {
@@ -48,7 +49,7 @@ export type SingleEntryData = Omit<
   }[];
 } & {
   trackLists: {
-    tracks: string[];
+    tracks: { index: string; name: string }[];
     releases: string[];
   }[];
 };
