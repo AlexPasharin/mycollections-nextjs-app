@@ -1,0 +1,27 @@
+import type { Composition } from "types/discography";
+
+const data: Composition = {
+  name: "Keep yourself alive",
+  versions: [
+    { id: "kya" },
+    { id: "kya-mono", versionName: "mono", parentVersion: "kya" },
+    { id: "kya-edit", versionName: "Electra 75 edit" },
+    {
+      id: "kya-edit-mono",
+      versionName: "Electra 75 edit mono",
+      parentVersion: "kya-edit",
+    },
+    { id: "kya-llrt", versionName: "long lost re-take" },
+    {
+      id: "kya-bbc-1",
+      versionName: "live at the BBC session 1",
+    },
+    {
+      id: "kya-bbc-1-stereo-swap",
+      versionName: "live at the BBC session 1, HR stereo swap",
+      parentVersion: "kya-bbc-1",
+    },
+  ],
+};
+
+export default data;
