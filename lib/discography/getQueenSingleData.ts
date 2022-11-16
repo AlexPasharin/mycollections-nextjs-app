@@ -12,7 +12,7 @@ export default async function getQueenSingleData(
 ): Promise<SingleEntryData | null> {
   try {
     const queenSinglesTextContentsDirectory = path.join(
-      // process.cwd(),
+      process.cwd(),
       "textcontents",
       "queendiscography",
       "singles"

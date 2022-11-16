@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Next js application for displaying and manipulating my media collections and related info such as discographies",
   "scripts": {
-    "dev": "next dev"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "author": "AlexPasharin",
   "license": "ISC",
