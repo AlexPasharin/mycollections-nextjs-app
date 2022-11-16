@@ -5,3 +5,11 @@ export default function MoviesPage() {
     </>
   );
 }
+
+export function getStaticProps() {
+  return {
+    props: {
+      pageTitle: "My Movies Collection",
+    },
+  };
+}

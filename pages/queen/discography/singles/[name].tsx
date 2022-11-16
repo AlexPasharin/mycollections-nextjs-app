@@ -54,11 +54,13 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: { params: { name: string } }) {
-  const single = await getQueenSingleData(params.name.toLowerCase());
+  const { name } = params;
+  const single = await getQueenSingleData(name.toLowerCase());
 
   return {
     props: {
       single,
+      pageTitle: `${name} (Queen single)`,
     },
   };
 }

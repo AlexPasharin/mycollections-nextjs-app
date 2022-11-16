@@ -1,11 +1,10 @@
-import { NextPage } from "next";
 import Head from "next/head";
+
+import type { AppProps } from "next/app";
 
 import "styles/global.sass";
 
-export default function App<
-  T extends JSX.IntrinsicAttributes & { pageTitle: string }
->({ Component, pageProps }: { Component: NextPage; pageProps: T }) {
+export default function App({ Component, pageProps }: AppProps) {
   const { pageTitle, ...rest } = pageProps;
 
   return (

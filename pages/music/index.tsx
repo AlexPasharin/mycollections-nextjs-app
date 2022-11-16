@@ -5,3 +5,11 @@ export default function MusicPage() {
     </>
   );
 }
+
+export function getStaticProps() {
+  return {
+    props: {
+      pageTitle: "My Music Collection",
+    },
+  };
+}
