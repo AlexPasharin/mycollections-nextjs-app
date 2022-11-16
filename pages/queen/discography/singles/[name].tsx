@@ -1,7 +1,8 @@
 import Link from "next/link";
 import type { NextPage } from "next";
 
-import { getQueenSingleData } from "lib/discography/queen_singles";
+import getQueenSingleData from "lib/discography/getQueenSingleData";
+import queenSinglesList from "data/discography/queen/singles";
 
 import type { SingleEntryData } from "types/discography";
 
@@ -45,16 +46,15 @@ const QueenSinglesPage: NextPage<Props> = ({ single }) => {
 
 export default QueenSinglesPage;
 
-export async function getServerSideProps({
-  params,
-}: {
-  params: { name: string };
-}) {
-  const single = await getQueenSingleData(params.name.toLowerCase());
+export async function getStaticPaths() {
+  return {
+    paths: queenSinglesList.map((name) => ({ params: { name } })),
+    fallback: false,
+  };
+}
 
-  if (!single) {
-    return { notFound: true };
-  }
+export async function getStaticProps({ params }: { params: { name: string } }) {
+  const single = await getQueenSingleData(params.name.toLowerCase());
 
   return {
     props: {
@@ -62,6 +62,24 @@ export async function getServerSideProps({
     },
   };
 }
+
+// export async function getServerSideProps({
+//   params,
+// }: {
+//   params: { name: string };
+// }) {
+//   const single = await getQueenSingleData(params.name.toLowerCase());
+
+//   if (!single) {
+//     return { notFound: true };
+//   }
+
+//   return {
+//     props: {
+//       single,
+//     },
+//   };
+// }
 
 const TrackList = ({
   tracks,

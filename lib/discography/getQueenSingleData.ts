@@ -7,11 +7,12 @@ import type {
   SingleEntryData,
 } from "types/discography";
 
-export async function getQueenSingleData(
+export default async function getQueenSingleData(
   name: string
 ): Promise<SingleEntryData | null> {
   try {
     const queenSinglesTextContentsDirectory = path.join(
+      process.cwd(),
       "textcontents",
       "queendiscography",
       "singles"
