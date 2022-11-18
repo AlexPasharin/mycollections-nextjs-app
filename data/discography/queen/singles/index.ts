@@ -1,1 +1,1 @@
-export default ["Keep Yourself Alive"];
+export default ["Keep Yourself Alive", "Liar"];

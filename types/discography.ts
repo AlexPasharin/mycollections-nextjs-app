@@ -45,7 +45,7 @@ export type SingleEntryData = Omit<
 } & {
   tracks: {
     name: string;
-    releases?: string;
+    releases: string | null;
   }[];
 } & {
   trackLists: {

@@ -85,7 +85,7 @@ export default async function getQueenSingleData(
       textContent,
       tracks: tracksUsedInSingleReleases.map(({ name, releases }) => ({
         name,
-        releases,
+        releases: releases || null,
       })),
       trackLists,
     };

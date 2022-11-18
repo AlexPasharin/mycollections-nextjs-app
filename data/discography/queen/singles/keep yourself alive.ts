@@ -60,18 +60,6 @@ const data: DiscographyEntryData = {
         },
       ],
     },
-
-    //      - not Electra 75 reissue
-    // Son and daughter - not Electra 75 reissue, Electra stereo/mono promos, Australian and New Zealand 74 7" or 1998 US promo CD
-    // Keep yourself alive (mono) - Electra 73 stereo/mono promos
-    // Son and daughter (censored) - Australian and New Zealand 74 7"s
-    // Keep yourself alive (US 75 edit) - Electra 75 reissue.
-    // Lily Of The Valley (US 75 edit) - Electra 75 reissue (except stereo/mono promos)
-    // God Save The queen (US 75 edit) - Electra 75 reissue (except stereo/mono promos)
-    // Keep yourself alive (US 75 edit mono) - Electra 75 stereo/mono promos
-    // Keep yourself alive (long lost re-take) - 1998 US promo CD
-    // Keep yourself alive (live at the BBC session 1) - 1998 US promo CD
-    // Keep yourself alive (Live Killers version - 98 promo edit) - 1998 US promo CD
   ],
   trackLists: [
     {
