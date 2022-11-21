@@ -26,15 +26,23 @@ const QueenSinglesPage: NextPage<Props> = ({ single }) => {
         <TrackList key={i} {...tl} />
       ))}
       <hr />
-      {stringToParagraphs(textContent).map((paragraphContent, i) => (
+      <section dangerouslySetInnerHTML={{ __html: textContent }} />
+      {/* {stringToParagraphs(textContent).map((paragraphContent, i) => (
         <p key={i}>{paragraphContent}</p>
-      ))}
+      ))} */}
       <div>
         <h2>Tracks: </h2>
         <ul>
-          {tracks.map(({ name, releases }) => (
+          {tracks.map(({ name, releases, artist }) => (
             <li key={name}>
-              <b>{name}</b>
+              <b>
+                {artist && (
+                  <>
+                    <i>{artist}</i> -{" "}
+                  </>
+                )}
+                {name}
+              </b>
               {releases && <span> - {releases}</span>}
             </li>
           ))}
@@ -54,13 +62,23 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: { params: { name: string } }) {
-  const { name } = params;
-  const single = await getQueenSingleData(name.toLowerCase());
+  const { name: singleName } = params;
+
+  const single = await getQueenSingleData(singleName.toLowerCase());
+
+  if (!single) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: "/404",
+      },
+    };
+  }
 
   return {
     props: {
       single,
-      pageTitle: `${name} (Queen single)`,
+      pageTitle: `${singleName} (Queen single)`,
     },
   };
 }
@@ -89,12 +107,19 @@ const TrackList = ({
 }: SingleEntryData["trackLists"][number]) => (
   <div>
     <ul style={{ marginBottom: "5px" }}>
-      {tracks.map(({ index, name }, idx) => (
+      {tracks.map(({ index, name, artist }, idx) => (
         <li key={idx} style={{ fontSize: "1.1em", display: "table-row" }}>
           <span style={{ display: "table-cell", paddingRight: "5px" }}>
             {index}
           </span>
-          <span style={{ display: "table-cell" }}>{name}</span>
+          <span style={{ display: "table-cell" }}>
+            {artist && (
+              <>
+                <i>{artist}</i> -{" "}
+              </>
+            )}
+            {name}
+          </span>
         </li>
       ))}
     </ul>

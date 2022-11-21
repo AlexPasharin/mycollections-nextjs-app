@@ -2,6 +2,7 @@ import type { Composition } from "types/discography";
 
 const data: Composition = {
   name: "Keep yourself alive",
+  artist: "Queen",
   versions: [
     { id: "kya" },
     { id: "kya-mono", versionName: "mono", parentVersion: "kya" },

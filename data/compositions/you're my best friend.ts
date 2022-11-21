@@ -1,10 +1,11 @@
 import type { Composition } from "types/discography";
 
 const data: Composition = {
-  name: "Doing Alright",
+  name: "You're My Best Friend",
+  artist: "Queen",
   versions: [
     {
-      id: "dar",
+      id: "ymbf",
     },
   ],
 };

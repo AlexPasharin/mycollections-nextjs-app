@@ -1,14 +1,16 @@
 type VersionID = string;
 
-type TrackVersion = {
+export interface TrackVersion {
   id: VersionID;
-  versionName?: string;
+  versionName: string;
   parentVersion?: VersionID;
-};
+  artist?: string;
+}
 
 export interface Composition {
   name: string;
-  versions: TrackVersion[];
+  artist: string;
+  versions: TrackVersion[] | [{ id: VersionID }, ...TrackVersion[]];
 }
 
 type TrackIndex = string | number;
@@ -46,10 +48,11 @@ export type SingleEntryData = Omit<
   tracks: {
     name: string;
     releases: string | null;
+    artist: string | null;
   }[];
 } & {
   trackLists: {
-    tracks: { index: string; name: string }[];
+    tracks: { index: string; name: string; artist: string | null }[];
     releases: string[];
   }[];
 };

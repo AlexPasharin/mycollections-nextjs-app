@@ -10,7 +10,7 @@ const data: DiscographyEntryData = {
         { id: "liar-edit" },
         {
           id: "liar-edit-mono",
-          releases: 'Electra 74 stereo/mono 7" promo',
+          releases: 'Electra  7" promo',
         },
       ],
     },
@@ -19,7 +19,7 @@ const data: DiscographyEntryData = {
       versions: [
         {
           id: "dar",
-          releases: 'not Electra 74 stereo/mono promo 7"',
+          releases: 'not Electra promo 7"',
         },
       ],
     },

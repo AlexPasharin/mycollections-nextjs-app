@@ -1,14 +1,11 @@
 import type { Composition } from "types/discography";
 
 const data: Composition = {
-  name: "God Save The Queen",
+  name: "Doing Alright",
+  artist: "Queen",
   versions: [
     {
-      id: "gstq-single-version",
-      versionName: "original single version",
-    },
-    {
-      id: "gstq",
+      id: "dar",
     },
   ],
 };

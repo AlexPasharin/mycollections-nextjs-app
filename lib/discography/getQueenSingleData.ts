@@ -1,11 +1,18 @@
 import fs from "fs";
 import path from "path";
+import showdown from "showdown";
 
 import type {
   Composition,
   DiscographyEntryData,
   SingleEntryData,
+  TrackVersion,
 } from "types/discography";
+
+const mdConverter = new showdown.Converter({
+  simplifiedAutoLink: true,
+  openLinksInNewWindow: true,
+});
 
 export default async function getQueenSingleData(
   name: string
@@ -20,7 +27,7 @@ export default async function getQueenSingleData(
 
     const textContentFilePath = path.join(
       queenSinglesTextContentsDirectory,
-      `${name}.txt`
+      `${name}.md`
     );
 
     const singleDataFilePath = path.join(
@@ -31,7 +38,9 @@ export default async function getQueenSingleData(
     );
 
     const [textContent, dataFileContent] = await Promise.all([
-      readFilePromise(textContentFilePath),
+      readFilePromise(textContentFilePath).then((md) =>
+        mdConverter.makeHtml(md)
+      ),
       getDefaultExport<DiscographyEntryData>(singleDataFilePath),
     ]);
 
@@ -40,18 +49,27 @@ export default async function getQueenSingleData(
         const { name, versions } = track;
 
         const compositionData = await getDefaultExport<Composition>(
-          path.join("discography", "queen", "compositions", name.toLowerCase())
+          path.join("compositions", name.toLowerCase())
         );
 
         return versions.map(({ id, releases }) => {
-          const { versionName } = compositionData.versions.find(
-            (v) => v.id === id
-          )!; // should be found
+          const version: Partial<TrackVersion> | undefined =
+            compositionData.versions.find((v) => v.id === id);
+
+          if (!version) {
+            throw `Could not find version with ${id} for composition ${name}`;
+          }
+
+          const compositionName = compositionData.name;
+          const { versionName, artist } = version;
 
           return {
             id,
-            name: versionName ? `${name} (${versionName})` : name,
+            name: versionName
+              ? `${compositionName} (${versionName})`
+              : compositionName,
             releases,
+            artist,
           };
         });
       })
@@ -62,7 +80,11 @@ export default async function getQueenSingleData(
         tracks: tracks.map(({ track, ...rest }, idx) => {
           const trackData = tracksUsedInSingleReleases.find(
             (t) => t.id === track
-          )!; // should be found
+          );
+
+          if (!trackData) {
+            throw `Could not find trackData for ${track}`;
+          }
 
           const trackIndex = (
             "indexes" in rest ? rest.indexes : [rest.index || idx + 1]
@@ -74,7 +96,7 @@ export default async function getQueenSingleData(
             rest.comment ? ` (${rest.comment})` : ""
           }`;
 
-          return { index: trackIndex, name };
+          return { index: trackIndex, name, artist: trackData.artist ?? null };
         }),
         releases: Array.isArray(releases) ? releases : [releases],
       })
@@ -83,16 +105,17 @@ export default async function getQueenSingleData(
     const result = {
       ...dataFileContent,
       textContent,
-      tracks: tracksUsedInSingleReleases.map(({ name, releases }) => ({
+      tracks: tracksUsedInSingleReleases.map(({ name, releases, artist }) => ({
         name,
         releases: releases || null,
+        artist: artist || null,
       })),
       trackLists,
     };
 
     return result;
   } catch (error) {
-    console.error(error);
+    console.error({ error });
 
     return null;
   }

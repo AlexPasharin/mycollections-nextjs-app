@@ -1,68 +1,52 @@
-const fs = require("fs");
+import { attemptToMakeCompositionFiles } from "./addNewCompositionFileSkeleton";
+import { singleDataContentTemplate } from "./templateGenerators";
+import { attemptToMakeAFile } from "./utils";
 
-function addNeweSingleFileSkeletons() {
-  const singleName = process.argv.slice(2).join(" ").toLowerCase();
+addNewSingleFileSkeletons("Queen");
 
-  const textContentsFilePath = `${process.cwd()}/textcontents/queendiscography/singles/${singleName}.txt`;
+async function addNewSingleFileSkeletons(artistName: string) {
+  let args = process.argv.slice();
+  const makeCompositionFileForSingleName =
+    args[args.length - 1] !== "--no-track";
+
+  args = makeCompositionFileForSingleName
+    ? args
+    : args.slice(0, args.length - 1);
+
+  const names = args
+    .slice(2)
+    .join(" ")
+    .split(",")
+    .map((str) => str.trim())
+    .filter((str) => Boolean(str));
+
+  if (!names.length) {
+    console.error("NO ARGUMENTS GIVEN, ABORTING");
+    process.exit(1);
+  }
+
+  const singleName = names[0];
+
+  const textContentsFilePath = `${process.cwd()}/textcontents/queendiscography/singles/${singleName}.md`;
   const singleDataFilePath = `${process.cwd()}/data/discography/queen/singles/${singleName}.ts`;
 
-  fs.writeFile(textContentsFilePath, "", (err: unknown) => {
-    if (err) {
-      console.error(
-        `Could not make text content file for ${singleName}: ${err}`
-      );
-    }
+  await attemptToMakeAFile({
+    path: textContentsFilePath,
+    fileExistsLogMessage: `Text content file ${textContentsFilePath} already exists`,
+    content: "",
+    errorMessage: `Could not make text content file for ${singleName}`,
   });
 
-  fs.writeFile(
-    singleDataFilePath,
-    singleDataContentTemplate({ singleName }),
-    (err: unknown) => {
-      if (err) {
-        console.error(
-          `Could not make single data file for ${singleName}: ${err}`
-        );
-      }
-    }
-  );
-}
+  await attemptToMakeAFile({
+    path: singleDataFilePath,
+    fileExistsLogMessage: `Single data content file ${singleDataFilePath} already exists`,
+    content: singleDataContentTemplate({ singleName }),
+    errorMessage: `Could not make single data content file for ${singleName}`,
+  });
 
-addNeweSingleFileSkeletons();
+  const compositionNames = makeCompositionFileForSingleName
+    ? names
+    : names.slice(1);
 
-function singleDataContentTemplate({ singleName }: { singleName: string }) {
-  const singleNameWords = singleName.split(" ");
-  const singleNameCapitalized = singleNameWords
-    .map((str) => str[0].toUpperCase() + str.slice(1).toLowerCase())
-    .join(" ");
-
-  const singleTitleTrackVersion =
-    singleNameWords.length > 0
-      ? singleNameWords.map((str) => str[0].toLowerCase()).join("")
-      : singleName.toLowerCase();
-
-  return `
-import type { DiscographyEntryData } from "types/discography";
-
-const data: DiscographyEntryData = {
-  title: "${singleNameCapitalized}",
-  discogs_url: "",
-  tracks: [
-    {
-      name: "${singleNameCapitalized}",
-      versions: [{ id: "${singleTitleTrackVersion}" }],
-    },
-  ],
-  trackLists: [
-    {
-      tracks: [
-        {
-          track: "${singleTitleTrackVersion}",
-        },
-      ],
-      releases: "",
-    },
-  ],
-};
-
-export default data;`;
+  await attemptToMakeCompositionFiles(compositionNames, artistName);
 }

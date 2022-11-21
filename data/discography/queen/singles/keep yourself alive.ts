@@ -7,24 +7,24 @@ const data: DiscographyEntryData = {
     {
       name: "Keep Yourself Alive",
       versions: [
-        { id: "kya", releases: "not Electra 75 reissue" },
+        { id: "kya", releases: "not Electra 1975 reissue" },
         {
           id: "kya-mono",
-          releases: 'Electra 73 stereo/mono 7" promo',
+          releases: 'Electra 1973 stereo/mono 7" promo',
         },
-        { id: "kya-edit", releases: "Electra 75 reissue" },
+        { id: "kya-edit", releases: "Electra 1975 reissue" },
         {
           id: "kya-edit-mono",
-          releases: 'Electra 75 stereo/mono 7" promo',
+          releases: 'Electra 1975 7" promo',
         },
         { id: "kya-llrt", releases: "1998 HR promo CD" },
         {
           id: "kya-bbc-1-stereo-swap",
-          releases: "1998 HR promo CD",
+          releases: '1998 HR "25 Anniversary" Promo Sampler CD single',
         },
         {
           id: "kya-lk-hr-98",
-          releases: "1998 HR promo CD",
+          releases: '1998 HR "25 Anniversary" Promo Sampler CD single',
         },
       ],
     },
@@ -34,11 +34,11 @@ const data: DiscographyEntryData = {
         {
           id: "sad",
           releases:
-            'not Electra 73 stereo/mono promos, Electra 75 reissue, Australian/New Zealand 74 7" or 98 US promo CD',
+            'not Electra 1973 stereo/mono 7" promo, Electra 1975 re-issue, Australian/New Zealand 1974 7" or 1998 US promo CD',
         },
         {
           id: "sad-censored",
-          releases: 'Australian/New Zealand 74 7"',
+          releases: 'Australian/New Zealand 1974 7"',
         },
       ],
     },
@@ -47,7 +47,7 @@ const data: DiscographyEntryData = {
       versions: [
         {
           id: "lov-stand-along-electra",
-          releases: "Electra 75 reissue, except for stereo/mono promos",
+          releases: 'Electra 1975 re-issue, except for stereo/mono 7" promo',
         },
       ],
     },
@@ -56,7 +56,7 @@ const data: DiscographyEntryData = {
       versions: [
         {
           id: "gstq-single-version",
-          releases: "Electra 75 reissue, except for stereo/mono promos",
+          releases: 'Electra 1975 re-issue, except for stereo/mono 7" promo',
         },
       ],
     },
@@ -97,7 +97,7 @@ const data: DiscographyEntryData = {
         },
         { index: "B", track: "sad-censored" },
       ],
-      releases: 'Australian / New Zealand 1974 7"',
+      releases: 'Australian/New Zealand 1974 7"',
     },
     {
       tracks: [
@@ -130,7 +130,7 @@ const data: DiscographyEntryData = {
         { track: "kya", comment: "album version - 1991 remaster" },
         { track: "kya", comment: "album version - 1998 remaster" },
       ],
-      releases: 'HR 1998 "25 Anniversary" Promo Sampler CD single',
+      releases: '1998 HR "25 Anniversary" Promo Sampler CD single',
     },
   ],
 };

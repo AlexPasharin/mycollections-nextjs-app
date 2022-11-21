@@ -2,6 +2,7 @@ import type { Composition } from "types/discography";
 
 const data: Composition = {
   name: "Liar",
+  artist: "Queen",
   versions: [
     {
       id: "liar",

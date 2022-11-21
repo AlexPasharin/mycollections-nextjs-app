@@ -17,10 +17,8 @@ const QueenSinglesPage: NextPage<Props> = ({ singles }) => {
       <h2>Queen singles:</h2>
       <ul>
         {singles.map((s) => (
-          <div>
-            <Link href={`${router.pathname}/${s}`} key={s}>
-              {s}
-            </Link>
+          <div key={s}>
+            <Link href={`${router.pathname}/${s}`}>{s}</Link>
           </div>
         ))}
       </ul>

@@ -2,6 +2,7 @@ import type { Composition } from "types/discography";
 
 const data: Composition = {
   name: "Lily Of The Valley",
+  artist: "Queen",
   versions: [
     {
       id: "lov",

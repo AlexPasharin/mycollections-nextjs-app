@@ -7,14 +7,17 @@
     "build": "next build",
     "start": "next start",
     "tsc": "tsc --noemit",
-    "new-single": "ts-node scripts/addNewSingleFileSkeletons.ts"
+    "new-single": "ts-node scripts/addNewSingleFileSkeletons.ts",
+    "new-song": "ts-node scripts/addNewCompositionFileSkeleton.ts"
   },
   "author": "AlexPasharin",
   "license": "ISC",
   "dependencies": {
+    "@types/showdown": "^2.0.0",
     "next": "^13.0.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "showdown": "^2.1.0"
   },
   "devDependencies": {
     "@types/node": "18.11.9",
