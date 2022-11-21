@@ -5,4 +5,5 @@ export default [
   "Killer Queen",
   "Now I'm Here",
   "Bohemian Rhapsody",
+  "You're My Best Friend",
 ];

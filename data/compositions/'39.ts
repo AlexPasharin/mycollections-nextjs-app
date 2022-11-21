@@ -5,7 +5,12 @@ const data: Composition = {
   artist: "Queen",
   versions: [
     {
-      id: "'",
+      id: "39",
+    },
+    {
+      id: "39-stand-along",
+      versionName: "stand-along",
+      parentVersion: "39",
     },
   ],
 };
