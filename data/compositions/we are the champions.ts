@@ -1,16 +1,16 @@
 import type { Composition } from "types/discography";
 
 const data: Composition = {
-  name: "Long Away",
-  artist: "Queen",
+  name: `We Are The Champions`,
+  artist: `Queen`,
   versions: [
     {
-      id: "la",
+      id: `watc`,
     },
     {
-      id: "la-mono",
+      id: `watc-mono`,
       versionName: "mono",
-      parentVersion: "mono",
+      parentVersion: "watc",
     },
   ],
 };

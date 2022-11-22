@@ -7,6 +7,12 @@ const data: Composition = {
     {
       id: "tymd",
     },
+    { id: "tymd-stand-along", versionName: "stand-along" },
+    {
+      id: "tymd-stand-along-mono",
+      versionName: "stand-along mono",
+      parentVersion: "stand-along",
+    },
   ],
 };
 

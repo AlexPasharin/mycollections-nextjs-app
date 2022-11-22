@@ -1,16 +1,15 @@
 import type { Composition } from "types/discography";
 
 const data: Composition = {
-  name: "Long Away",
-  artist: "Queen",
+  name: `Fat Bottomed Girls`,
+  artist: `Queen`,
   versions: [
     {
-      id: "la",
+      id: `fbg`,
     },
     {
-      id: "la-mono",
-      versionName: "mono",
-      parentVersion: "mono",
+      id: `fbg-single-edit`,
+      versionName: "single edit",
     },
   ],
 };

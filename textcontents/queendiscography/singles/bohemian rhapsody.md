@@ -6,7 +6,7 @@ EMI territories used a single version of "I’m In Love With My Car" (with engin
 
 On 26 July 1978 a special limited edition numbered promo blue vinyl 7" was released by EMI in the UK to celebrate the "Queen's Award For Industry For Export Achievement". Same year single was also re-issued in France with a new picture sleeve, accompanied by a famous rare French promo release, which featured a rare unique edited version of “Bohemian Rhapsody”.
 
-Around 1982 the title track was reissued in North America backed with "You’re my best friend" as a part of "Spun Gold" series (no picture sleeve, [https://www.discogs.com/Queen-Bohemian-Rhapsody-Youre-My-Best-Friend/release/2480724](https://www.discogs.com/Queen-Bohemian-Rhapsody-Youre-My-Best-Friend/release/2480724)).
+Around 1982 the title track was reissued in North America backed with "You're my best friend" as a part of "Spun Gold" series (no picture sleeve, [https://www.discogs.com/Queen-Bohemian-Rhapsody-Youre-My-Best-Friend/release/2480724](https://www.discogs.com/Queen-Bohemian-Rhapsody-Youre-My-Best-Friend/release/2480724)).
 
 UK 3"CD released in 1988 has an amusing indexing error - title track starts with the final "swirling" sounds from “Good Company” that precedes it on the "A Night At The Opera" album.
 

@@ -1,21 +1,28 @@
 export function singleDataContentTemplate({
   singleName,
+  compositionNames,
 }: {
   singleName: string;
+  compositionNames: string[];
 }) {
   const { name, id } = processCompositionName(singleName);
 
-  return `
-import type { DiscographyEntryData } from "types/discography";
+  const tracks = compositionNames.map((cn) => {
+    const { name, id } = processCompositionName(cn);
+
+    return `    {
+      name: \`${name}\`,
+      versions: [{ id:  \`${id}\`, releases: \`\`}],
+    },`;
+  });
+
+  return `import type { DiscographyEntryData } from "types/discography";
 
 const data: DiscographyEntryData = {
-  title: "${name}",
+  title: \`${name}\`,
   discogs_url: "",
   tracks: [
-    {
-      name: "${name}",
-      versions: [{ id: "${id}" }],
-    },
+${tracks.join("\n")}
   ],
   trackLists: [
     {
@@ -29,7 +36,8 @@ const data: DiscographyEntryData = {
   ],
 };
 
-export default data;`;
+export default data;
+`;
 }
 
 export function compositionDataContentTemplate({
@@ -46,7 +54,7 @@ import type { Composition } from "types/discography";
 
 const data: Composition = {
   name: \`${name}\`,
-  artist: \`${artistName}\`
+  artist: \`${artistName}\`,
   versions: [
     {
       id: \`${id}\`,
@@ -69,7 +77,7 @@ function processCompositionName(compositionName: string): {
     .join(" ");
 
   const compositionID =
-    compositionNameWords.length > 0
+    compositionNameWords.length > 1
       ? compositionNameWords.map((str) => str[0].toLowerCase()).join("")
       : compositionName.toLowerCase();
 

@@ -99,7 +99,7 @@ export async function getStaticProps({ params }: { params: { name: string } }) {
 //       single,
 //     },
 //   };
-// }
+// }-{" "}
 
 const TrackList = ({
   tracks,
@@ -107,19 +107,15 @@ const TrackList = ({
 }: SingleEntryData["trackLists"][number]) => (
   <div>
     <ul style={{ marginBottom: "5px" }}>
-      {tracks.map(({ index, name, artist }, idx) => (
+      {tracks.map(({ index, track_html }, idx) => (
         <li key={idx} style={{ fontSize: "1.1em", display: "table-row" }}>
           <span style={{ display: "table-cell", paddingRight: "5px" }}>
             {index}
           </span>
-          <span style={{ display: "table-cell" }}>
-            {artist && (
-              <>
-                <i>{artist}</i> -{" "}
-              </>
-            )}
-            {name}
-          </span>
+          <span
+            style={{ display: "table-cell" }}
+            dangerouslySetInnerHTML={{ __html: track_html }}
+          />
         </li>
       ))}
     </ul>
@@ -132,9 +128,3 @@ const TrackList = ({
     </ul>
   </div>
 );
-
-const stringToParagraphs = (str: string): string[] =>
-  str
-    .split("\n")
-    .map((p) => p.trim())
-    .filter((p) => !!p);

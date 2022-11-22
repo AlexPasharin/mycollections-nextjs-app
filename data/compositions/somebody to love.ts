@@ -7,6 +7,11 @@ const data: Composition = {
     {
       id: "stl",
     },
+    {
+      id: "stl-mono",
+      versionName: "mono",
+      parentVersion: "stl",
+    },
   ],
 };
 

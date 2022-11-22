@@ -17,7 +17,7 @@ type TrackIndex = string | number;
 type TrackIndexes = { indexes: TrackIndex[] } | { index?: TrackIndex };
 
 type Track = TrackIndexes & {
-  track: string;
+  track: string | string[];
   comment?: string;
 };
 
@@ -52,7 +52,7 @@ export type SingleEntryData = Omit<
   }[];
 } & {
   trackLists: {
-    tracks: { index: string; name: string; artist: string | null }[];
+    tracks: { index: string; track_html: string }[];
     releases: string[];
   }[];
 };

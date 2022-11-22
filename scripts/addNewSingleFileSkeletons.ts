@@ -37,16 +37,16 @@ async function addNewSingleFileSkeletons(artistName: string) {
     errorMessage: `Could not make text content file for ${singleName}`,
   });
 
-  await attemptToMakeAFile({
-    path: singleDataFilePath,
-    fileExistsLogMessage: `Single data content file ${singleDataFilePath} already exists`,
-    content: singleDataContentTemplate({ singleName }),
-    errorMessage: `Could not make single data content file for ${singleName}`,
-  });
-
   const compositionNames = makeCompositionFileForSingleName
     ? names
     : names.slice(1);
+
+  await attemptToMakeAFile({
+    path: singleDataFilePath,
+    fileExistsLogMessage: `Single data content file ${singleDataFilePath} already exists`,
+    content: singleDataContentTemplate({ singleName, compositionNames: names }),
+    errorMessage: `Could not make single data content file for ${singleName}`,
+  });
 
   await attemptToMakeCompositionFiles(compositionNames, artistName);
 }

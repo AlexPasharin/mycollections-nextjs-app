@@ -75,16 +75,15 @@ export default async function getQueenSingleData(
       })
     ).then((tracks) => tracks.flat());
 
+    // since we will need all tracks to construct trackLists and we will search for them by their id, possibly many times, this "optimizes" this search a bit
+    const tracksMap = new Map(
+      tracksUsedInSingleReleases.map((tr) => [tr.id, tr])
+    );
+
     const trackLists = dataFileContent.trackLists.map(
       ({ tracks, releases }) => ({
         tracks: tracks.map(({ track, ...rest }, idx) => {
-          const trackData = tracksUsedInSingleReleases.find(
-            (t) => t.id === track
-          );
-
-          if (!trackData) {
-            throw `Could not find trackData for ${track}`;
-          }
+          const tracks = Array.isArray(track) ? track : [track];
 
           const trackIndex = (
             "indexes" in rest ? rest.indexes : [rest.index || idx + 1]
@@ -92,11 +91,25 @@ export default async function getQueenSingleData(
             .map((i) => `${i}.`)
             .join(" \\ ");
 
-          const name = `${trackData.name}${
-            rest.comment ? ` (${rest.comment})` : ""
-          }`;
+          let trackName = tracks
+            .map((tr) => {
+              const trackData = tracksMap.get(tr);
 
-          return { index: trackIndex, name, artist: trackData.artist ?? null };
+              if (!trackData) {
+                throw `Could not find trackData for ${track}`;
+              }
+
+              const { name, artist } = trackData;
+
+              return `${artist ? `<i>${artist}</i> - ` : ""}${name}`;
+            })
+            .join(" / ");
+
+          if (rest.comment) {
+            trackName += ` (${rest.comment})`;
+          }
+
+          return { index: trackIndex, name, track_html: trackName };
         }),
         releases: Array.isArray(releases) ? releases : [releases],
       })

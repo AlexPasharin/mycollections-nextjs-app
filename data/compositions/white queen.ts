@@ -1,16 +1,15 @@
 import type { Composition } from "types/discography";
 
 const data: Composition = {
-  name: "Long Away",
-  artist: "Queen",
+  name: `White Queen (As It Began)`,
+  artist: `Queen`,
   versions: [
     {
-      id: "la",
+      id: `wq`,
     },
     {
-      id: "la-mono",
-      versionName: "mono",
-      parentVersion: "mono",
+      id: `wq-stand-along`,
+      versionName: "stand-along",
     },
   ],
 };
