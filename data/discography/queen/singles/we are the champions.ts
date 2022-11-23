@@ -7,8 +7,28 @@ const data: DiscographyEntryData = {
     {
       name: `We Are The Champions`,
       versions: [
-        { id: `watc`, releases: 'not UK mispress promo 7"' },
+        {
+          id: `watc`,
+          releases: 'not UK mispress promo 7" or US 1991 promo CD',
+        },
         { id: `watc-mono`, releases: 'Electra 1977 promo 7" and 12"' },
+        { id: "watc-bush", releases: "US 1991 promo CD" },
+        {
+          id: "watc-wembley",
+          releases: "2006 download",
+        },
+        {
+          id: "watc-qpr-return-champs",
+          releases: "2006 download",
+        },
+        {
+          id: "br-wwry-germany",
+          releases: "2006 download",
+        },
+        {
+          id: "watc-video",
+          releases: "2006 download",
+        },
       ],
     },
     {
@@ -17,7 +37,7 @@ const data: DiscographyEntryData = {
         {
           id: `wwry`,
           releases:
-            'notElectra 1977 promo 7", Polish 1 track flexi 7", US 1992 7", 1994 European CDs or 2006 download',
+            'not Electra 1977 promo 7", Polish 1980 1 track flexi 7", US 1991 promo CD, US 1992 7", 1994 European CDs or 2006 download',
         },
         { id: "wwry-mono", releases: 'Electra 1977 promo 12"' },
         { id: "wwry-ruined", releases: "US 1992 promo CD" },
@@ -118,7 +138,7 @@ const data: DiscographyEntryData = {
           track: "watc",
         },
       ],
-      releases: 'Polish 1 track flexi 7"',
+      releases: 'Polish 1980 1 track flexi 7"',
     },
     {
       tracks: [
@@ -133,6 +153,14 @@ const data: DiscographyEntryData = {
         },
       ],
       releases: ['UK 1988 3"CD', 'Japanese 1991 3"CD'],
+    },
+    {
+      tracks: [
+        {
+          track: "watc-bush",
+        },
+      ],
+      releases: "US 1991 promo CD",
     },
     {
       tracks: [
@@ -171,6 +199,75 @@ const data: DiscographyEntryData = {
         },
       ],
       releases: "US 1992 promo CD",
+    },
+    {
+      tracks: [
+        {
+          track: "watc",
+        },
+        {
+          track: ["wwry", "watc"],
+        },
+      ],
+      releases: 'US 1992 "Back Trax” CD',
+    },
+    {
+      tracks: [
+        {
+          track: "watc",
+        },
+        {
+          track: "fwbf",
+        },
+      ],
+      releases: "European 1994 CD",
+    },
+    {
+      tracks: [
+        {
+          track: "watc",
+        },
+        {
+          track: "akom",
+        },
+      ],
+      releases: "Dutch 1994 mispress CD",
+    },
+    {
+      tracks: [
+        {
+          indexes: ["A", 1],
+          track: "wwry",
+        },
+        {
+          indexes: ["B", 2],
+          track: "watc",
+        },
+      ],
+      releases: [
+        '2003 French/German “Evian commercial” 12" and CD',
+        '2007 "30 Anniversary" promo CD',
+      ],
+    },
+    {
+      tracks: [
+        {
+          track: "watc",
+        },
+        {
+          track: "watc-wembley",
+        },
+        {
+          track: "watc-qpr-return-champs",
+        },
+        {
+          track: "br-wwry-germany",
+        },
+        {
+          track: "watc-video",
+        },
+      ],
+      releases: "2006 download",
     },
   ],
 };

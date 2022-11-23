@@ -20,7 +20,7 @@ export async function attemptToMakeCompositionFiles(
   artistName: string
 ) {
   for await (const compositionName of compositionNames) {
-    const path = `${process.cwd()}/data/compositions/${compositionName}.ts`;
+    const path = `${process.cwd()}/data/compositions/${compositionName.toLowerCase()}.ts`;
 
     await attemptToMakeAFile({
       path,

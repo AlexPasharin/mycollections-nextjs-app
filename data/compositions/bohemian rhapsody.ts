@@ -35,10 +35,12 @@ const data: Composition = {
     {
       id: "br-qpr-hyde-park",
       versionName: "Queen + Paul Rodgers live in Hyde Park 15 July 2005",
+      artist: "Queen + Paul Rodgers",
     },
     {
       id: "br-qpr-hyde-park-video",
       versionName: "Queen + Paul Rodgers live in Hyde Park 15 July 2005, video",
+      artist: "Queen + Paul Rodgers",
     },
     {
       id: "br-wwry-london",

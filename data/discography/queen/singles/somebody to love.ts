@@ -32,6 +32,12 @@ const data: DiscographyEntryData = {
         { id: "tymd-stand-along", releases: 'Japanese 1991 3"CD' },
       ],
     },
+    {
+      name: "You Take My Breath Away",
+      versions: [
+        { id: "ytmba", releases: '2021 "The Greatest Pop-up store" 7"' },
+      ],
+    },
   ],
   trackLists: [
     {
@@ -104,6 +110,16 @@ const data: DiscographyEntryData = {
         },
       ],
       releases: 'Japanese 1991 3"CD',
+    },
+    {
+      tracks: [
+        {
+          index: "A",
+          track: "stl",
+        },
+        { index: "B", track: "ytmba" },
+      ],
+      releases: '2021 "The Greatest Pop-up store" 7"',
     },
   ],
 };
