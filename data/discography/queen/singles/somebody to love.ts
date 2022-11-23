@@ -17,7 +17,7 @@ const data: DiscographyEntryData = {
         {
           id: "wm",
           releases:
-            'not Electra 1976 promo 7" or Polish 1977 7"/1980 one sided flexi 7"',
+            'not Electra 1976 promo 7", Polish 1977 7"/1980 one sided flexi 7" or 2021 "The Greatest Pop-up store" 7"',
         },
       ],
     },

@@ -6,4 +6,4 @@ Peaked at No.2 in UK charts, at No.13 in US charts.
 
 The 2008 "Singles Collection 1" CD single used the original standard UK picture sleeve.
 
-On 15 October 2021 re-released with new picture sleeve and B-side on yellow vinyl 7" as one of 4 limited edition (1000 copies) 'The Greatest Pop-Up Store' singles.
+On 15 October 2021 re-released with new picture sleeve and B-side on yellow vinyl 7" as one of 4 limited edition (1000 copies) 'The Greatest Pop-Up Store' singles ([https://www.discogs.com/release/20597962-Queen-Somebody-To-Love] (https://www.discogs.com/release/20597962-Queen-Somebody-To-Love)).

@@ -12,4 +12,5 @@ export default [
   "First Queen EP",
   "Long Away",
   "We Are The Champions",
+  "Spread Your Wings",
 ];
