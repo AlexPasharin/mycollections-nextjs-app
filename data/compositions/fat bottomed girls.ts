@@ -14,13 +14,13 @@ const data: Composition = {
     {
       id: `fbg-br-promo-segue`,
       versionName: 'Electra 12" promo segue version',
-      trackName: `Fat Bottomed Girls\\Bicycle Race`,
+      trackName: `Fat Bottomed Girls/Bicycle Race`,
       foreignCompositions: ["br"],
     },
     {
       id: `br-fbg-promo-segue`,
       versionName: 'Electra 12" promo segue version',
-      trackName: `Bicycle Race\\Fat Bottomed Girls`,
+      trackName: `Bicycle Race/Fat Bottomed Girls`,
       foreignCompositions: ["br"],
     },
   ],

@@ -120,7 +120,7 @@ const TrackList = ({
       ))}
     </ul>
     <ul style={{ marginLeft: "60px", marginTop: "5px" }}>
-      {releases.map((r) => (
+      {releases?.map((r) => (
         <li key={r} style={{ marginBottom: "2px" }}>
           {r}
         </li>

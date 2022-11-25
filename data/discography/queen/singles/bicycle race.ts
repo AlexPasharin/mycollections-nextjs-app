@@ -2,7 +2,8 @@ import type { DiscographyEntryData } from "types/discography";
 
 const data: DiscographyEntryData = {
   title: `Bicycle Race`,
-  discogs_url: "",
+  discogs_url:
+    "https://www.discogs.com/master/6826-Queen-Bicycle-Race-Fat-Bottomed-Girls",
   tracks: [
     {
       name: `Bicycle Race`,
@@ -46,10 +47,7 @@ const data: DiscographyEntryData = {
           track: "fbg-single-edit",
         },
       ],
-      releases: [
-        'Original EMI 1978 7"',
-        '2008 "Singles collection 1" CD single',
-      ],
+      releases: ['Original 1978 7"', '2008 "Singles collection 1" CD single'],
     },
     {
       tracks: [

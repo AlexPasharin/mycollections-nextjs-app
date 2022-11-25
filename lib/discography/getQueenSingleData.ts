@@ -6,7 +6,6 @@ import type {
   Composition,
   DiscographyEntryData,
   SingleEntryData,
-  TrackVersion,
 } from "types/discography";
 
 const mdConverter = new showdown.Converter({
@@ -110,7 +109,11 @@ export default async function getQueenSingleData(
 
           return { index: trackIndex, name, track_html: trackName };
         }),
-        releases: Array.isArray(releases) ? releases : [releases],
+        releases: Array.isArray(releases)
+          ? releases
+          : releases
+          ? [releases]
+          : null,
       })
     );
 

@@ -12,7 +12,7 @@ export function singleDataContentTemplate({
 
     return `    {
       name: \`${name}\`,
-      versions: [{ id:  \`${id}\`, releases: \`\`}],
+      versions: [{ id: \`${id}\`, releases: \`\`}],
     },`;
   });
 

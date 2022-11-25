@@ -6,4 +6,4 @@ Japanese 1991 3"CD contained a unique clean stand-along version of "Tenement Fun
 
 Re-released on CD by Hollywood Records on 18 April 2009 for Record Store Day (limited to 3000 copies, numbered).
 
-The 2008 "Singles Collection" CD single used the original standard UK picture sleeve.
+The 2008 "Singles Collection 1" CD single used the original standard UK picture sleeve.

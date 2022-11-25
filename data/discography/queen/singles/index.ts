@@ -15,4 +15,6 @@ export default [
   "Spread Your Wings",
   "It's Late",
   "Bicycle Race",
+  "Don't Stop Me Now",
+  "Jealousy",
 ];

@@ -25,7 +25,7 @@ type Track = TrackIndexes & {
 
 export interface TrackList {
   tracks: Track[];
-  releases: string | string[];
+  releases?: string | string[];
 }
 
 export interface DiscographyEntryData {
@@ -55,6 +55,6 @@ export type SingleEntryData = Omit<
 } & {
   trackLists: {
     tracks: { index: string; track_html: string }[];
-    releases: string[];
+    releases: string[] | null;
   }[];
 };
