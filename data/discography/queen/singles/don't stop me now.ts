@@ -44,7 +44,7 @@ const data: DiscographyEntryData = {
       releases: [
         'Original EMI 1979 7"',
         "French 1994 CD",
-        '2008 "Singles collection 1" CD single',
+        '2008 "Singles collection 1" CD',
       ],
     },
     {

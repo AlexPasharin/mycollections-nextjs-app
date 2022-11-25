@@ -11,6 +11,7 @@ const data: Composition = {
       id: "nih-odeon-soundcheck",
       versionName: "Hammersmith Odeon Soundcheck, 24 December 1975",
     },
+    { id: `nih-lk`, versionName: "Live Killers version" },
   ],
 };
 

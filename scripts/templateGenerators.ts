@@ -28,10 +28,10 @@ ${tracks.join("\n")}
     {
       tracks: [
         {
-          track: "${id}",
+          track: \`${id}\`,
         },
       ],
-      releases: "",
+      releases: \`\`,
     },
   ],
 };

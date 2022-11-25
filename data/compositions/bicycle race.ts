@@ -20,6 +20,7 @@ const data: Composition = {
       trackName: `Bicycle Race/Fat Bottomed Girls`,
       foreignCompositions: ["fbg"],
     },
+    { id: `br-ext`, versionName: "extended version" },
   ],
 };
 

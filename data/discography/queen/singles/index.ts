@@ -17,4 +17,8 @@ export default [
   "Bicycle Race",
   "Don't Stop Me Now",
   "Jealousy",
+  "Mustapha",
+  "Love Of My Life (live)",
+  "We Will Rock You (live)",
+  "Crazy Little Thing Called Love",
 ];
