@@ -2,15 +2,17 @@ type VersionID = string;
 
 export interface TrackVersion {
   id: VersionID;
-  versionName: string;
+  versionName?: string;
   parentVersion?: VersionID;
   artist?: string;
+  trackName?: string; // in case name is different from composition name
+  foreignCompositions?: string[]; // in case version is also part of another compositions' versions
 }
 
 export interface Composition {
   name: string;
   artist: string;
-  versions: TrackVersion[] | [{ id: VersionID }, ...TrackVersion[]];
+  versions: TrackVersion[];
 }
 
 type TrackIndex = string | number;

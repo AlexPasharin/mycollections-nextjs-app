@@ -1,27 +1,24 @@
 import type { Composition } from "types/discography";
 
 const data: Composition = {
-  name: `Fat Bottomed Girls`,
+  name: `Bicycle Race`,
   artist: `Queen`,
   versions: [
     {
-      id: `fbg-single-edit`,
-      versionName: "single edit",
+      id: `br`,
     },
-    {
-      id: `fbg`,
-    },
+    { id: `br-mono`, versionName: "mono", parentVersion: "br" },
     {
       id: `fbg-br-promo-segue`,
-      versionName: 'Electra 12" promo segue version',
+      versionName: 'Electra 12" promo segue',
       trackName: `Fat Bottomed Girls\\Bicycle Race`,
-      foreignCompositions: ["br"],
+      foreignCompositions: ["fbg"],
     },
     {
       id: `br-fbg-promo-segue`,
-      versionName: 'Electra 12" promo segue version',
+      versionName: 'Electra 12" promo segue',
       trackName: `Bicycle Race\\Fat Bottomed Girls`,
-      foreignCompositions: ["br"],
+      foreignCompositions: ["fbg"],
     },
   ],
 };

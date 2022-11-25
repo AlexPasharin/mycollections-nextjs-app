@@ -13,4 +13,6 @@ export default [
   "Long Away",
   "We Are The Champions",
   "Spread Your Wings",
+  "It's Late",
+  "Bicycle Race",
 ];

@@ -53,15 +53,14 @@ export default async function getQueenSingleData(
         );
 
         return versions.map(({ id, releases }) => {
-          const version: Partial<TrackVersion> | undefined =
-            compositionData.versions.find((v) => v.id === id);
+          const version = compositionData.versions.find((v) => v.id === id);
 
           if (!version) {
             throw `Could not find version with ${id} for composition ${name}`;
           }
 
-          const compositionName = compositionData.name;
-          const { versionName, artist } = version;
+          const { versionName, artist, trackName } = version;
+          const compositionName = trackName || compositionData.name;
 
           return {
             id,
