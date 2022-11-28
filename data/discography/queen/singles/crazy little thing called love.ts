@@ -99,7 +99,7 @@ const data: DiscographyEntryData = {
         },
         { index: "A", track: `cltcl-mono` },
       ],
-      releases: `1979 Electra promo 7"`,
+      releases: `Electra promo 7"`,
     },
     {
       tracks: [

@@ -1,13 +1,16 @@
 import type { Composition } from "types/discography";
 
 const data: Composition = {
-  name: `Play The Game`,
+  name: `Save Me`,
   artist: `Queen`,
   versions: [
     {
-      id: `ptg`,
+      id: `sm-single-mix`,
+      versionName: "original single mix",
     },
-    { id: `ptg-mono`, versionName: "mono", parentVersion: "ptg" },
+    {
+      id: `sm`,
+    },
   ],
 };
 

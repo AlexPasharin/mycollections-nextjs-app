@@ -1,13 +1,12 @@
 import type { Composition } from "types/discography";
 
 const data: Composition = {
-  name: `Play The Game`,
+  name: `Las Palabras De Amor (The Words Of Love)`,
   artist: `Queen`,
   versions: [
     {
-      id: `ptg`,
+      id: `lpda`,
     },
-    { id: `ptg-mono`, versionName: "mono", parentVersion: "ptg" },
   ],
 };
 

@@ -21,4 +21,7 @@ export default [
   "Love Of My Life (live)",
   "We Will Rock You (live)",
   "Crazy Little Thing Called Love",
+  "Save Me",
+  "Play The Game",
+  "Another One Bites The Dust",
 ];

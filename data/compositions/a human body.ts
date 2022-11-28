@@ -1,13 +1,12 @@
 import type { Composition } from "types/discography";
 
 const data: Composition = {
-  name: `Play The Game`,
+  name: `A Human Body`,
   artist: `Queen`,
   versions: [
     {
-      id: `ptg`,
+      id: `ahb`,
     },
-    { id: `ptg-mono`, versionName: "mono", parentVersion: "ptg" },
   ],
 };
 
