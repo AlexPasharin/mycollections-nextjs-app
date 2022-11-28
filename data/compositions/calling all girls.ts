@@ -1,16 +1,16 @@
 import type { Composition } from "types/discography";
 
 const data: Composition = {
-  name: `Need Your Loving Tonight`,
+  name: `Calling All Girls`,
   artist: `Queen`,
   versions: [
     {
-      id: `nylt`,
+      id: `cag`,
     },
     {
-      id: `nylt-mono`,
+      id: `cag-mono`,
       versionName: "mono",
-      parentVersion: "nylt",
+      parentVersion: "cag",
     },
   ],
 };

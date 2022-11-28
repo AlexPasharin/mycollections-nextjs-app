@@ -1,16 +1,11 @@
 import type { Composition } from "types/discography";
 
 const data: Composition = {
-  name: `Need Your Loving Tonight`,
+  name: `Life Is Real (Song For Lennon)`,
   artist: `Queen`,
   versions: [
     {
-      id: `nylt`,
-    },
-    {
-      id: `nylt-mono`,
-      versionName: "mono",
-      parentVersion: "nylt",
+      id: `lir`,
     },
   ],
 };

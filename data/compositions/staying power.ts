@@ -1,17 +1,13 @@
 import type { Composition } from "types/discography";
 
 const data: Composition = {
-  name: `Need Your Loving Tonight`,
+  name: `Staying Power`,
   artist: `Queen`,
   versions: [
     {
-      id: `nylt`,
+      id: `sp`,
     },
-    {
-      id: `nylt-mono`,
-      versionName: "mono",
-      parentVersion: "nylt",
-    },
+    { id: "sp-ext", versionName: "extended remix" },
   ],
 };
 

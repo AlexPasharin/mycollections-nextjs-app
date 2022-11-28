@@ -10,6 +10,12 @@ const data: Composition = {
       trackName: "Flash",
     },
     {
+      id: `ft-single-edit-mono`,
+      versionName: "single edit mono",
+      trackName: "Flash",
+      parentVersion: `ft-single-edit`,
+    },
+    {
       id: `ft`,
     },
   ],

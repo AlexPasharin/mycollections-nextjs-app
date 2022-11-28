@@ -40,9 +40,7 @@ const data: DiscographyEntryData = {
     },
     {
       name: `Keep Yourself Alive`,
-      versions: [
-        { id: `kya`, releases: `1983 "Spun Gold" series 7" re-issue` },
-      ],
+      versions: [{ id: `kya`, releases: `1983 "Spun Gold" series 7"` }],
     },
     {
       name: `Need Your Loving Tonight`,
@@ -73,7 +71,7 @@ const data: DiscographyEntryData = {
       ],
       releases: [
         'Original EMI 1980 7"',
-        'Original 1980 12"',
+        'Original 1980 12" (possibly with exception of Columbia)',
         '2009 "Singles collection 2" CD',
       ],
     },

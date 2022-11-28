@@ -1,16 +1,16 @@
 import type { Composition } from "types/discography";
 
 const data: Composition = {
-  name: `Need Your Loving Tonight`,
+  name: `Under Pressure`,
   artist: `Queen`,
   versions: [
     {
-      id: `nylt`,
+      id: `up`,
     },
     {
-      id: `nylt-mono`,
+      id: `up-mono`,
       versionName: "mono",
-      parentVersion: "nylt",
+      parentVersion: "up",
     },
   ],
 };

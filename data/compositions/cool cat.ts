@@ -1,16 +1,12 @@
+
 import type { Composition } from "types/discography";
 
 const data: Composition = {
-  name: `Need Your Loving Tonight`,
+  name: `Cool Cat`,
   artist: `Queen`,
   versions: [
     {
-      id: `nylt`,
-    },
-    {
-      id: `nylt-mono`,
-      versionName: "mono",
-      parentVersion: "nylt",
+      id: `cc`,
     },
   ],
 };

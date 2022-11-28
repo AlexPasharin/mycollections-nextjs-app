@@ -24,4 +24,12 @@ export default [
   "Save Me",
   "Play The Game",
   "Another One Bites The Dust",
+  "Need Your Loving Tonight",
+  "Flash",
+  "Under Pressure",
+  "Body Language",
+  "Las Palabras De Amor",
+  "Calling All Girls",
+  "Staying Power",
+  "Back Chat",
 ];
