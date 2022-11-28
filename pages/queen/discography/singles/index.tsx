@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 
 import queenSinglesList from "data/discography/queen/singles";
 
 interface Props {
-  singles: string[];
+  singles: typeof queenSinglesList;
 }
 
 const QueenSinglesPage: NextPage<Props> = ({ singles }) => {
@@ -16,10 +16,17 @@ const QueenSinglesPage: NextPage<Props> = ({ singles }) => {
     <>
       <h2>Queen singles:</h2>
       <ul>
-        {singles.map((s) => (
-          <div key={s}>
-            <Link href={`${router.pathname}/${s}`}>{s}</Link>
-          </div>
+        {singles.map(({ year, singles }) => (
+          <li key={year}>
+            <h3>{year}</h3>
+            <ul>
+              {singles.map((s) => (
+                <li key={s}>
+                  <Link href={`${router.pathname}/${s}`}>{s}</Link>
+                </li>
+              ))}
+            </ul>
+          </li>
         ))}
       </ul>
     </>
@@ -28,11 +35,11 @@ const QueenSinglesPage: NextPage<Props> = ({ singles }) => {
 
 export default QueenSinglesPage;
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = () => {
   return {
     props: {
       singles: queenSinglesList,
       pageTitle: "Queen singles",
     },
   };
-}
+};

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { NextPage } from "next";
+import type { GetStaticPaths, NextPage } from "next";
 
 import getQueenSingleData from "lib/discography/getQueenSingleData";
 import queenSinglesList from "data/discography/queen/singles";
@@ -54,12 +54,14 @@ const QueenSinglesPage: NextPage<Props> = ({ single }) => {
 
 export default QueenSinglesPage;
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = () => {
   return {
-    paths: queenSinglesList.map((name) => ({ params: { name } })),
+    paths: queenSinglesList
+      .map(({ singles }) => singles.map((name) => ({ params: { name } })))
+      .flat(),
     fallback: false,
   };
-}
+};
 
 export async function getStaticProps({ params }: { params: { name: string } }) {
   const { name: singleName } = params;
