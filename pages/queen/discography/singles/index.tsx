@@ -14,7 +14,7 @@ const QueenSinglesPage: NextPage<Props> = ({ singles }) => {
 
   return (
     <>
-      <h2>Queen singles:</h2>
+      <h2>Queen singles</h2>
       <ul>
         {singles.map(({ year, singles }) => (
           <li key={year}>

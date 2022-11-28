@@ -46,4 +46,5 @@ export default [
       "Back Chat",
     ],
   },
+  { year: "1984", singles: ["Radio Ga Ga"] },
 ];
