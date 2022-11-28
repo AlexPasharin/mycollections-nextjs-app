@@ -46,5 +46,8 @@ export default [
       "Back Chat",
     ],
   },
-  { year: "1984", singles: ["Radio Ga Ga"] },
+  {
+    year: "1984",
+    singles: ["Radio Ga Ga", "I Want To Break Free", "It's A Hard Life"],
+  },
 ];
