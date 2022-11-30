@@ -7,23 +7,27 @@ const data: DiscographyEntryData = {
     {
       name: `One Vision`,
       versions: [
-        { id: `ov-edit`, releases: `not 12" releases (except for Capitol promo 12") or Argentinian cassette`},  
         {
-        id: `bv`,
-        releases: `not Capitol promo 7"/12"/cassette, Mexican promo 7" or 2005 French CD`
-      },
-      {
-        id: `ov-ext`,
-        releases: ``
-      },
-      {
-        id: `ov-promo-edit`,
-        releases: `12" releases (except for Capitol promo 12"), rgentinian cassette`
-      },],
+          id: `ov-edit`,
+          releases: `not 12" releases (except for Capitol promo 12") or Argentinian cassette`,
+        },
+        {
+          id: `bv`,
+          releases: `not Capitol promo 7"/12"/cassette, Mexican promo 7" or 2005 French CD`,
+        },
+        {
+          id: `ov-ext`,
+          releases: ``,
+        },
+        {
+          id: `ov-promo-edit`,
+          releases: `12" releases (except for Capitol promo 12"), rgentinian cassette`,
+        },
+      ],
     },
     {
       name: `We Will Rock You`,
-      versions: [{ id: `wwry`, releases: `2005 French CD`}],
+      versions: [{ id: `wwry`, releases: `2005 French CD` }],
     },
   ],
   trackLists: [
@@ -38,10 +42,7 @@ const data: DiscographyEntryData = {
           track: `bv`,
         },
       ],
-      releases: [
-        'Original 1985 7"',
-        '2010 "Singles collection 3" CD',
-      ],
+      releases: ['Original 1985 7"', '2010 "Singles collection 3" CD'],
     },
     {
       tracks: [
@@ -51,8 +52,7 @@ const data: DiscographyEntryData = {
         },
         { index: "B", track: `bv` },
       ],
-      releases: 
-        ['Original 1984 12"', 'Argentinian cassette'], 
+      releases: ['Original 1985 12"', "Argentinian cassette"],
     },
     {
       tracks: [
@@ -62,12 +62,10 @@ const data: DiscographyEntryData = {
         },
         {
           index: "B",
-          track:  `ov-promo-edit`,
+          track: `ov-promo-edit`,
         },
       ],
-      releases: 
-        `Capitol promo 7"`
-      ,
+      releases: `Capitol promo 7"`,
     },
     {
       tracks: [
@@ -83,7 +81,7 @@ const data: DiscographyEntryData = {
       releases: [
         `Capitol promo 12"`,
         `Capitol promo cassette`,
-        'Mexican promo 7"'
+        'Mexican promo 7"',
       ],
     },
     {

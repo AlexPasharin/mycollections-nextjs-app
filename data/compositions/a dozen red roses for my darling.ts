@@ -1,13 +1,13 @@
 import type { Composition } from "types/discography";
 
 const data: Composition = {
-  name: `A Kind Of Magic`,
+  name: `A Dozen Red Roses For My Darling`,
   artist: `Queen`,
   versions: [
     {
-      id: `akom`,
+      id: `adrrfmd`,
     },
-    { id: `akom-ext`, versionName: "extended version" },
+    { id: `adrrfmd-ext`, versionName: "extended version" },
   ],
 };
 

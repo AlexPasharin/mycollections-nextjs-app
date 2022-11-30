@@ -1,4 +1,3 @@
-
 import type { Composition } from "types/discography";
 
 const data: Composition = {
@@ -8,6 +7,7 @@ const data: Composition = {
     {
       id: `fwbf`,
     },
+    { id: `fwbf-ext`, versionName: "extended version" },
   ],
 };
 

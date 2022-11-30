@@ -1,13 +1,12 @@
 import type { Composition } from "types/discography";
 
 const data: Composition = {
-  name: `A Kind Of Magic`,
+  name: `Gimme The Prize  (Kurgan's Theme)`,
   artist: `Queen`,
   versions: [
     {
-      id: `akom`,
+      id: `gtp`,
     },
-    { id: `akom-ext`, versionName: "extended version" },
   ],
 };
 

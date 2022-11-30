@@ -1,13 +1,13 @@
 import type { Composition } from "types/discography";
 
 const data: Composition = {
-  name: `A Kind Of Magic`,
+  name: `Princes Of The Universe`,
   artist: `Queen`,
   versions: [
     {
-      id: `akom`,
+      id: `potu`,
     },
-    { id: `akom-ext`, versionName: "extended version" },
+    { id: `potu-video`, versionName: "video" },
   ],
 };
 

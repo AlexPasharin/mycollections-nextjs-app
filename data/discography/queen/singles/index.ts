@@ -57,4 +57,14 @@ export default [
     ],
   },
   { year: "1985", singles: ["One Vision"] },
+  {
+    year: "1986",
+    singles: [
+      "Princes Of The Universe",
+      "A Kind Of Magic",
+      "Friends Will Be Friends",
+      "Pain Is So Close To Pleasure",
+      "Who Wants To Live Forever",
+    ],
+  },
 ];

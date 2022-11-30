@@ -1,13 +1,13 @@
+
 import type { Composition } from "types/discography";
 
 const data: Composition = {
-  name: `A Kind Of Magic`,
+  name: `Don't Lose Your Head`,
   artist: `Queen`,
   versions: [
     {
-      id: `akom`,
+      id: `dlyh`,
     },
-    { id: `akom-ext`, versionName: "extended version" },
   ],
 };
 

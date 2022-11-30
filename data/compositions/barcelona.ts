@@ -1,13 +1,12 @@
 import type { Composition } from "types/discography";
 
 const data: Composition = {
-  name: `A Kind Of Magic`,
-  artist: `Queen`,
+  name: `Barcelona`,
+  artist: `Freddie Mercury and Monterrat Caballé`,
   versions: [
     {
-      id: `akom`,
+      id: `barcelona`,
     },
-    { id: `akom-ext`, versionName: "extended version" },
   ],
 };
 
