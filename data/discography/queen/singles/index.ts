@@ -48,6 +48,13 @@ export default [
   },
   {
     year: "1984",
-    singles: ["Radio Ga Ga", "I Want To Break Free", "It's A Hard Life"],
+    singles: [
+      "Radio Ga Ga",
+      "I Want To Break Free",
+      "It's A Hard Life",
+      "Hammer To Fall",
+      "Thank God It's Christmas",
+    ],
   },
+  { year: "1985", singles: ["One Vision"] },
 ];

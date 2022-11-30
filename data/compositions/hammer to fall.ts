@@ -8,6 +8,9 @@ const data: Composition = {
       id: `htf`,
     },
     { id: `htf-edit`, versionName: "single edit" },
+    { id: `htf-ext`, versionName: "Headbangers Mix" },
+    { id: `htf-malouf`, versionName: "Malouf remix" },
+    { id: `htf-malouf-edit`, versionName: "Malouf remix edit" },
   ],
 };
 
