@@ -41,7 +41,7 @@ export interface DiscographyEntryData {
   trackLists: TrackList[];
 }
 
-export type SingleEntryData = Omit<
+export type ExtendedDiscographyEntryData = Omit<
   DiscographyEntryData,
   "tracks" | "trackLists"
 > & {

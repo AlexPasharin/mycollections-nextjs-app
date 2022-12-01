@@ -5,7 +5,7 @@ import showdown from "showdown";
 import type {
   Composition,
   DiscographyEntryData,
-  SingleEntryData,
+  ExtendedDiscographyEntryData,
 } from "types/discography";
 
 const mdConverter = new showdown.Converter({
@@ -13,34 +13,41 @@ const mdConverter = new showdown.Converter({
   openLinksInNewWindow: true,
 });
 
-export default async function getQueenSingleData(
-  name: string
-): Promise<SingleEntryData | null> {
+export default async function getExtendedDiscographyEntryData({
+  artist,
+  entryName,
+  entryType,
+}: {
+  artist: string;
+  entryName: string;
+  entryType: string;
+}): Promise<ExtendedDiscographyEntryData | null> {
   try {
-    const queenSinglesTextContentsDirectory = path.join(
+    const textContentsDirectory = path.join(
       process.cwd(),
       "textcontents",
-      "queendiscography",
-      "singles"
+      artist.toLowerCase(),
+      "discography",
+      entryType
     );
 
     const textContentFilePath = path.join(
-      queenSinglesTextContentsDirectory,
-      `${name}.md`
+      textContentsDirectory,
+      `${entryName}.md`
     );
 
-    const singleDataFilePath = path.join(
+    const entryDataFilePath = path.join(
+      artist.toLowerCase(),
       "discography",
-      "queen",
-      "singles",
-      `${name}.ts`
+      entryType,
+      `${entryName}.ts`
     );
 
     const [textContent, dataFileContent] = await Promise.all([
       readFilePromise(textContentFilePath).then((md) =>
         mdConverter.makeHtml(md)
       ),
-      getDefaultExport<DiscographyEntryData>(singleDataFilePath),
+      getDefaultExport<DiscographyEntryData>(entryDataFilePath),
     ]);
 
     const tracksUsedInSingleReleases = await Promise.all(
@@ -51,23 +58,31 @@ export default async function getQueenSingleData(
           path.join("compositions", name.toLowerCase())
         );
 
+        const {
+          versions: compositionVersions,
+          name: compositionName,
+          artist: compositionArtist,
+        } = compositionData;
+
         return versions.map(({ id, releases }) => {
-          const version = compositionData.versions.find((v) => v.id === id);
+          const version = compositionVersions.find((v) => v.id === id);
 
           if (!version) {
-            throw `Could not find version with ${id} for composition ${name}`;
+            throw `Could not find version with ${id} for composition ${compositionName}`;
           }
 
-          const { versionName, artist, trackName } = version;
-          const compositionName = trackName || compositionData.name;
+          const { versionName, artist: versionArtist, trackName } = version;
+          const name = trackName || compositionName;
+          const trackArtist = versionArtist || compositionArtist;
 
           return {
             id,
-            name: versionName
-              ? `${compositionName} (${versionName})`
-              : compositionName,
+            name: versionName ? `${name} (${versionName})` : name,
             releases,
-            artist,
+            artist:
+              trackArtist && trackArtist.toLowerCase() !== artist.toLowerCase()
+                ? trackArtist
+                : null,
           };
         });
       })
@@ -107,7 +122,7 @@ export default async function getQueenSingleData(
             trackName += ` (${rest.comment})`;
           }
 
-          return { index: trackIndex, name, track_html: trackName };
+          return { index: trackIndex, name: entryName, track_html: trackName };
         }),
         releases: Array.isArray(releases)
           ? releases
@@ -123,7 +138,7 @@ export default async function getQueenSingleData(
       tracks: tracksUsedInSingleReleases.map(({ name, releases, artist }) => ({
         name,
         releases: releases || null,
-        artist: artist || null,
+        artist,
       })),
       trackLists,
     };

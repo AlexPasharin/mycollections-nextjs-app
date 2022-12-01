@@ -1,22 +1,31 @@
+import type {
+  GetStaticPaths,
+  GetStaticProps,
+  InferGetStaticPropsType,
+  NextPage,
+} from "next";
 import Link from "next/link";
-import type { GetStaticPaths, NextPage } from "next";
+import { useRouter } from "next/router";
 
-import getQueenSingleData from "lib/discography/getQueenSingleData";
-import queenSinglesList from "data/discography/queen/singles";
+import getExtendedDiscographyEntryData from "lib/discography/getExtendedDiscographyEntryData";
+import queenSinglesList from "data/queen/discography/singles";
 
-import type { SingleEntryData } from "types/discography";
+import type { ExtendedDiscographyEntryData } from "types/discography";
 
-interface Props {
-  single: SingleEntryData;
-}
+type Props = Omit<InferGetStaticPropsType<typeof getStaticProps>, "pageTitle">;
 
-const QueenSinglesPage: NextPage<Props> = ({ single }) => {
-  const { title, discogs_url, textContent, trackLists, tracks } = single;
+const DiscographyEntryPage: NextPage<Props> = ({ entry }) => {
+  const router = useRouter();
+  const { entryType, artist } = router.query;
+
+  const { title, discogs_url, textContent, trackLists, tracks } = entry;
 
   return (
     <div>
       <div style={{ marginTop: "20px" }}>
-        <Link href="/queen/discography/singles">Back to Queen singles</Link>
+        <Link href={`/${artist}/discography/${entryType}`}>
+          Back to {artist} {entryType}
+        </Link>
       </div>
       <h1>{title}</h1>
       <a href={discogs_url} target="_blank">
@@ -52,23 +61,34 @@ const QueenSinglesPage: NextPage<Props> = ({ single }) => {
   );
 };
 
-export default QueenSinglesPage;
+export default DiscographyEntryPage;
 
 export const getStaticPaths: GetStaticPaths = () => {
   return {
     paths: queenSinglesList
-      .map(({ singles }) => singles.map((name) => ({ params: { name } })))
+      .map(({ singles }) =>
+        singles.map((entryName) => ({
+          params: { entryName, entryType: "singles", artist: "Queen" },
+        }))
+      )
       .flat(),
     fallback: false,
   };
 };
 
-export async function getStaticProps({ params }: { params: { name: string } }) {
-  const { name: singleName } = params;
+export const getStaticProps: GetStaticProps<{
+  entry: ExtendedDiscographyEntryData;
+  pageTitle: string;
+}> = async (context) => {
+  const { entryName, entryType, artist } = context.params!;
 
-  const single = await getQueenSingleData(singleName.toLowerCase());
+  const entry = await getExtendedDiscographyEntryData({
+    entryName: (entryName as string).toLowerCase(),
+    entryType: entryType as string,
+    artist: artist as string,
+  });
 
-  if (!single) {
+  if (!entry) {
     return {
       redirect: {
         permanent: false,
@@ -79,34 +99,16 @@ export async function getStaticProps({ params }: { params: { name: string } }) {
 
   return {
     props: {
-      single,
-      pageTitle: `${singleName} (Queen single)`,
+      entry,
+      pageTitle: `${entryName} - ${artist} ${entryType}`,
     },
   };
-}
-
-// export async function getServerSideProps({
-//   params,
-// }: {
-//   params: { name: string };
-// }) {
-//   const single = await getQueenSingleData(params.name.toLowerCase());
-
-//   if (!single) {
-//     return { notFound: true };
-//   }
-
-//   return {
-//     props: {
-//       single,
-//     },
-//   };
-// }-{" "}
+};
 
 const TrackList = ({
   tracks,
   releases,
-}: SingleEntryData["trackLists"][number]) => (
+}: ExtendedDiscographyEntryData["trackLists"][number]) => (
   <div>
     <ul style={{ marginBottom: "5px" }}>
       {tracks.map(({ index, track_html }, idx) => (

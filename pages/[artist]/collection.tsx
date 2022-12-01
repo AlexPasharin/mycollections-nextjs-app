@@ -1,3 +1,5 @@
+import { GetStaticProps } from "next";
+
 export default function QueenCollectionPage() {
   return (
     <>
@@ -6,10 +8,10 @@ export default function QueenCollectionPage() {
   );
 }
 
-export function getStaticProps() {
+export const getStaticProps: GetStaticProps = () => {
   return {
     props: {
       pageTitle: "My Queen Collection",
     },
   };
-}
+};
