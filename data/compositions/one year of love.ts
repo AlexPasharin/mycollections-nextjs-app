@@ -1,4 +1,3 @@
-
 import type { Composition } from "types/discography";
 
 const data: Composition = {
@@ -7,6 +6,10 @@ const data: Composition = {
   versions: [
     {
       id: `oyol`,
+    },
+    {
+      id: `oyol-edit`,
+      versionName: "1992 promo edit",
     },
   ],
 };

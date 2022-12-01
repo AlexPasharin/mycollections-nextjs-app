@@ -65,6 +65,7 @@ export default [
       "Friends Will Be Friends",
       "Pain Is So Close To Pleasure",
       "Who Wants To Live Forever",
+      "One Year Of Love",
     ],
   },
 ];
