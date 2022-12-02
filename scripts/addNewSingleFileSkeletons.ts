@@ -27,8 +27,8 @@ async function addNewSingleFileSkeletons(artistName: string) {
 
   const singleName = names[0].toLowerCase();
 
-  const textContentsFilePath = `${process.cwd()}/textcontents/queendiscography/singles/${singleName}.md`;
-  const singleDataFilePath = `${process.cwd()}/data/discography/queen/singles/${singleName}.ts`;
+  const textContentsFilePath = `${process.cwd()}/textcontents/queen/discography/singles/${singleName}.md`;
+  const singleDataFilePath = `${process.cwd()}/data/queen/discography/singles/${singleName}.ts`;
 
   await attemptToMakeAFile({
     path: textContentsFilePath,
