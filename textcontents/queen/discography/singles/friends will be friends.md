@@ -4,4 +4,4 @@ Originally released in UK\* (9 June 1986, also 12"), Italy\* (12"), Brazil\* (33
 
 Peaked at No.14 in UK charts.
 
-The 2009 "Singles Collection 3" CD single used the original UK picture sleeve.
+The 2010 "Singles Collection 3" CD single used the original UK picture sleeve.

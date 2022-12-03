@@ -8,4 +8,4 @@ There is a famous "Peace In The Middle East" one-sided Israelian 12" from 1993 (
 
 Peaked at No.21 in UK charts.
 
-The 2009 "Singles Collection 2" CD single used the original UK picture sleeve.
+The 2010 "Singles Collection 3" CD single used the original UK picture sleeve.

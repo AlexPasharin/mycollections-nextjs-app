@@ -4,4 +4,4 @@ Peaked at No. 43 in UK charts.
 
 Re-released in Holland in 1992 with a new picture sleeve and tracklist on 7", tape and CD.
 
-The 2009 "Singles Collection 3" CD single used the original UK picture sleeve.
+The 2010 "Singles Collection 3" CD single used the original UK picture sleeve.
