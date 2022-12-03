@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+import { GetStaticPaths, GetStaticProps } from "next";
 
 export default function QueenCollectionPage() {
   return (
@@ -7,6 +7,13 @@ export default function QueenCollectionPage() {
     </>
   );
 }
+
+export const getStaticPaths: GetStaticPaths = () => {
+  return {
+    paths: [{ params: { artist: "Queen" } }],
+    fallback: false,
+  };
+};
 
 export const getStaticProps: GetStaticProps = () => {
   return {
