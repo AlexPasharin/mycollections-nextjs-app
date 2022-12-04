@@ -1,14 +1,15 @@
 import { ChangeEventHandler, useState } from "react";
 
+import type { GetStaticProps } from "next";
+
+import { getJSONData } from "utils";
+
 import type {
   NonQueenRelease,
   NonQueenReleasesByArtist,
 } from "types/non_queen";
 
 import styles from "styles/non_queen_collection.module.sass";
-import { readJson } from "fs-extra";
-import { GetStaticProps } from "next";
-import { getJSONData } from "utils";
 
 type NonQueenReleasesUnpacked = (NonQueenRelease & { artist_name: string })[];
 

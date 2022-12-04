@@ -1,7 +1,12 @@
-import { GetStaticProps } from "next";
 import { ChangeEventHandler, useState } from "react";
-import { Movie } from "types/movies";
+
+import type { GetStaticProps } from "next";
+
 import { getJSONData } from "utils";
+
+import type { Movie } from "types/movies";
+
+import styles from "styles/non_queen_collection.module.sass";
 
 interface Props {
   movies: Movie[];
@@ -19,13 +24,13 @@ export default function MoviesPage({ movies }: Props) {
   };
 
   return (
-    <>
+    <div className={styles["non-queen-collection"]}>
       <h1>Movies Collection</h1>
-      <div className="non-queen-filter">
-        <span className="non-queen-filter-text">Filter:</span>
+      <div className={styles["non-queen-filter"]}>
+        <span className={styles["non-queen-filter-text"]}>Filter:</span>
         <input value={searchKey} onChange={onSearch} />
       </div>
-      <ul className="non-queen-entries">
+      <ul className={styles["non-queen-releases"]}>
         {filteredMovies.map((e) => (
           <li key={e.id}>
             <h2>{e.name}</h2>
@@ -39,7 +44,7 @@ export default function MoviesPage({ movies }: Props) {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 }
 
