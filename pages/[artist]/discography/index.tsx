@@ -3,20 +3,20 @@ import Link from "next/link";
 
 import type { NextPage, GetStaticProps, GetStaticPaths } from "next";
 
-import styles from "styles/queen-discography.module.sass";
+import styles from "styles/discography.module.sass";
 import { useRouter } from "next/router";
 
-const QueenDiscographyPage: NextPage = () => {
+const ArtistDiscographyPage: NextPage = () => {
   const router = useRouter();
-  const { artist } = router.query;
+  const artist = router.query.artist as string;
 
   return (
     <>
       <h1>{artist} Discography</h1>
       <div className={styles["image-wrapper"]}>
         <Image
-          src="/images/queen.jpeg"
-          alt="Queen band"
+          src={`/images/${artist}.jpeg`}
+          alt={artist}
           width="800"
           height="450"
         />
@@ -26,7 +26,7 @@ const QueenDiscographyPage: NextPage = () => {
   );
 };
 
-export default QueenDiscographyPage;
+export default ArtistDiscographyPage;
 
 export const getStaticPaths: GetStaticPaths = () => {
   return {

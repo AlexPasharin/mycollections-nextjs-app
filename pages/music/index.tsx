@@ -6,6 +6,8 @@ import type {
   NonQueenReleasesByArtist,
 } from "types/non_queen";
 
+import styles from "styles/non_queen_collection.module.sass";
+
 type NonQueenReleasesUnpacked = (NonQueenRelease & { artist_name: string })[];
 
 interface Props {
@@ -28,13 +30,13 @@ export default function MusicPage({ releases }: Props) {
   };
 
   return (
-    <>
+    <div className={styles["non-queen-collection"]}>
       <h1>Music Collection (non Queen related)</h1>
-      <div className="non-queen-filter">
-        <span className="non-queen-filter-text">Filter:</span>
+      <div className={styles["non-queen-filter"]}>
+        <span className={styles["non-queen-filter-text"]}>Filter:</span>
         <input value={searchKey} onChange={onSearch} />
       </div>
-      <ul className="non-queen-entries">
+      <ul className={styles["non-queen-releases"]}>
         {filteredReleases.map((e) => (
           <li key={e.id}>
             <h2>
@@ -50,7 +52,7 @@ export default function MusicPage({ releases }: Props) {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 }
 
