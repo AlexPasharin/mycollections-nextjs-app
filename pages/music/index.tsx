@@ -1,4 +1,3 @@
-import { readFile } from "fs";
 import { ChangeEventHandler, useState } from "react";
 
 import type {
@@ -7,6 +6,9 @@ import type {
 } from "types/non_queen";
 
 import styles from "styles/non_queen_collection.module.sass";
+import { readJson } from "fs-extra";
+import { GetStaticProps } from "next";
+import { getJSONData } from "utils";
 
 type NonQueenReleasesUnpacked = (NonQueenRelease & { artist_name: string })[];
 
@@ -56,31 +58,20 @@ export default function MusicPage({ releases }: Props) {
   );
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       pageTitle: "My Music Collection",
       releases: await getNonQueenReleasesFromJSON(),
     },
   };
-}
-
-const getJSONData = (path: string) =>
-  new Promise((resolve, reject) => {
-    readFile(`./data/${path}.json`, { encoding: "utf8" }, (err, data) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(JSON.parse(data));
-      }
-    });
-  });
+};
 
 const getNonQueenReleasesFromJSON =
   async (): Promise<NonQueenReleasesUnpacked> => {
-    const data = (await getJSONData(
+    const data = await getJSONData<NonQueenReleasesByArtist[]>(
       "non_queen/collection"
-    )) as NonQueenReleasesByArtist[];
+    );
 
     return data
       .map(({ artist, releases }) =>

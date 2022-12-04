@@ -1,5 +1,7 @@
 import * as dotenv from "dotenv";
 import knex from "knex";
+import { NonQueenDBRelease } from "../../types/non_queen";
+import { DBMovie } from "../../types/movies";
 
 dotenv.config();
 
@@ -12,11 +14,19 @@ const dbConnection = () =>
     },
   });
 
-export const getNonQueenEntries = async () => {
-  const connection = dbConnection();
-  const entries = await connection("non_queen").select();
+export const getNonQueenEntries = fetchFromDB<NonQueenDBRelease>({
+  tableName: "non_queen",
+});
 
-  connection.destroy();
+export const getMovies = fetchFromDB<DBMovie>({ tableName: "movies" });
 
-  return entries;
-};
+function fetchFromDB<T extends {}>({ tableName }: { tableName: string }) {
+  return async () => {
+    const connection = dbConnection();
+    const entries = await connection<T>(tableName).select();
+
+    connection.destroy();
+
+    return entries;
+  };
+}

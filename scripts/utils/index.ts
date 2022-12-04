@@ -1,4 +1,6 @@
-import fs from "fs";
+import { existsSync, writeFile, writeFileSync } from "fs";
+import { ensureDirSync, writeJson } from "fs-extra";
+import { join, sep } from "path";
 import rl from "readline";
 
 export async function attemptToMakeAFile({
@@ -12,7 +14,7 @@ export async function attemptToMakeAFile({
   content: string;
   errorMessage: string;
 }): Promise<boolean> {
-  const fileExists = fs.existsSync(path);
+  const fileExists = existsSync(path);
 
   let shouldContinue = true;
 
@@ -26,7 +28,7 @@ export async function attemptToMakeAFile({
 
   if (shouldContinue) {
     return new Promise((resolve) => {
-      fs.writeFile(path, content, (err: unknown) => {
+      writeFile(path, content, (err: unknown) => {
         if (err) {
           console.error(`${errorMessage}: ${err}`);
 
@@ -41,6 +43,27 @@ export async function attemptToMakeAFile({
   }
 
   return Promise.resolve(false);
+}
+
+export async function writeToJsonFile(obj: unknown, outputJsonPath: string) {
+  const compressFilePath = join("data", `${outputJsonPath}.json`);
+
+  const outputFilePathParts = compressFilePath.split(sep);
+  const fileName = outputFilePathParts.pop();
+
+  if (!fileName) {
+    throw `Incorrect path ${outputJsonPath}: empty file name`;
+  }
+
+  const debugOutputFileDirectory = join(...outputFilePathParts, "debug");
+  const debugFilePath = join(debugOutputFileDirectory, fileName);
+
+  ensureDirSync(debugOutputFileDirectory);
+
+  await Promise.all([
+    writeJson(compressFilePath, obj),
+    writeJson(debugFilePath, obj, { spaces: 2 }),
+  ]);
 }
 
 function promptForYes(question: string): Promise<boolean> {

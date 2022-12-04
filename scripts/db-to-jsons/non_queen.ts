@@ -1,4 +1,3 @@
-import { writeFileSync } from "fs";
 import {
   find,
   groupBy,
@@ -11,6 +10,7 @@ import {
   values,
 } from "ramda";
 
+import { writeToJsonFile } from "../utils";
 import { getNonQueenEntries } from "../utils/db";
 
 import type {
@@ -19,7 +19,7 @@ import type {
   NonQueenReleasesByArtist,
 } from "../../types/non_queen";
 
-getNonQueenEntries().then((releasesFlatArray: NonQueenDBRelease[]) => {
+getNonQueenEntries().then(async (releasesFlatArray) => {
   const releasesByArtist: NonQueenReleasesByArtist[] = pipe(
     groupBy<NonQueenDBRelease>(prop("artist_name")),
     mapObjIndexed((releases, artistName) => ({
@@ -27,10 +27,8 @@ getNonQueenEntries().then((releasesFlatArray: NonQueenDBRelease[]) => {
       index_by: find((r) => !!r.index_by, releases)?.index_by || artistName,
       releases: pipe(
         map<NonQueenDBRelease, NonQueenRelease>( // for some reason this annotation is needed for correct type inference here
-          ({ id, name, discogs_url, format, comment }) => ({
-            id,
-            name,
-            format,
+          ({ discogs_url, comment, ...rest }) => ({
+            ...rest,
             discogs_url: discogs_url || undefined,
             comment: comment || undefined,
           })
@@ -43,13 +41,5 @@ getNonQueenEntries().then((releasesFlatArray: NonQueenDBRelease[]) => {
     map((artistData) => omit(["index_by"], artistData))
   )(releasesFlatArray);
 
-  writeFileSync(
-    "./data/non_queen/collection.json",
-    JSON.stringify(releasesByArtist)
-  );
-
-  writeFileSync(
-    "./data/non_queen/debug/collection.json",
-    JSON.stringify(releasesByArtist, null, 2)
-  );
+  await writeToJsonFile(releasesByArtist, "non_queen/collection");
 });
