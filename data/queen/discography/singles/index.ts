@@ -68,5 +68,5 @@ export default [
       "One Year Of Love",
     ],
   },
-  { year: "1989", singles: ["I Want It All"] },
+  { year: "1989", singles: ["I Want It All", "Breakthru"] },
 ];
