@@ -1,13 +1,13 @@
 import type { Composition } from "types/discography";
 
 const data: Composition = {
-  name: `The Invisible Man`,
+  name: `Scandal`,
   artist: `Queen`,
   versions: [
     {
-      id: `tim`,
+      id: `scandal`,
     },
-    { id: `tim-ext`, versionName: "extended version" },
+    { id: `scandal-ext`, versionName: "extended mix" },
   ],
 };
 

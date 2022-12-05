@@ -1,13 +1,16 @@
 import type { Composition } from "types/discography";
 
 const data: Composition = {
-  name: `The Invisible Man`,
+  name: `Stone Cold Crazy`,
   artist: `Queen`,
   versions: [
     {
-      id: `tim`,
+      id: `scc`,
     },
-    { id: `tim-ext`, versionName: "extended version" },
+    {
+      id: `scc-nov-74-89-edit`,
+      versionName: "Live at the Rainbow'74, 89 single edit",
+    },
   ],
 };
 

@@ -1,13 +1,12 @@
 import type { Composition } from "types/discography";
 
 const data: Composition = {
-  name: `The Invisible Man`,
+  name: `Hijack My Heart`,
   artist: `Queen`,
   versions: [
     {
-      id: `tim`,
+      id: `hmh`,
     },
-    { id: `tim-ext`, versionName: "extended version" },
   ],
 };
 

@@ -1,13 +1,16 @@
 import type { Composition } from "types/discography";
 
 const data: Composition = {
-  name: `The Invisible Man`,
+  name: `My Melancholy Blues`,
   artist: `Queen`,
   versions: [
     {
-      id: `tim`,
+      id: `mmb`,
     },
-    { id: `tim-ext`, versionName: "extended version" },
+    {
+      id: `mmb-77-houston-89-edit`,
+      versionName: "Live at the Houston 77, 89 single edit",
+    },
   ],
 };
 
