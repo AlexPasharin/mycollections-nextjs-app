@@ -2,7 +2,7 @@ import type { DiscographyEntryData } from "types/discography";
 
 const data: DiscographyEntryData = {
   title: `Innuendo`,
-  discogs_url: "",
+  discogs_url: "https://www.discogs.com/master/19676-Queen-Innuendo",
   tracks: [
     {
       name: `Innuendo`,

@@ -15,7 +15,7 @@ const ArtistDiscographyPage: NextPage = () => {
       <h1>{artist} Discography</h1>
       <div className={styles["image-wrapper"]}>
         <Image
-          src={`/images/${artist}.jpeg`}
+          src={`/images/${artist.toLowerCase()}.jpeg`}
           alt={artist}
           width="800"
           height="450"
