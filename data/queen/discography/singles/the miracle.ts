@@ -38,15 +38,15 @@ const data: DiscographyEntryData = {
     {
       tracks: [
         {
-          index: "A",
+          indexes: ["A", 1],
           track: `tm`,
         },
         {
-          index: "B1",
+          indexes: ["B1", 2],
           track: `scc-nov-74-89-edit`,
         },
         {
-          index: "B2",
+          indexes: ["B2", 3],
           track: `mmb-77-houston-89-edit`,
         },
       ],

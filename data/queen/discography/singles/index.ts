@@ -78,4 +78,8 @@ export default [
       "The Miracle",
     ],
   },
+  {
+    year: "1991",
+    singles: ["Innuendo", "Headlong"],
+  },
 ];
