@@ -80,6 +80,6 @@ export default [
   },
   {
     year: "1991",
-    singles: ["Innuendo", "Headlong"],
+    singles: ["Innuendo", "Headlong", "I'm Going Slightly Mad"],
   },
 ];
