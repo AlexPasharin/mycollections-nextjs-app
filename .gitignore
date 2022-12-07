@@ -3,3 +3,5 @@ node_modules
 
 data/**/debug/**/*
 .env
+
+tsconfig.tsbuildinfo
