@@ -80,6 +80,13 @@ export default [
   },
   {
     year: "1991",
-    singles: ["Innuendo", "Headlong", "I'm Going Slightly Mad"],
+    singles: [
+      "Innuendo",
+      "Headlong",
+      "I'm Going Slightly Mad",
+      "These Are The Days Of Our Lives",
+      "The Show Must Go On",
+      "Bohemian Rhapsody These Are The Days Of Our Lives",
+    ],
   },
 ];

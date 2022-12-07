@@ -95,11 +95,11 @@ const data: DiscographyEntryData = {
     {
       tracks: [
         {
-          index: "A1",
+          index: "A",
           track: `headlong`,
         },
         {
-          index: "A2",
+          index: "B",
           track: `agp`,
         },
       ],
@@ -225,7 +225,7 @@ const data: DiscographyEntryData = {
           track: `agp`,
         },
       ],
-      releases: `'2010 "Singles collection 4" CD'`,
+      releases: `2010 "Singles collection 4" CD`,
     },
   ],
 };
