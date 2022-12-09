@@ -6,9 +6,10 @@ import type {
 } from "next";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { readdir } from "fs/promises";
+import path from "path";
 
 import getExtendedDiscographyEntryData from "lib/discography/getExtendedDiscographyEntryData";
-import queenSinglesList from "data/queen/discography/singles";
 
 import type { ExtendedDiscographyEntryData } from "types/discography";
 
@@ -63,15 +64,22 @@ const DiscographyEntryPage: NextPage<Props> = ({ entry }) => {
 
 export default DiscographyEntryPage;
 
-export const getStaticPaths: GetStaticPaths = () => {
+export const getStaticPaths: GetStaticPaths = async () => {
+  const queenSingles = (
+    await readdir(path.join("data", "queen", "discography", "singles"))
+  )
+    .filter((name) => path.extname(name) === ".ts")
+    .map((name) => name.split(".")[0])
+    .filter((name) => name !== "index");
+
   return {
-    paths: queenSinglesList
-      .map(({ singles }) =>
-        singles.map((entryName) => ({
-          params: { entryName, entryType: "singles", artist: "Queen" },
-        }))
-      )
-      .flat(),
+    paths: queenSingles.map((s) => ({
+      params: {
+        entryName: s,
+        entryType: "singles",
+        artist: "Queen",
+      },
+    })),
     fallback: false,
   };
 };

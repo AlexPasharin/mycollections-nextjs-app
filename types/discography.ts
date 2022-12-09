@@ -39,6 +39,8 @@ export interface DiscographyEntryData {
     }[];
   }[];
   trackLists: TrackList[];
+  artist?: string;
+  releaseDate?: string;
 }
 
 export type ExtendedDiscographyEntryData = Omit<

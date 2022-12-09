@@ -2,6 +2,7 @@ import type { DiscographyEntryData } from "types/discography";
 
 const data: DiscographyEntryData = {
   title: `Another One Bites The Dust`,
+  releaseDate: "1980.08.12",
   discogs_url:
     "https://www.discogs.com/master/12080-Queen-Another-One-Bites-The-Dust",
   tracks: [

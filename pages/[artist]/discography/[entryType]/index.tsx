@@ -3,10 +3,15 @@ import { useRouter } from "next/router";
 
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 
-import queenSinglesList from "data/queen/discography/singles";
+import type { DiscographyEntryData } from "types/discography";
+
+type Entries = {
+  year: string;
+  entries: { title: string; id: string }[];
+}[];
 
 interface Props {
-  entries: typeof queenSinglesList;
+  entries: Entries;
 }
 
 const DiscographyEntryPage: NextPage<Props> = ({ entries }) => {
@@ -19,14 +24,14 @@ const DiscographyEntryPage: NextPage<Props> = ({ entries }) => {
         {artist} {entryType}
       </h2>
       <ul>
-        {entries.map(({ year, singles }) => (
+        {entries.map(({ year, entries }) => (
           <li key={year}>
             <h3>{year}</h3>
             <ul>
-              {singles.map((s) => (
-                <li key={s}>
-                  <Link href={`/${artist}/discography/${entryType}/${s}`}>
-                    {s}
+              {entries.map(({ id, title }) => (
+                <li key={id}>
+                  <Link href={`/${artist}/discography/${entryType}/${id}`}>
+                    {title}
                   </Link>
                 </li>
               ))}
@@ -48,25 +53,46 @@ export const getStaticPaths: GetStaticPaths = () => {
 };
 
 export const getStaticProps: GetStaticProps<{
-  entries: typeof queenSinglesList;
+  entries: Entries;
   pageTitle: string;
 }> = async (context) => {
   try {
     const { artist, entryType } = context.params!;
-    const entries = (
-      await import(
-        `data/${(artist as string).toLowerCase()}/discography/${entryType}`
-      )
+    const path = `${(artist as string).toLowerCase()}/discography/${entryType}`;
+
+    const entries: { year: string; entries: string[] }[] = (
+      await import(`data/${path}`)
     ).default;
+
+    const resolvedEntries = await Promise.all(
+      entries.map(async ({ year, entries }) => {
+        const entriesData = await Promise.all(
+          entries.map(async (s: string) => {
+            const id = s.toLowerCase();
+
+            const { title, artist } = (await import(`data/${path}/${id}`))
+              .default;
+
+            return { title: `${artist ? artist + " - " : ""}${title}`, id };
+          })
+        );
+
+        return {
+          year,
+          entries: entriesData,
+        };
+      })
+    );
 
     return {
       props: {
-        entries,
+        entries: resolvedEntries,
         pageTitle: `${artist} ${entryType}`,
       },
     };
   } catch (e) {
-    console.log({ e });
+    console.error(e);
+
     return {
       redirect: {
         permanent: false,

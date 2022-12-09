@@ -2,6 +2,7 @@ import type { DiscographyEntryData } from "types/discography";
 
 const data: DiscographyEntryData = {
   title: `A Kind Of Magic`,
+  releaseDate: "1986.03.17",
   discogs_url: "https://www.discogs.com/master/16015-Queen-A-Kind-Of-Magic",
   tracks: [
     {

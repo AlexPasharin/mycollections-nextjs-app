@@ -31,7 +31,27 @@ const data: Composition = {
       versionName: "Live Killers fast version, Japanese single stand-along",
       parentVersion: `wwry-lk-fast`,
     },
-    { id: "wwry-ruined", versionName: "1992 Rick Rubin remix" },
+    { id: "wwry-ruined", versionName: "Rick Rubin ruined remix" },
+    {
+      id: "wwry-ruined-promo",
+      versionName: 'Rick Rubin ruined remix, 12" promo version',
+    },
+    { id: "wwry-ruined-instr", versionName: "ruined instrumental" },
+    {
+      id: "wwry-ruined-bb",
+      versionName: "big beat a capella",
+    },
+    {
+      id: "wwry-ruined-zulu",
+      versionName: "zulu scratch a capella",
+    },
+    { id: "wwry-ruined-effects-instr", versionName: "effects instrumental" },
+    { id: "wwry-ruined-clap", versionName: "clap a capella" },
+    { id: "wwry-ruined-effects-acapella", versionName: "effects a capella" },
+    {
+      id: "wwry-ruined-edit",
+      versionName: "Rick Rubin ruined remix edit",
+    },
   ],
 };
 

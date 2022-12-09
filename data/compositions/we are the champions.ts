@@ -31,6 +31,7 @@ const data: Composition = {
       versionName: "We Will Rock You German Cast musical - album version",
       artist: "We Will Rock You German Cast",
     },
+    { id: `watc-ruined`, versionName: "Rick Rubin ruined remix" },
   ],
 };
 

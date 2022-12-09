@@ -2,6 +2,7 @@ import type { DiscographyEntryData } from "types/discography";
 
 const data: DiscographyEntryData = {
   title: `Bicycle Race`,
+  releaseDate: "1978.10.13",
   discogs_url:
     "https://www.discogs.com/master/6826-Queen-Bicycle-Race-Fat-Bottomed-Girls",
   tracks: [

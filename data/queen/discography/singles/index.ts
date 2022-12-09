@@ -1,11 +1,11 @@
 export default [
-  { year: "1973", singles: ["Keep Yourself Alive"] },
-  { year: "1974", singles: ["Liar", "Seven Seas Of Rhye", "Killer Queen"] },
-  { year: "1975", singles: ["Now I'm Here", "Bohemian Rhapsody"] },
-  { year: "1976", singles: ["You're My Best Friend", "Somebody To Love"] },
+  { year: "1973", entries: ["Keep Yourself Alive"] },
+  { year: "1974", entries: ["Liar", "Seven Seas Of Rhye", "Killer Queen"] },
+  { year: "1975", entries: ["Now I'm Here", "Bohemian Rhapsody"] },
+  { year: "1976", entries: ["You're My Best Friend", "Somebody To Love"] },
   {
     year: "1977",
-    singles: [
+    entries: [
       "Tie Your Mother Down",
       "Teo Torriatte",
       "First Queen EP",
@@ -13,10 +13,10 @@ export default [
       "We Are The Champions",
     ],
   },
-  { year: "1978", singles: ["Spread Your Wings", "It's Late", "Bicycle Race"] },
+  { year: "1978", entries: ["Spread Your Wings", "It's Late", "Bicycle Race"] },
   {
     year: "1979",
-    singles: [
+    entries: [
       "Don't Stop Me Now",
       "Jealousy",
       "Mustapha",
@@ -27,7 +27,7 @@ export default [
   },
   {
     year: "1980",
-    singles: [
+    entries: [
       "Save Me",
       "Play The Game",
       "Another One Bites The Dust",
@@ -35,10 +35,10 @@ export default [
       "Flash",
     ],
   },
-  { year: "1981", singles: ["Under Pressure"] },
+  { year: "1981", entries: ["Under Pressure"] },
   {
     year: "1982",
-    singles: [
+    entries: [
       "Body Language",
       "Las Palabras De Amor",
       "Calling All Girls",
@@ -48,7 +48,7 @@ export default [
   },
   {
     year: "1984",
-    singles: [
+    entries: [
       "Radio Ga Ga",
       "I Want To Break Free",
       "It's A Hard Life",
@@ -56,10 +56,10 @@ export default [
       "Thank God It's Christmas",
     ],
   },
-  { year: "1985", singles: ["One Vision"] },
+  { year: "1985", entries: ["One Vision"] },
   {
     year: "1986",
-    singles: [
+    entries: [
       "Princes Of The Universe",
       "A Kind Of Magic",
       "Friends Will Be Friends",
@@ -70,7 +70,7 @@ export default [
   },
   {
     year: "1989",
-    singles: [
+    entries: [
       "I Want It All",
       "Breakthru",
       "The Invisible Man",
@@ -80,13 +80,14 @@ export default [
   },
   {
     year: "1991",
-    singles: [
+    entries: [
       "Innuendo",
       "Headlong",
       "I'm Going Slightly Mad",
       "These Are The Days Of Our Lives",
       "The Show Must Go On",
       "Bohemian Rhapsody These Are The Days Of Our Lives",
+      "wwry watc ruined by rick rubin",
     ],
   },
 ];

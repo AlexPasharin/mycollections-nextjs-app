@@ -2,6 +2,7 @@ import type { DiscographyEntryData } from "types/discography";
 
 const data: DiscographyEntryData = {
   title: `Body Language`,
+  releaseDate: "1982.04.19",
   discogs_url: "https://www.discogs.com/master/13595-Queen-Body-Language",
   tracks: [
     {

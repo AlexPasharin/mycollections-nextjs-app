@@ -2,6 +2,7 @@ import type { DiscographyEntryData } from "types/discography";
 
 const data: DiscographyEntryData = {
   title: `Back Chat`,
+  releaseDate: "1982.08.09",
   discogs_url: "https://www.discogs.com/master/13509-Queen-Back-Chat",
   tracks: [
     {

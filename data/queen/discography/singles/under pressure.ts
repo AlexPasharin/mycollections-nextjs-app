@@ -2,6 +2,7 @@ import type { DiscographyEntryData } from "types/discography";
 
 const data: DiscographyEntryData = {
   title: `Under Pressure`,
+  artist: "Queen & David Bowie",
   discogs_url:
     "https://www.discogs.com/master/13442-Queen-David-Bowie-Under-Pressure",
   tracks: [
