@@ -21,6 +21,7 @@ export function singleDataContentTemplate({
 const data: DiscographyEntryData = {
   title: \`${name}\`,
   discogs_url: "",
+  releaseDate: "",
   tracks: [
 ${tracks.join("\n")}
   ],

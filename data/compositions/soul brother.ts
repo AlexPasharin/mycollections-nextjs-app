@@ -11,6 +11,11 @@ const data: Composition = {
       id: `sb-canada-edit`,
       versionName: "Canadian single edit",
     },
+    {
+      id: `sb-inverted`,
+      versionName: "inverted stereo channels",
+      parentVersion: "sb",
+    },
   ],
 };
 

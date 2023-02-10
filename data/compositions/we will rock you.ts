@@ -31,6 +31,20 @@ const data: Composition = {
       versionName: "Live Killers fast version, Japanese single stand-along",
       parentVersion: `wwry-lk-fast`,
     },
+    {
+      id: `wwry-wembley-86`,
+      versionName: "Live at Wembley 12 July 86",
+    },
+    {
+      id: `wwry-wembley-86-single-edit`,
+      versionName: "Live at Wembley 12 July 86, 1992 single edit",
+      parentVersion: `wwry-wembley-86`,
+    },
+    {
+      id: `wwry-wembley-86-2010`,
+      versionName: "Live at Wembley 12 July 86, 2010 single edit",
+      parentVersion: `wwry-wembley-86`,
+    },
     { id: "wwry-ruined", versionName: "Rick Rubin ruined remix" },
     {
       id: "wwry-ruined-promo",

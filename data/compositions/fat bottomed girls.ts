@@ -12,6 +12,11 @@ const data: Composition = {
       id: `fbg`,
     },
     {
+      id: `fbg-remaster-error`,
+      versionName: "1994 remaster version with glitch",
+      parentVersion: "fbg",
+    },
+    {
       id: `fbg-br-promo-segue`,
       versionName: 'Electra 12" promo segue version',
       trackName: `Fat Bottomed Girls/Bicycle Race`,

@@ -18,8 +18,23 @@ const data: Composition = {
     },
     { id: "watc-bush", versionName: "1991 promo version feat. George Bush" },
     {
-      id: "watc-wembley",
-      versionName: "Live At Wembley'86",
+      id: "watc-wembley-86",
+      versionName: "Live at Wembley 12 July 86",
+    },
+    {
+      id: "watc-wembley-86-single-edit",
+      versionName: "Live at Wembley 12 July 86, 1992 single edit",
+      parentVersion: "watc-wembley-86",
+    },
+    {
+      id: "watc-wembley-86-2006",
+      versionName: "Live at Wembley 12 July 86, 2006 download edit",
+      parentVersion: "watc-wembley-86",
+    },
+    {
+      id: "watc-wembley-86-2010",
+      versionName: "Live at Wembley 12 July 86, 2010 single edit",
+      parentVersion: "watc-wembley-86",
     },
     {
       id: "watc-qpr-return-champs",

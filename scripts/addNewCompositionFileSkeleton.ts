@@ -27,6 +27,7 @@ export async function attemptToMakeCompositionFiles(
       fileExistsLogMessage: `Composition content data file ${path} already exists`,
       content: compositionDataContentTemplate({ compositionName, artistName }),
       errorMessage: `Could not make composition content data file for ${compositionName}`,
+      skipExisting: true,
     });
   }
 }

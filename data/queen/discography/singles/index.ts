@@ -90,4 +90,23 @@ export default [
       "wwry watc ruined by rick rubin",
     ],
   },
+  {
+    year: "1992",
+    entries: [
+      "The Show Must Go On Bohemian Rhapsody",
+      "wwry watc live at wembley 86",
+    ],
+  },
+  {
+    year: "1995",
+    entries: [
+      "Heaven For Everyone",
+      "Too Much Love Will Kill You",
+      "A Winter's Tale",
+    ],
+  },
+  {
+    year: "1996",
+    entries: ["You Don't Fool Me", "I Was Born To Love You", "Let Me Live"],
+  },
 ];

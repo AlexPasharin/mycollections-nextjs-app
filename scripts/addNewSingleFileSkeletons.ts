@@ -6,6 +6,7 @@ addNewSingleFileSkeletons("Queen");
 
 async function addNewSingleFileSkeletons(artistName: string) {
   let args = process.argv.slice();
+
   const makeCompositionFileForSingleName =
     args[args.length - 1] !== "--no-track";
 
@@ -18,7 +19,7 @@ async function addNewSingleFileSkeletons(artistName: string) {
     .join(" ")
     .split(",")
     .map((str) => str.trim())
-    .filter((str) => Boolean(str));
+    .filter(Boolean);
 
   if (!names.length) {
     console.error("NO ARGUMENTS GIVEN, ABORTING");

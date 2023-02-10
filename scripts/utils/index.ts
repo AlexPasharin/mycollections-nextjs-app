@@ -8,11 +8,13 @@ export async function attemptToMakeAFile({
   fileExistsLogMessage,
   content,
   errorMessage,
+  skipExisting = false,
 }: {
   path: string;
   fileExistsLogMessage: string;
   content: string;
   errorMessage: string;
+  skipExisting?: boolean;
 }): Promise<boolean> {
   const fileExists = existsSync(path);
 
@@ -21,9 +23,11 @@ export async function attemptToMakeAFile({
   if (fileExists) {
     console.log(fileExistsLogMessage + "\n\n");
 
-    shouldContinue = await promptForYes(
-      "Press Y if you want to continue and override this file\nAny other input will skip attempting to produce the file\n"
-    );
+    shouldContinue = skipExisting
+      ? false
+      : await promptForYes(
+          "Press Y if you want to continue and override this file\nAny other input will skip attempting to produce the file\n"
+        );
   }
 
   if (shouldContinue) {

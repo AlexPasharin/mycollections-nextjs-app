@@ -14,7 +14,7 @@ const data: DiscographyEntryData = {
         { id: `watc-mono`, releases: 'Electra 1977 promo 7" and 12"' },
         { id: "watc-bush", releases: "US 1991 promo CD" },
         {
-          id: "watc-wembley",
+          id: "watc-wembley-86-2006",
           releases: "2006 download",
         },
         {
@@ -255,7 +255,7 @@ const data: DiscographyEntryData = {
           track: "watc",
         },
         {
-          track: "watc-wembley",
+          track: "watc-wembley-86-2006",
         },
         {
           track: "watc-qpr-return-champs",

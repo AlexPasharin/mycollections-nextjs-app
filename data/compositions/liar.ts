@@ -13,6 +13,15 @@ const data: Composition = {
       versionName: '7" edit mono',
       parentVersion: "liar-edit",
     },
+    {
+      id: "liar-bbc-1",
+      versionName: "BBC session 1",
+    },
+    {
+      id: `liar-bbc-1-stereo-swap`,
+      versionName: "BBC session 1, HR stereo swap",
+      parentVersion: "liar-bbc-1",
+    },
   ],
 };
 

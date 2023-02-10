@@ -1,20 +1,20 @@
 import type { Composition } from "types/discography";
 
 const data: Composition = {
-  name: "Doing Alright",
-  artist: "Queen",
+  name: `My Fairy King`,
+  artist: `Queen`,
   versions: [
     {
-      id: "dar",
+      id: `mfk`,
     },
     {
-      id: "dar-bbc",
+      id: `mfk-bbc`,
       versionName: "BBC session",
     },
     {
-      id: "dar-bbc-stereo-swap",
+      id: `mfk-bbc-stereo-swap`,
       versionName: "BBC session, HR stereo swap",
-      parentVersion: "dar-bbc",
+      parentVersion: `mfk-bbc`,
     },
   ],
 };

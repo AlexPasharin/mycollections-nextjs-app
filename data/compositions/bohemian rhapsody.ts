@@ -10,6 +10,7 @@ const data: Composition = {
     {
       id: "br-stand-along",
       versionName: "stand-along",
+      parentVersion: "br",
     },
     {
       id: "br-78-edit",
