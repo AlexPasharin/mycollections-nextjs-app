@@ -1,7 +1,7 @@
 import type { DiscographyEntryData } from "types/discography";
 
 const data: DiscographyEntryData = {
-  title: `The Show Must Go On/Bohemian Rhapsody`,
+  title: `The Show Must Go On / Bohemian Rhapsody`,
   releaseDate: "1992.02.06",
   discogs_url:
     "https://www.discogs.com/master/1256197-Queen-The-Show-Must-Go-On-And-Bohemian-Rhapsody",

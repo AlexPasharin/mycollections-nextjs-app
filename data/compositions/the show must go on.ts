@@ -1,4 +1,3 @@
-
 import type { Composition } from "types/discography";
 
 const data: Composition = {
@@ -7,6 +6,11 @@ const data: Composition = {
   versions: [
     {
       id: `tsmgo`,
+    },
+    {
+      id: `tsmgo-live-98`,
+      versionName: "live at Paris 98",
+      artist: "Queen + Elton John",
     },
   ],
 };

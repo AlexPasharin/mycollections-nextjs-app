@@ -109,4 +109,15 @@ export default [
     year: "1996",
     entries: ["You Don't Fool Me", "I Was Born To Love You", "Let Me Live"],
   },
+  {
+    year: "1998",
+    entries: [
+      "No-One But You",
+      "Another One Bites The Dust (1998 Wyclef Jean Remix)",
+    ],
+  },
+  {
+    year: "1999",
+    entries: ["Under Pressure (rah mix)"],
+  },
 ];

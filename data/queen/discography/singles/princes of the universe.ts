@@ -97,6 +97,7 @@ const data: DiscographyEntryData = {
         },
         {
           track: "potu-video",
+          enhanced: true,
         },
       ],
       releases: `2000 Dutch CD`,

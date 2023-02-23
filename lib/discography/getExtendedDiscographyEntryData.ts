@@ -96,33 +96,51 @@ export default async function getExtendedDiscographyEntryData({
     const trackLists = dataFileContent.trackLists.map(
       ({ tracks, releases }) => ({
         tracks: tracks.map(({ track, ...rest }, idx) => {
-          const tracks = Array.isArray(track) ? track : [track];
-
           const trackIndex = (
             "indexes" in rest ? rest.indexes : [rest.index || idx + 1]
           )
             .map((i) => `${i}.`)
             .join(" \\ ");
 
-          let trackName = tracks
-            .map((tr) => {
-              const trackData = tracksMap.get(tr);
+          const isForeignAristTrack =
+            "foreign_artist" in rest && rest.foreign_artist;
 
-              if (!trackData) {
-                throw `Could not find trackData for ${track}`;
-              }
+          let trackName;
 
-              const { name, artist } = trackData;
+          if (isForeignAristTrack) {
+            trackName = `<i>${rest.artist}</i> - ${track}*`;
+          } else {
+            const tracks = Array.isArray(track) ? track : [track];
 
-              return `${artist ? `<i>${artist}</i> - ` : ""}${name}`;
-            })
-            .join(" / ");
+            trackName = tracks
+              .map((tr) => {
+                const trackData = tracksMap.get(tr!);
 
-          if (rest.comment) {
+                if (!trackData) {
+                  throw `Could not find trackData for ${track}`;
+                }
+
+                const { name, artist } = trackData;
+
+                return `${artist ? `<i>${artist}</i> - ` : ""}${name}`;
+              })
+              .join(" / ");
+          }
+
+          if ("comment" in rest && rest.comment) {
             trackName += ` (${rest.comment})`;
           }
 
-          return { index: trackIndex, name: entryName, track_html: trackName };
+          if (rest.enhanced) {
+            trackName = "Enhanced section: " + trackName;
+          }
+
+          return {
+            index: trackIndex,
+            name: entryName,
+            track_html: trackName,
+            isForeignAristTrack,
+          };
         }),
         releases: Array.isArray(releases)
           ? releases

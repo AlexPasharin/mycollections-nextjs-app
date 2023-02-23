@@ -3,8 +3,6 @@ import { useRouter } from "next/router";
 
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 
-import type { DiscographyEntryData } from "types/discography";
-
 type Entries = {
   year: string;
   entries: { title: string; id: string }[];

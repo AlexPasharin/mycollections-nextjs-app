@@ -1,15 +1,11 @@
 import type { Composition } from "types/discography";
 
 const data: Composition = {
-  name: `Gimme The Prize  (Kurgan's Theme)`,
+  name: `No-one But You (Only The Good Dies Young)`,
   artist: `Queen`,
   versions: [
     {
-      id: `gtp`,
-    },
-    {
-      id: `gtp-eye-single`,
-      versionName: "The Eye remix - single version",
+      id: `nby`,
     },
   ],
 };

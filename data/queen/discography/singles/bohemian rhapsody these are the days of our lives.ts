@@ -1,8 +1,8 @@
 import type { DiscographyEntryData } from "types/discography";
 
 const data: DiscographyEntryData = {
-  title: `Bohemian Rhapsody/These Are The Days Of Our Lives`,
-  releaseDate: "1982.04.19",
+  title: `Bohemian Rhapsody / These Are The Days Of Our Lives`,
+  releaseDate: "1991-12-9",
   discogs_url:
     "https://www.discogs.com/master/14498-Queen-Bohemian-Rhapsody-These-Are-The-Days-Of-Our-Lives",
   tracks: [

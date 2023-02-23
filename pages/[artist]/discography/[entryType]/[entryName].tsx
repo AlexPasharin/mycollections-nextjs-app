@@ -21,6 +21,10 @@ const DiscographyEntryPage: NextPage<Props> = ({ entry }) => {
 
   const { title, discogs_url, textContent, trackLists, tracks } = entry;
 
+  const hasForeightArtistTracks = trackLists.some((list) =>
+    list.tracks.some((t) => t.isForeignAristTrack)
+  );
+
   return (
     <div>
       <div style={{ marginTop: "20px" }}>
@@ -35,11 +39,9 @@ const DiscographyEntryPage: NextPage<Props> = ({ entry }) => {
       {trackLists.map((tl, i) => (
         <TrackList key={i} {...tl} />
       ))}
+      {hasForeightArtistTracks && <p>* No {artist} involment</p>}
       <hr />
       <section dangerouslySetInnerHTML={{ __html: textContent }} />
-      {/* {stringToParagraphs(textContent).map((paragraphContent, i) => (
-        <p key={i}>{paragraphContent}</p>
-      ))} */}
       <div>
         <h2>Tracks: </h2>
         <ul>

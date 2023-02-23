@@ -1,7 +1,7 @@
 import type { DiscographyEntryData } from "types/discography";
 
 const data: DiscographyEntryData = {
-  title: `We Will Rock You/We Are The Champions Live at Wembley'86`,
+  title: `We Will Rock You / We Are The Champions Live at Wembley'86`,
   discogs_url:
     "https://www.discogs.com/master/282646-Queen-We-Will-Rock-You-We-Are-The-Champions-Live-At-Wembley-86",
   releaseDate: "1992.05",

@@ -18,10 +18,13 @@ export interface Composition {
 type TrackIndex = string | number;
 type TrackIndexes = { indexes: TrackIndex[] } | { index?: TrackIndex };
 
-type Track = TrackIndexes & {
-  track: string | string[];
-  comment?: string;
-};
+type Track = TrackIndexes & { enhanced?: true } & (
+    | {
+        track: string | string[];
+        comment?: string;
+      }
+    | { foreign_artist: true; artist: string; track: string }
+  );
 
 export interface TrackList {
   tracks: Track[];
@@ -56,7 +59,11 @@ export type ExtendedDiscographyEntryData = Omit<
   }[];
 } & {
   trackLists: {
-    tracks: { index: string; track_html: string }[];
+    tracks: {
+      index: string;
+      track_html: string;
+      isForeignAristTrack: boolean;
+    }[];
     releases: string[] | null;
   }[];
 };
