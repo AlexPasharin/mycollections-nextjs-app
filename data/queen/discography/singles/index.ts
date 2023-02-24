@@ -120,4 +120,5 @@ export default [
     year: "1999",
     entries: ["Under Pressure (rah mix)"],
   },
+  { year: "2002", entries: ["Flash (the Official Club Mixes)"] },
 ];
