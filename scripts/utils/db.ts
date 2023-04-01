@@ -1,11 +1,12 @@
 import * as dotenv from "dotenv";
 import knex from "knex";
+import { DBArtist } from "../../types/artists";
 import { NonQueenDBRelease } from "../../types/non_queen";
 import { DBMovie } from "../../types/movies";
 
 dotenv.config();
 
-const dbConnection = () =>
+export const dbConnection = () =>
   knex({
     client: "pg",
     connection: {
@@ -19,6 +20,10 @@ export const getNonQueenEntries = fetchFromDB<NonQueenDBRelease>({
 });
 
 export const getMovies = fetchFromDB<DBMovie>({ tableName: "movies" });
+
+export const getArtists = fetchFromDB<{ id: number; name: string }>({
+  tableName: "artists",
+});
 
 function fetchFromDB<T extends {}>({ tableName }: { tableName: string }) {
   return async () => {

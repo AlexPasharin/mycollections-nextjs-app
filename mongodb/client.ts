@@ -8,11 +8,18 @@ export const queryMongoDB = async <T>(
   queryFunc: (client: MongoClient) => Promise<T>
 ) => {
   const client = new MongoClient(uri);
-  await client.connect();
 
-  const result = await queryFunc(client);
+  try {
+    await client.connect();
 
-  await client.close();
+    const result = await queryFunc(client);
 
-  return result;
+    return result;
+  } catch (error) {
+    console.error(error);
+
+    throw error;
+  } finally {
+    await client.close();
+  }
 };

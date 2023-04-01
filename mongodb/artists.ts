@@ -5,11 +5,23 @@ export interface Artist {
   name: string;
 }
 
-export default function getArtists() {
-  return queryMongoDB(async (client) => {
+export const getArtists = () =>
+  queryMongoDB<Artist[]>((client) => {
     const db = client.db("music_collection");
     const collection = db.collection<Artist>("artists");
 
     return collection.find().toArray();
   });
-}
+
+export const insertArtists = (artists: { id: number; name: string }[]) =>
+  queryMongoDB((client) => {
+    const db = client.db("music_collection");
+    const collection = db.collection<Artist>("artists");
+
+    return collection.insertMany(
+      artists.map(({ id, name }) => ({
+        _id: id,
+        name,
+      }))
+    );
+  });
