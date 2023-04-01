@@ -6,7 +6,7 @@ const data: DiscographyEntryData = {
   releaseDate: "2021-10-29",
   tracks: [
     {
-      name: `We Will Rockk You`,
+      name: `We Will Rock You`,
       versions: [{ id: `wwry` }],
     },
     {
