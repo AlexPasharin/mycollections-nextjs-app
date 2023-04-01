@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function MainDirectory({ header }: { header: string }) {
   const sections = [
-    { title: "Queen Collection", path: "/Queen/collection" },
+    { title: "Queen Collection", path: "/queen/collection" },
     { title: "Non Queen Music Collection", path: "/music" },
     { title: "Movies", path: "/movies" },
     { title: "Queen Discography", path: "/Queen/discography" },

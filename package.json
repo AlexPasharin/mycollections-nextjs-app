@@ -10,7 +10,8 @@
     "new-single": "ts-node scripts/addNewSingleFileSkeletons.ts",
     "new-song": "ts-node scripts/addNewCompositionFileSkeleton.ts",
     "non-queen-to-json": "npx ts-node scripts/db-to-jsons/non_queen.ts",
-    "movies-to-json": "npx ts-node scripts/db-to-jsons/movies.ts"
+    "movies-to-json": "npx ts-node scripts/db-to-jsons/movies.ts",
+    "artists-to-json": "npx ts-node scripts/db-to-jsons/artists.ts"
   },
   "author": "AlexPasharin",
   "license": "ISC",
@@ -19,20 +20,22 @@
     "dotenv": "^16.0.3",
     "fs-extra": "^11.1.0",
     "knex": "^2.3.0",
+    "mongodb": "^5.1.0",
     "next": "^13.0.3",
     "pg": "^8.8.0",
     "ramda": "^0.28.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "showdown": "^2.1.0"
+    "showdown": "^2.1.0",
+    "ts-loader": "^9.4.2"
   },
   "devDependencies": {
     "@types/fs-extra": "^9.0.13",
-    "@types/node": "18.11.9",
+    "@types/node": "^18.11.9",
     "@types/ramda": "^0.28.20",
     "@types/react": "18.0.25",
     "sass": "^1.56.1",
     "ts-node": "^10.9.1",
-    "typescript": "^4.9.3"
+    "typescript": "^5.0.3"
   }
 }

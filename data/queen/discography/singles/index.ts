@@ -1,5 +1,5 @@
 export default [
-  { year: "1973", entries: ["Keep Yourself Alive"] },
+  { year: 1973, entries: ["Keep Yourself Alive"] },
   { year: "1974", entries: ["Liar", "Seven Seas Of Rhye", "Killer Queen"] },
   { year: "1975", entries: ["Now I'm Here", "Bohemian Rhapsody"] },
   { year: "1976", entries: ["You're My Best Friend", "Somebody To Love"] },
@@ -8,6 +8,7 @@ export default [
     entries: [
       "Tie Your Mother Down",
       "Teo Torriatte",
+
       "First Queen EP",
       "Long Away",
       "We Are The Champions",
@@ -121,4 +122,13 @@ export default [
     entries: ["Under Pressure (rah mix)"],
   },
   { year: "2002", entries: ["Flash (the Official Club Mixes)"] },
+  {
+    year: "2005",
+    entries: ["Wwry (2005 Japan)", "It's A Beautiful Day (2005 Remix)"],
+  },
+  { year: "2006", entries: ["aobtd (the miami project)"] },
+  { year: "2009", entries: ["bohemian rhapsody (muppets)"] },
+  { year: 2011, entries: ["Stormtroopers In Stilettos"] },
+  { year: 2014, entries: ["Let Me In Your Heart Again", "Love Kills"] },
+  { year: 2021, entries: ["We Will Rock You (2021 Pop-up Store)"] },
 ];

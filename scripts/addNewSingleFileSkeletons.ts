@@ -45,7 +45,7 @@ async function addNewSingleFileSkeletons(artistName: string) {
   await attemptToMakeAFile({
     path: singleDataFilePath,
     fileExistsLogMessage: `Single data content file ${singleDataFilePath} already exists`,
-    content: singleDataContentTemplate({ singleName, compositionNames: names }),
+    content: singleDataContentTemplate({ singleName, compositionNames }),
     errorMessage: `Could not make single data content file for ${singleName}`,
   });
 

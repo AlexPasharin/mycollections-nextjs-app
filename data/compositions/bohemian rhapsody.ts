@@ -48,6 +48,15 @@ const data: Composition = {
       versionName: "We Will Rock You London Cast musical - album version",
       artist: "We Will Rock You London Cast",
     },
+    {
+      id: "br-muppets",
+      artist: "Queen + The Muppets",
+    },
+    {
+      id: "br-muppets-video",
+      versionName: "video",
+      artist: "Queen + The Muppets",
+    },
   ],
 };
 

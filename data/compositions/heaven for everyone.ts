@@ -6,17 +6,16 @@ const data: Composition = {
   versions: [
     {
       id: `queen-hfe-edit`,
-      versionName: "Queen version, single edit",
+      versionName: "single edit",
       artist: "Queen",
     },
     {
       id: `queen-hfe`,
-      versionName: "Queen version",
       artist: "Queen",
     },
     {
       id: `queen-hfe-swiss-promo-video`,
-      versionName: "Queen version, Swiss 1999 promo CD ROM video",
+      versionName: "Swiss 1999 promo CD ROM video",
       artist: "Queen",
     },
   ],

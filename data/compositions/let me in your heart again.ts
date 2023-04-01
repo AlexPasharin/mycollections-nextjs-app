@@ -1,15 +1,15 @@
 import type { Composition } from "types/discography";
 
 const data: Composition = {
-  name: `Made In Heaven`,
-  artist: `Freddie Mercury`,
+  name: `Let Me In Your Heart Again`,
+  artist: `Queen`,
   versions: [
     {
-      id: `mih`,
+      id: `lmiyha`,
     },
     {
-      id: `queen-mih`,
-      artist: "Queen",
+      id: `lmiyha-orbit`,
+      versionName: "William Orbit mix",
     },
   ],
 };

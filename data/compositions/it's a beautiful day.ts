@@ -15,6 +15,10 @@ const data: Composition = {
       id: `iabd-reprise`,
       versionName: "reprise",
     },
+    {
+      id: `iabd-2005-remix`,
+      versionName: "Robertson & DJ Koma Remix",
+    },
   ],
 };
 

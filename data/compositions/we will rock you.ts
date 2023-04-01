@@ -66,6 +66,10 @@ const data: Composition = {
       id: "wwry-ruined-edit",
       versionName: "Rick Rubin ruined remix edit",
     },
+    {
+      id: `wwry-karaoke`,
+      versionName: "Karaoke version",
+    },
   ],
 };
 

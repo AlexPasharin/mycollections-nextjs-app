@@ -7,10 +7,10 @@ const data: Composition = {
     {
       id: `tmlwky`,
     },
-    { id: `queen-tmlwky`, versionName: `Queen version`, artist: `Queen` },
+    { id: `queen-tmlwky`, artist: `Queen` },
     {
       id: `queen-tmlwky-edit`,
-      versionName: `Queen version, promo edit`,
+      versionName: `promo edit`,
       artist: `Queen`,
     },
   ],

@@ -52,6 +52,51 @@ const data: Composition = {
       versionName: "Team 1 Black Rock Star instrumental",
       artist: "Queen / Wyclef Jean Featuring Pras & Free",
     },
+    {
+      id: `aobtd-gervais-edit`,
+      versionName: "Cedric Gervais & Second Sun Radio Edit",
+      artist: "Queen vs The Miami Project",
+    },
+    {
+      id: `aobtd-gervais-video`,
+      versionName: "Cedric Gervais & Second Sun Radio Edit Video",
+      artist: "Queen vs The Miami Project",
+    },
+    {
+      id: `aobtd-gervais-vocal`,
+      versionName: "Cedric Gervais & Second Sun Vocal Mix",
+      artist: "Queen vs The Miami Project",
+    },
+    {
+      id: `aobtd-gervais-club`,
+      versionName: "Cedric Gervais & Second Sun Dub/Club Mix",
+      artist: "Queen vs The Miami Project",
+    },
+    {
+      id: `aobtd-koletzki`,
+      versionName: "Oliver Koletzki Remix",
+      artist: "Queen vs The Miami Project",
+    },
+    {
+      id: `aobtd-skillz`,
+      versionName: "A Skillz Remix",
+      artist: "Queen vs The Miami Project",
+    },
+    {
+      id: `aobtd-soul-avengers`,
+      versionName: "Soul Avengerz Remix",
+      artist: "Queen vs The Miami Project",
+    },
+    {
+      id: `aobtd-soul-avengers-dub`,
+      versionName: "Soul Avengerz Dub",
+      artist: "Queen vs The Miami Project",
+    },
+    {
+      id: `aobtd-dj-pedro`,
+      versionName: "DJ Pedro & Olivier Berger Mix",
+      artist: "Queen vs The Miami Project",
+    },
   ],
 };
 

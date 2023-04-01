@@ -1,17 +1,16 @@
 import type { Composition } from "types/discography";
 
 const data: Composition = {
-  name: `I Was Born To Love You`,
+  name: `Love Kills`,
   artist: `Freddie Mercury`,
   versions: [
     {
-      id: `iwbtly`,
+      id: `lk`,
     },
-    { id: `queen-iwbtly`, artist: `Queen` },
     {
-      id: `queen-iwbtly-canada-edit`,
-      versionName: `Canadian promo edit`,
+      id: `lk-ballad`,
       artist: `Queen`,
+      trackName: "Love Kills - The Ballad",
     },
   ],
 };
