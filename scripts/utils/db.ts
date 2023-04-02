@@ -1,8 +1,8 @@
 import * as dotenv from "dotenv";
 import knex from "knex";
-import { DBArtist } from "../../types/artists";
 import { NonQueenDBRelease } from "../../types/non_queen";
 import { DBMovie } from "../../types/movies";
+import { DBEntryType, type DBEntry } from "../../types/entries";
 
 dotenv.config();
 
@@ -15,15 +15,23 @@ export const dbConnection = () =>
     },
   });
 
+export const getArtists = fetchFromDB<{ id: number; name: string }>({
+  tableName: "artists",
+});
+
+export const getQueenEntries = fetchFromDB<DBEntry>({
+  tableName: "entries",
+});
+
+export const getEntryTypes = fetchFromDB<DBEntryType>({
+  tableName: "types",
+});
+
 export const getNonQueenEntries = fetchFromDB<NonQueenDBRelease>({
   tableName: "non_queen",
 });
 
 export const getMovies = fetchFromDB<DBMovie>({ tableName: "movies" });
-
-export const getArtists = fetchFromDB<{ id: number; name: string }>({
-  tableName: "artists",
-});
 
 function fetchFromDB<T extends {}>({ tableName }: { tableName: string }) {
   return async () => {
