@@ -1,19 +1,39 @@
-import { Artist, getArtistByName, getArtists } from "mongodb/artists";
+import {
+  Artist,
+  EnhancedArtist,
+  Entry,
+  getArtistByName,
+  getArtists,
+} from "mongodb/artists";
 import {
   GetStaticPaths,
   GetStaticProps,
   InferGetStaticPropsType,
   NextPage,
 } from "next";
+import { map, pipe, toPairs } from "ramda";
 
 type Props = Omit<InferGetStaticPropsType<typeof getStaticProps>, "pageTitle">;
 
 const QueenCollectionArtist: NextPage<Props> = ({ name, entries }) => {
-  console.log({ entries });
+  console.log(entries);
+
   return (
     <main>
       <h1>Queen Collection</h1>
       <h2>Entries by {name}</h2>
+      {entries.map(({ type, typeEntries }) => (
+        <div key={type}>
+          <h3>{type}</h3>
+          <ul>
+            {typeEntries.map((entry) => (
+              <li key={entry.id}>
+                <p>{entry.name}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </main>
   );
 };
@@ -35,7 +55,7 @@ export default QueenCollectionArtist;
 
 export const getStaticProps: GetStaticProps<{
   name: string;
-  entries: Artist["entries"];
+  entries: { type: string; typeEntries: Entry[] }[];
   pageTitle: string;
 }> = async (context) => {
   const { artist } = context.params!; // we know that "artist" must be in path parameters
@@ -45,7 +65,13 @@ export const getStaticProps: GetStaticProps<{
   return {
     props: {
       name,
-      entries,
+      entries: pipe(
+        toPairs<EnhancedArtist["entries"], string>,
+        map(([type, typeEntries]) => ({
+          type,
+          typeEntries,
+        }))
+      )(entries),
       pageTitle: `Queen Collection - Entries by Artist ${name}`,
     },
   };

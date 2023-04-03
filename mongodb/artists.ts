@@ -4,13 +4,12 @@ import { queryMongoDB } from "./client";
 import { DBArtist } from "../types/artists";
 import { DBEntry } from "../types/entries";
 
+export type Entry = Omit<DBEntry, "artist_id" | "type" | "entry_artist_id"> & {
+  entryArtist?: string;
+};
+
 export type EnhancedArtist = DBArtist & {
-  entries: Record<
-    string,
-    (Omit<DBEntry, "artist_id" | "type" | "entry_artist_id"> & {
-      entryArtist?: string;
-    })[]
-  >;
+  entries: Record<string, Entry[]>;
 };
 
 export type Artist = Omit<EnhancedArtist, "id"> & {
