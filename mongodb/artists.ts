@@ -27,7 +27,14 @@ export const getArtists = () =>
 export const getArtistByName = (name: string) =>
   queryArtistsCollection((artistsCollection) =>
     // case insenstive search by artist name
-    artistsCollection.findOne({ name: { $regex: name, $options: "i" } })
+    artistsCollection.findOne({
+      name: {
+        $regex: new RegExp(
+          `^${name.replaceAll("+", "\\+").replaceAll("*", "\\*")}$`
+        ),
+        $options: "i",
+      },
+    })
   );
 
 export const upsertArtists = (artists: EnhancedArtist[]) =>

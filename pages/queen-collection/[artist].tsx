@@ -16,8 +16,6 @@ import { map, pipe, toPairs } from "ramda";
 type Props = Omit<InferGetStaticPropsType<typeof getStaticProps>, "pageTitle">;
 
 const QueenCollectionArtist: NextPage<Props> = ({ name, entries }) => {
-  console.log(entries);
-
   return (
     <main>
       <h1>Queen Collection</h1>
