@@ -4,11 +4,6 @@ import { queryMongoDB } from "./client";
 import { DBArtist } from "../types/artists";
 import { DBEntry } from "../types/entries";
 
-export interface Artist {
-  _id: number;
-  name: string;
-}
-
 export type EnhancedArtist = DBArtist & {
   entries: Record<
     string,
@@ -18,9 +13,22 @@ export type EnhancedArtist = DBArtist & {
   >;
 };
 
+export type Artist = Omit<EnhancedArtist, "id"> & {
+  _id: EnhancedArtist["id"];
+};
+
 export const getArtists = () =>
   queryArtistsCollection((artistsCollection) =>
-    artistsCollection.find({}, { projection: { entries: 0 } }).toArray()
+    artistsCollection
+      // dont include "entries" in all artists response
+      .find<{ _id: number; name: string }>({}, { projection: { entries: 0 } })
+      .toArray()
+  );
+
+export const getArtistByName = (name: string) =>
+  queryArtistsCollection((artistsCollection) =>
+    // case insenstive search by artist name
+    artistsCollection.findOne({ name: { $regex: name, $options: "i" } })
   );
 
 export const upsertArtists = (artists: EnhancedArtist[]) =>
@@ -56,7 +64,7 @@ export const upsertArtists = (artists: EnhancedArtist[]) =>
     );
   });
 
-export const deleteArtists = (artists: Artist[]) =>
+export const deleteArtists = (artists: { _id: number }[]) =>
   queryArtistsCollection(async (artistsCollection) => {
     if (!artists.length) {
       console.log("No artists to delete");

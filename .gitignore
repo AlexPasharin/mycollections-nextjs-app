@@ -2,6 +2,7 @@ node_modules
 .next
 
 data/**/debug/**/*
+data/artists/**/*
 .env
 
 tsconfig.tsbuildinfo

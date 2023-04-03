@@ -1,5 +1,5 @@
-import { existsSync, writeFile, writeFileSync } from "fs";
-import { ensureDirSync, writeJson } from "fs-extra";
+import { existsSync, writeFile } from "fs";
+import { ensureDirSync, readJson, writeJson } from "fs-extra";
 import { join, sep } from "path";
 import rl from "readline";
 
@@ -49,25 +49,46 @@ export async function attemptToMakeAFile({
   return Promise.resolve(false);
 }
 
-export async function writeToJsonFile(obj: unknown, outputJsonPath: string) {
-  const compressFilePath = join("data", `${outputJsonPath}.json`);
+export async function writeToJsonFile(
+  obj: unknown,
+  outputJsonPath: string,
+  options = { includeDebugCopy: true, compress: true }
+) {
+  const outputFilePath = join("data", `${outputJsonPath}.json`);
 
-  const outputFilePathParts = compressFilePath.split(sep);
+  const outputFilePathParts = outputFilePath.split(sep);
   const fileName = outputFilePathParts.pop();
 
   if (!fileName) {
     throw `Incorrect path ${outputJsonPath}: empty file name`;
   }
 
-  const debugOutputFileDirectory = join(...outputFilePathParts, "debug");
-  const debugFilePath = join(debugOutputFileDirectory, fileName);
+  const { compress, includeDebugCopy } = options;
 
-  ensureDirSync(debugOutputFileDirectory);
+  ensureDirSync(join(...outputFilePathParts));
 
-  await Promise.all([
-    writeJson(compressFilePath, obj),
-    writeJson(debugFilePath, obj, { spaces: 2 }),
-  ]);
+  const writeFilePromise = writeJson(
+    outputFilePath,
+    obj,
+    compress ? undefined : { spaces: 2 }
+  );
+
+  let writeDebugCopyPromise;
+
+  if (includeDebugCopy) {
+    const debugOutputFileDirectory = join(...outputFilePathParts, "debug");
+    const debugFilePath = join(debugOutputFileDirectory, fileName);
+
+    ensureDirSync(debugOutputFileDirectory);
+
+    writeDebugCopyPromise = writeJson(debugFilePath, obj, { spaces: 2 });
+  }
+
+  await Promise.all([writeFilePromise, writeDebugCopyPromise]);
+}
+
+export async function readJSONFromFile(fileName: string) {
+  return readJson(fileName);
 }
 
 function promptForYes(question: string): Promise<boolean> {
