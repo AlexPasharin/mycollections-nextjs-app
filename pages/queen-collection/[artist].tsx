@@ -12,15 +12,37 @@ import {
   NextPage,
 } from "next";
 import { map, pipe, toPairs } from "ramda";
+import { useState } from "react";
 
 type Props = Omit<InferGetStaticPropsType<typeof getStaticProps>, "pageTitle">;
 
 const QueenCollectionArtist: NextPage<Props> = ({ name, entries }) => {
+  const [query, setQuery] = useState("");
+
+  const trimmedQuery = query.trim();
+  const filteredEntries = trimmedQuery
+    ? entries.reduce<typeof entries>((acc, { type, typeEntries }) => {
+        const filteredTypeEntries = typeEntries.filter((e) =>
+          e.name.toLowerCase().includes(query.toLowerCase())
+        );
+
+        return filteredTypeEntries.length
+          ? [...acc, { type, typeEntries: filteredTypeEntries }]
+          : acc;
+      }, [])
+    : entries;
+
   return (
     <main>
       <h1>Queen Collection</h1>
       <h2>Entries by {name}</h2>
-      {entries.map(({ type, typeEntries }) => (
+      <input
+        style={{ height: "30px", width: "300px", fontSize: "1.2em" }}
+        autoFocus
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+      />
+      {filteredEntries.map(({ type, typeEntries }) => (
         <div key={type}>
           <h3>{type}</h3>
           <ul>
