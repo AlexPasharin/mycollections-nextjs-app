@@ -12,7 +12,7 @@ type NullableKeys<T> = {
 type NullableToOptional<T> = {
   [K in keyof T as Exclude<K, NullableKeys<T>>]: T[K];
 } & {
-  [K in NullableKeys<T>]?: T[K];
+  [K in NullableKeys<T>]?: NonNullable<T[K]>;
 };
 
 export const removeNulls = <T>(obj: T): NullableToOptional<T> =>

@@ -32,6 +32,9 @@ const QueenCollectionArtist: NextPage<Props> = ({ name, entries }) => {
       }, [])
     : entries;
 
+  const openAllTypes =
+    filteredEntries.map(({ typeEntries }) => typeEntries).flat().length < 5;
+
   return (
     <main>
       <h1>Queen Collection</h1>
@@ -50,7 +53,7 @@ const QueenCollectionArtist: NextPage<Props> = ({ name, entries }) => {
         onChange={(e) => setQuery(e.target.value)}
       />
       {filteredEntries.map(({ type, typeEntries }) => (
-        <details key={type} open>
+        <details key={type} open={openAllTypes}>
           <summary style={{ margin: "10px 0" }}>
             <h3 style={{ display: "inline", marginLeft: "10px" }}>{type}</h3>
           </summary>
@@ -72,41 +75,125 @@ const EntryData = ({ entry }: { entry: Entry }) => {
   return (
     <li style={{ borderBottom: "solid 1px lightgrey" }}>
       <h4
-        style={{ opacity: 0.8, cursor: releases ? "pointer" : "default" }}
+        style={{ opacity: 0.8, cursor: "pointer" }}
         onClick={() => setShowReleases(!showReleases)}
       >
         {name}
       </h4>
-      {showReleases && releases && (
-        <ol style={{ marginBottom: "16px" }}>
-          {releases.map((r) => {
-            const { version, discogs_url } = r;
-
-            return (
-              <li style={{ margin: "8px 0" }}>
-                {discogs_url ? (
-                  <a href={discogs_url} target="_blank">
-                    {version}
-                  </a>
-                ) : (
-                  <span>{version}</span>
-                )}
-              </li>
-            );
-          })}
-        </ol>
-      )}
+      {showReleases && <Releases releases={releases} />}
     </li>
   );
 };
 
-const Release = ({
-  release,
-}: {
-  release: NonNullable<Entry["releases"]>[number];
-}) => {
-  const { discogs_url } = release;
+type Release = NonNullable<Entry["releases"]>[number];
+
+const Releases = ({ releases }: { releases: Release[] | undefined }) => (
+  <div style={{ marginBottom: "16px" }}>
+    {releases ? (
+      <ol>
+        {releases.map((release) => (
+          <Release release={release} key={release.id} />
+        ))}
+      </ol>
+    ) : (
+      <span style={{ fontWeight: "bold" }}>
+        No releases for this entry in collection
+      </span>
+    )}
+  </div>
+);
+
+const Release = ({ release }: { release: Release }) => {
+  const [showDetails, setShowDetails] = useState(false);
+
+  const { version, id } = release;
+
+  return (
+    <li style={{ margin: "8px 0" }} key={id}>
+      <div
+        style={{ cursor: "pointer", marginBottom: "12px" }}
+        onClick={() => setShowDetails(!showDetails)}
+      >
+        {version}
+      </div>
+      {showDetails && <ReleaseDetails release={release} />}
+    </li>
+  );
 };
+
+const ReleaseDetails = ({ release }: { release: Release }) => {
+  const {
+    discogs_url,
+    format,
+    country,
+    label,
+    cat_number,
+    comment,
+    condition_problems,
+  } = release;
+
+  const tableRows = [
+    {
+      label: "Format",
+      value: format,
+    },
+    {
+      label: "Country",
+      value: country,
+    },
+    {
+      label: "Label",
+      value: label,
+    },
+    {
+      label: "Catalogue number",
+      value: cat_number,
+    },
+    {
+      label: "Comment",
+      value: comment,
+    },
+    {
+      label: "Condition problems",
+      value: condition_problems,
+    },
+  ];
+
+  return (
+    <div>
+      {discogs_url && (
+        <div style={{ marginBottom: "12px" }}>
+          <a href={discogs_url} target="_blank">
+            {discogs_url}
+          </a>
+        </div>
+      )}
+      <table style={{ borderCollapse: "collapse" }}>
+        <tbody>
+          {tableRows.map(({ label, value }) => (
+            <OptionalTableRow label={label} value={value} key={label} />
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+const OptionalTableRow = ({
+  label,
+  value,
+}: {
+  label: string;
+  value?: string;
+}) =>
+  value ? (
+    <tr style={{ borderBottom: "solid 1px lightgrey" }}>
+      <td style={{ fontWeight: "bold", padding: "8px 12px 8px 0" }}>
+        {label}:
+      </td>
+      <td>{value} </td>
+    </tr>
+  ) : null;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const artists = await getArtists();
