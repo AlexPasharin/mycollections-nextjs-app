@@ -2,11 +2,28 @@ import { Collection } from "mongodb";
 
 import { queryMongoDB } from "./client";
 import { DBArtist } from "../types/artists";
-import { DBEntry } from "../types/entries";
+import { DBEntry, DBRelease } from "../types/entries";
+import { complement, isNil, pickBy } from "ramda";
 
-export type Entry = Omit<DBEntry, "artist_id" | "type" | "entry_artist_id"> & {
-  entryArtist?: string;
+type NullableKeys<T> = {
+  [K in keyof T]: null extends T[K] ? K : never;
+}[keyof T];
+
+type NullableToOptional<T> = {
+  [K in keyof T as Exclude<K, NullableKeys<T>>]: T[K];
+} & {
+  [K in NullableKeys<T>]?: T[K];
 };
+
+export const removeNulls = <T>(obj: T): NullableToOptional<T> =>
+  pickBy(complement(isNil), obj);
+
+export type Entry = NullableToOptional<
+  Omit<DBEntry, "artist_id" | "type" | "entry_artist_id"> & {
+    entryArtist?: string;
+    releases?: NullableToOptional<DBRelease>[];
+  }
+>;
 
 export type EnhancedArtist = DBArtist & {
   entries: Record<string, Entry[]>;

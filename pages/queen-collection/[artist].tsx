@@ -35,27 +35,77 @@ const QueenCollectionArtist: NextPage<Props> = ({ name, entries }) => {
   return (
     <main>
       <h1>Queen Collection</h1>
-      <h2>Entries by {name}</h2>
+      <h2>
+        Entries by <span style={{ color: "red" }}>{name}</span>
+      </h2>
       <input
-        style={{ height: "30px", width: "300px", fontSize: "1.2em" }}
+        style={{
+          height: "30px",
+          width: "300px",
+          fontSize: "1.2em",
+          marginBottom: "px",
+        }}
         autoFocus
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
       {filteredEntries.map(({ type, typeEntries }) => (
-        <div key={type}>
-          <h3>{type}</h3>
-          <ul>
+        <details key={type} open>
+          <summary style={{ margin: "10px 0" }}>
+            <h3 style={{ display: "inline", marginLeft: "10px" }}>{type}</h3>
+          </summary>
+          <ul style={{ marginLeft: "24px" }}>
             {typeEntries.map((entry) => (
-              <li key={entry.id}>
-                <p>{entry.name}</p>
-              </li>
+              <EntryData key={entry.id} entry={entry} />
             ))}
           </ul>
-        </div>
+        </details>
       ))}
     </main>
   );
+};
+
+const EntryData = ({ entry }: { entry: Entry }) => {
+  const [showReleases, setShowReleases] = useState(false);
+  const { name, releases } = entry;
+
+  return (
+    <li style={{ borderBottom: "solid 1px lightgrey" }}>
+      <h4
+        style={{ opacity: 0.8, cursor: releases ? "pointer" : "default" }}
+        onClick={() => setShowReleases(!showReleases)}
+      >
+        {name}
+      </h4>
+      {showReleases && releases && (
+        <ol style={{ marginBottom: "16px" }}>
+          {releases.map((r) => {
+            const { version, discogs_url } = r;
+
+            return (
+              <li style={{ margin: "8px 0" }}>
+                {discogs_url ? (
+                  <a href={discogs_url} target="_blank">
+                    {version}
+                  </a>
+                ) : (
+                  <span>{version}</span>
+                )}
+              </li>
+            );
+          })}
+        </ol>
+      )}
+    </li>
+  );
+};
+
+const Release = ({
+  release,
+}: {
+  release: NonNullable<Entry["releases"]>[number];
+}) => {
+  const { discogs_url } = release;
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
