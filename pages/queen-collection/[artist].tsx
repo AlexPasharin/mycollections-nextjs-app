@@ -70,16 +70,22 @@ const QueenCollectionArtist: NextPage<Props> = ({ name, entries }) => {
 
 const EntryData = ({ entry }: { entry: Entry }) => {
   const [showReleases, setShowReleases] = useState(false);
-  const { name, releases } = entry;
+  const { name, releases, release_date } = entry;
 
   return (
     <li style={{ borderBottom: "solid 1px lightgrey" }}>
-      <h4
-        style={{ opacity: 0.8, cursor: "pointer" }}
-        onClick={() => setShowReleases(!showReleases)}
-      >
-        {name}
-      </h4>
+      <div  style={{ cursor: "pointer" }}
+        onClick={() => setShowReleases(!showReleases)}>
+        <h4
+          style={{ opacity: 0.8 }}
+        >
+          {name}
+        </h4>
+        {release_date && <p style={{ fontStyle:"italic", marginTop: "-12px" }}>
+          Originally release date: {release_date}
+        </p>
+        }
+      </div>
       {showReleases && <Releases releases={releases} />}
     </li>
   );
