@@ -74,17 +74,16 @@ const EntryData = ({ entry }: { entry: Entry }) => {
 
   return (
     <li style={{ borderBottom: "solid 1px lightgrey" }}>
-      <div  style={{ cursor: "pointer" }}
-        onClick={() => setShowReleases(!showReleases)}>
-        <h4
-          style={{ opacity: 0.8 }}
-        >
-          {name}
-        </h4>
-        {release_date && <p style={{ fontStyle:"italic", marginTop: "-12px" }}>
-          Originally release date: {release_date}
-        </p>
-        }
+      <div
+        style={{ cursor: "pointer" }}
+        onClick={() => setShowReleases(!showReleases)}
+      >
+        <h4 style={{ opacity: 0.8 }}>{name}</h4>
+        {release_date && (
+          <p style={{ fontStyle: "italic", marginTop: "-12px" }}>
+            Original release date: {release_date}
+          </p>
+        )}
       </div>
       {showReleases && <Releases releases={releases} />}
     </li>
@@ -197,7 +196,7 @@ const OptionalTableRow = ({
       <td style={{ fontWeight: "bold", padding: "8px 12px 8px 0" }}>
         {label}:
       </td>
-      <td>{value} </td>
+      <td style={{ padding: "8px 12px 8px 0" }}>{value} </td>
     </tr>
   ) : null;
 
