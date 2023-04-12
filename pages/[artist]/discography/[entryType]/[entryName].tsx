@@ -98,7 +98,8 @@ export const getStaticProps: GetStaticProps<{
     artist: artist as string,
   });
 
-/*   if (!entry) {
+  // TODO temporary workaround, coz does not work on windows
+  /*   if (!entry) {
     return {
       redirect: {
         permanent: false,
@@ -109,7 +110,7 @@ export const getStaticProps: GetStaticProps<{
  */
   return {
     props: {
-      entry: entry!,
+      entry: entry!, // related to the workaround above
       pageTitle: `${entryName} - ${artist} ${entryType}`,
     },
   };

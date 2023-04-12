@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import showdown from "showdown";
 
-import { pathToFileURL } from 'url';
+import { pathToFileURL } from "url";
 import * as ts from "typescript";
 
 import type {
@@ -185,14 +185,7 @@ function readFilePromise(name: string) {
 }
 
 async function getDefaultExport<T>(path: string): Promise<T> {
-  const dynamicImport = await dynamicallyImportDataFile<T>(path);
+  const fileContents = await readFilePromise(`./data/${path}`);
 
-  return dynamicImport.default;
-}
-
-async function dynamicallyImportDataFile<T>(path: string): Promise<{ default: T }> {
-  const fileContents = await readFilePromise(`./data/${path}`)
-  const transpiledJavascriptCode = ts.transpile(fileContents)
-
-  return {default: eval(transpiledJavascriptCode)}
+  return eval(ts.transpile(fileContents));
 }
