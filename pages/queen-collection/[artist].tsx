@@ -203,12 +203,14 @@ const OptionalTableRow = ({
 export const getStaticPaths: GetStaticPaths = async () => {
   const artists = await getArtists();
 
+  const paths = artists.map(({ name }) => ({
+    params: {
+      artist: name.toLowerCase(),
+    },
+  }))
+
   return {
-    paths: artists.map(({ name }) => ({
-      params: {
-        artist: name.toLowerCase(),
-      },
-    })),
+    paths,
     fallback: false,
   };
 };
@@ -220,9 +222,9 @@ export const getStaticProps: GetStaticProps<{
   entries: { type: string; typeEntries: Entry[] }[];
   pageTitle: string;
 }> = async (context) => {
-  const { artist } = context.params!; // we know that "artist" must be in path parameters
+  const artist  = context.params!.artist as string; // we know that "artist" must be in path parameters
 
-  const { name, entries } = (await getArtistByName(artist as string))!; // and we know that "artist" is a string and corresponds to a real artist in db
+  const { name, entries } = (await getArtistByName(artist))!; // and we know that "artist" is a string and corresponds to a real artist in db
 
   return {
     props: {

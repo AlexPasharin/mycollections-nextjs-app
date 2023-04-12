@@ -98,7 +98,7 @@ export const getStaticProps: GetStaticProps<{
     artist: artist as string,
   });
 
-  if (!entry) {
+/*   if (!entry) {
     return {
       redirect: {
         permanent: false,
@@ -106,10 +106,10 @@ export const getStaticProps: GetStaticProps<{
       },
     };
   }
-
+ */
   return {
     props: {
-      entry,
+      entry: entry!,
       pageTitle: `${entryName} - ${artist} ${entryType}`,
     },
   };
