@@ -1,8 +1,8 @@
 import { Collection } from "mongodb";
 
 import { queryMongoDB } from "./client";
-import { DBArtist } from "../types/artists";
-import { DBEntry, DBRelease } from "../types/entries";
+import { DBArtist, DBArtist2 } from "../types/artists";
+import { DBEntry, DBEntry2, DBRelease, DBRelease2 } from "../types/entries";
 import { complement, isNil, pickBy } from "ramda";
 
 type NullableKeys<T> = {
@@ -25,12 +25,27 @@ export type Entry = NullableToOptional<
   }
 >;
 
+export type Entry2 = NullableToOptional<
+  Omit<DBEntry2, "artist_id" | "type" | "entry_artist_id"> & {
+    entryArtist?: string;
+    releases?: NullableToOptional<DBRelease2>[];
+  }
+>;
+
 export type EnhancedArtist = DBArtist & {
   entries: Record<string, Entry[]>;
 };
 
+export type EnhancedArtist2 = DBArtist2 & {
+  entries: Record<string, Entry2[]>;
+};
+
 export type Artist = Omit<EnhancedArtist, "id"> & {
   _id: EnhancedArtist["id"];
+};
+
+export type MongoArtist = Omit<EnhancedArtist2, "id"> & {
+  _id: EnhancedArtist2["id"];
 };
 
 export const getArtists = () =>

@@ -1,31 +1,45 @@
-import { differenceWith, intersection } from "ramda";
+import { difference, differenceWith, intersection, uniq } from "ramda";
 import { readJSONFromFile, writeToJsonFile } from "../../utils";
+import {
+  dbConnection,
+  getArtistsNew,
+  getNonQueenEntries,
+} from "../../utils/db";
 
-readJSONFromFile("data/artists/queen_related_extended_copy_2.json").then(
-  async (artists) => {
-    const processedArtists = artists.map((artist: any) => {
-      let { name, nameForSorting, invertForSortingName, ...rest } = artist;
+readJSONFromFile("data/artists/non_queen.json").then(async (artists) => {
+  const artistsWithParents = artists.filter((a: any) => a.parent_artists);
+  const parents = artistsWithParents.map((a: any) => a.parent_artists).flat();
 
-      if (name.startsWith("The ")) {
-        nameForSorting = name.substring(4) + ", The";
-      } else if (invertForSortingName) {
-        nameForSorting = name.split(/\s+/).reverse().join(", ");
-      }
+  console.log(parents);
 
-      return {
-        ...rest,
-        name,
-        nameForSorting,
-      };
-    });
+  const connection = dbConnection();
+  const dbArtists = await connection("artists_2")
+    .select("id", "name")
+    .whereIn("name", parents);
 
-    await writeToJsonFile(
-      processedArtists,
-      "artists/queen_related_extended_copy_3",
-      {
-        includeDebugCopy: false,
-        compress: false,
-      }
-    );
-  }
-);
+  await Promise.all(
+    artistsWithParents.map(async (artist: any) => {
+      const parentArtists = artist.parent_artists.map(
+        (parent: any) => dbArtists.find((a) => a.name === parent).id
+      );
+
+      console.log(parentArtists);
+
+      await connection("artists_2")
+        .where({ name: artist.name })
+        .update({ parent_artists: JSON.stringify(parentArtists) });
+    })
+  );
+
+  connection.destroy();
+  return;
+
+  await connection("artists_2").insert(
+    artists.map((a: any) => ({ ...a, parent_artists: null }))
+  );
+
+  // await writeToJsonFile(ext_artists, "artists/non_queen", {
+  //   includeDebugCopy: false,
+  //   compress: false,
+  // });
+});

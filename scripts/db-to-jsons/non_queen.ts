@@ -1,45 +1,93 @@
+import { prop, sortBy } from "ramda";
+import { readJSONFromFile, writeToJsonFile } from "../utils";
 import {
-  find,
-  groupBy,
-  map,
-  mapObjIndexed,
-  omit,
-  pipe,
-  prop,
-  sortBy,
-  values,
-} from "ramda";
+  getArtistsNew,
+  getNonQueenEntries,
+  getEntries,
+  getFormats,
+} from "../utils/db";
 
-import { writeToJsonFile } from "../utils";
-import { getNonQueenEntries } from "../utils/db";
+Promise.all([
+  getNonQueenEntries(),
+  getArtistsNew(),
+  getEntries(),
+  getFormats(),
+]).then(async ([nonQueenReleases, artists, entries, allFormats]) => {
+  type Artist = typeof artists[number];
 
-import type {
-  NonQueenDBRelease,
-  NonQueenRelease,
-  NonQueenReleasesByArtist,
-} from "../../types/non_queen";
+  const artistsMap = artists.reduce<Record<string, Artist>>(
+    (acc, artist) => ({ ...acc, [artist.name]: artist }),
+    {}
+  );
 
-getNonQueenEntries().then(async (releasesFlatArray) => {
-  const releasesByArtist: NonQueenReleasesByArtist[] = pipe(
-    groupBy<NonQueenDBRelease>(prop("artist_name")),
-    mapObjIndexed((releases, artistName) => ({
-      artist: artistName,
-      index_by: find((r) => !!r.index_by, releases)?.index_by || artistName,
-      releases: pipe(
-        map<NonQueenDBRelease, NonQueenRelease>( // for some reason this annotation is needed for correct type inference here
-          ({ discogs_url, comment, ...rest }) => ({
-            ...rest,
-            discogs_url: discogs_url || undefined,
-            comment: comment || undefined,
-          })
-        ),
-        sortBy(prop("name"))
-      )(releases),
-    })),
-    values,
-    sortBy(prop("index_by")),
-    map((artistData) => omit(["index_by"], artistData))
-  )(releasesFlatArray);
+  const newReleases = nonQueenReleases
+    .map(({ name, artist_name, format, comment, discogs_url }) => {
+      const artist = artistsMap[artist_name];
 
-  await writeToJsonFile(releasesByArtist, "non_queen/collection");
+      const releaseEntry = entries.find(
+        (e) => e.artist_id === artist.id && e.name === name
+      )!;
+
+      return {
+        artist: artist.name_for_sorting || artist.name,
+        entry_name: name,
+        entry_id: releaseEntry.id,
+        name: "",
+        format,
+        discogs_url,
+        release_date: releaseEntry.release_date,
+        version: "",
+        countries: [],
+        cat_numbers: { label: "", cat_number: "" },
+        comment,
+        condition_problems: null,
+        release_artist_id: null,
+        part_of_queen_collection: false,
+        parent_releases: null,
+      };
+    })
+    .sort((release1, release2) => {
+      const artist1 = release1.artist;
+      const artist2 = release2.artist;
+
+      if (artist1 < artist2) {
+        return -1;
+      }
+
+      if (artist1 > artist2) {
+        return 1;
+      }
+
+      const rDate1 = release1.release_date;
+      const rDate2 = release2.release_date;
+
+      if (rDate1 < rDate2) {
+        return -1;
+      }
+
+      if (rDate1 < rDate2) {
+        return 1;
+      }
+
+      return 0;
+    });
+
+  const releasesJSON: { format: string }[] = await readJSONFromFile(
+    "data/non_queen/releases.json"
+  );
+  const formats = releasesJSON.reduce(
+    (acc, { format }) => acc.add(format),
+    new Set()
+  );
+
+  formats.forEach((f) => {
+    if (!allFormats.some((format) => format.id === f)) {
+      console.error(f);
+    }
+  });
+
+  // await writeToJsonFile(newReleases, "non_queen/releases", {
+  //   includeDebugCopy: false,
+  //   compress: false,
+  // });
 });

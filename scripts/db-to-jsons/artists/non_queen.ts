@@ -14,7 +14,6 @@ import { writeToJsonFile } from "../../utils";
 getNonQueenEntries().then(async (releases) => {
   const releasesArtists = releases.map((a) => ({
     name: a.artist_name,
-    indexBy: a.index_by,
   }));
 
   type releasesArtist = typeof releasesArtists[number];
