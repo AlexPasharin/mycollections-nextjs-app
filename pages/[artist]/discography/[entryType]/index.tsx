@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import BackButton from "components/BackButton";
 
 type Entries = {
   year: string;
@@ -18,6 +19,7 @@ const DiscographyEntryPage: NextPage<Props> = ({ entries }) => {
 
   return (
     <>
+      <BackButton text={`Back to ${artist} discography`}/>
       <h2>
         {artist} {entryType}
       </h2>

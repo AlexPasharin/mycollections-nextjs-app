@@ -1,3 +1,4 @@
+import BackButton from "components/BackButton";
 import {
   Artist,
   EnhancedArtist,
@@ -37,6 +38,7 @@ const QueenCollectionArtist: NextPage<Props> = ({ name, entries }) => {
 
   return (
     <main>
+      <BackButton text="Back to Queen collection artists selection"/>
       <h1>Queen Collection</h1>
       <h2>
         Entries by <span style={{ color: "red" }}>{name}</span>

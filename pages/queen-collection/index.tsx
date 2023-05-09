@@ -3,6 +3,7 @@ import type { GetStaticProps, InferGetStaticPropsType } from "next";
 import { prop, sortBy } from "ramda";
 import { useState } from "react";
 import Link from "next/link";
+import BackButton from "components/BackButton";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
@@ -20,6 +21,7 @@ export default function QueenCollection({ artists }: Props) {
 
   return (
     <main>
+      <BackButton text="Back to main page"/>
       <h1>Queen Collection</h1>
       <h2>Choose An Artist</h2>
       <input

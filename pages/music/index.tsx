@@ -10,6 +10,7 @@ import type {
 } from "types/non_queen";
 
 import styles from "styles/non_queen_collection.module.sass";
+import BackButton from "components/BackButton";
 
 type NonQueenReleasesUnpacked = (NonQueenRelease & { artist_name: string })[];
 
@@ -34,6 +35,7 @@ export default function MusicPage({ releases }: Props) {
 
   return (
     <div className={styles["non-queen-collection"]}>
+      <BackButton text="Back to main page"/>
       <h1>Music Collection (non Queen related)</h1>
       <div className={styles["non-queen-filter"]}>
         <span className={styles["non-queen-filter-text"]}>Filter:</span>

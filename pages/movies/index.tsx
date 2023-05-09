@@ -7,6 +7,7 @@ import { getJSONData } from "utils";
 import type { Movie } from "types/movies";
 
 import styles from "styles/non_queen_collection.module.sass";
+import BackButton from "components/BackButton";
 
 interface Props {
   movies: Movie[];
@@ -25,6 +26,7 @@ export default function MoviesPage({ movies }: Props) {
 
   return (
     <div className={styles["non-queen-collection"]}>
+      <BackButton text="Back to main page"/>
       <h1>Movies Collection</h1>
       <div className={styles["non-queen-filter"]}>
         <span className={styles["non-queen-filter-text"]}>Filter:</span>

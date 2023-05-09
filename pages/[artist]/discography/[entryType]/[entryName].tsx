@@ -4,7 +4,6 @@ import type {
   InferGetStaticPropsType,
   NextPage,
 } from "next";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { readdir } from "fs/promises";
 import path from "path";
@@ -12,6 +11,7 @@ import path from "path";
 import getExtendedDiscographyEntryData from "lib/discography/getExtendedDiscographyEntryData";
 
 import type { ExtendedDiscographyEntryData } from "types/discography";
+import BackButton from "components/BackButton";
 
 type Props = Omit<InferGetStaticPropsType<typeof getStaticProps>, "pageTitle">;
 
@@ -27,11 +27,7 @@ const DiscographyEntryPage: NextPage<Props> = ({ entry }) => {
 
   return (
     <div>
-      <div style={{ marginTop: "20px" }}>
-        <Link href={`/${artist}/discography/${entryType}`}>
-          Back to {artist} {entryType}
-        </Link>
-      </div>
+      <BackButton text={`Back to ${artist} ${entryType}`}/>
       <h1>{title}</h1>
       <a href={discogs_url} target="_blank">
         {discogs_url}

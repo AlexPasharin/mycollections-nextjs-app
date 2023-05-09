@@ -5,6 +5,7 @@ import type { NextPage, GetStaticProps, GetStaticPaths } from "next";
 
 import styles from "styles/discography.module.sass";
 import { useRouter } from "next/router";
+import BackButton from "components/BackButton";
 
 const ArtistDiscographyPage: NextPage = () => {
   const router = useRouter();
@@ -12,6 +13,7 @@ const ArtistDiscographyPage: NextPage = () => {
 
   return (
     <>
+      <BackButton text="Back to main page"/>
       <h1>{artist} Discography</h1>
       <div className={styles["image-wrapper"]}>
         <Image
