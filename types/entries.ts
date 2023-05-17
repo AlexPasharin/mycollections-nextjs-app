@@ -55,7 +55,7 @@ export interface DBRelease2 {
   name: string | null;
   format: string;
   release_date: string | null;
-  countries: string[] | null;
+  countries: string[] | { "made in": string; "printed in": string } | null;
   cat_numbers: unknown;
   matrix_runout: unknown;
   comment: string | null;

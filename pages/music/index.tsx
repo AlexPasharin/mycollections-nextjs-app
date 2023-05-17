@@ -1,84 +1,77 @@
-import { ChangeEventHandler, useState } from "react";
-
-import type { GetStaticProps } from "next";
-
-import { getJSONData } from "utils";
-
-import type {
-  NonQueenRelease,
-  NonQueenReleasesByArtist,
-} from "types/non_queen";
-
-import styles from "styles/non_queen_collection.module.sass";
+import { getArtists } from "mongodb/releases";
+import type { GetStaticProps, InferGetStaticPropsType } from "next";
+// import { prop, sortBy } from "ramda";
+import { useState } from "react";
+import Link from "next/link";
 import BackButton from "components/BackButton";
 
-type NonQueenReleasesUnpacked = (NonQueenRelease & { artist_name: string })[];
+type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
-interface Props {
-  releases: NonQueenReleasesUnpacked;
-}
+export default function QueenCollection({ artists }: Props) {
+  const [query, setQuery] = useState("");
 
-export default function MusicPage({ releases }: Props) {
-  const [searchKey, setSearchKey] = useState("");
-
-  const filteredReleases = searchKey
-    ? releases.filter(
-        (e) =>
-          e.artist_name.toLowerCase().includes(searchKey) ||
-          e.name.toLowerCase().includes(searchKey)
+  const trimmedQuery = query.trim();
+  const filteredArtists = trimmedQuery
+    ? artists.filter((a) =>
+        a.name.toLowerCase().includes(trimmedQuery.toLowerCase())
       )
-    : releases;
+    : artists;
 
-  const onSearch: ChangeEventHandler<HTMLInputElement> = (e) => {
-    setSearchKey(e.target.value.toLowerCase());
-  };
+  const showArtistList = filteredArtists.length > 0;
 
   return (
-    <div className={styles["non-queen-collection"]}>
-      <BackButton text="Back to main page"/>
-      <h1>Music Collection (non Queen related)</h1>
-      <div className={styles["non-queen-filter"]}>
-        <span className={styles["non-queen-filter-text"]}>Filter:</span>
-        <input value={searchKey} onChange={onSearch} />
-      </div>
-      <ul className={styles["non-queen-releases"]}>
-        {filteredReleases.map((e) => (
-          <li key={e.id}>
-            <h2>
-              {e.artist_name} - {e.name}
-            </h2>
-            <div>Format: {e.format}</div>
-            <a href={e.discogs_url}>{e.discogs_url}</a>
-            {e.comment && (
-              <div>
-                <i>{e.comment}</i>
-              </div>
-            )}
-          </li>
-        ))}
-      </ul>
-    </div>
+    <main>
+      <BackButton text="Back to main page" />
+      <h1>Music Collection</h1>
+      <h2>Choose An Artist</h2>
+      <input
+        style={{ height: "30px", width: "300px", fontSize: "1.2em" }}
+        autoFocus
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+      />
+      {showArtistList ? (
+        <ul>
+          {filteredArtists.map((artist) => (
+            <li key={artist._id}>
+              <ArtistRow artist={artist} />
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <h3>No Artists correspond to query {trimmedQuery}</h3>
+      )}
+    </main>
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  return {
-    props: {
-      pageTitle: "My Music Collection",
-      releases: await getNonQueenReleasesFromJSON(),
-    },
-  };
+interface Artist {
+  _id: number;
+  name: string;
+}
+
+const ArtistRow = ({ artist }: { artist: Artist }) => {
+  const { name } = artist;
+
+  return (
+    <div
+      style={{
+        padding: "24px 0",
+        borderTop: "solid 1px grey",
+        fontSize: "1.2em",
+        cursor: "pointer",
+      }}
+    >
+      <Link href={`/music/${name.toLowerCase()}`}>{name}</Link>
+    </div>
+  );
 };
 
-const getNonQueenReleasesFromJSON =
-  async (): Promise<NonQueenReleasesUnpacked> => {
-    const data = await getJSONData<NonQueenReleasesByArtist[]>(
-      "non_queen/collection"
-    );
-
-    return data
-      .map(({ artist, releases }) =>
-        releases.map((r) => ({ ...r, artist_name: artist }))
-      )
-      .flat();
-  };
+export const getStaticProps: GetStaticProps<{
+  artists: Artist[];
+}> = async () => ({
+  props: {
+    artists: await getArtists(),
+    pageTitle: "My Music Collection - Artists",
+  },
+});

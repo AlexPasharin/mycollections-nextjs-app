@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function MainDirectory({ header }: { header: string }) {
   const sections = [
-    { title: "Queen Collection", path: "/queen-collection" },
-    { title: "Non Queen Music Collection", path: "/music" },
+    { title: "Music Collection", path: "/music" },
+    { title: "Non Queen Music Collection (depricated)", path: "/non_queen" },
     { title: "Movies", path: "/movies" },
     { title: "Queen Discography", path: "/Queen/discography" },
   ];

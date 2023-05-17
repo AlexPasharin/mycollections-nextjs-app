@@ -1,11 +1,10 @@
 import BackButton from "components/BackButton";
 import {
-  Artist,
-  EnhancedArtist,
-  Entry,
-  getArtistByName,
+  getArtistReleases,
   getArtists,
-} from "mongodb/artists";
+  Entry,
+  EnhancedArtist,
+} from "mongodb/releases";
 import {
   GetStaticPaths,
   GetStaticProps,
@@ -38,8 +37,8 @@ const QueenCollectionArtist: NextPage<Props> = ({ name, entries }) => {
 
   return (
     <main>
-      <BackButton text="Back to Queen collection artists selection"/>
-      <h1>Queen Collection</h1>
+      <BackButton text="Back to Music collection artists selection" />
+      <h1>Music Collection</h1>
       <h2>
         Entries by <span style={{ color: "red" }}>{name}</span>
       </h2>
@@ -99,7 +98,7 @@ const Releases = ({ releases }: { releases: Release[] | undefined }) => (
     {releases ? (
       <ol>
         {releases.map((release) => (
-          <Release release={release} key={release.id} />
+          <ReleaseInfo release={release} key={release.id} />
         ))}
       </ol>
     ) : (
@@ -110,7 +109,7 @@ const Releases = ({ releases }: { releases: Release[] | undefined }) => (
   </div>
 );
 
-const Release = ({ release }: { release: Release }) => {
+const ReleaseInfo = ({ release }: { release: Release }) => {
   const [showDetails, setShowDetails] = useState(false);
 
   const { version, id } = release;
@@ -132,9 +131,8 @@ const ReleaseDetails = ({ release }: { release: Release }) => {
   const {
     discogs_url,
     format,
-    country,
-    label,
-    cat_number,
+    countries,
+    cat_numbers,
     comment,
     condition_problems,
   } = release;
@@ -145,17 +143,22 @@ const ReleaseDetails = ({ release }: { release: Release }) => {
       value: format,
     },
     {
-      label: "Country",
-      value: country,
+      label:
+        Array.isArray(countries) && countries.length > 1
+          ? "Countries"
+          : "Country",
+      value: Array.isArray(countries)
+        ? countries.join(", ")
+        : typeof countries === "string"
+        ? countries
+        : countries
+        ? `made in ${countries["made in"]}, printed in ${countries["printed in"]}`
+        : null,
     },
-    {
-      label: "Label",
-      value: label,
-    },
-    {
-      label: "Catalogue number",
-      value: cat_number,
-    },
+    // {
+    //   label: "Catalogue number",
+    //   value: cat_numbers,
+    // },
     {
       label: "Comment",
       value: comment,
@@ -191,7 +194,7 @@ const OptionalTableRow = ({
   value,
 }: {
   label: string;
-  value?: string;
+  value?: string | null;
 }) =>
   value ? (
     <tr style={{ borderBottom: "solid 1px lightgrey" }}>
@@ -209,7 +212,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     params: {
       artist: name.toLowerCase(),
     },
-  }))
+  }));
 
   return {
     paths,
@@ -224,9 +227,9 @@ export const getStaticProps: GetStaticProps<{
   entries: { type: string; typeEntries: Entry[] }[];
   pageTitle: string;
 }> = async (context) => {
-  const artist  = context.params!.artist as string; // we know that "artist" must be in path parameters
+  const artist = context.params!.artist as string; // we know that "artist" must be in path parameters
 
-  const { name, entries } = (await getArtistByName(artist))!; // and we know that "artist" is a string and corresponds to a real artist in db
+  const { name, entries } = (await getArtistReleases(artist))!; // and we know that "artist" is a string and corresponds to a real artist in db
 
   return {
     props: {
@@ -238,7 +241,7 @@ export const getStaticProps: GetStaticProps<{
           typeEntries,
         }))
       )(entries),
-      pageTitle: `Queen Collection - Entries by Artist ${name}`,
+      pageTitle: `Music Collection - Entries by Artist ${name}`,
     },
   };
 };
