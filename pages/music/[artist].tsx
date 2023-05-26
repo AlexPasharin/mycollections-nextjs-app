@@ -32,8 +32,8 @@ const QueenCollectionArtist: NextPage<Props> = ({ name, entries }) => {
       }, [])
     : entries;
 
-  const openAllTypes =
-    filteredEntries.map(({ typeEntries }) => typeEntries).flat().length < 5;
+  const openAllTypes = true;
+  filteredEntries.map(({ typeEntries }) => typeEntries).flat().length < 5;
 
   return (
     <main>
@@ -110,7 +110,7 @@ const Releases = ({ releases }: { releases: Release[] | undefined }) => (
 );
 
 const ReleaseInfo = ({ release }: { release: Release }) => {
-  const [showDetails, setShowDetails] = useState(false);
+  const [showDetails, setShowDetails] = useState(true);
 
   const { version, id } = release;
 
@@ -152,7 +152,10 @@ const ReleaseDetails = ({ release }: { release: Release }) => {
         : typeof countries === "string"
         ? countries
         : countries
-        ? `made in ${countries["made in"]}, printed in ${countries["printed in"]}`
+        ? `made in ${countries as any["made in"]}, printed in ${
+            //TODO: REMOVE ANYS
+            countries as any["printed in"]
+          }`
         : null,
     },
     // {

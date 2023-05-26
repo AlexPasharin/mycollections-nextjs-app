@@ -2,19 +2,10 @@ import { Collection } from "mongodb";
 
 import { queryMongoDB } from "./client";
 
-import { DBArtist, DBArtist2 } from "../types/artists";
-import { DBEntry, DBEntry2, DBRelease, DBRelease2 } from "../types/entries";
+import { DBArtist2 } from "../types/artists";
+import { DBEntry2, DBRelease2 } from "../types/entries";
 import { complement, isNil, pickBy } from "ramda";
-
-type NullableKeys<T> = {
-  [K in keyof T]: null extends T[K] ? K : never;
-}[keyof T];
-
-type NullableToOptional<T> = {
-  [K in keyof T as Exclude<K, NullableKeys<T>>]: T[K];
-} & {
-  [K in NullableKeys<T>]?: NonNullable<T[K]>;
-};
+import { NullableToOptional } from "../types/utils";
 
 export const removeNulls = <T>(obj: T): NullableToOptional<T> =>
   pickBy(complement(isNil), obj);
