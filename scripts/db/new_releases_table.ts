@@ -12,7 +12,7 @@ knex.schema.hasTable(tableName).then(async (alreadyExists) => {
         table.uuid("id").primary().defaultTo(knex.raw("uuid_generate_v4()"));
         table.uuid("entry_id").notNullable();
         table.string("name");
-        table.string("version").notNullable();
+        table.string("version");
         table.string("format");
         table.text("discogs_url");
         table.string("release_date", 10);
