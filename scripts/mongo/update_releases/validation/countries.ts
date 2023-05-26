@@ -16,7 +16,7 @@ export const validateCountriesField = <T extends DBRelease2>(
 ): Result<{
   countries: ValidatedCountriesType | null;
 }> => {
-  const stringValidation = validateCountriesdFieldAsStringOrArrayOfStrings(
+  const stringValidation = validateCountriesFieldAsStringOrArrayOfStrings(
     fieldValue,
     dbCountries
   );
@@ -47,7 +47,7 @@ export const validateCountriesField = <T extends DBRelease2>(
   ];
 
   const madeInCountriesResolved =
-    validateCountriesdFieldAsStringOrArrayOfStrings(
+    validateCountriesFieldAsStringOrArrayOfStrings(
       madeInCountries,
       dbCountries
     );
@@ -73,7 +73,7 @@ export const validateCountriesField = <T extends DBRelease2>(
   ];
 
   const printedInCountriesResolved =
-    validateCountriesdFieldAsStringOrArrayOfStrings(
+    validateCountriesFieldAsStringOrArrayOfStrings(
       printedInCountries,
       dbCountries
     );
@@ -102,7 +102,7 @@ export const validateCountriesField = <T extends DBRelease2>(
   };
 };
 
-const validateCountriesdFieldAsStringOrArrayOfStrings = (
+const validateCountriesFieldAsStringOrArrayOfStrings = (
   fieldValue: unknown,
   dbCountries: Record<string, string | undefined>
 ): Result<{ countries: StringOrStringArray } | null> => {
