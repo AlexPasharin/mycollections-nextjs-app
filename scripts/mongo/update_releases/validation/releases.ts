@@ -3,6 +3,7 @@ import type { NullableToOptional, Result } from "../../../../types/utils";
 
 import {
   removeNils,
+  validatePropsAreNonEmptyIfStrings,
   validatePropsAreNullOrNonEmptyArrOfNonEmptyStrings,
 } from "../../../../utils";
 import { ValidatedCountriesType, validateCountriesField } from "./countries";
@@ -48,7 +49,7 @@ type ValidatedDBRelease = NullableToOptional<
   parent_releases?: string[];
   jukebox_hole?: true;
   picture_sleeve?: false;
-  speed?: "33RPM";
+  speed?: 33;
 };
 
 export const validateRelease = (
@@ -147,11 +148,25 @@ export const validateRelease = (
 
   if (!validateReleaseSpeed(releaseWithStringArrayFieldsValidated)) {
     return {
-      errors: [`"speed" should be null or a non-empty string`],
+      errors: [`"speed" should be null or a literal 33`],
     };
   }
 
-  releaseWithStringArrayFieldsValidated.speed;
+  const stringPropsValidityCheck = validatePropsAreNonEmptyIfStrings(
+    releaseWithStringArrayFieldsValidated,
+    [
+      "name",
+      "version",
+      "discogs_url",
+      "comment",
+      "condition_problems",
+      "relation_to_queen",
+    ]
+  );
+
+  if (stringPropsValidityCheck !== true) {
+    return stringPropsValidityCheck;
+  }
 
   return removeNils({
     ...releaseWithStringArrayFieldsValidated,
@@ -323,5 +338,5 @@ const validateMatrixRunout = <T extends DBRelease2>(
 
 const validateReleaseSpeed = <T extends DBRelease2>(
   release: T
-): release is T & { speed: "33RPM" | null } =>
-  release.speed === null || release.speed === "33RPM";
+): release is T & { speed: 33 | null } =>
+  release.speed === null || release.speed === 33;
