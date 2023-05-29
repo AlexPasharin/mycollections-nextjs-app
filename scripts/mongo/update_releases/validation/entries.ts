@@ -12,7 +12,7 @@ import {
 } from "../../../../utils";
 import { releaseDateIsValid } from "./release_date";
 
-type ValidatedDBEntry = NullableToOptional<
+export type ValidatedDBEntry = NullableToOptional<
   Omit<DBEntry2, "tags" | "parent_entries">
 > & {
   tags?: NonEmptyStringArray;

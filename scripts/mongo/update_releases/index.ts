@@ -1,6 +1,14 @@
-import { removeNulls } from "../../../mongodb/artists";
-// import { DBEntry2 } from "../../../types/entries";
-import { sortBy } from "ramda";
+import {
+  fromPairs,
+  groupBy,
+  indexBy,
+  map,
+  mapObjIndexed,
+  omit,
+  pipe,
+  sortBy,
+  toPairs,
+} from "ramda";
 import {
   getArtistsNew,
   getEntries,
@@ -9,113 +17,11 @@ import {
   getEntryTypes,
   getLabels,
 } from "../../utils/db";
-import { validateArtist } from "./validation/artists";
-import { validateCountriesField } from "./validation/countries";
-import { validateEntries } from "./validation/entries";
-import { validateRelease } from "./validation/releases";
-
-// import {
-//   fromPairs,
-//   groupBy,
-//   indexBy,
-//   mapObjIndexed,
-//   omit,
-//   prop,
-//   propOr,
-//   sortBy,
-//   toPairs,
-// } from "ramda";
-
-// import { insertReleases } from "../../../mongodb/releases";
-
-// Promise.all([
-//   getArtistsNew(),
-//   getEntries(),
-//   getReleases(),
-//   getEntryTypes(),
-// ]).then(async ([artists, entries, releases, types]) => {
-//   // group entries by artist
-//   const entriesGroupedByArtists = groupBy(
-//     (entry) => entry.artist_id.toString(),
-//     entries
-//   );
-
-//   const releasesGroupedByEntries = groupBy(
-//     (release) => release.entry_id.toString(),
-//     releases
-//   );
-
-//   const entryTypesMap = indexBy(prop("id"), types);
-
-//   const data = artists.reduce<MongoArtist[]>((acc, artist) => {
-//     const entries = entriesGroupedByArtists[artist.id] || [];
-
-//     const enhancedEntries = entries.reduce<DBEntry2[]>((acc, entry) => {
-//       const releases = releasesGroupedByEntries[entry.id];
-
-//       if (!releases) {
-//         return acc;
-//       }
-
-//       return [
-//         ...acc,
-//         {
-//           ...removeNulls(entry),
-//           releases: sortBy(
-//             propOr("2999", "release_date"),
-//             releases.map((release) => ({
-//               ...removeNulls(omit(["entry_id"], release)),
-//               name: release.name || undefined,
-//               part_of_queen_collection:
-//                 release.part_of_queen_collection || undefined,
-//               jukebox_hole: release.jukebox_hole || undefined,
-//               picture_sleeve:
-//                 release.picture_sleeve === false ? false : undefined,
-//             }))
-//           ),
-//         },
-//       ];
-//     }, []);
-
-//     if (!enhancedEntries.length) {
-//       return acc;
-//     }
-
-//     const { id, ...rest } = artist;
-
-//     const enhancedArtist = removeNulls({
-//       ...rest,
-//       _id: id,
-//       entries: mapObjIndexed(
-//         (entries) =>
-//           sortBy(
-//             propOr("2999", "release_date"),
-//             entries.map((e) => ({
-//               ...omit(["type", "artist_id"], e),
-//               part_of_queen_collection: e.part_of_queen_collection || undefined,
-//             }))
-//           ),
-//         groupBy<DBEntry2>(
-//           (entry) => entryTypesMap[entry.type].name,
-//           enhancedEntries
-//         )
-//       ),
-//     });
-
-//     enhancedArtist.entries = fromPairs(
-//       sortBy(prop(0), toPairs(enhancedArtist.entries))
-//     );
-
-//     return [...acc, enhancedArtist];
-//   }, []);
-
-//   const sortedData = sortBy(
-//     (artist) => artist.name_for_sorting || artist.name,
-//     data
-//   );
-
-//   await insertReleases(sortedData);
-// });
+import { ValidatedDBArtist, validateArtist } from "./validation/artists";
+import { validateEntries, ValidatedDBEntry } from "./validation/entries";
+import { ValidatedDBRelease, validateRelease } from "./validation/releases";
+import { DBEntryType } from "../../../types/entries";
+import { writeToJsonFile } from "../../utils";
 
 Promise.all([
   getArtistsNew(),
@@ -123,8 +29,9 @@ Promise.all([
   getReleases(),
   getCountries(),
   getLabels(),
+  getEntryTypes(),
 ])
-  .then(([artists, entries, releases, countries, labels]) => {
+  .then(async ([artists, entries, releases, countries, labels, entryTypes]) => {
     const artistIDsSet = new Set(artists.map((a) => a.id));
 
     let validatedArtists = artists.map((a) => {
@@ -202,53 +109,97 @@ Promise.all([
       return validatedRelease;
     });
 
-    // const catNumbersShapes = new Set(
-    //   releases.map((r) => {
-    //     const { cat_numbers, id } = r;
-    //     if (Array.isArray(cat_numbers)) {
-    //       console.log(id);
-    //       return "array";
-    //     }
-
-    //     if (cat_numbers === null) {
-    //       return "null";
-    //     }
-
-    //     if (typeof cat_numbers === "object") {
-    //       return Object.keys(cat_numbers).sort().join(", ");
-    //     }
-
-    //     return typeof cat_numbers;
-    //   })
-    // );
-
-    // console.log(catNumbersShapes);
-
-    // const catNumbersArrShapes = new Set(
-    //   releases
-    //     .map(({ cat_numbers }) => cat_numbers)
-    //     .filter((cat_numbers) => Array.isArray(cat_numbers))
-    //     .map((cat_numbers) => {
-    //       return (cat_numbers as any[])
-    //         .map((c) => {
-    //           if (c === null) {
-    //             return "null";
-    //           }
-
-    //           if (typeof c === "object") {
-    //             return Object.keys(c).sort().join(", ");
-    //           }
-
-    //           return typeof c;
-    //         })
-    //         .join("::");
-    //     })
-    // );
-
-    // console.log(catNumbersArrShapes);
-
     console.log(`Releases validated successfully`);
+
+    const entriesGroupedByArtist = groupBy(
+      (e) => e.artist_id,
+      validatedEntries
+    );
+
+    const releasesGroupedByEntries = groupBy(
+      (r) => r.entry_id,
+      validatedReleases
+    );
+
+    const typesMap = mapObjIndexed(
+      (type: DBEntryType) => type.name,
+      indexBy((type) => type.id.toString(), entryTypes)
+    );
+
+    type EnhancedEntry = ValidatedDBEntry & {
+      releases?: Omit<ValidatedDBRelease, "entry_id">[];
+    };
+
+    type MongoEntry = Omit<EnhancedEntry, "artist_id" | "type">;
+
+    type MongoArtist = ValidatedDBArtist & {
+      entries?: { [index: string]: MongoEntry[] };
+    };
+
+    const enhancedArtists: MongoArtist[] = validatedArtists.map((artist) => {
+      let artistEntries: EnhancedEntry[] | undefined =
+        entriesGroupedByArtist[artist.id];
+
+      if (!artistEntries) {
+        return artist;
+      }
+
+      artistEntries = artistEntries.map((e) => {
+        const entryReleases = releasesGroupedByEntries[e.id];
+
+        return entryReleases
+          ? {
+              ...e,
+              releases: sortByReleaseDate(
+                entryReleases.map((r) => omit(["entry_id"], r))
+              ),
+            }
+          : e;
+      });
+
+      const artistEntriesGroupedByType = pipe(
+        groupBy((e) => e.type.toString()),
+        toPairs<EnhancedEntry[]>,
+        sortBy(([type]) => Number(type)),
+        map<[string, EnhancedEntry[]], [string, MongoEntry[]]>(
+          ([type, entries]) => [
+            typesMap[type],
+            sortByReleaseDate(
+              entries.map((e) => omit(["artist_id", "type"], e))
+            ),
+          ]
+        ),
+        fromPairs
+      )(artistEntries);
+
+      return {
+        ...artist,
+        entries: artistEntriesGroupedByType,
+      };
+    });
+
+    await writeToJsonFile(enhancedArtists, "enhanced_artists", {
+      includeDebugCopy: false,
+      compress: false,
+    });
   })
   .catch((e) => {
     console.error(e);
   });
+
+const sortByReleaseDate = <T extends { release_date?: string }>(entries: T[]) =>
+  sortBy(({ release_date }) => {
+    if (!release_date) {
+      return "2999";
+    }
+
+    const dateMatch = release_date.match(
+      /^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?$/
+    )!; // we use this function only for values of release_date that confirm to this regex
+
+    const year = dateMatch[1];
+    const month = dateMatch[2] || "12";
+    const day = dateMatch[3] || "31";
+
+    return `${year}-${month}-${day}`;
+  }, entries);

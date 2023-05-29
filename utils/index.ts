@@ -16,6 +16,7 @@ export const removeNils = <T>(obj: T): NullableToOptional<T> =>
   pickBy<T, NullableToOptional<T>>(complement(isNil), obj);
 
 // validate if a given object's "unknown" typed property specified by a given key is actually null or a non-empty array of non-empty strings
+// white spaces in the beginning or the end of any string are not allowed either
 const validatePropIsNullOrNonEmptyArrOfNonEmptyStrings = <
   U extends string,
   T extends { [key in U]: unknown }
@@ -30,7 +31,7 @@ const validatePropIsNullOrNonEmptyArrOfNonEmptyStrings = <
     ? obj
     : {
         errors: [
-          `"${key}" field must be null or a non-empty array of non-empty strings`,
+          `"${key}" field must be null or a non-empty array of non-empty strings, also white spaces in the beginning or the end are not allowed`,
         ],
       };
 };
@@ -68,7 +69,9 @@ export const objPropIsNullOrNonEmptyArrOfNonEmptyStrings = <
     val === null ||
     (Array.isArray(val) &&
       val.length > 0 &&
-      val.every((el) => typeof el === "string" && el.length > 0))
+      val.every(
+        (el) => typeof el === "string" && el.length > 0 && el.trim() === el
+      ))
   );
 };
 
@@ -99,7 +102,11 @@ const validatePropIsNonEmptyIfString = <
 ): Result<true> => {
   const val = obj[key];
 
-  return typeof val === "string" && !val
-    ? { errors: [`"${key}" cannot be an empty string`] }
+  return typeof val === "string" && (!val || val.trim() !== val)
+    ? {
+        errors: [
+          `"${key}" cannot be an empty string or containg empty spaces in the beginning or the end`,
+        ],
+      }
     : true;
 };

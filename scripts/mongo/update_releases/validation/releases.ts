@@ -30,7 +30,7 @@ type ValidCatNumbersObject =
 
 type ValidatedCatNumbers = ValidCatNumbersObject | ValidCatNumbersObject[];
 
-type ValidatedDBRelease = NullableToOptional<
+export type ValidatedDBRelease = NullableToOptional<
   Omit<
     DBRelease2,
     | "countries"
@@ -71,8 +71,6 @@ export const validateRelease = (
     ...release,
     countries: countriesFieldValidationResult.countries,
   };
-
-  const { countries } = countriesFieldValidationResult;
 
   const releaseDateValidityCheck = releaseDateIsValid(
     releaseWithCountriesFieldValidated.release_date
@@ -161,6 +159,7 @@ export const validateRelease = (
       "comment",
       "condition_problems",
       "relation_to_queen",
+      "release_date",
     ]
   );
 

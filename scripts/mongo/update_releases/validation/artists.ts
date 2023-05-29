@@ -11,7 +11,7 @@ import {
   validatePropsAreNonEmptyIfStrings,
 } from "../../../../utils";
 
-type ValidatedDBArtist = NullableToOptional<
+export type ValidatedDBArtist = NullableToOptional<
   Omit<DBArtist2, "parent_artists" | "other_names">
 > & {
   parent_artists?: NonEmptyStringArray;
