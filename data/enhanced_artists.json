@@ -1,6 +1,6 @@
 [
   {
-    "id": "2560edc1-5f8a-4046-9575-6d1505580bb1",
+    "_id": "2560edc1-5f8a-4046-9575-6d1505580bb1",
     "name": "ABBA",
     "entries": {
       "Studio Album": [
@@ -30,7 +30,7 @@
     }
   },
   {
-    "id": "12dad3a6-b796-42fc-84d6-41558078aa69",
+    "_id": "12dad3a6-b796-42fc-84d6-41558078aa69",
     "name": "Aerosmith",
     "entries": {
       "Studio Album": [
@@ -101,7 +101,7 @@
     }
   },
   {
-    "id": "d54fc935-b4e3-40cc-ae74-e7cfefee870f",
+    "_id": "d54fc935-b4e3-40cc-ae74-e7cfefee870f",
     "name": "Tori Amos",
     "name_for_sorting": "Amos, Tori",
     "entries": {
@@ -173,12 +173,12 @@
     }
   },
   {
-    "id": "a913fe94-86d1-4cac-b606-f7d88574442e",
+    "_id": "a913fe94-86d1-4cac-b606-f7d88574442e",
     "name": "Benny Andersson",
     "name_for_sorting": "Andersson, Benny"
   },
   {
-    "id": "0807a8e2-0d3f-425b-8e41-d57197a24ed4",
+    "_id": "0807a8e2-0d3f-425b-8e41-d57197a24ed4",
     "name": "Andrew Lloyd Webber And Tim Rice",
     "parent_artists": [
       "59d8c39e-0662-4b74-889b-ef95319cf32d",
@@ -209,7 +209,7 @@
     }
   },
   {
-    "id": "5c579060-58a4-400f-9862-9244c6ab70e6",
+    "_id": "5c579060-58a4-400f-9862-9244c6ab70e6",
     "name": "Fiona Apple",
     "name_for_sorting": "Apple, Fiona",
     "entries": {
@@ -241,7 +241,7 @@
     }
   },
   {
-    "id": "31267e25-5b9f-479a-b4b7-54e99e23a7d3",
+    "_id": "31267e25-5b9f-479a-b4b7-54e99e23a7d3",
     "name": "Artists United For Nature",
     "entries": {
       "Single": [
@@ -272,7 +272,7 @@
     }
   },
   {
-    "id": "8363d96a-cf07-4c0c-859a-3c153becde89",
+    "_id": "8363d96a-cf07-4c0c-859a-3c153becde89",
     "name": "The Beatles",
     "name_for_sorting": "Beatles, The",
     "entries": {
@@ -796,7 +796,7 @@
     }
   },
   {
-    "id": "c7447b26-925e-4545-99d3-62d7a12dd0b8",
+    "_id": "c7447b26-925e-4545-99d3-62d7a12dd0b8",
     "name": "Maurice Bejart",
     "name_for_sorting": "Bejart, Maurice",
     "entries": {
@@ -849,7 +849,7 @@
     }
   },
   {
-    "id": "369f9056-6f96-41b7-a1bd-2844b9acd380",
+    "_id": "369f9056-6f96-41b7-a1bd-2844b9acd380",
     "name": "Benny Andersson, Björn Ulvaeus, Tim Rice",
     "parent_artists": [
       "a913fe94-86d1-4cac-b606-f7d88574442e",
@@ -881,7 +881,7 @@
     }
   },
   {
-    "id": "e0de0b61-e621-40a3-8e13-a95ec3822c20",
+    "_id": "e0de0b61-e621-40a3-8e13-a95ec3822c20",
     "name": "Leonard Bernstein",
     "name_for_sorting": "Bernstein, Leonard",
     "entries": {
@@ -911,7 +911,7 @@
     }
   },
   {
-    "id": "9814156f-b81f-44c6-8d6a-614acb201777",
+    "_id": "9814156f-b81f-44c6-8d6a-614acb201777",
     "name": "Björk",
     "entries": {
       "Studio Album": [
@@ -938,7 +938,7 @@
     }
   },
   {
-    "id": "93f6bee8-9948-41e1-8025-c57f5ae865a4",
+    "_id": "93f6bee8-9948-41e1-8025-c57f5ae865a4",
     "name": "Blondie",
     "entries": {
       "Studio Album": [
@@ -969,7 +969,7 @@
     }
   },
   {
-    "id": "538aea95-383d-461e-8771-5da773f252cd",
+    "_id": "538aea95-383d-461e-8771-5da773f252cd",
     "name": "Blossom",
     "other_names": [
       "Blümchen"
@@ -1002,7 +1002,7 @@
     }
   },
   {
-    "id": "77b1128c-154a-4aa9-b762-70bd6166849a",
+    "_id": "77b1128c-154a-4aa9-b762-70bd6166849a",
     "name": "Blur",
     "entries": {
       "Studio Album": [
@@ -1101,7 +1101,7 @@
     }
   },
   {
-    "id": "baafc3df-403d-42f0-bac9-5c3d262beab8",
+    "_id": "baafc3df-403d-42f0-bac9-5c3d262beab8",
     "name": "The Body",
     "name_for_sorting": "Body, The",
     "entries": {
@@ -1130,7 +1130,7 @@
     }
   },
   {
-    "id": "402c5be8-b032-49e2-9866-b07243899fe7",
+    "_id": "402c5be8-b032-49e2-9866-b07243899fe7",
     "name": "Bon Jovi",
     "entries": {
       "Studio Album": [
@@ -1160,7 +1160,7 @@
     }
   },
   {
-    "id": "85b7df98-ab5f-43c9-9359-fee10f2247cc",
+    "_id": "85b7df98-ab5f-43c9-9359-fee10f2247cc",
     "name": "Tracy Bonham",
     "name_for_sorting": "Bonham, Tracy",
     "entries": {
@@ -1212,7 +1212,7 @@
     }
   },
   {
-    "id": "e54826ce-fe39-4a04-903e-6a14d2bd958b",
+    "_id": "e54826ce-fe39-4a04-903e-6a14d2bd958b",
     "name": "David Bowie",
     "name_for_sorting": "Bowie, David",
     "entries": {
@@ -1845,7 +1845,7 @@
     }
   },
   {
-    "id": "6e10cb75-0815-406f-a3cf-88cc2be4c6ee",
+    "_id": "6e10cb75-0815-406f-a3cf-88cc2be4c6ee",
     "name": "The Braids",
     "name_for_sorting": "Braids, The",
     "entries": {
@@ -1876,7 +1876,7 @@
     }
   },
   {
-    "id": "b01a4323-0cc2-4596-8e3b-0c0b4d680250",
+    "_id": "b01a4323-0cc2-4596-8e3b-0c0b4d680250",
     "name": "Jon Brewer",
     "name_for_sorting": "Brewer, Jon",
     "entries": {
@@ -1906,7 +1906,7 @@
     }
   },
   {
-    "id": "ee621ea9-6773-4a9b-9c19-1a6a3564e7a2",
+    "_id": "ee621ea9-6773-4a9b-9c19-1a6a3564e7a2",
     "name": "Brian May & Czech National Symphony Orchestra",
     "parent_artists": [
       "16d591da-df9e-400f-b750-c54f9d9aca89",
@@ -1914,7 +1914,7 @@
     ]
   },
   {
-    "id": "a4061933-e7da-46b3-93b5-b116cef062d3",
+    "_id": "a4061933-e7da-46b3-93b5-b116cef062d3",
     "name": "The Brian May Band",
     "name_for_sorting": "Brian May Band, The",
     "parent_artists": [
@@ -1922,7 +1922,7 @@
     ]
   },
   {
-    "id": "16aee6f4-c978-4772-aee3-cc2767ceb932",
+    "_id": "16aee6f4-c978-4772-aee3-cc2767ceb932",
     "name": "Brian May with Cozy Powell",
     "parent_artists": [
       "16d591da-df9e-400f-b750-c54f9d9aca89",
@@ -1930,14 +1930,14 @@
     ]
   },
   {
-    "id": "2065454b-a285-4924-93fe-daffc2e32aff",
+    "_id": "2065454b-a285-4924-93fe-daffc2e32aff",
     "name": "Brian May+Friends",
     "parent_artists": [
       "16d591da-df9e-400f-b750-c54f9d9aca89"
     ]
   },
   {
-    "id": "1487684e-24a3-4f4e-9029-7bef1e6fcc07",
+    "_id": "1487684e-24a3-4f4e-9029-7bef1e6fcc07",
     "name": "Sarah Brightman",
     "name_for_sorting": "Brightman, Sarah",
     "entries": {
@@ -1968,12 +1968,12 @@
     }
   },
   {
-    "id": "59310be1-60a9-4da7-9e22-34a09204dbba",
+    "_id": "59310be1-60a9-4da7-9e22-34a09204dbba",
     "name": "Montserrat Caballé",
     "name_for_sorting": "Caballé, Montserrat"
   },
   {
-    "id": "ec30177c-5723-4379-a1b9-8cd538d93644",
+    "_id": "ec30177c-5723-4379-a1b9-8cd538d93644",
     "name": "Captain Jack",
     "entries": {
       "Single": [
@@ -2003,7 +2003,7 @@
     }
   },
   {
-    "id": "dd4a8e6a-d7b8-4067-b69b-ece4a7902ae8",
+    "_id": "dd4a8e6a-d7b8-4067-b69b-ece4a7902ae8",
     "name": "Carmine Appice's Guitar Zeus",
     "entries": {
       "Studio Album": [
@@ -2034,7 +2034,7 @@
     }
   },
   {
-    "id": "3bb70c91-a3fd-49e0-b56d-711bd76f0c53",
+    "_id": "3bb70c91-a3fd-49e0-b56d-711bd76f0c53",
     "name": "Tracy Chapman",
     "name_for_sorting": "Chapman, Tracy",
     "entries": {
@@ -2065,7 +2065,7 @@
     }
   },
   {
-    "id": "8c54451c-03b9-4805-be82-98ad121e4cc1",
+    "_id": "8c54451c-03b9-4805-be82-98ad121e4cc1",
     "name": "The Cranberries",
     "name_for_sorting": "Cranberries, The",
     "entries": {
@@ -2094,7 +2094,7 @@
     }
   },
   {
-    "id": "8365fa80-6d64-491a-83c1-ab521c39e1d2",
+    "_id": "8365fa80-6d64-491a-83c1-ab521c39e1d2",
     "name": "The Cross",
     "name_for_sorting": "Cross, The",
     "entries": {
@@ -2605,7 +2605,7 @@
     }
   },
   {
-    "id": "0a82697f-1843-4653-aaa4-8c515299df3d",
+    "_id": "0a82697f-1843-4653-aaa4-8c515299df3d",
     "name": "Sheryl Crow",
     "name_for_sorting": "Crow, Sheryl",
     "entries": {
@@ -2667,11 +2667,11 @@
     }
   },
   {
-    "id": "8938cf0a-154f-4950-bf60-1ca85a055e32",
+    "_id": "8938cf0a-154f-4950-bf60-1ca85a055e32",
     "name": "Czech National Symphony Orchestra"
   },
   {
-    "id": "9f4a6e99-61f3-4479-9918-9234cdf366d8",
+    "_id": "9f4a6e99-61f3-4479-9918-9234cdf366d8",
     "name": "Roger Daltrey",
     "name_for_sorting": "Daltrey, Roger",
     "entries": {
@@ -2726,7 +2726,7 @@
     }
   },
   {
-    "id": "a5dcaf9f-9caa-4e53-b868-f34773116596",
+    "_id": "a5dcaf9f-9caa-4e53-b868-f34773116596",
     "name": "The Dave Brubeck Quartet",
     "name_for_sorting": "Dave Brubeck Quartet, The",
     "entries": {
@@ -2757,7 +2757,7 @@
     }
   },
   {
-    "id": "20835ed7-2ebf-4540-872a-09d5d56e8131",
+    "_id": "20835ed7-2ebf-4540-872a-09d5d56e8131",
     "name": "Dave Matthews Band",
     "entries": {
       "Single": [
@@ -2787,7 +2787,7 @@
     }
   },
   {
-    "id": "8ff22579-d61f-4a2a-b127-922b8610dcce",
+    "_id": "8ff22579-d61f-4a2a-b127-922b8610dcce",
     "name": "David Bowie / Trevor Jones",
     "parent_artists": [
       "e54826ce-fe39-4a04-903e-6a14d2bd958b",
@@ -2820,12 +2820,12 @@
     }
   },
   {
-    "id": "ee575ca5-eede-4f63-bf82-3dd92ef1f9ee",
+    "_id": "ee575ca5-eede-4f63-bf82-3dd92ef1f9ee",
     "name": "John Deacon",
     "name_for_sorting": "Deacon, John"
   },
   {
-    "id": "ed00fa82-a277-4d36-a7a8-e729d9b9b6d1",
+    "_id": "ed00fa82-a277-4d36-a7a8-e729d9b9b6d1",
     "name": "Def Leppard",
     "entries": {
       "EP": [
@@ -2857,7 +2857,7 @@
     }
   },
   {
-    "id": "ee9667c9-bb86-404d-b160-6ad2e162fd75",
+    "_id": "ee9667c9-bb86-404d-b160-6ad2e162fd75",
     "name": "Dennis Wilson, Taylor Hawkins, Brian May and Roger Taylor",
     "parent_artists": [
       "ebd27629-a1c2-4438-9502-fd94c3b58cdb",
@@ -2893,7 +2893,7 @@
     }
   },
   {
-    "id": "6b951420-8156-4a8d-a961-7839da3ba859",
+    "_id": "6b951420-8156-4a8d-a961-7839da3ba859",
     "name": "Dire Straits",
     "entries": {
       "Studio Album": [
@@ -2969,7 +2969,7 @@
     }
   },
   {
-    "id": "42805940-19fd-48a6-8255-67fc8cfb0fc4",
+    "_id": "42805940-19fd-48a6-8255-67fc8cfb0fc4",
     "name": "Don Johnson Big Band",
     "entries": {
       "Studio Album": [
@@ -3067,7 +3067,7 @@
     }
   },
   {
-    "id": "3e829a92-04fa-4290-a41f-d443d1b1c9bc",
+    "_id": "3e829a92-04fa-4290-a41f-d443d1b1c9bc",
     "name": "The Doors",
     "name_for_sorting": "Doors, The",
     "entries": {
@@ -3157,7 +3157,7 @@
     }
   },
   {
-    "id": "2535726d-3bea-4d29-b680-a682deca509a",
+    "_id": "2535726d-3bea-4d29-b680-a682deca509a",
     "name": "Dream Theater",
     "entries": {
       "EP": [
@@ -3187,7 +3187,7 @@
     }
   },
   {
-    "id": "f8bda606-efa2-45a5-8793-eb800831739a",
+    "_id": "f8bda606-efa2-45a5-8793-eb800831739a",
     "name": "Dune",
     "entries": {
       "Single": [
@@ -3217,12 +3217,12 @@
     }
   },
   {
-    "id": "28c95542-750a-4cf5-8c59-b2085397d5ad",
+    "_id": "28c95542-750a-4cf5-8c59-b2085397d5ad",
     "name": "Kerry Ellis",
     "name_for_sorting": "Ellis, Kerry"
   },
   {
-    "id": "cc7d9da9-00cf-403b-b24b-c2eeba746aa3",
+    "_id": "cc7d9da9-00cf-403b-b24b-c2eeba746aa3",
     "name": "Eminem",
     "entries": {
       "Studio Album": [
@@ -3252,7 +3252,7 @@
     }
   },
   {
-    "id": "48cbecf0-5174-4585-b8c5-f3885b1cf8a8",
+    "_id": "48cbecf0-5174-4585-b8c5-f3885b1cf8a8",
     "name": "Everlast",
     "entries": {
       "Studio Album": [
@@ -3282,7 +3282,7 @@
     }
   },
   {
-    "id": "cae05de9-0c1f-46a7-bc13-1518fdf06aa0",
+    "_id": "cae05de9-0c1f-46a7-bc13-1518fdf06aa0",
     "name": "Ex-it",
     "entries": {
       "Single": [
@@ -3312,7 +3312,7 @@
     }
   },
   {
-    "id": "18c9ffff-d789-4e48-8008-290aa6084afe",
+    "_id": "18c9ffff-d789-4e48-8008-290aa6084afe",
     "name": "Extreme",
     "entries": {
       "Studio Album": [
@@ -3442,7 +3442,7 @@
     }
   },
   {
-    "id": "aaff2391-ca25-4590-b708-733c294e3d6b",
+    "_id": "aaff2391-ca25-4590-b708-733c294e3d6b",
     "name": "Faith No More",
     "entries": {
       "Studio Album": [
@@ -3494,14 +3494,14 @@
     }
   },
   {
-    "id": "586bbc86-aeb2-4646-a506-4bc69a2e7eb1",
+    "_id": "586bbc86-aeb2-4646-a506-4bc69a2e7eb1",
     "name": "Felix and Arty",
     "parent_artists": [
       "e2b04a43-d9fa-4378-b47f-97a2b4a07f5f"
     ]
   },
   {
-    "id": "4caf390b-118d-41ec-8e9a-e53204cbd4a1",
+    "_id": "4caf390b-118d-41ec-8e9a-e53204cbd4a1",
     "name": "Five",
     "entries": {
       "Studio Album": [
@@ -3579,7 +3579,7 @@
     }
   },
   {
-    "id": "68cbaa81-1835-4396-9254-ba2f4408ea6c",
+    "_id": "68cbaa81-1835-4396-9254-ba2f4408ea6c",
     "name": "Five + Queen",
     "parent_artists": [
       "4caf390b-118d-41ec-8e9a-e53204cbd4a1",
@@ -3613,7 +3613,7 @@
     }
   },
   {
-    "id": "78e2dce4-2767-4897-b790-29d13c1b8468",
+    "_id": "78e2dce4-2767-4897-b790-29d13c1b8468",
     "name": "Foo Fighters",
     "entries": {
       "Studio Album": [
@@ -3875,7 +3875,7 @@
     }
   },
   {
-    "id": "9efe821b-33c7-4a20-b174-7872236d8995",
+    "_id": "9efe821b-33c7-4a20-b174-7872236d8995",
     "name": "Fork",
     "entries": {
       "Live Album": [
@@ -3929,7 +3929,7 @@
     }
   },
   {
-    "id": "6b68702d-b1d2-4701-86ac-ddcea2238f61",
+    "_id": "6b68702d-b1d2-4701-86ac-ddcea2238f61",
     "name": "Freddie Mercury & Montserrat Caballé",
     "parent_artists": [
       "f03a8461-275f-4646-ac47-799ada927e72",
@@ -3937,7 +3937,7 @@
     ]
   },
   {
-    "id": "85963ea8-6fc4-4801-ba63-f09ac8d5e245",
+    "_id": "85963ea8-6fc4-4801-ba63-f09ac8d5e245",
     "name": "Freddie Mercury, Stuart Leathem & Esther Trousdale",
     "parent_artists": [
       "f03a8461-275f-4646-ac47-799ada927e72",
@@ -3988,11 +3988,11 @@
     }
   },
   {
-    "id": "e07da364-1ce4-4f41-9a0a-91bf62d54954",
+    "_id": "e07da364-1ce4-4f41-9a0a-91bf62d54954",
     "name": "Free"
   },
   {
-    "id": "81be0e57-493d-4148-a6e1-fd492c865742",
+    "_id": "81be0e57-493d-4148-a6e1-fd492c865742",
     "name": "Peter Gabriel",
     "name_for_sorting": "Gabriel, Peter",
     "entries": {
@@ -4020,7 +4020,7 @@
     }
   },
   {
-    "id": "94aaf2ac-7e5e-4307-b676-936f011975a8",
+    "_id": "94aaf2ac-7e5e-4307-b676-936f011975a8",
     "name": "Garbage",
     "entries": {
       "Studio Album": [
@@ -4069,7 +4069,7 @@
     }
   },
   {
-    "id": "b9c217a6-c45c-45bc-8fd6-fe7f1b7817bf",
+    "_id": "b9c217a6-c45c-45bc-8fd6-fe7f1b7817bf",
     "name": "Bob Geldof",
     "name_for_sorting": "Geldof, Bob",
     "entries": {
@@ -4123,7 +4123,7 @@
     }
   },
   {
-    "id": "0517f1e5-1505-44a0-806f-2dc3d25b972d",
+    "_id": "0517f1e5-1505-44a0-806f-2dc3d25b972d",
     "name": "Genesis",
     "entries": {
       "Studio Album": [
@@ -4207,7 +4207,7 @@
     }
   },
   {
-    "id": "599de7ed-4a0d-4d2b-9884-f5f7e9b5502f",
+    "_id": "599de7ed-4a0d-4d2b-9884-f5f7e9b5502f",
     "name": "George Michael And Queen",
     "parent_artists": [
       "18ce7691-37b5-407e-92c8-875b81c41bf0",
@@ -4241,7 +4241,7 @@
     }
   },
   {
-    "id": "7c1a8409-2bf9-4f2e-851a-f9504bdd7390",
+    "_id": "7c1a8409-2bf9-4f2e-851a-f9504bdd7390",
     "name": "George Michael and Queen with Lisa Stansfield",
     "parent_artists": [
       "18ce7691-37b5-407e-92c8-875b81c41bf0",
@@ -4250,7 +4250,7 @@
     ]
   },
   {
-    "id": "fc3039a4-432e-469d-9dd5-929d3474b7fe",
+    "_id": "fc3039a4-432e-469d-9dd5-929d3474b7fe",
     "name": "Glee Cast",
     "entries": {
       "Soundtrack Album": [
@@ -4574,7 +4574,7 @@
     }
   },
   {
-    "id": "610d3e5e-7c18-4cf4-a367-2378aba926d0",
+    "_id": "610d3e5e-7c18-4cf4-a367-2378aba926d0",
     "name": "Gnarls Barkley",
     "entries": {
       "Single": [
@@ -4602,7 +4602,7 @@
     }
   },
   {
-    "id": "25980821-77b9-4933-87f7-e1870cc8a2f1",
+    "_id": "25980821-77b9-4933-87f7-e1870cc8a2f1",
     "name": "Goon",
     "entries": {
       "Studio Album": [
@@ -4629,7 +4629,7 @@
     }
   },
   {
-    "id": "1f59fed2-0a02-459e-b84e-cc1030050708",
+    "_id": "1f59fed2-0a02-459e-b84e-cc1030050708",
     "name": "Green Day",
     "entries": {
       "Studio Album": [
@@ -4656,7 +4656,7 @@
     }
   },
   {
-    "id": "200e5857-a199-491b-a8f5-20e3cea204ff",
+    "_id": "200e5857-a199-491b-a8f5-20e3cea204ff",
     "name": "Guns N' Roses",
     "entries": {
       "Studio Album": [
@@ -4880,7 +4880,7 @@
     }
   },
   {
-    "id": "c3b7f17a-46bd-4aca-b480-2888e5674bdc",
+    "_id": "c3b7f17a-46bd-4aca-b480-2888e5674bdc",
     "name": "Hank Marvin feat. Brian May",
     "parent_artists": [
       "78f66e62-40af-48eb-85de-3483700c466f",
@@ -4888,7 +4888,7 @@
     ]
   },
   {
-    "id": "a25eecdc-58d8-4ff2-a88e-049cc951de14",
+    "_id": "a25eecdc-58d8-4ff2-a88e-049cc951de14",
     "name": "Hanzina",
     "entries": {
       "Studio Album": [
@@ -4901,12 +4901,12 @@
     }
   },
   {
-    "id": "a0f78dd3-5f68-478d-b37c-346278f6c4ed",
+    "_id": "a0f78dd3-5f68-478d-b37c-346278f6c4ed",
     "name": "Taylor Hawkins",
     "name_for_sorting": "Hawkins, Taylor"
   },
   {
-    "id": "7fd4a5b6-8c6b-4722-9e4c-2e51fc81ab3b",
+    "_id": "7fd4a5b6-8c6b-4722-9e4c-2e51fc81ab3b",
     "name": "Brian Helgeland",
     "name_for_sorting": "Helgeland, Brian",
     "entries": {
@@ -4936,7 +4936,7 @@
     }
   },
   {
-    "id": "4cd74cd7-9a85-4513-96a1-cd6a3ec045d2",
+    "_id": "4cd74cd7-9a85-4513-96a1-cd6a3ec045d2",
     "name": "John Hough",
     "name_for_sorting": "Hough, John",
     "entries": {
@@ -4965,7 +4965,7 @@
     }
   },
   {
-    "id": "aaf6f0ea-4389-47e4-8190-e853d522d80f",
+    "_id": "aaf6f0ea-4389-47e4-8190-e853d522d80f",
     "name": "Ian Hunter",
     "name_for_sorting": "Hunter, Ian",
     "entries": {
@@ -5010,7 +5010,7 @@
     }
   },
   {
-    "id": "bdda5588-7200-4154-8940-a2e242215e7d",
+    "_id": "bdda5588-7200-4154-8940-a2e242215e7d",
     "name": "INXS",
     "entries": {
       "Studio Album": [
@@ -5112,7 +5112,7 @@
     }
   },
   {
-    "id": "0737f135-70c3-441a-a725-4af2208af3dc",
+    "_id": "0737f135-70c3-441a-a725-4af2208af3dc",
     "name": "The Immortals",
     "name_for_sorting": "Immortals, The",
     "entries": {
@@ -5144,7 +5144,7 @@
     }
   },
   {
-    "id": "ff9c8085-1ccc-45ff-ac45-bf1fb773e27a",
+    "_id": "ff9c8085-1ccc-45ff-ac45-bf1fb773e27a",
     "name": "Iommi",
     "entries": {
       "Studio Album": [
@@ -5197,7 +5197,7 @@
     }
   },
   {
-    "id": "7b442df3-1e90-4a43-acab-fec00bb3c0b5",
+    "_id": "7b442df3-1e90-4a43-acab-fec00bb3c0b5",
     "name": "J. Karjalainen Electric Sauna",
     "entries": {
       "Studio Album": [
@@ -5224,7 +5224,7 @@
     }
   },
   {
-    "id": "ccc035b4-651b-4797-8788-25f460e14074",
+    "_id": "ccc035b4-651b-4797-8788-25f460e14074",
     "name": "Michael Jackson",
     "name_for_sorting": "Jackson, Michael",
     "entries": {
@@ -5436,7 +5436,7 @@
     }
   },
   {
-    "id": "9e475f7d-e982-4c67-95b9-76645e38af9a",
+    "_id": "9e475f7d-e982-4c67-95b9-76645e38af9a",
     "name": "Jacques Loussier Trio",
     "entries": {
       "Studio Album": [
@@ -5458,12 +5458,12 @@
     }
   },
   {
-    "id": "00c840d1-987c-44bf-918c-2ee07df1e4ab",
+    "_id": "00c840d1-987c-44bf-918c-2ee07df1e4ab",
     "name": "Wyclef Jean",
     "name_for_sorting": "Jean, Wyclef"
   },
   {
-    "id": "1eee465f-114c-4f1a-b66d-0b3196c4c9da",
+    "_id": "1eee465f-114c-4f1a-b66d-0b3196c4c9da",
     "name": "Jewel",
     "entries": {
       "Single": [
@@ -5491,7 +5491,7 @@
     }
   },
   {
-    "id": "b32c655b-3463-4b35-af90-8903dde2a8c6",
+    "_id": "b32c655b-3463-4b35-af90-8903dde2a8c6",
     "name": "The Jimi Hendrix Experience",
     "name_for_sorting": "Jimi Hendrix Experience, The",
     "entries": {
@@ -5525,7 +5525,7 @@
     }
   },
   {
-    "id": "2518115a-106c-47e4-8d2f-473b4b0d61c4",
+    "_id": "2518115a-106c-47e4-8d2f-473b4b0d61c4",
     "name": "Elton John",
     "name_for_sorting": "John, Elton",
     "entries": {
@@ -5646,7 +5646,7 @@
     }
   },
   {
-    "id": "b975d080-a073-4871-a9bc-45dc6d6f3267",
+    "_id": "b975d080-a073-4871-a9bc-45dc6d6f3267",
     "name": "Holly Johnson",
     "name_for_sorting": "Johnson, Holly",
     "entries": {
@@ -5691,12 +5691,12 @@
     }
   },
   {
-    "id": "33429209-f4cb-4754-8fbe-2bf787847511",
+    "_id": "33429209-f4cb-4754-8fbe-2bf787847511",
     "name": "Trevor Jones",
     "name_for_sorting": "Jones, Trevor"
   },
   {
-    "id": "2336107b-f4c7-4146-8b5f-2b16e5ca0666",
+    "_id": "2336107b-f4c7-4146-8b5f-2b16e5ca0666",
     "name": "Judas Priest",
     "entries": {
       "Studio Album": [
@@ -5749,7 +5749,7 @@
     }
   },
   {
-    "id": "5098139c-f2de-43e6-9b0e-ec5c796cc9ad",
+    "_id": "5098139c-f2de-43e6-9b0e-ec5c796cc9ad",
     "name": "K's Choice",
     "entries": {
       "Studio Album": [
@@ -5820,12 +5820,12 @@
     }
   },
   {
-    "id": "4af82c16-f4e4-4091-a7b5-e12f5c432ff3",
+    "_id": "4af82c16-f4e4-4091-a7b5-e12f5c432ff3",
     "name": "Michael Kamen",
     "name_for_sorting": "Kamen, Michael"
   },
   {
-    "id": "c1bab1b4-55b3-4ec6-898d-800b58b61b4b",
+    "_id": "c1bab1b4-55b3-4ec6-898d-800b58b61b4b",
     "name": "Kemopetrol",
     "entries": {
       "Studio Album": [
@@ -5853,7 +5853,7 @@
     }
   },
   {
-    "id": "4d7e8320-5248-4166-b798-30f5a7118ad8",
+    "_id": "4d7e8320-5248-4166-b798-30f5a7118ad8",
     "name": "Kerry Ellis & Brian May",
     "parent_artists": [
       "28c95542-750a-4cf5-8c59-b2085397d5ad",
@@ -5976,7 +5976,7 @@
     }
   },
   {
-    "id": "1a978442-5681-442d-862e-57dc54add675",
+    "_id": "1a978442-5681-442d-862e-57dc54add675",
     "name": "Kingston Wall",
     "entries": {
       "Studio Album": [
@@ -6044,7 +6044,7 @@
     }
   },
   {
-    "id": "d07373a5-1edf-40e9-b104-aa307ccfe626",
+    "_id": "d07373a5-1edf-40e9-b104-aa307ccfe626",
     "name": "Kula Shaker",
     "entries": {
       "Studio Album": [
@@ -6096,7 +6096,7 @@
     }
   },
   {
-    "id": "64c20194-83a6-4450-86cc-f2b239166c59",
+    "_id": "64c20194-83a6-4450-86cc-f2b239166c59",
     "name": "Kwan",
     "entries": {
       "Studio Album": [
@@ -6123,7 +6123,7 @@
     }
   },
   {
-    "id": "cc8f0dcc-a731-4373-963c-2b2d39658c9f",
+    "_id": "cc8f0dcc-a731-4373-963c-2b2d39658c9f",
     "name": "Lady Gaga",
     "entries": {
       "Studio Album": [
@@ -6153,7 +6153,7 @@
     }
   },
   {
-    "id": "f47cc74b-bd78-4a0e-814a-af60ea39f2b3",
+    "_id": "f47cc74b-bd78-4a0e-814a-af60ea39f2b3",
     "name": "Adam Lambert",
     "name_for_sorting": "Lambert, Adam",
     "entries": {
@@ -6184,7 +6184,7 @@
     }
   },
   {
-    "id": "1ca41ae8-ab42-41d7-9271-e526103b28d0",
+    "_id": "1ca41ae8-ab42-41d7-9271-e526103b28d0",
     "name": "Bill Lawrence",
     "name_for_sorting": "Lawrence, Bill",
     "entries": {
@@ -6210,7 +6210,7 @@
     }
   },
   {
-    "id": "8d8df124-c771-4147-bcaf-12401c2d63a9",
+    "_id": "8d8df124-c771-4147-bcaf-12401c2d63a9",
     "name": "Lazarus Original New York Cast, David Bowie",
     "parent_artists": [
       "e54826ce-fe39-4a04-903e-6a14d2bd958b"
@@ -6240,12 +6240,12 @@
     }
   },
   {
-    "id": "15c053fc-df6d-4af9-9c43-2d0737b5c533",
+    "_id": "15c053fc-df6d-4af9-9c43-2d0737b5c533",
     "name": "Stuart Leathem",
     "name_for_sorting": "Leathem, Stuart"
   },
   {
-    "id": "bc42581e-9da8-481a-9bd5-f750b1bd401f",
+    "_id": "bc42581e-9da8-481a-9bd5-f750b1bd401f",
     "name": "Led Zeppelin",
     "entries": {
       "Studio Album": [
@@ -6388,7 +6388,7 @@
     }
   },
   {
-    "id": "2486ca33-0edc-461e-96f4-f7751f24b725",
+    "_id": "2486ca33-0edc-461e-96f4-f7751f24b725",
     "name": "John Lennon",
     "name_for_sorting": "Lennon,John",
     "entries": {
@@ -6421,7 +6421,7 @@
     }
   },
   {
-    "id": "5884b67f-2aab-42fb-a7df-d49c62b02a0a",
+    "_id": "5884b67f-2aab-42fb-a7df-d49c62b02a0a",
     "name": "Live",
     "entries": {
       "Studio Album": [
@@ -6481,7 +6481,7 @@
     }
   },
   {
-    "id": "9102e960-536c-4625-b3e7-d52c68de0748",
+    "_id": "9102e960-536c-4625-b3e7-d52c68de0748",
     "name": "The London Symphony Orchestra",
     "name_for_sorting": "London Symphony Orchestra, The",
     "entries": {
@@ -6513,7 +6513,7 @@
     }
   },
   {
-    "id": "7e2ff38f-6044-49c4-9705-4175fb831f62",
+    "_id": "7e2ff38f-6044-49c4-9705-4175fb831f62",
     "name": "Baz Luhrmann",
     "name_for_sorting": "Luhrmann, Baz",
     "entries": {
@@ -6544,19 +6544,19 @@
     }
   },
   {
-    "id": "8487ae32-28bd-48ce-8ccf-417eb9d08855",
+    "_id": "8487ae32-28bd-48ce-8ccf-417eb9d08855",
     "name": "Larry Lurex",
     "name_for_sorting": "Lurex, Larry"
   },
   {
-    "id": "9f12d15b-d760-4335-abc4-1caf3a12dd11",
+    "_id": "9f12d15b-d760-4335-abc4-1caf3a12dd11",
     "name": "MC SPY-D+Friends",
     "parent_artists": [
       "16d591da-df9e-400f-b750-c54f9d9aca89"
     ]
   },
   {
-    "id": "ceb06fea-4d79-4896-8a0a-f3c19106a905",
+    "_id": "ceb06fea-4d79-4896-8a0a-f3c19106a905",
     "name": "Seth MacFarlane",
     "name_for_sorting": "MacFarlane, Seth",
     "entries": {
@@ -6580,7 +6580,7 @@
     }
   },
   {
-    "id": "3fba5837-4c25-4af8-a670-0de0d3126ca8",
+    "_id": "3fba5837-4c25-4af8-a670-0de0d3126ca8",
     "name": "Madonna",
     "entries": {
       "Compilation Album": [
@@ -6610,7 +6610,7 @@
     }
   },
   {
-    "id": "3ae72136-e161-4be4-95af-a1c5e9d6ba79",
+    "_id": "3ae72136-e161-4be4-95af-a1c5e9d6ba79",
     "name": "Vanessa Mae",
     "name_for_sorting": "Mae, Vanessa",
     "entries": {
@@ -6638,7 +6638,7 @@
     }
   },
   {
-    "id": "938ecbe8-60de-45cb-bbb3-f607d20c73c8",
+    "_id": "938ecbe8-60de-45cb-bbb3-f607d20c73c8",
     "name": "Magic Affair",
     "entries": {
       "Single": [
@@ -6668,7 +6668,7 @@
     }
   },
   {
-    "id": "e6c28f91-fb94-46f8-bde3-254f15fe0196",
+    "_id": "e6c28f91-fb94-46f8-bde3-254f15fe0196",
     "name": "Manic Street Preachers",
     "entries": {
       "Studio Album": [
@@ -6716,7 +6716,7 @@
     }
   },
   {
-    "id": "e8bb913e-75bf-4320-87c8-917190ababc9",
+    "_id": "e8bb913e-75bf-4320-87c8-917190ababc9",
     "name": "Mansun",
     "entries": {
       "Studio Album": [
@@ -6812,7 +6812,7 @@
     }
   },
   {
-    "id": "b45168c4-9615-46b5-8982-d76805cd443a",
+    "_id": "b45168c4-9615-46b5-8982-d76805cd443a",
     "name": "Marilyn Manson",
     "entries": {
       "Studio Album": [
@@ -6839,7 +6839,7 @@
     }
   },
   {
-    "id": "75c15ac9-bc0e-4f82-b4b8-df85fa79c6d1",
+    "_id": "75c15ac9-bc0e-4f82-b4b8-df85fa79c6d1",
     "name": "Maroon 5",
     "entries": {
       "Studio Album": [
@@ -6892,7 +6892,7 @@
     }
   },
   {
-    "id": "78f66e62-40af-48eb-85de-3483700c466f",
+    "_id": "78f66e62-40af-48eb-85de-3483700c466f",
     "name": "Hank Marvin",
     "name_for_sorting": "Marvin, Hank",
     "entries": {
@@ -6950,7 +6950,7 @@
     }
   },
   {
-    "id": "60f6eec0-31cd-4525-aae9-6c810d319231",
+    "_id": "60f6eec0-31cd-4525-aae9-6c810d319231",
     "name": "Massive Attack",
     "entries": {
       "Studio Album": [
@@ -6983,7 +6983,7 @@
     }
   },
   {
-    "id": "16d591da-df9e-400f-b750-c54f9d9aca89",
+    "_id": "16d591da-df9e-400f-b750-c54f9d9aca89",
     "name": "Brian May",
     "name_for_sorting": "May, Brian",
     "entries": {
@@ -7765,7 +7765,7 @@
     }
   },
   {
-    "id": "f03a8461-275f-4646-ac47-799ada927e72",
+    "_id": "f03a8461-275f-4646-ac47-799ada927e72",
     "name": "Freddie Mercury",
     "name_for_sorting": "Mercury, Freddie",
     "entries": {
@@ -8907,7 +8907,7 @@
     }
   },
   {
-    "id": "7867bbdc-0b9b-4a97-b067-94b9d18a6468",
+    "_id": "7867bbdc-0b9b-4a97-b067-94b9d18a6468",
     "name": "Metallica",
     "entries": {
       "Studio Album": [
@@ -9063,7 +9063,7 @@
     }
   },
   {
-    "id": "05848d85-e53c-4eb8-81f5-f54b3ff5575d",
+    "_id": "05848d85-e53c-4eb8-81f5-f54b3ff5575d",
     "name": "Metallica with Michael Kamen conducting The San Francisco Symphony Orchestra",
     "parent_artists": [
       "7867bbdc-0b9b-4a97-b067-94b9d18a6468",
@@ -9072,12 +9072,12 @@
     ]
   },
   {
-    "id": "16ed512a-a05b-42a6-8c85-82639d4aebce",
+    "_id": "16ed512a-a05b-42a6-8c85-82639d4aebce",
     "name": "The Miami Project",
     "name_for_sorting": "Miami Project, The"
   },
   {
-    "id": "18ce7691-37b5-407e-92c8-875b81c41bf0",
+    "_id": "18ce7691-37b5-407e-92c8-875b81c41bf0",
     "name": "George Michael",
     "name_for_sorting": "Michael, George",
     "entries": {
@@ -9160,7 +9160,7 @@
     }
   },
   {
-    "id": "c2349c20-f91d-4153-ad41-b9c801159db3",
+    "_id": "c2349c20-f91d-4153-ad41-b9c801159db3",
     "name": "Moby",
     "entries": {
       "Studio Album": [
@@ -9190,7 +9190,7 @@
     }
   },
   {
-    "id": "a56eaab4-337b-4423-8b51-09261b34f625",
+    "_id": "a56eaab4-337b-4423-8b51-09261b34f625",
     "name": "Alanis Morissette",
     "name_for_sorting": "Morissette, Alanis",
     "entries": {
@@ -9454,7 +9454,7 @@
     }
   },
   {
-    "id": "115d5e36-eaf0-4394-b7c5-33b8df61ba21",
+    "_id": "115d5e36-eaf0-4394-b7c5-33b8df61ba21",
     "name": "Russell Mulcahy",
     "name_for_sorting": "Mulcahy, Russell",
     "entries": {
@@ -9492,7 +9492,7 @@
     }
   },
   {
-    "id": "139942eb-193b-41c0-84cb-601ac5fb060a",
+    "_id": "139942eb-193b-41c0-84cb-601ac5fb060a",
     "name": "Muse",
     "entries": {
       "Studio Album": [
@@ -9828,7 +9828,7 @@
     }
   },
   {
-    "id": "b777e61f-4ed3-4615-8d84-6cbbd77852f6",
+    "_id": "b777e61f-4ed3-4615-8d84-6cbbd77852f6",
     "name": "Musiikkiteatteri Palatsi The Show Must Go On Musical Cast",
     "entries": {
       "Studio Album": [
@@ -9858,7 +9858,7 @@
     }
   },
   {
-    "id": "ea67c1cc-b640-4f26-af22-590e2095917d",
+    "_id": "ea67c1cc-b640-4f26-af22-590e2095917d",
     "name": "Billie Myers",
     "name_for_sorting": "Myers, Billie",
     "entries": {
@@ -9886,20 +9886,7 @@
     }
   },
   {
-    "id": "ab6254fe-17a5-458f-b9a6-0eeb4ba2b086",
-    "name": "Nada Surf",
-    "entries": {
-      "Studio Album": [
-        {
-          "id": "d6252ea6-ca3c-4b0f-9fe1-5ddf86838fa4",
-          "name": "High / Low",
-          "release_date": "1996-06-18"
-        }
-      ]
-    }
-  },
-  {
-    "id": "8655b7d6-45c5-42ec-b696-e60da296ea65",
+    "_id": "8655b7d6-45c5-42ec-b696-e60da296ea65",
     "name": "Jimmy Nail",
     "name_for_sorting": "Nail, Jimmy",
     "entries": {
@@ -9954,7 +9941,7 @@
     }
   },
   {
-    "id": "79ec9f4d-bad0-4228-89f2-7b77068f3ac9",
+    "_id": "79ec9f4d-bad0-4228-89f2-7b77068f3ac9",
     "name": "Neumann",
     "entries": {
       "Compilation Album": [
@@ -9984,7 +9971,7 @@
     }
   },
   {
-    "id": "92772962-e77d-4fa8-9926-0223adba124e",
+    "_id": "92772962-e77d-4fa8-9926-0223adba124e",
     "name": "Nirvana",
     "entries": {
       "Studio Album": [
@@ -10109,7 +10096,7 @@
     }
   },
   {
-    "id": "4dedb232-682c-4359-82d2-662b55879b89",
+    "_id": "4dedb232-682c-4359-82d2-662b55879b89",
     "name": "No Doubt",
     "entries": {
       "Studio Album": [
@@ -10165,7 +10152,7 @@
     }
   },
   {
-    "id": "2a92af24-d4b3-49d3-8076-5938a6eda607",
+    "_id": "2a92af24-d4b3-49d3-8076-5938a6eda607",
     "name": "Oasis",
     "entries": {
       "Studio Album": [
@@ -10651,7 +10638,7 @@
     }
   },
   {
-    "id": "ef51c105-e75c-4bdd-86c8-b202e0434756",
+    "_id": "ef51c105-e75c-4bdd-86c8-b202e0434756",
     "name": "Elaine Paige",
     "name_for_sorting": "Paige, Elaine",
     "entries": {
@@ -10682,7 +10669,7 @@
     }
   },
   {
-    "id": "c8c88819-cc36-450c-9428-de487bde3fcd",
+    "_id": "c8c88819-cc36-450c-9428-de487bde3fcd",
     "name": "Pearl Jam",
     "entries": {
       "Studio Album": [
@@ -10710,7 +10697,7 @@
     }
   },
   {
-    "id": "c7785bfb-0b16-41f6-a6bb-32abf4c00411",
+    "_id": "c7785bfb-0b16-41f6-a6bb-32abf4c00411",
     "name": "Peeping Tom",
     "entries": {
       "Studio Album": [
@@ -10738,7 +10725,7 @@
     }
   },
   {
-    "id": "9cb30531-c0aa-419f-8a05-6c46463ec32a",
+    "_id": "9cb30531-c0aa-419f-8a05-6c46463ec32a",
     "name": "Pikku Kukka",
     "entries": {
       "Studio Album": [
@@ -10751,7 +10738,7 @@
     }
   },
   {
-    "id": "6e3965d4-5610-486b-99df-6fb5324c9437",
+    "_id": "6e3965d4-5610-486b-99df-6fb5324c9437",
     "name": "Pink Floyd",
     "entries": {
       "Studio Album": [
@@ -10935,7 +10922,7 @@
     }
   },
   {
-    "id": "95f9c2b6-7062-4dd9-a097-702900e89d2c",
+    "_id": "95f9c2b6-7062-4dd9-a097-702900e89d2c",
     "name": "Placebo",
     "entries": {
       "Studio Album": [
@@ -11155,7 +11142,7 @@
     }
   },
   {
-    "id": "bc34b0bc-79e8-431d-adb5-9e4fbe0f91c9",
+    "_id": "bc34b0bc-79e8-431d-adb5-9e4fbe0f91c9",
     "name": "Porcupine Tree",
     "entries": {
       "Studio Album": [
@@ -11222,7 +11209,7 @@
     }
   },
   {
-    "id": "87936cb5-b01f-47b3-baca-6aa2203e39d9",
+    "_id": "87936cb5-b01f-47b3-baca-6aa2203e39d9",
     "name": "Cozy Powell",
     "name_for_sorting": "Powell, Cozy",
     "entries": {
@@ -11253,11 +11240,11 @@
     }
   },
   {
-    "id": "9c9998ec-09fe-4aeb-aaef-702c6048e806",
+    "_id": "9c9998ec-09fe-4aeb-aaef-702c6048e806",
     "name": "Pras"
   },
   {
-    "id": "763d0783-d9c8-49f2-bff6-fbfebe505676",
+    "_id": "763d0783-d9c8-49f2-bff6-fbfebe505676",
     "name": "Pulp",
     "entries": {
       "Studio Album": [
@@ -11355,7 +11342,7 @@
     }
   },
   {
-    "id": "0bbda29c-2e80-4d21-9e38-f594e5717c72",
+    "_id": "0bbda29c-2e80-4d21-9e38-f594e5717c72",
     "name": "Queen",
     "entries": {
       "Studio Album": [
@@ -19823,7 +19810,7 @@
     }
   },
   {
-    "id": "4d43a6ce-c04b-4853-9b23-734de590bc5a",
+    "_id": "4d43a6ce-c04b-4853-9b23-734de590bc5a",
     "name": "Queen & David Bowie",
     "parent_artists": [
       "0bbda29c-2e80-4d21-9e38-f594e5717c72",
@@ -19834,7 +19821,7 @@
     ]
   },
   {
-    "id": "e472af88-cb52-4f34-bb4d-6cffc4fffdb4",
+    "_id": "e472af88-cb52-4f34-bb4d-6cffc4fffdb4",
     "name": "Queen + Adam Lambert",
     "parent_artists": [
       "0bbda29c-2e80-4d21-9e38-f594e5717c72",
@@ -19842,7 +19829,7 @@
     ]
   },
   {
-    "id": "770b5f3a-689d-467d-9bab-935a7d74c37d",
+    "_id": "770b5f3a-689d-467d-9bab-935a7d74c37d",
     "name": "Queen + Paul Rodgers",
     "parent_artists": [
       "0bbda29c-2e80-4d21-9e38-f594e5717c72",
@@ -19850,7 +19837,7 @@
     ]
   },
   {
-    "id": "effcb187-f9d0-43c0-8c6e-df56ae47679f",
+    "_id": "effcb187-f9d0-43c0-8c6e-df56ae47679f",
     "name": "Queen + Vanguard",
     "parent_artists": [
       "0bbda29c-2e80-4d21-9e38-f594e5717c72",
@@ -19858,7 +19845,7 @@
     ]
   },
   {
-    "id": "7fd418bb-5f94-41a3-8031-3ab0d86ecff4",
+    "_id": "7fd418bb-5f94-41a3-8031-3ab0d86ecff4",
     "name": "Queen vs The Miami Project",
     "parent_artists": [
       "0bbda29c-2e80-4d21-9e38-f594e5717c72",
@@ -19866,14 +19853,14 @@
     ]
   },
   {
-    "id": "0cb98df8-1f69-4c01-90e2-aa1fa6525aed",
+    "_id": "0cb98df8-1f69-4c01-90e2-aa1fa6525aed",
     "name": "Queen+",
     "parent_artists": [
       "0bbda29c-2e80-4d21-9e38-f594e5717c72"
     ]
   },
   {
-    "id": "5a471526-0e71-46e0-afe2-5cd26d636ccf",
+    "_id": "5a471526-0e71-46e0-afe2-5cd26d636ccf",
     "name": "Queen/Wyclef Jean featuring Pras & Free",
     "parent_artists": [
       "0bbda29c-2e80-4d21-9e38-f594e5717c72",
@@ -19883,7 +19870,7 @@
     ]
   },
   {
-    "id": "73c992a7-fd02-4412-9dd4-62bc52b5efa4",
+    "_id": "73c992a7-fd02-4412-9dd4-62bc52b5efa4",
     "name": "R.E.M.",
     "entries": {
       "Studio Album": [
@@ -20123,7 +20110,7 @@
     }
   },
   {
-    "id": "f4c7e050-8af7-4933-a8ff-05fa125bb203",
+    "_id": "f4c7e050-8af7-4933-a8ff-05fa125bb203",
     "name": "Radiohead",
     "entries": {
       "Studio Album": [
@@ -20306,7 +20293,7 @@
     }
   },
   {
-    "id": "c15cc39c-a166-4a14-b6d6-61b33e61c650",
+    "_id": "c15cc39c-a166-4a14-b6d6-61b33e61c650",
     "name": "Rage Against The Machine",
     "entries": {
       "Studio Album": [
@@ -20352,7 +20339,7 @@
     }
   },
   {
-    "id": "d296a4c3-ce93-4cf8-874c-d8853ffd50eb",
+    "_id": "d296a4c3-ce93-4cf8-874c-d8853ffd50eb",
     "name": "Rainbow",
     "entries": {
       "Studio Album": [
@@ -20380,7 +20367,7 @@
     }
   },
   {
-    "id": "89fceff0-5b0c-4c24-a298-9ab6326ac553",
+    "_id": "89fceff0-5b0c-4c24-a298-9ab6326ac553",
     "name": "Red Hot Chili Peppers",
     "entries": {
       "Studio Album": [
@@ -20445,7 +20432,7 @@
     }
   },
   {
-    "id": "050428f3-5143-479a-8339-886dd1c163d1",
+    "_id": "050428f3-5143-479a-8339-886dd1c163d1",
     "name": "Trine Rein",
     "name_for_sorting": "Rein, Trine",
     "entries": {
@@ -20476,12 +20463,12 @@
     }
   },
   {
-    "id": "63f1ad67-8e27-498d-80f5-60e2e11be086",
+    "_id": "63f1ad67-8e27-498d-80f5-60e2e11be086",
     "name": "Tim Rice",
     "name_for_sorting": "Rice, Tim"
   },
   {
-    "id": "7baf924e-afc3-421c-a719-2c164ff1d24b",
+    "_id": "7baf924e-afc3-421c-a719-2c164ff1d24b",
     "name": "Cliff Richard",
     "name_for_sorting": "Richard, Cliff",
     "entries": {
@@ -20513,7 +20500,7 @@
     }
   },
   {
-    "id": "c80f9ad1-6de2-4afa-990a-c4578d148ffa",
+    "_id": "c80f9ad1-6de2-4afa-990a-c4578d148ffa",
     "name": "Rock Aid Armenia",
     "entries": {
       "Single": [
@@ -20558,12 +20545,12 @@
     }
   },
   {
-    "id": "c3b445e1-8cef-4f69-a321-cadf2be6fdd8",
+    "_id": "c3b445e1-8cef-4f69-a321-cadf2be6fdd8",
     "name": "Paul Rodgers",
     "name_for_sorting": "Rodgers, Paul"
   },
   {
-    "id": "5364f0af-6a42-4862-bf41-2fe7ceb77d1f",
+    "_id": "5364f0af-6a42-4862-bf41-2fe7ceb77d1f",
     "name": "Roger Taylor & Yoshiki",
     "parent_artists": [
       "e2b04a43-d9fa-4378-b47f-97a2b4a07f5f",
@@ -20571,7 +20558,7 @@
     ]
   },
   {
-    "id": "f24bb82a-8cb4-477e-89c4-00808f6f7a9d",
+    "_id": "f24bb82a-8cb4-477e-89c4-00808f6f7a9d",
     "name": "Mick Ronson",
     "name_for_sorting": "Ronson, Mick",
     "entries": {
@@ -20602,7 +20589,7 @@
     }
   },
   {
-    "id": "e10ebe75-1ac0-48a0-b9ba-df4fb18a30fb",
+    "_id": "e10ebe75-1ac0-48a0-b9ba-df4fb18a30fb",
     "name": "Roxette",
     "entries": {
       "Studio Album": [
@@ -20629,7 +20616,7 @@
     }
   },
   {
-    "id": "864425ec-09b6-48c0-9a50-7f6b6a790516",
+    "_id": "864425ec-09b6-48c0-9a50-7f6b6a790516",
     "name": "The Royal Philharmonic Orchestra",
     "name_for_sorting": "Royal Philharmonic Orchestra, The",
     "entries": {
@@ -20764,7 +20751,7 @@
     }
   },
   {
-    "id": "d54f00b3-ced2-4bc9-aeca-be3b60b50289",
+    "_id": "d54f00b3-ced2-4bc9-aeca-be3b60b50289",
     "name": "Rush",
     "entries": {
       "Studio Album": [
@@ -20790,7 +20777,7 @@
     }
   },
   {
-    "id": "8490fb84-39b8-4623-bf1f-b52691c92e03",
+    "_id": "8490fb84-39b8-4623-bf1f-b52691c92e03",
     "name": "Jennifer Rush",
     "name_for_sorting": "Rush, Jennifer",
     "entries": {
@@ -20821,12 +20808,12 @@
     }
   },
   {
-    "id": "f2dd5fd5-08fa-464f-83a2-48b9fa9a59d0",
+    "_id": "f2dd5fd5-08fa-464f-83a2-48b9fa9a59d0",
     "name": "The San Francisco Symphony Orchestra",
     "name_for_sorting": "San Francisco Symphony Orchestra, The"
   },
   {
-    "id": "54322d38-2227-4f32-a860-5ec5c72573ad",
+    "_id": "54322d38-2227-4f32-a860-5ec5c72573ad",
     "name": "Scatman John",
     "entries": {
       "Studio Album": [
@@ -20856,7 +20843,7 @@
     }
   },
   {
-    "id": "e1ce33ec-31b9-4989-ae88-0242be60ce5f",
+    "_id": "e1ce33ec-31b9-4989-ae88-0242be60ce5f",
     "name": "Scorpions",
     "entries": {
       "Studio Album": [
@@ -20893,7 +20880,7 @@
     }
   },
   {
-    "id": "ddf396f3-e8ab-4321-b693-90d350676c1b",
+    "_id": "ddf396f3-e8ab-4321-b693-90d350676c1b",
     "name": "Shakin' Stevens",
     "entries": {
       "Single": [
@@ -20923,7 +20910,7 @@
     }
   },
   {
-    "id": "db94c975-cdd9-4720-9b98-037f63422ed9",
+    "_id": "db94c975-cdd9-4720-9b98-037f63422ed9",
     "name": "Feargal Sharkey",
     "name_for_sorting": "Sharkey, Feargal",
     "entries": {
@@ -20975,7 +20962,7 @@
     }
   },
   {
-    "id": "67e11f92-f159-4190-ad06-995a522d2203",
+    "_id": "67e11f92-f159-4190-ad06-995a522d2203",
     "name": "Bryan Singer",
     "name_for_sorting": "Singer, Bryan",
     "entries": {
@@ -21017,7 +21004,7 @@
     }
   },
   {
-    "id": "04149bb8-8cad-4952-8599-29c71a711b47",
+    "_id": "04149bb8-8cad-4952-8599-29c71a711b47",
     "name": "Skunk Anansie",
     "entries": {
       "Studio Album": [
@@ -21088,11 +21075,11 @@
     }
   },
   {
-    "id": "85f22d4c-5f9e-4c2d-b7ea-e1d410d30c91",
+    "_id": "85f22d4c-5f9e-4c2d-b7ea-e1d410d30c91",
     "name": "Slash"
   },
   {
-    "id": "1d90f489-2cb3-4e88-bd84-076a29849414",
+    "_id": "1d90f489-2cb3-4e88-bd84-076a29849414",
     "name": "Slash's Snakepit",
     "parent_artists": [
       "85f22d4c-5f9e-4c2d-b7ea-e1d410d30c91"
@@ -21122,7 +21109,7 @@
     }
   },
   {
-    "id": "36311bda-de59-4e71-9497-f270fac71427",
+    "_id": "36311bda-de59-4e71-9497-f270fac71427",
     "name": "The Smashing Pumpkins",
     "name_for_sorting": "Smashing Pumpkins, The",
     "entries": {
@@ -21156,7 +21143,7 @@
     }
   },
   {
-    "id": "95fbc55c-ea91-4662-bdde-98999c384436",
+    "_id": "95fbc55c-ea91-4662-bdde-98999c384436",
     "name": "Smile",
     "entries": {
       "Studio Album": [
@@ -21209,7 +21196,7 @@
     }
   },
   {
-    "id": "374b9e1e-1818-48c6-8426-c7eb2acaa9b9",
+    "_id": "374b9e1e-1818-48c6-8426-c7eb2acaa9b9",
     "name": "Penelope Spheeris",
     "name_for_sorting": "Spheeris, Penelope",
     "entries": {
@@ -21239,7 +21226,7 @@
     }
   },
   {
-    "id": "e6595bf1-ccff-448a-ba97-806540533aea",
+    "_id": "e6595bf1-ccff-448a-ba97-806540533aea",
     "name": "Billy Squier",
     "name_for_sorting": "Squier, Billy",
     "entries": {
@@ -21364,17 +21351,17 @@
     }
   },
   {
-    "id": "99c3ddbc-02dd-4a1e-a921-f31fc5f340b5",
+    "_id": "99c3ddbc-02dd-4a1e-a921-f31fc5f340b5",
     "name": "Tim Staffell",
     "name_for_sorting": "Staffell, Tim"
   },
   {
-    "id": "1570cbf7-d533-4448-b83c-b75cc5d32cca",
+    "_id": "1570cbf7-d533-4448-b83c-b75cc5d32cca",
     "name": "Lisa Stansfield",
     "name_for_sorting": "Stansfield, Lisa"
   },
   {
-    "id": "096c0054-0a73-4095-b89e-57902a37d5b9",
+    "_id": "096c0054-0a73-4095-b89e-57902a37d5b9",
     "name": "Status Quo",
     "entries": {
       "Studio Album": [
@@ -21404,7 +21391,7 @@
     }
   },
   {
-    "id": "235e03ab-c463-4324-b6a2-ed7b7e158267",
+    "_id": "235e03ab-c463-4324-b6a2-ed7b7e158267",
     "name": "Steely Dan",
     "entries": {
       "Studio Album": [
@@ -21432,7 +21419,7 @@
     }
   },
   {
-    "id": "6d8521e9-7cd7-4df6-97c8-538c390e81fc",
+    "_id": "6d8521e9-7cd7-4df6-97c8-538c390e81fc",
     "name": "Stereophonics",
     "entries": {
       "Studio Album": [
@@ -21459,7 +21446,7 @@
     }
   },
   {
-    "id": "cf655ce5-aaa7-4c07-a367-8b7b980402c1",
+    "_id": "cf655ce5-aaa7-4c07-a367-8b7b980402c1",
     "name": "Al Stewart",
     "name_for_sorting": "Stewart, Al",
     "entries": {
@@ -21505,7 +21492,7 @@
     }
   },
   {
-    "id": "ca9a4808-c162-4ab0-a1e2-9942fb9fc82a",
+    "_id": "ca9a4808-c162-4ab0-a1e2-9942fb9fc82a",
     "name": "Sting",
     "entries": {
       "Compilation Album": [
@@ -21533,7 +21520,7 @@
     }
   },
   {
-    "id": "84800ef6-decd-4a87-99b8-33bb9cb78983",
+    "_id": "84800ef6-decd-4a87-99b8-33bb9cb78983",
     "name": "Suede",
     "entries": {
       "Studio Album": [
@@ -21600,7 +21587,7 @@
     }
   },
   {
-    "id": "e1e69723-c0f4-43a0-ad1e-ba327977c2eb",
+    "_id": "e1e69723-c0f4-43a0-ad1e-ba327977c2eb",
     "name": "Supergrass",
     "entries": {
       "Studio Album": [
@@ -21633,7 +21620,7 @@
     }
   },
   {
-    "id": "d450ba91-6d69-4782-850c-932f4e776abd",
+    "_id": "d450ba91-6d69-4782-850c-932f4e776abd",
     "name": "Claire Sweeney",
     "name_for_sorting": "Sweeney, Claire",
     "entries": {
@@ -21664,11 +21651,11 @@
     }
   },
   {
-    "id": "7704a1de-b582-46c8-bd25-3efa061f0208",
+    "_id": "7704a1de-b582-46c8-bd25-3efa061f0208",
     "name": "Tamia"
   },
   {
-    "id": "adcc7abc-8322-49c5-bd13-c5c43d2324b0",
+    "_id": "adcc7abc-8322-49c5-bd13-c5c43d2324b0",
     "name": "Taylor Hawkins & The Coattail Riders",
     "entries": {
       "Studio Album": [
@@ -21698,7 +21685,7 @@
     }
   },
   {
-    "id": "e2b04a43-d9fa-4378-b47f-97a2b4a07f5f",
+    "_id": "e2b04a43-d9fa-4378-b47f-97a2b4a07f5f",
     "name": "Roger Taylor",
     "name_for_sorting": "Taylor, Roger",
     "entries": {
@@ -22550,7 +22537,7 @@
     }
   },
   {
-    "id": "0907b411-20d2-4234-bf31-0bd9357b1e52",
+    "_id": "0907b411-20d2-4234-bf31-0bd9357b1e52",
     "name": "Tenacious D",
     "entries": {
       "Studio Album": [
@@ -22577,7 +22564,7 @@
     }
   },
   {
-    "id": "71f86b8e-7ce0-4e61-9fab-4a625ddb8d06",
+    "_id": "71f86b8e-7ce0-4e61-9fab-4a625ddb8d06",
     "name": "Them Crooked Vultures",
     "entries": {
       "Studio Album": [
@@ -22607,7 +22594,7 @@
     }
   },
   {
-    "id": "19647f52-0491-40cd-b2ed-3d19a291afcd",
+    "_id": "19647f52-0491-40cd-b2ed-3d19a291afcd",
     "name": "The Tiger Lillies",
     "name_for_sorting": "Tiger Lillies, The",
     "entries": {
@@ -22635,7 +22622,7 @@
     }
   },
   {
-    "id": "acd2805a-3b5c-47ee-98e0-a0b3c67a6bfd",
+    "_id": "acd2805a-3b5c-47ee-98e0-a0b3c67a6bfd",
     "name": "Travis",
     "entries": {
       "Single": [
@@ -22665,7 +22652,7 @@
     }
   },
   {
-    "id": "20a1b75b-585d-41c9-bcd7-c0ff83959fc0",
+    "_id": "20a1b75b-585d-41c9-bcd7-c0ff83959fc0",
     "name": "Trey Parker, Robert Lopez, Matt Stone",
     "entries": {
       "Studio Album": [
@@ -22692,12 +22679,12 @@
     }
   },
   {
-    "id": "d9881e8d-25e1-4f3a-8974-a69defca5f28",
+    "_id": "d9881e8d-25e1-4f3a-8974-a69defca5f28",
     "name": "Esther Trousdale",
     "name_for_sorting": "Trousdale, Esther"
   },
   {
-    "id": "ca61faba-2e99-4961-bc65-58e8bd2bda22",
+    "_id": "ca61faba-2e99-4961-bc65-58e8bd2bda22",
     "name": "Judie Tzuke",
     "name_for_sorting": "Tzuke, Judie",
     "entries": {
@@ -22728,7 +22715,7 @@
     }
   },
   {
-    "id": "eff95c9e-88a7-43cd-8fde-8a0137bffee1",
+    "_id": "eff95c9e-88a7-43cd-8fde-8a0137bffee1",
     "name": "U2",
     "entries": {
       "Studio Album": [
@@ -22934,7 +22921,7 @@
     }
   },
   {
-    "id": "88b1504a-97a1-43fc-a729-648450057f03",
+    "_id": "88b1504a-97a1-43fc-a729-648450057f03",
     "name": "Ultra Bra",
     "entries": {
       "Studio Album": [
@@ -23048,12 +23035,12 @@
     }
   },
   {
-    "id": "ebc3b741-9620-460a-8e63-98db11229335",
+    "_id": "ebc3b741-9620-460a-8e63-98db11229335",
     "name": "Björn Ulvaeus",
     "name_for_sorting": "Ulvaeus, Björn"
   },
   {
-    "id": "091d9a9f-7dff-4860-b510-a724d9c17b0f",
+    "_id": "091d9a9f-7dff-4860-b510-a724d9c17b0f",
     "name": "Valensia",
     "entries": {
       "Studio Album": [
@@ -23083,11 +23070,11 @@
     }
   },
   {
-    "id": "660c1d3c-edcd-46e2-a5a5-7cda8f683bbf",
+    "_id": "660c1d3c-edcd-46e2-a5a5-7cda8f683bbf",
     "name": "Vanguard"
   },
   {
-    "id": "106f9c25-e355-44b9-809f-07a737b72579",
+    "_id": "106f9c25-e355-44b9-809f-07a737b72579",
     "name": "Vanilla Ice",
     "entries": {
       "Single": [
@@ -23119,7 +23106,7 @@
     }
   },
   {
-    "id": "7815ffd6-df53-4bbf-8003-8703bb4af50d",
+    "_id": "7815ffd6-df53-4bbf-8003-8703bb4af50d",
     "name": "Various Artists",
     "entries": {
       "Studio Album": [
@@ -24270,7 +24257,7 @@
     }
   },
   {
-    "id": "7d988a7f-05ac-4ae7-aa27-77406a811897",
+    "_id": "7d988a7f-05ac-4ae7-aa27-77406a811897",
     "name": "The Verve",
     "name_for_sorting": "Verve, The",
     "entries": {
@@ -24304,7 +24291,7 @@
     }
   },
   {
-    "id": "c72c97c3-7f72-443e-9ced-cf6868b95357",
+    "_id": "c72c97c3-7f72-443e-9ced-cf6868b95357",
     "name": "Maija Vilkkumaa",
     "name_for_sorting": "Vilkkumaa, Maija",
     "entries": {
@@ -24433,7 +24420,7 @@
     }
   },
   {
-    "id": "5041cfe4-5940-428a-ac43-4e9d34cffcf0",
+    "_id": "5041cfe4-5940-428a-ac43-4e9d34cffcf0",
     "name": "We Will Rock You German Cast",
     "entries": {
       "Live Album": [
@@ -24447,7 +24434,7 @@
     }
   },
   {
-    "id": "e3c4520e-307a-430e-8baf-66f5ab2577d3",
+    "_id": "e3c4520e-307a-430e-8baf-66f5ab2577d3",
     "name": "We Will Rock You Original London Cast",
     "entries": {
       "Live Album": [
@@ -24477,7 +24464,7 @@
     }
   },
   {
-    "id": "aa8a685f-0e90-42a2-98b7-967c509153ef",
+    "_id": "aa8a685f-0e90-42a2-98b7-967c509153ef",
     "name": "We Will Rock You Original Madrid Cast",
     "entries": {
       "Live Album": [
@@ -24507,16 +24494,16 @@
     }
   },
   {
-    "id": "59d8c39e-0662-4b74-889b-ef95319cf32d",
+    "_id": "59d8c39e-0662-4b74-889b-ef95319cf32d",
     "name": "Andrew Lloyd Webber",
     "name_for_sorting": "Webber, Andrew Lloyd"
   },
   {
-    "id": "26aeac61-0165-49c3-91f2-09da068393bb",
+    "_id": "26aeac61-0165-49c3-91f2-09da068393bb",
     "name": "Weebl"
   },
   {
-    "id": "20cc9d8d-8409-4036-9acc-032a6edec53a",
+    "_id": "20cc9d8d-8409-4036-9acc-032a6edec53a",
     "name": "Weebl and May feat. Brian Blessed, King Of The Hawkmen",
     "parent_artists": [
       "16d591da-df9e-400f-b750-c54f9d9aca89",
@@ -24527,7 +24514,7 @@
     ]
   },
   {
-    "id": "622f86ab-5f76-485b-914a-8715d6f61ee1",
+    "_id": "622f86ab-5f76-485b-914a-8715d6f61ee1",
     "name": "Robbie Williams",
     "name_for_sorting": "Williams, Robbie",
     "entries": {
@@ -24646,12 +24633,12 @@
     }
   },
   {
-    "id": "ebd27629-a1c2-4438-9502-fd94c3b58cdb",
+    "_id": "ebd27629-a1c2-4438-9502-fd94c3b58cdb",
     "name": "Dennis Wilson",
     "name_for_sorting": "Wilson, Dennis"
   },
   {
-    "id": "b76a0a9b-9db9-4c3e-befa-21e6a55c4ae5",
+    "_id": "b76a0a9b-9db9-4c3e-befa-21e6a55c4ae5",
     "name": "Amy Winehouse",
     "name_for_sorting": "Winehouse, Amy",
     "entries": {
@@ -24682,7 +24669,7 @@
     }
   },
   {
-    "id": "59e25392-292e-4c0e-8b04-8365edf9d480",
+    "_id": "59e25392-292e-4c0e-8b04-8365edf9d480",
     "name": "Woman",
     "entries": {
       "Single": [
@@ -24728,11 +24715,11 @@
     }
   },
   {
-    "id": "04b87ab1-2dfb-4595-8482-cc7b3e88f071",
+    "_id": "04b87ab1-2dfb-4595-8482-cc7b3e88f071",
     "name": "Yoshiki"
   },
   {
-    "id": "cb7deafb-bd27-4aac-9c2b-08b573827dc2",
+    "_id": "cb7deafb-bd27-4aac-9c2b-08b573827dc2",
     "name": "Zucchero",
     "entries": {
       "Compilation Album": [
@@ -24762,7 +24749,7 @@
     }
   },
   {
-    "id": "84f57f90-c112-451b-b3e9-f1a746aa6726",
+    "_id": "84f57f90-c112-451b-b3e9-f1a746aa6726",
     "name": "Сектор Газа",
     "entries": {
       "Studio Album": [
