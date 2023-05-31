@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build-debug-releases": "DEBUG_RELEASES=true npm run build",
     "start": "next start",
     "tsc": "tsc --noemit",
     "new-single": "ts-node scripts/addNewSingleFileSkeletons.ts",

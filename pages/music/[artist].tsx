@@ -1,10 +1,6 @@
 import BackButton from "components/BackButton";
-import {
-  getArtistReleases,
-  getArtists,
-  Entry,
-  EnhancedArtist,
-} from "mongodb/releases";
+import { debug } from "console";
+import { getArtistReleases, getArtists, MongoEntry } from "mongodb/releases";
 import {
   GetStaticPaths,
   GetStaticProps,
@@ -16,7 +12,11 @@ import { useState } from "react";
 
 type Props = Omit<InferGetStaticPropsType<typeof getStaticProps>, "pageTitle">;
 
-const QueenCollectionArtist: NextPage<Props> = ({ name, entries }) => {
+const QueenCollectionArtist: NextPage<Props> = ({
+  name,
+  entries,
+  debugReleases, // this "opens up" all hidden details on releases already on build stage, thus making sure no runtime errors will occur at least on data representation after deployment
+}) => {
   const [query, setQuery] = useState("");
 
   const trimmedQuery = query.trim();
@@ -32,8 +32,9 @@ const QueenCollectionArtist: NextPage<Props> = ({ name, entries }) => {
       }, [])
     : entries;
 
-  const openAllTypes = true;
-  filteredEntries.map(({ typeEntries }) => typeEntries).flat().length < 5;
+  const openAllTypes = debugReleases
+    ? true
+    : filteredEntries.map(({ typeEntries }) => typeEntries).flat().length < 5;
 
   return (
     <main>
@@ -60,7 +61,11 @@ const QueenCollectionArtist: NextPage<Props> = ({ name, entries }) => {
           </summary>
           <ul style={{ marginLeft: "24px" }}>
             {typeEntries.map((entry) => (
-              <EntryData key={entry.id} entry={entry} />
+              <EntryData
+                key={entry.id}
+                entry={entry}
+                debugReleases={debugReleases}
+              />
             ))}
           </ul>
         </details>
@@ -69,8 +74,15 @@ const QueenCollectionArtist: NextPage<Props> = ({ name, entries }) => {
   );
 };
 
-const EntryData = ({ entry }: { entry: Entry }) => {
-  const [showReleases, setShowReleases] = useState(false);
+const EntryData = ({
+  entry,
+  debugReleases,
+}: {
+  entry: MongoEntry;
+  debugReleases: boolean;
+}) => {
+  const [showReleases, setShowReleases] = useState(debugReleases);
+
   const { name, releases, release_date } = entry;
 
   return (
@@ -86,19 +98,31 @@ const EntryData = ({ entry }: { entry: Entry }) => {
           </p>
         )}
       </div>
-      {showReleases && <Releases releases={releases} />}
+      {showReleases && (
+        <Releases releases={releases} debugReleases={debugReleases} />
+      )}
     </li>
   );
 };
 
-type Release = NonNullable<Entry["releases"]>[number];
+type Release = NonNullable<MongoEntry["releases"]>[number];
 
-const Releases = ({ releases }: { releases: Release[] | undefined }) => (
+const Releases = ({
+  releases,
+  debugReleases,
+}: {
+  releases: Release[] | undefined;
+  debugReleases: boolean;
+}) => (
   <div style={{ marginBottom: "16px" }}>
     {releases ? (
       <ol>
         {releases.map((release) => (
-          <ReleaseInfo release={release} key={release.id} />
+          <ReleaseInfo
+            release={release}
+            key={release.id}
+            debugReleases={debugReleases}
+          />
         ))}
       </ol>
     ) : (
@@ -109,8 +133,14 @@ const Releases = ({ releases }: { releases: Release[] | undefined }) => (
   </div>
 );
 
-const ReleaseInfo = ({ release }: { release: Release }) => {
-  const [showDetails, setShowDetails] = useState(true);
+const ReleaseInfo = ({
+  release,
+  debugReleases,
+}: {
+  release: Release;
+  debugReleases: boolean;
+}) => {
+  const [showDetails, setShowDetails] = useState(debugReleases);
 
   const { version, id } = release;
 
@@ -227,8 +257,9 @@ export default QueenCollectionArtist;
 
 export const getStaticProps: GetStaticProps<{
   name: string;
-  entries: { type: string; typeEntries: Entry[] }[];
+  entries: { type: string; typeEntries: MongoEntry[] }[];
   pageTitle: string;
+  debugReleases: boolean;
 }> = async (context) => {
   const artist = context.params!.artist as string; // we know that "artist" must be in path parameters
 
@@ -237,14 +268,17 @@ export const getStaticProps: GetStaticProps<{
   return {
     props: {
       name,
-      entries: pipe(
-        toPairs<EnhancedArtist["entries"], string>,
-        map(([type, typeEntries]) => ({
-          type,
-          typeEntries,
-        }))
-      )(entries),
+      entries: entries
+        ? pipe(
+            toPairs<MongoEntry[]>,
+            map(([type, typeEntries]) => ({
+              type,
+              typeEntries,
+            }))
+          )(entries)
+        : [],
       pageTitle: `Music Collection - Entries by Artist ${name}`,
+      debugReleases: !!process.env.DEBUG_RELEASES,
     },
   };
 };

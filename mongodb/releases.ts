@@ -44,7 +44,10 @@ export const insertReleases = (releases: MongoArtist[]) =>
 export const getArtists = () =>
   queryReleasesCollection((collection) =>
     collection
-      .find<{ _id: number; name: string }>({}, { projection: { _id: 1 } })
+      .find<{ _id: number; name: string }>(
+        {},
+        { projection: { _id: 1, name: 1 } }
+      )
       .toArray()
   );
 
