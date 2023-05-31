@@ -41,12 +41,18 @@ export const insertReleases = (releases: MongoArtist[]) =>
     releasesCollection.insertMany(releases)
   );
 
+export interface Artist {
+  _id: number;
+  name: string;
+  name_for_sorting?: string;
+}
+
 export const getArtists = () =>
   queryReleasesCollection((collection) =>
     collection
-      .find<{ _id: number; name: string }>(
+      .find<Artist>(
         {},
-        { projection: { _id: 1, name: 1 } }
+        { projection: { _id: 1, name: 1, name_for_sorting: 1 } }
       )
       .toArray()
   );

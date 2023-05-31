@@ -19,6 +19,8 @@ const QueenCollectionArtist: NextPage<Props> = ({
 }) => {
   const [query, setQuery] = useState("");
 
+  const noEntries = !entries.length;
+
   const trimmedQuery = query.trim();
   const filteredEntries = trimmedQuery
     ? entries.reduce<typeof entries>((acc, { type, typeEntries }) => {
@@ -41,35 +43,48 @@ const QueenCollectionArtist: NextPage<Props> = ({
       <BackButton text="Back to Music collection artists selection" />
       <h1>Music Collection</h1>
       <h2>
-        Entries by <span style={{ color: "red" }}>{name}</span>
+        <span style={{ color: "red" }}>{name}</span>
       </h2>
-      <input
-        style={{
-          height: "30px",
-          width: "300px",
-          fontSize: "1.2em",
-          marginBottom: "px",
-        }}
-        autoFocus
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-      />
-      {filteredEntries.map(({ type, typeEntries }) => (
-        <details key={type} open={openAllTypes}>
-          <summary style={{ margin: "10px 0" }}>
-            <h3 style={{ display: "inline", marginLeft: "10px" }}>{type}</h3>
-          </summary>
-          <ul style={{ marginLeft: "24px" }}>
-            {typeEntries.map((entry) => (
-              <EntryData
-                key={entry.id}
-                entry={entry}
-                debugReleases={debugReleases}
-              />
-            ))}
-          </ul>
-        </details>
-      ))}
+      {noEntries ? (
+        <div
+          style={{
+            fontSize: "1.5em",
+          }}
+        >
+          No entries for this artist in collection
+        </div>
+      ) : (
+        <>
+          <input
+            style={{
+              height: "30px",
+              width: "300px",
+              fontSize: "1.2em",
+            }}
+            autoFocus
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          {filteredEntries.map(({ type, typeEntries }) => (
+            <details key={type} open={openAllTypes}>
+              <summary style={{ margin: "10px 0" }}>
+                <h3 style={{ display: "inline", marginLeft: "10px" }}>
+                  {type}
+                </h3>
+              </summary>
+              <ul style={{ marginLeft: "24px" }}>
+                {typeEntries.map((entry) => (
+                  <EntryData
+                    key={entry.id}
+                    entry={entry}
+                    debugReleases={debugReleases}
+                  />
+                ))}
+              </ul>
+            </details>
+          ))}
+        </>
+      )}
     </main>
   );
 };
