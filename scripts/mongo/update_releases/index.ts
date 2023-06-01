@@ -17,20 +17,23 @@ import {
   getEntryTypes,
   getLabels,
 } from "../../utils/db";
-import { ValidatedDBArtist, validateArtist } from "./validation/artists";
-import { validateEntries, ValidatedDBEntry } from "./validation/entries";
-import { ValidatedDBRelease, validateRelease } from "./validation/releases";
+import { validateArtist } from "./validation/artists";
+import { validateEntries } from "./validation/entries";
+import { validateRelease } from "./validation/releases";
 import { DBEntryType } from "../../../types/entries";
 import { writeToJsonFile } from "../../utils";
+
+import {
+  deleteArtists,
+  getAllReleases,
+  upsertReleases,
+} from "../../../mongodb/releases";
 
 import {
   EnhancedEntry,
   MongoArtist,
   MongoEntry,
-  deleteArtists,
-  getAllReleases,
-  upsertReleases,
-} from "../../../mongodb/releases";
+} from "../../../types/mongo/releases";
 
 Promise.all([
   getArtistsNew(),
@@ -128,7 +131,7 @@ Promise.all([
         return validatedRelease;
       });
 
-      console.log(`Releases validated successfully`);
+      console.log(`Releases validated successfully\n`);
 
       const entriesGroupedByArtist = groupBy(
         (e) => e.artist_id,
@@ -201,8 +204,9 @@ Promise.all([
       );
 
       await deleteArtists(artistsInMongoOnly);
+      console.log();
 
-      await upsertReleases(enhancedArtists);
+      await upsertReleases(enhancedArtists, mongoReleases);
     }
   )
   .catch((e) => {

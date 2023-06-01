@@ -1,9 +1,6 @@
 import type { DBEntry2 } from "../../../../types/entries";
-import type {
-  NonEmptyStringArray,
-  NullableToOptional,
-  Result,
-} from "../../../../types/utils";
+import type { Result } from "../../../../types/utils";
+import { ValidatedDBEntry } from "../../../../types/validation";
 
 import {
   validatePropsAreNullOrNonEmptyArrOfNonEmptyStrings,
@@ -11,14 +8,6 @@ import {
   validatePropsAreNonEmptyIfStrings,
 } from "../../../../utils";
 import { releaseDateIsValid } from "./release_date";
-
-export type ValidatedDBEntry = NullableToOptional<
-  Omit<DBEntry2, "tags" | "parent_entries">
-> & {
-  tags?: NonEmptyStringArray;
-  parent_entries?: NonEmptyStringArray;
-  part_of_queen_collection?: true;
-};
 
 export const validateEntries = (
   entry: DBEntry2,

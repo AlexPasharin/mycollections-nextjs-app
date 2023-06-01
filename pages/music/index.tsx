@@ -3,8 +3,10 @@ import { sortBy } from "ramda";
 import Link from "next/link";
 import { useState } from "react";
 
-import { Artist, getArtists } from "mongodb/releases";
+import { getArtists } from "mongodb/releases";
 import BackButton from "components/BackButton";
+
+import { Artist } from "types/mongo/artists";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 

@@ -1,56 +1,19 @@
 import type { DBRelease2 } from "../../../../types/entries";
-import type { NullableToOptional, Result } from "../../../../types/utils";
+import type { Result } from "../../../../types/utils";
+import {
+  type MatrixRunout,
+  MatrixRunoutAllowedKeys,
+  type ValidatedCatNumbers,
+  type ValidatedDBRelease,
+} from "../../../../types/validation";
 
 import {
   removeNils,
   validatePropsAreNonEmptyIfStrings,
   validatePropsAreNullOrNonEmptyArrOfNonEmptyStrings,
 } from "../../../../utils";
-import { ValidatedCountriesType, validateCountriesField } from "./countries";
+import { validateCountriesField } from "./countries";
 import { releaseDateIsValid } from "./release_date";
-
-type LabelsType = { label: string } | { labels: string[] };
-type CatNumbersType =
-  | { cat_number: string }
-  | { cat_numbers: string[] | { "in UK": string; "in Europe": string } };
-
-enum MatrixRunoutAllowedKeys {
-  CD1 = "CD1",
-  CD2 = "CD2",
-  "Side A" = "Side A",
-  "Side B" = "Side B",
-}
-
-type MatrixRunout = string | { [key in MatrixRunoutAllowedKeys]?: string };
-
-type ValidCatNumbersObject =
-  | (LabelsType & CatNumbersType)
-  | LabelsType
-  | CatNumbersType;
-
-type ValidatedCatNumbers = ValidCatNumbersObject | ValidCatNumbersObject[];
-
-export type ValidatedDBRelease = NullableToOptional<
-  Omit<
-    DBRelease2,
-    | "countries"
-    | "cat_numbers"
-    | "matrix_runout"
-    | "tags"
-    | "parent_releases"
-    | "speed"
-  >
-> & {
-  countries?: ValidatedCountriesType;
-  cat_numbers?: ValidatedCatNumbers;
-  matrix_runout?: MatrixRunout;
-  part_of_queen_collection?: true;
-  tags?: string[];
-  parent_releases?: string[];
-  jukebox_hole?: true;
-  picture_sleeve?: false;
-  speed?: 33;
-};
 
 export const validateRelease = (
   release: DBRelease2,

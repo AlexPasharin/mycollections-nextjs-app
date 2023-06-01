@@ -1,14 +1,12 @@
 import { equals } from "ramda";
 
 import type { Result } from "../../../../types/utils";
-import { DBRelease2 } from "../../../../types/entries";
-
-type StringOrStringArray = string | string[];
-type CountriesObjectType<T> = { "made in": T; "printed in": T };
-
-export type ValidatedCountriesType =
-  | StringOrStringArray
-  | CountriesObjectType<StringOrStringArray>;
+import type { DBRelease2 } from "../../../../types/entries";
+import type {
+  CountriesObjectType,
+  StringOrStringArray,
+  ValidatedCountriesType,
+} from "../../../../types/validation";
 
 export const validateCountriesField = <T extends DBRelease2>(
   fieldValue: unknown,

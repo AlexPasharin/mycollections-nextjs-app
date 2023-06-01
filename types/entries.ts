@@ -1,13 +1,3 @@
-type NullableKeys<T> = {
-  [K in keyof T]: null extends T[K] ? K : never;
-}[keyof T];
-
-type NullableToOptional<T> = {
-  [K in keyof T as Exclude<K, NullableKeys<T>>]: T[K];
-} & {
-  [K in NullableKeys<T>]?: NonNullable<T[K]>;
-};
-
 export interface DBEntry {
   id: number;
   name: string;

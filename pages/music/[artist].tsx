@@ -1,6 +1,3 @@
-import BackButton from "components/BackButton";
-import { debug } from "console";
-import { getArtistReleases, getArtists, MongoEntry } from "mongodb/releases";
 import {
   GetStaticPaths,
   GetStaticProps,
@@ -9,6 +6,10 @@ import {
 } from "next";
 import { map, pipe, toPairs } from "ramda";
 import { useState } from "react";
+
+import BackButton from "components/BackButton";
+import { getArtistReleases, getArtists } from "mongodb/releases";
+import { MongoEntry } from "types/mongo/releases";
 
 type Props = Omit<InferGetStaticPropsType<typeof getStaticProps>, "pageTitle">;
 

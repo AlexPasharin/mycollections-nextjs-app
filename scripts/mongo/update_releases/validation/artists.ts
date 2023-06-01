@@ -1,22 +1,12 @@
 import type { DBArtist2 } from "../../../../types/artists";
-import type {
-  NonEmptyStringArray,
-  NullableToOptional,
-  Result,
-} from "../../../../types/utils";
+import type { Result } from "../../../../types/utils";
+import type { ValidatedDBArtist } from "../../../../types/validation";
 
 import {
   validatePropsAreNullOrNonEmptyArrOfNonEmptyStrings,
   removeNils,
   validatePropsAreNonEmptyIfStrings,
 } from "../../../../utils";
-
-export type ValidatedDBArtist = NullableToOptional<
-  Omit<DBArtist2, "parent_artists" | "other_names">
-> & {
-  parent_artists?: NonEmptyStringArray;
-  other_names?: NonEmptyStringArray;
-};
 
 export const validateArtist = (
   artist: DBArtist2,

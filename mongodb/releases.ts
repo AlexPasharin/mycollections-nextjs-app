@@ -2,50 +2,14 @@ import { Collection } from "mongodb";
 
 import { queryMongoDB } from "./client";
 
-import { DBArtist2 } from "../types/artists";
-import { DBEntry2, DBRelease2 } from "../types/entries";
-import { complement, isNil, pickBy } from "ramda";
-import { NullableToOptional } from "../types/utils";
-
-import { ValidatedDBArtist } from "../scripts/mongo/update_releases/validation/artists";
-import { ValidatedDBEntry } from "../scripts/mongo/update_releases/validation/entries";
-import { ValidatedDBRelease } from "../scripts/mongo/update_releases/validation/releases";
-
-export const removeNulls = <T>(obj: T): NullableToOptional<T> =>
-  pickBy(complement(isNil), obj);
-
-export type Entry = NullableToOptional<
-  Omit<DBEntry2, "artist_id" | "type" | "entry_artist_id"> & {
-    entryArtist?: string;
-    releases?: NullableToOptional<DBRelease2>[];
-  }
->;
-
-export type EnhancedArtist = DBArtist2 & {
-  entries: Record<string, Entry[]>;
-};
-
-export type EnhancedEntry = ValidatedDBEntry & {
-  releases?: Omit<ValidatedDBRelease, "entry_id">[];
-};
-
-export type MongoEntry = Omit<EnhancedEntry, "artist_id" | "type">;
-
-export type MongoArtist = Omit<ValidatedDBArtist, "id"> & {
-  _id: string;
-  entries?: { [index: string]: MongoEntry[] };
-};
+import { MongoArtist } from "../types/mongo/releases";
+import { Artist } from "../types/mongo/artists";
+import { equals } from "ramda";
 
 export const insertReleases = (releases: MongoArtist[]) =>
   queryReleasesCollection((releasesCollection) =>
     releasesCollection.insertMany(releases)
   );
-
-export interface Artist {
-  _id: number;
-  name: string;
-  name_for_sorting?: string;
-}
 
 export const getArtists = () =>
   queryReleasesCollection((collection) =>
@@ -73,17 +37,30 @@ export const getArtistReleases = (artistName: string) =>
     })
   );
 
-export const upsertReleases = (artists: MongoArtist[]) =>
-  queryReleasesCollection(async (releasesCollection) => {
-    if (!artists.length) {
-      console.log("No artists to upsert");
+export const upsertReleases = async (
+  newArtistsData: MongoArtist[],
+  oldArtistsData: MongoArtist[]
+) => {
+  if (!newArtistsData.length) {
+    console.log("No artists to upsert");
 
-      return;
-    }
+    return;
+  }
 
+  const oldDataMap = oldArtistsData.reduce<
+    Record<string, MongoArtist | undefined>
+  >((acc, artist) => ({ ...acc, [artist._id]: artist }), {});
+
+  await queryReleasesCollection(async (releasesCollection) => {
     await Promise.all(
-      artists.map(async (artist) => {
+      newArtistsData.map(async (artist) => {
         try {
+          const oldArtistData = oldDataMap[artist._id];
+
+          if (equals(oldArtistData, artist)) {
+            return; // dont do anything if artist already in Mongo and its data didn't change
+          }
+
           const { _id, ...rest } = artist;
 
           const { acknowledged, upsertedId } =
@@ -108,6 +85,7 @@ export const upsertReleases = (artists: MongoArtist[]) =>
       })
     );
   });
+};
 
 export const deleteArtists = (artists: { _id: string }[]) =>
   queryReleasesCollection(async (releasesCollection) => {
