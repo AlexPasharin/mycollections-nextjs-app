@@ -1,13 +1,3 @@
-type NullableKeys<T> = {
-  [K in keyof T]: null extends T[K] ? K : never;
-}[keyof T];
-
-type NullableToOptional<T> = {
-  [K in keyof T as Exclude<K, NullableKeys<T>>]: T[K];
-} & {
-  [K in NullableKeys<T>]?: NonNullable<T[K]>;
-};
-
 export interface DBEntry {
   id: number;
   name: string;
@@ -17,15 +7,20 @@ export interface DBEntry {
   entry_artist_id: number | null;
 }
 
-export type DBEntry2 = NullableToOptional<{
+export type DBEntry2 = {
   id: string;
   name: string;
-  release_date: string | null;
   type: number;
+  release_date: string | null;
   artist_id: string;
   entry_artist_id: string | null;
+  comment: string | null;
+  discogs_url: string | null;
   part_of_queen_collection: boolean | null;
-}>;
+  relation_to_queen: string | null;
+  tags: unknown;
+  parent_entries: unknown;
+};
 
 export interface DBEntryType {
   id: number;
@@ -55,16 +50,17 @@ export interface DBRelease2 {
   name: string | null;
   format: string;
   release_date: string | null;
-  countries: string[] | null;
+  countries: unknown;
   cat_numbers: unknown;
   matrix_runout: unknown;
   comment: string | null;
   condition_problems: string | null;
   release_artist_id: string | null;
-  tags: string[];
-  parent_releases: string[];
+  tags: unknown;
+  parent_releases: unknown;
   jukebox_hole: boolean | null;
   picture_sleeve: boolean | null;
   speed: unknown;
   part_of_queen_collection: boolean | null;
+  relation_to_queen: string | null;
 }

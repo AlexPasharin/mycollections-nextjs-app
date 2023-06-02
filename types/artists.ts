@@ -6,7 +6,7 @@ export type DBArtist = {
 export type DBArtist2 = {
   id: string;
   name: string;
-  parent_artists?: string[] | null;
-  name_for_sorting?: string | null;
-  other_names?: string[] | null;
+  name_for_sorting: string | null;
+  parent_artists: unknown;
+  other_names: unknown;
 };
