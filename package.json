@@ -12,7 +12,6 @@
     "new-single": "ts-node scripts/addNewSingleFileSkeletons.ts",
     "new-song": "ts-node scripts/addNewCompositionFileSkeleton.ts",
     "update-releases": "ts-node scripts/mongo/update_releases/index.ts",
-    "non-queen-to-json": "npx ts-node scripts/db-to-jsons/non_queen.ts",
     "movies-to-json": "npx ts-node scripts/db-to-jsons/movies.ts"
   },
   "author": "AlexPasharin",
