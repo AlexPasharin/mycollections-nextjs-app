@@ -29,7 +29,7 @@ type CatNumbersType =
   | { cat_number: string }
   | { cat_numbers: string[] | { "in UK": string; "in Europe": string } };
 
-type ValidCatNumbersObject =
+export type ValidCatNumbersObject =
   | (LabelsType & CatNumbersType)
   | LabelsType
   | CatNumbersType;

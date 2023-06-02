@@ -4,8 +4,9 @@
   "description": "Next js application for displaying and manipulating my media collections and related info such as discographies",
   "scripts": {
     "dev": "next dev",
+    "safe-dev": "DEBUG_RELEASES=true npm run dev",
     "build": "next build",
-    "build-debug-releases": "DEBUG_RELEASES=true npm run build",
+    "safe-build": "DEBUG_RELEASES=true npm run build",
     "start": "next start",
     "tsc": "tsc --noemit",
     "new-single": "ts-node scripts/addNewSingleFileSkeletons.ts",
