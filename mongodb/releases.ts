@@ -1,15 +1,10 @@
 import { Collection } from "mongodb";
+import { equals } from "ramda";
 
 import { queryMongoDB } from "./client";
 
 import { MongoArtist } from "../types/mongo/releases";
 import { Artist } from "../types/mongo/artists";
-import { equals } from "ramda";
-
-export const insertReleases = (releases: MongoArtist[]) =>
-  queryReleasesCollection((releasesCollection) =>
-    releasesCollection.insertMany(releases)
-  );
 
 export const getArtists = () =>
   queryReleasesCollection((collection) =>
@@ -106,6 +101,12 @@ export const deleteArtists = (artists: { _id: string }[]) =>
     console.log(
       `Succesfully deleted ${deletedCount} documents from "music_collection.artists" collection`
     );
+
+    if (idsToDelete.length !== deletedCount) {
+      console.error(
+        `Amount of deleted documents is not the same as amount of given ids to delete!`.toUpperCase()
+      );
+    }
   });
 
 const queryReleasesCollection = async <T>(
