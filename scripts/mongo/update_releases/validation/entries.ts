@@ -52,9 +52,19 @@ export const validateEntries = (
     return stringPropsValidityCheck;
   }
 
+  const { part_of_queen_collection, relation_to_queen } =
+    entryWithStringArrayFieldsValidated;
+
+  if (!part_of_queen_collection && relation_to_queen) {
+    return {
+      errors: [
+        `Relation to queen should be null, if entry is not a part of queen collection`,
+      ],
+    };
+  }
+
   return removeNils({
     ...entryWithStringArrayFieldsValidated,
-    part_of_queen_collection:
-      entryWithStringArrayFieldsValidated.part_of_queen_collection || null,
+    part_of_queen_collection: part_of_queen_collection || null,
   });
 };

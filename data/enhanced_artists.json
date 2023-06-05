@@ -808,20 +808,6 @@
           "part_of_queen_collection": true,
           "releases": [
             {
-              "id": "898af20a-3c7d-4931-8f7d-6aeb2d96316d",
-              "version": "2019 EU Blu ray, deluxe book edition",
-              "format": "BD",
-              "discogs_url": "https://www.discogs.com/release/16217621-Queen-Queen-Bejart-Ballet-For-Life",
-              "release_date": "2019-09-06",
-              "countries": "EU",
-              "cat_numbers": {
-                "label": "Eagle Vision",
-                "cat_number": "5051300539870"
-              },
-              "matrix_runout": "EJ75363-01 0053987 manufactured by optimal media GmbH",
-              "part_of_queen_collection": true
-            },
-            {
               "id": "60348a8f-0083-45cc-82e4-3d45ae5271d9",
               "version": "2019 EU DVD, standard slip case",
               "format": "DVD",
@@ -833,6 +819,20 @@
                 "cat_number": "EREDV1363"
               },
               "matrix_runout": "0413618 DJ5364-01 manufactured by optimal media GmbH",
+              "part_of_queen_collection": true
+            },
+            {
+              "id": "898af20a-3c7d-4931-8f7d-6aeb2d96316d",
+              "version": "2019 EU Blu ray, deluxe book edition",
+              "format": "BD",
+              "discogs_url": "https://www.discogs.com/release/16217621-Queen-Queen-Bejart-Ballet-For-Life",
+              "release_date": "2019-09-06",
+              "countries": "EU",
+              "cat_numbers": {
+                "label": "Eagle Vision",
+                "cat_number": "5051300539870"
+              },
+              "matrix_runout": "EJ75363-01 0053987 manufactured by optimal media GmbH",
               "part_of_queen_collection": true
             },
             {
@@ -2173,17 +2173,16 @@
           "part_of_queen_collection": true,
           "releases": [
             {
-              "id": "33692bc9-a96e-4805-8417-b37a9d3b37e9",
-              "version": "European LP",
-              "format": "LP",
-              "discogs_url": "https://www.discogs.com/Cross-MAD-BAD-And-Dangerous-To-Know/release/1617639",
+              "id": "091df441-2a91-4848-98b1-9f3a3b72db0b",
+              "version": "1990 EEC Tape Cassette",
+              "format": "TC",
+              "discogs_url": "https://www.discogs.com/The-Cross-MAD-BAD-And-Dangerous-To-Know/release/8874150",
               "release_date": "1990",
               "countries": "EEC",
               "cat_numbers": {
-                "label": "EMI Electrola",
-                "cat_number": "1C 064 7 93924 1"
+                "label": "EMI",
+                "cat_number": "1C264-7939244"
               },
-              "matrix_runout": "7939241-A 2 (side A), 7939241-B 1 1 (Side B)",
               "part_of_queen_collection": true
             },
             {
@@ -2201,16 +2200,17 @@
               "part_of_queen_collection": true
             },
             {
-              "id": "091df441-2a91-4848-98b1-9f3a3b72db0b",
-              "version": "1990 EEC Tape Cassette",
-              "format": "TC",
-              "discogs_url": "https://www.discogs.com/The-Cross-MAD-BAD-And-Dangerous-To-Know/release/8874150",
+              "id": "33692bc9-a96e-4805-8417-b37a9d3b37e9",
+              "version": "European LP",
+              "format": "LP",
+              "discogs_url": "https://www.discogs.com/Cross-MAD-BAD-And-Dangerous-To-Know/release/1617639",
               "release_date": "1990",
               "countries": "EEC",
               "cat_numbers": {
-                "label": "EMI",
-                "cat_number": "1C264-7939244"
+                "label": "EMI Electrola",
+                "cat_number": "1C 064 7 93924 1"
               },
+              "matrix_runout": "7939241-A 2 (side A), 7939241-B 1 1 (Side B)",
               "part_of_queen_collection": true
             }
           ]
@@ -2221,6 +2221,20 @@
           "release_date": "1991-09-09",
           "part_of_queen_collection": true,
           "releases": [
+            {
+              "id": "3876981b-98d9-4288-bbeb-64c77831b241",
+              "version": "German LP",
+              "format": "LP",
+              "discogs_url": "https://www.discogs.com/The-Cross-Blue-Rock/release/3069110",
+              "release_date": "1991-09-09",
+              "countries": "Germany",
+              "cat_numbers": {
+                "label": "Electrola",
+                "cat_number": "1C 064-7 97624 1"
+              },
+              "matrix_runout": "7976241-A01 ON YOUR HEAD TOWNHOUSE DMM 1 (Side A), 7976241-B01 TODD ARFAR 1 (Side B)",
+              "part_of_queen_collection": true
+            },
             {
               "id": "a4bf27d9-ae78-4f45-ab01-c06c38dce877",
               "version": "Dutch CD",
@@ -2234,20 +2248,6 @@
               },
               "matrix_runout": "797624 2 @ 1-1-3-NL",
               "comment": "My copy has autographs by Roger Taylor and Spike Edney.",
-              "part_of_queen_collection": true
-            },
-            {
-              "id": "3876981b-98d9-4288-bbeb-64c77831b241",
-              "version": "German LP",
-              "format": "LP",
-              "discogs_url": "https://www.discogs.com/The-Cross-Blue-Rock/release/3069110",
-              "release_date": "1991-09-09",
-              "countries": "Germany",
-              "cat_numbers": {
-                "label": "Electrola",
-                "cat_number": "1C 064-7 97624 1"
-              },
-              "matrix_runout": "7976241-A01 ON YOUR HEAD TOWNHOUSE DMM 1 (Side A), 7976241-B01 TODD ARFAR 1 (Side B)",
               "part_of_queen_collection": true
             }
           ]
@@ -2370,20 +2370,6 @@
           "part_of_queen_collection": true,
           "releases": [
             {
-              "id": "894ca017-a8c8-4db5-8561-258f5896e423",
-              "version": "UK 12''",
-              "format": "12''",
-              "discogs_url": "https://www.discogs.com/The-Cross-Heaven-For-Everyone/release/3389869",
-              "release_date": "1988-03-28",
-              "countries": "UK",
-              "cat_numbers": {
-                "label": "Virgin",
-                "cat_number": "VST 1062"
-              },
-              "matrix_runout": "VST 1062 A-1U-1-1 DD TOWNHOUSE DMM (Side A), VST 1062 B-1U-1-1 DD TOWNHOUSE DMM (Side B)",
-              "part_of_queen_collection": true
-            },
-            {
               "id": "0702319a-d9ab-480a-837f-4420931f68e3",
               "version": "UK 7''",
               "format": "7''",
@@ -2395,6 +2381,20 @@
                 "cat_number": "VS 1062"
               },
               "matrix_runout": "VS 1062 A-1U-1-Q4 D (Side A), VS 1062 B-1U-1-Q1 D (Side B)",
+              "part_of_queen_collection": true
+            },
+            {
+              "id": "894ca017-a8c8-4db5-8561-258f5896e423",
+              "version": "UK 12''",
+              "format": "12''",
+              "discogs_url": "https://www.discogs.com/The-Cross-Heaven-For-Everyone/release/3389869",
+              "release_date": "1988-03-28",
+              "countries": "UK",
+              "cat_numbers": {
+                "label": "Virgin",
+                "cat_number": "VST 1062"
+              },
+              "matrix_runout": "VST 1062 A-1U-1-1 DD TOWNHOUSE DMM (Side A), VST 1062 B-1U-1-1 DD TOWNHOUSE DMM (Side B)",
               "part_of_queen_collection": true
             },
             {
@@ -2472,20 +2472,6 @@
           "part_of_queen_collection": true,
           "releases": [
             {
-              "id": "f7b20913-95e6-424d-beda-6e36c8c4b210",
-              "version": "UK original 7''",
-              "format": "7''",
-              "discogs_url": "https://www.discogs.com/The-Cross-Power-To-Love/release/3386057",
-              "release_date": "1990-01-29",
-              "countries": "UK",
-              "cat_numbers": {
-                "label": "Parlophone",
-                "cat_number": "R 6251"
-              },
-              "matrix_runout": "R 6251 A-1-1-Q3 D (Side A), R 6251 B-1-1-Q3 D (Side B)",
-              "part_of_queen_collection": true
-            },
-            {
               "id": "982a1795-3d5c-4113-b661-d7bf820a7280",
               "version": "UK CD single",
               "format": "CDS",
@@ -2497,6 +2483,20 @@
                 "cat_number": "CDR 6251"
               },
               "matrix_runout": "147497 2 AR . 1 : 1 : 2 EMI SWINDON",
+              "part_of_queen_collection": true
+            },
+            {
+              "id": "f7b20913-95e6-424d-beda-6e36c8c4b210",
+              "version": "UK original 7''",
+              "format": "7''",
+              "discogs_url": "https://www.discogs.com/The-Cross-Power-To-Love/release/3386057",
+              "release_date": "1990-01-29",
+              "countries": "UK",
+              "cat_numbers": {
+                "label": "Parlophone",
+                "cat_number": "R 6251"
+              },
+              "matrix_runout": "R 6251 A-1-1-Q3 D (Side A), R 6251 B-1-1-Q3 D (Side B)",
               "part_of_queen_collection": true
             },
             {
@@ -4713,32 +4713,6 @@
           ]
         },
         {
-          "id": "e3a7e503-7f18-42b1-85e0-34a000118a73",
-          "name": "Use Your Illusion I",
-          "release_date": "1991-09-17",
-          "releases": [
-            {
-              "id": "27062828-e90a-4ac7-989d-4e1f2dc44402",
-              "version": "German CD",
-              "format": "CD",
-              "discogs_url": "https://www.discogs.com/Guns-N-Roses-Use-Your-Illusion-I/release/6860151",
-              "release_date": "1991",
-              "countries": "Germany",
-              "cat_numbers": {
-                "labels": [
-                  "Geffen Records",
-                  "Uzi Suicide Records"
-                ],
-                "cat_numbers": [
-                  "GED 24415",
-                  "GEFD 24415",
-                  "424 415-2"
-                ]
-              }
-            }
-          ]
-        },
-        {
           "id": "dfb6d565-d42a-49b0-b0b4-4130a40cf8e6",
           "name": "Use Your Illusion II",
           "release_date": "1991-09-17",
@@ -4762,6 +4736,32 @@
                 ]
               },
               "comment": "case slightly broken"
+            }
+          ]
+        },
+        {
+          "id": "e3a7e503-7f18-42b1-85e0-34a000118a73",
+          "name": "Use Your Illusion I",
+          "release_date": "1991-09-17",
+          "releases": [
+            {
+              "id": "27062828-e90a-4ac7-989d-4e1f2dc44402",
+              "version": "German CD",
+              "format": "CD",
+              "discogs_url": "https://www.discogs.com/Guns-N-Roses-Use-Your-Illusion-I/release/6860151",
+              "release_date": "1991",
+              "countries": "Germany",
+              "cat_numbers": {
+                "labels": [
+                  "Geffen Records",
+                  "Uzi Suicide Records"
+                ],
+                "cat_numbers": [
+                  "GED 24415",
+                  "GEFD 24415",
+                  "424 415-2"
+                ]
+              }
             }
           ]
         },
@@ -7087,21 +7087,6 @@
               "part_of_queen_collection": true
             },
             {
-              "id": "53f8885f-71d2-4ed0-801e-1517ec8d707a",
-              "version": "2022 picture disk LP re-issue",
-              "format": "LP",
-              "discogs_url": "https://www.discogs.com/release/22970714-Brian-May-Another-World",
-              "release_date": "2022-04-22",
-              "countries": "EU",
-              "cat_numbers": {
-                "label": "EMI",
-                "cat_number": "00602438623044"
-              },
-              "matrix_runout": "BL584447-01 A1 3862299 MILES",
-              "comment": "Ltd edition, copy 990/2500. ABBEYROAD1/2SPEED.ROOM30 (Side A), BL58447-01 B1 3862299 MILES.ABBEYROAD1/2SPEED.ROOM30 (Side B).",
-              "part_of_queen_collection": true
-            },
-            {
               "id": "44c1657e-8782-497c-ac49-034450c699c8",
               "version": "2022 EU Box Set",
               "format": "CD+LP",
@@ -7114,6 +7099,21 @@
               },
               "matrix_runout": "BL58447-01 A2 3862299 Iε MILES",
               "comment": "ABBEYROAD1/2SPEED.ROOM30 (LP Side A), BL58447-01 B1 3862299 Tᛚ MILES.ABBEYROAD1/2SPEED.ROOM30 (LP, Side B), Universal[Logo] 3862312 Universal[Logo] AL61195-01 manufactured by optimal media GmbH (CD1), Universal[Logo] 3862314 Universal[Logo] AL61197-01 manufactured by optimal media GmbH (CD2).",
+              "part_of_queen_collection": true
+            },
+            {
+              "id": "53f8885f-71d2-4ed0-801e-1517ec8d707a",
+              "version": "2022 picture disk LP re-issue",
+              "format": "LP",
+              "discogs_url": "https://www.discogs.com/release/22970714-Brian-May-Another-World",
+              "release_date": "2022-04-22",
+              "countries": "EU",
+              "cat_numbers": {
+                "label": "EMI",
+                "cat_number": "00602438623044"
+              },
+              "matrix_runout": "BL584447-01 A1 3862299 MILES",
+              "comment": "Ltd edition, copy 990/2500. ABBEYROAD1/2SPEED.ROOM30 (Side A), BL58447-01 B1 3862299 MILES.ABBEYROAD1/2SPEED.ROOM30 (Side B).",
               "part_of_queen_collection": true
             }
           ]
@@ -7152,21 +7152,6 @@
           "part_of_queen_collection": true,
           "releases": [
             {
-              "id": "924f138b-ae82-4d58-9e19-c5afa37b6951",
-              "version": "Russian unofficial 94 LP",
-              "format": "LP",
-              "discogs_url": "https://www.discogs.com/The-Brian-May-Band-Live-At-The-Brixton-Academy/release/4274846",
-              "release_date": "1994",
-              "countries": "Russia",
-              "cat_numbers": {
-                "label": "AnTrop",
-                "cat_number": "RAT 30814-1/2/3/4"
-              },
-              "matrix_runout": "RAT 30814-1 (Side A), RAT 30814-2 (Side B), RAT 30814-3 (Side C), RAT 30814-4 (Side D)",
-              "comment": "Individual sides have their own cat.numbers.",
-              "part_of_queen_collection": true
-            },
-            {
               "id": "0cd4af4c-3e34-4da6-a677-9f9bb0cdd001",
               "version": "Original Dutch CD",
               "format": "CD",
@@ -7192,6 +7177,21 @@
                 "label": "Parlophone",
                 "cat_number": "7243 8 28589 4 2"
               },
+              "part_of_queen_collection": true
+            },
+            {
+              "id": "924f138b-ae82-4d58-9e19-c5afa37b6951",
+              "version": "Russian unofficial 94 LP",
+              "format": "LP",
+              "discogs_url": "https://www.discogs.com/The-Brian-May-Band-Live-At-The-Brixton-Academy/release/4274846",
+              "release_date": "1994",
+              "countries": "Russia",
+              "cat_numbers": {
+                "label": "AnTrop",
+                "cat_number": "RAT 30814-1/2/3/4"
+              },
+              "matrix_runout": "RAT 30814-1 (Side A), RAT 30814-2 (Side B), RAT 30814-3 (Side C), RAT 30814-4 (Side D)",
+              "comment": "Individual sides have their own cat.numbers.",
               "part_of_queen_collection": true
             }
           ]
@@ -7270,6 +7270,20 @@
               "part_of_queen_collection": true
             },
             {
+              "id": "bf3d7ddc-c32f-4140-a9ad-1d5559c49dfd",
+              "version": "Blue \"\"pill\"\" UK promo CD single",
+              "format": "CDS",
+              "discogs_url": "https://www.discogs.com/Brian-May-Too-Much-Love-Will-Kill-You/release/3010927",
+              "release_date": "1992",
+              "countries": "UK",
+              "cat_numbers": {
+                "label": "Parlophone",
+                "cat_number": "MAYDJ 1"
+              },
+              "matrix_runout": "CDMAYDJ 1 :1 :1 EMI SWINDON",
+              "part_of_queen_collection": true
+            },
+            {
               "id": "dff351f5-47bf-4b7b-9811-04e0567ad266",
               "version": "Dutch CD single",
               "format": "CDS",
@@ -7282,20 +7296,6 @@
               },
               "matrix_runout": "880199 2 @ 2 ",
               "comment": "1-1-2-NL.",
-              "part_of_queen_collection": true
-            },
-            {
-              "id": "bf3d7ddc-c32f-4140-a9ad-1d5559c49dfd",
-              "version": "Blue \"\"pill\"\" UK promo CD single",
-              "format": "CDS",
-              "discogs_url": "https://www.discogs.com/Brian-May-Too-Much-Love-Will-Kill-You/release/3010927",
-              "release_date": "1992",
-              "countries": "UK",
-              "cat_numbers": {
-                "label": "Parlophone",
-                "cat_number": "MAYDJ 1"
-              },
-              "matrix_runout": "CDMAYDJ 1 :1 :1 EMI SWINDON",
               "part_of_queen_collection": true
             }
           ]
@@ -7471,20 +7471,6 @@
           "part_of_queen_collection": true,
           "releases": [
             {
-              "id": "c8c8b367-32d8-464e-a1a5-89efc4154514",
-              "version": "EU 7''",
-              "format": "7''",
-              "discogs_url": "https://www.discogs.com/Brian-May-The-Business-Rock-On-Cozy-Mix-A-Tribute-To-Cozy-Powell-1947-1998/release/2024271",
-              "release_date": "1998-05-25",
-              "countries": "EU",
-              "cat_numbers": {
-                "label": "Parlophone",
-                "cat_number": "R 6498"
-              },
-              "matrix_runout": "R 6498 A-02-01-1 (Side A), R 6498 B-02-01-1  (Side B)",
-              "part_of_queen_collection": true
-            },
-            {
               "id": "508243ab-5364-47a4-afaf-0ea687e52dd0",
               "version": "UK CD single",
               "format": "CDS",
@@ -7511,6 +7497,20 @@
               },
               "matrix_runout": "CDRDJ 6498 1:1:1: EMI SWINDON ifpi 1425",
               "part_of_queen_collection": true
+            },
+            {
+              "id": "c8c8b367-32d8-464e-a1a5-89efc4154514",
+              "version": "EU 7''",
+              "format": "7''",
+              "discogs_url": "https://www.discogs.com/Brian-May-The-Business-Rock-On-Cozy-Mix-A-Tribute-To-Cozy-Powell-1947-1998/release/2024271",
+              "release_date": "1998-05-25",
+              "countries": "EU",
+              "cat_numbers": {
+                "label": "Parlophone",
+                "cat_number": "R 6498"
+              },
+              "matrix_runout": "R 6498 A-02-01-1 (Side A), R 6498 B-02-01-1  (Side B)",
+              "part_of_queen_collection": true
             }
           ]
         },
@@ -7520,20 +7520,6 @@
           "release_date": "1998-06",
           "part_of_queen_collection": true,
           "releases": [
-            {
-              "id": "eeee6d13-4ecc-45c6-9589-2a9b8a71ed8c",
-              "version": "European 3-track CD single",
-              "format": "CDS",
-              "discogs_url": "https://www.discogs.com/Brian-May-On-My-Way-Up/release/3394097",
-              "release_date": "1998-06",
-              "countries": "EU",
-              "cat_numbers": {
-                "label": "Parlophone",
-                "cat_number": "7243 8 85610 2 0"
-              },
-              "matrix_runout": "EMI UDEN 8856102 @ 1 1-1-2-NL IFPI L047 ifpi 1599",
-              "part_of_queen_collection": true
-            },
             {
               "id": "d3a1eff7-789f-4f37-967e-3cfcb45472e0",
               "version": "European 1-track promo CD single",
@@ -7546,6 +7532,20 @@
                 "cat_number": "MAY 1"
               },
               "matrix_runout": "EMI UDEN MAY 1 @ 1 1-1-1-NL IFPI L046 ifpi 15C8",
+              "part_of_queen_collection": true
+            },
+            {
+              "id": "eeee6d13-4ecc-45c6-9589-2a9b8a71ed8c",
+              "version": "European 3-track CD single",
+              "format": "CDS",
+              "discogs_url": "https://www.discogs.com/Brian-May-On-My-Way-Up/release/3394097",
+              "release_date": "1998-06",
+              "countries": "EU",
+              "cat_numbers": {
+                "label": "Parlophone",
+                "cat_number": "7243 8 85610 2 0"
+              },
+              "matrix_runout": "EMI UDEN 8856102 @ 1 1-1-2-NL IFPI L047 ifpi 1599",
               "part_of_queen_collection": true
             },
             {
@@ -7580,44 +7580,6 @@
           ]
         },
         {
-          "id": "cad36ad2-8b53-48a4-b696-2bf7ad86376b",
-          "name": "Why Don't We Try Again",
-          "release_date": "1998-08-31",
-          "part_of_queen_collection": true,
-          "releases": [
-            {
-              "id": "d0dd23be-4df7-44cc-8150-f65df55150d7",
-              "version": "EU ltd numbered 7'' PD with tour poster",
-              "format": "7''",
-              "discogs_url": "https://www.discogs.com/Brian-May-Why-Dont-We-Try-Again/release/2964583",
-              "release_date": "1998-08-31",
-              "countries": "EU",
-              "cat_numbers": {
-                "label": "Parlophone",
-                "cat_number": "7243 8 86058 7 8"
-              },
-              "matrix_runout": "R+6504 +A 8860587 A-1-1- (Side A), R+6504 +B 8860587 B-1-1- (Side B)",
-              "comment": "Numbered, my copy number 4187.",
-              "part_of_queen_collection": true
-            },
-            {
-              "id": "2af81122-e48f-4677-8735-de6855fcae09",
-              "version": "EU CD single, numbered ltd edition with tour poster",
-              "format": "CDS",
-              "discogs_url": "https://www.discogs.com/Brian-May-Why-Dont-We-Try-Again/release/3018569",
-              "release_date": "1998-08-31",
-              "countries": "EU",
-              "cat_numbers": {
-                "label": "Parlophone",
-                "cat_number": "7243 8 86058 2 3"
-              },
-              "matrix_runout": "886058 2 ",
-              "comment": "Numbered, my copy number 04680.  1 : 1 : 3 EMI SWINDON IFPI L041 ifpi 1421.",
-              "part_of_queen_collection": true
-            }
-          ]
-        },
-        {
           "id": "21fc411c-997d-4c2f-9e4d-afe2cf5f9bd0",
           "name": "Another World",
           "release_date": "1998-08",
@@ -7635,6 +7597,44 @@
                 "cat_number": "CDWORLD 2"
               },
               "matrix_runout": "EMI UDEN CDWORLD 2 @ 1 1-1-1-NL IFPI L046 ifpi 15D3",
+              "part_of_queen_collection": true
+            }
+          ]
+        },
+        {
+          "id": "cad36ad2-8b53-48a4-b696-2bf7ad86376b",
+          "name": "Why Don't We Try Again",
+          "release_date": "1998-08-31",
+          "part_of_queen_collection": true,
+          "releases": [
+            {
+              "id": "2af81122-e48f-4677-8735-de6855fcae09",
+              "version": "EU CD single, numbered ltd edition with tour poster",
+              "format": "CDS",
+              "discogs_url": "https://www.discogs.com/Brian-May-Why-Dont-We-Try-Again/release/3018569",
+              "release_date": "1998-08-31",
+              "countries": "EU",
+              "cat_numbers": {
+                "label": "Parlophone",
+                "cat_number": "7243 8 86058 2 3"
+              },
+              "matrix_runout": "886058 2 ",
+              "comment": "Numbered, my copy number 04680.  1 : 1 : 3 EMI SWINDON IFPI L041 ifpi 1421.",
+              "part_of_queen_collection": true
+            },
+            {
+              "id": "d0dd23be-4df7-44cc-8150-f65df55150d7",
+              "version": "EU ltd numbered 7'' PD with tour poster",
+              "format": "7''",
+              "discogs_url": "https://www.discogs.com/Brian-May-Why-Dont-We-Try-Again/release/2964583",
+              "release_date": "1998-08-31",
+              "countries": "EU",
+              "cat_numbers": {
+                "label": "Parlophone",
+                "cat_number": "7243 8 86058 7 8"
+              },
+              "matrix_runout": "R+6504 +A 8860587 A-1-1- (Side A), R+6504 +B 8860587 B-1-1- (Side B)",
+              "comment": "Numbered, my copy number 4187.",
               "part_of_queen_collection": true
             }
           ]
@@ -7844,20 +7844,6 @@
               "part_of_queen_collection": true
             },
             {
-              "id": "68ec32c2-f0a9-4239-917e-a1ac6abfde44",
-              "version": "Russian unofficial 92 LP",
-              "format": "LP",
-              "discogs_url": "https://www.discogs.com/%D0%A4%D1%80%D0%B5%D0%B4%D0%B4%D0%B8-%D0%9C%D0%B5%D1%80%D0%BA%D1%83%D1%80%D0%B8-%D0%9C%D0%BE%D0%BD%D1%81%D0%B5%D1%80%D1%80%D0%B0%D1%82-%D0%9A%D0%B0%D0%B1%D0%B0%D0%BB%D1%8C%D0%B5-%D0%91%D0%B0%D1%80%D1%81%D0%B5%D0%BB%D0%BE%D0%BD%D0%B0/release/1902053",
-              "release_date": "1992",
-              "countries": "Russia",
-              "cat_numbers": {
-                "label": "AnTrop",
-                "cat_number": "П92-00257-8"
-              },
-              "matrix_runout": "TR 30020 92 (Side A), ATR 30022 92(Side B)",
-              "part_of_queen_collection": true
-            },
-            {
               "id": "4a614064-e0fa-45c9-9af4-7992db3df5c9",
               "version": "French 1992 re-issue CD, made by PMDC version.",
               "format": "CD",
@@ -7869,6 +7855,20 @@
                 "cat_number": "INT 837277-2"
               },
               "matrix_runout": "837 277-2 01 / 1-A 1**H IFPI 0211",
+              "part_of_queen_collection": true
+            },
+            {
+              "id": "68ec32c2-f0a9-4239-917e-a1ac6abfde44",
+              "version": "Russian unofficial 92 LP",
+              "format": "LP",
+              "discogs_url": "https://www.discogs.com/%D0%A4%D1%80%D0%B5%D0%B4%D0%B4%D0%B8-%D0%9C%D0%B5%D1%80%D0%BA%D1%83%D1%80%D0%B8-%D0%9C%D0%BE%D0%BD%D1%81%D0%B5%D1%80%D1%80%D0%B0%D1%82-%D0%9A%D0%B0%D0%B1%D0%B0%D0%BB%D1%8C%D0%B5-%D0%91%D0%B0%D1%80%D1%81%D0%B5%D0%BB%D0%BE%D0%BD%D0%B0/release/1902053",
+              "release_date": "1992",
+              "countries": "Russia",
+              "cat_numbers": {
+                "label": "AnTrop",
+                "cat_number": "П92-00257-8"
+              },
+              "matrix_runout": "TR 30020 92 (Side A), ATR 30022 92(Side B)",
               "part_of_queen_collection": true
             }
           ]
@@ -7934,20 +7934,6 @@
               "part_of_queen_collection": true
             },
             {
-              "id": "ad135f35-fb52-417e-801e-738a91c57b4e",
-              "name": "The Freddie Mercury Album",
-              "version": "UK Tape cassette",
-              "format": "TC",
-              "discogs_url": "https://www.discogs.com/Freddie-Mercury-The-Freddie-Mercury-Album/release/2717501",
-              "release_date": "1992-11-16",
-              "countries": "UK",
-              "cat_numbers": {
-                "label": "Parlophone",
-                "cat_number": "TCPCSD 124"
-              },
-              "part_of_queen_collection": true
-            },
-            {
               "id": "54413ba4-2a0d-47c3-90d3-054cf563d305",
               "name": "The Freddie Mercury Album",
               "version": "Original UK LP",
@@ -7960,6 +7946,20 @@
                 "cat_number": "PCSD 124"
               },
               "matrix_runout": "PCSD 124 A-01-01-1 (Side A), PCSD 124 B-01-01-2 (Side B)",
+              "part_of_queen_collection": true
+            },
+            {
+              "id": "ad135f35-fb52-417e-801e-738a91c57b4e",
+              "name": "The Freddie Mercury Album",
+              "version": "UK Tape cassette",
+              "format": "TC",
+              "discogs_url": "https://www.discogs.com/Freddie-Mercury-The-Freddie-Mercury-Album/release/2717501",
+              "release_date": "1992-11-16",
+              "countries": "UK",
+              "cat_numbers": {
+                "label": "Parlophone",
+                "cat_number": "TCPCSD 124"
+              },
               "part_of_queen_collection": true
             },
             {
@@ -8076,21 +8076,6 @@
           "part_of_queen_collection": true,
           "releases": [
             {
-              "id": "990e7c6e-9144-40c7-a054-2b4f98f4862f",
-              "version": "Dutch 7''",
-              "format": "7''",
-              "discogs_url": "https://www.discogs.com/Freddie-Mercury-Love-Kills/release/2895561",
-              "release_date": "1984",
-              "countries": "Holland",
-              "cat_numbers": {
-                "label": "CBS",
-                "cat_number": "A-4735"
-              },
-              "matrix_runout": "01-4735-1A-1 A (Side A), NL 01-4735-1B-1 B (Side B)",
-              "part_of_queen_collection": true,
-              "jukebox_hole": true
-            },
-            {
               "id": "3ca09484-9ee0-4d66-bba4-3ed5c01f9de9",
               "version": "Dutch 12''",
               "format": "12''",
@@ -8104,6 +8089,21 @@
               "matrix_runout": "A 11-4735-1A-1 (Side A), A 11-4735-1B-1 (Side B)",
               "comment": "B-side by Georgio Moroder, mistankenly credited to Freddie as well.",
               "part_of_queen_collection": true
+            },
+            {
+              "id": "990e7c6e-9144-40c7-a054-2b4f98f4862f",
+              "version": "Dutch 7''",
+              "format": "7''",
+              "discogs_url": "https://www.discogs.com/Freddie-Mercury-Love-Kills/release/2895561",
+              "release_date": "1984",
+              "countries": "Holland",
+              "cat_numbers": {
+                "label": "CBS",
+                "cat_number": "A-4735"
+              },
+              "matrix_runout": "01-4735-1A-1 A (Side A), NL 01-4735-1B-1 B (Side B)",
+              "part_of_queen_collection": true,
+              "jukebox_hole": true
             }
           ]
         },
@@ -8461,6 +8461,20 @@
           "part_of_queen_collection": true,
           "releases": [
             {
+              "id": "158d4802-4212-479d-8d64-c670fa769698",
+              "version": "1988 Spanish 7\"",
+              "format": "7''",
+              "discogs_url": "https://www.discogs.com/release/5238703-Freddie-Mercury-Montserrat-Caball%C3%A9-The-Golden-Boy",
+              "release_date": "1988",
+              "countries": "Spain",
+              "cat_numbers": {
+                "label": "Polydor",
+                "cat_number": "887 787-7"
+              },
+              "matrix_runout": "850 887 787 // 7 * A * 1 (Side A), 850 887 787 // 7 * B * 1 (Side B)",
+              "part_of_queen_collection": true
+            },
+            {
               "id": "70ad0e4d-bc81-404b-8e4a-4254246467c6",
               "version": "1988 German CD",
               "format": "CDS",
@@ -8473,20 +8487,6 @@
               },
               "matrix_runout": "887 787-2 01 * MADE IN W",
               "comment": "GERMANY BY PDO. My copy has a sticker which seems to belong to some other, completely unrelated release.",
-              "part_of_queen_collection": true
-            },
-            {
-              "id": "158d4802-4212-479d-8d64-c670fa769698",
-              "version": "1988 Spanish 7\"",
-              "format": "7''",
-              "discogs_url": "https://www.discogs.com/release/5238703-Freddie-Mercury-Montserrat-Caball%C3%A9-The-Golden-Boy",
-              "release_date": "1988",
-              "countries": "Spain",
-              "cat_numbers": {
-                "label": "Polydor",
-                "cat_number": "887 787-7"
-              },
-              "matrix_runout": "850 887 787 // 7 * A * 1 (Side A), 850 887 787 // 7 * B * 1 (Side B)",
               "part_of_queen_collection": true
             }
           ]
@@ -8549,19 +8549,6 @@
               "part_of_queen_collection": true
             },
             {
-              "id": "e8423d18-218a-445e-8bf9-5d8dc7051a91",
-              "version": "UK cassette single",
-              "format": "TCC",
-              "discogs_url": "https://www.discogs.com/release/3829393-Freddie-Mercury-In-My-Defence",
-              "release_date": "1992-11-30",
-              "countries": "UK",
-              "cat_numbers": {
-                "label": "Parlophone",
-                "cat_number": "TCR6331"
-              },
-              "part_of_queen_collection": true
-            },
-            {
               "id": "6414156f-b63c-4324-b947-92277852b0c0",
               "version": "1992 original UK CD Part 1",
               "format": "CDS",
@@ -8574,6 +8561,19 @@
               },
               "matrix_runout": "880395 2 ",
               "comment": "1 : 1:3. EMI SWINDON.",
+              "part_of_queen_collection": true
+            },
+            {
+              "id": "e8423d18-218a-445e-8bf9-5d8dc7051a91",
+              "version": "UK cassette single",
+              "format": "TCC",
+              "discogs_url": "https://www.discogs.com/release/3829393-Freddie-Mercury-In-My-Defence",
+              "release_date": "1992-11-30",
+              "countries": "UK",
+              "cat_numbers": {
+                "label": "Parlophone",
+                "cat_number": "TCR6331"
+              },
               "part_of_queen_collection": true
             },
             {
@@ -8708,20 +8708,6 @@
           "part_of_queen_collection": true,
           "releases": [
             {
-              "id": "b7eddfe6-ae9d-4e2d-bd0b-ef1021d239fc",
-              "version": "EU CD single",
-              "format": "CDS",
-              "discogs_url": "https://www.discogs.com/Freddie-Mercury-Time-Waits-For-No-One/release/13927125",
-              "release_date": "2019-07-26",
-              "countries": "EU",
-              "cat_numbers": {
-                "label": "Universal Music Group",
-                "cat_number": "0805996"
-              },
-              "matrix_runout": "[Universal logotype] 0805996 [Universal logotype] AJ76482-01 manufactured by optimal media GmbH IFPI L578 IFPI 9702",
-              "part_of_queen_collection": true
-            },
-            {
               "id": "3747c2e8-47da-4b0d-acbf-bc0db3b1c9c3",
               "version": "EU 7'' picture disc",
               "format": "7''",
@@ -8733,6 +8719,20 @@
                 "cat_number": "0805997"
               },
               "matrix_runout": "BJ 76173-01 A1 0805996 (Side A), BJ 76173-01 B1 0805996 (Side B)",
+              "part_of_queen_collection": true
+            },
+            {
+              "id": "b7eddfe6-ae9d-4e2d-bd0b-ef1021d239fc",
+              "version": "EU CD single",
+              "format": "CDS",
+              "discogs_url": "https://www.discogs.com/Freddie-Mercury-Time-Waits-For-No-One/release/13927125",
+              "release_date": "2019-07-26",
+              "countries": "EU",
+              "cat_numbers": {
+                "label": "Universal Music Group",
+                "cat_number": "0805996"
+              },
+              "matrix_runout": "[Universal logotype] 0805996 [Universal logotype] AJ76482-01 manufactured by optimal media GmbH IFPI L578 IFPI 9702",
               "part_of_queen_collection": true
             }
           ]
@@ -8779,27 +8779,6 @@
       ],
       "Box Set": [
         {
-          "id": "fa06c111-e0ae-442f-90dd-6c5fa46ebf5a",
-          "name": "The Solo Collection",
-          "release_date": "2000-10-23",
-          "part_of_queen_collection": true,
-          "releases": [
-            {
-              "id": "bc57e6c5-69ef-4174-b2d4-cb06f5ace457",
-              "version": "EU 10CD + DVD Box Set",
-              "format": "CD+DVD",
-              "discogs_url": "https://www.discogs.com/Freddie-Mercury-The-Solo-Collection/release/1753866",
-              "release_date": "2000-10-23",
-              "countries": "EU",
-              "cat_numbers": {
-                "label": "Parlophone",
-                "cat_number": "7243 5 27964 0 3"
-              },
-              "part_of_queen_collection": true
-            }
-          ]
-        },
-        {
           "id": "03c15381-5909-43d8-96f8-9b86ac595fa9",
           "name": "Solo",
           "release_date": "2000-10-23",
@@ -8817,6 +8796,27 @@
                 "cat_number": "7243 5 28047 2 6"
               },
               "matrix_runout": "EMI uDEN 5279542 @ 1 1-1-6-NL (CD1), EMI uDEN 5279552 @ 1 1-2-8-NL (CD2), EMI uDEN FMBCD 01 @ 1 1-1-7-NL (CD3)",
+              "part_of_queen_collection": true
+            }
+          ]
+        },
+        {
+          "id": "fa06c111-e0ae-442f-90dd-6c5fa46ebf5a",
+          "name": "The Solo Collection",
+          "release_date": "2000-10-23",
+          "part_of_queen_collection": true,
+          "releases": [
+            {
+              "id": "bc57e6c5-69ef-4174-b2d4-cb06f5ace457",
+              "version": "EU 10CD + DVD Box Set",
+              "format": "CD+DVD",
+              "discogs_url": "https://www.discogs.com/Freddie-Mercury-The-Solo-Collection/release/1753866",
+              "release_date": "2000-10-23",
+              "countries": "EU",
+              "cat_numbers": {
+                "label": "Parlophone",
+                "cat_number": "7243 5 27964 0 3"
+              },
               "part_of_queen_collection": true
             }
           ]
@@ -11983,20 +11983,6 @@
               "part_of_queen_collection": true
             },
             {
-              "id": "e9479580-9938-4d1f-a612-35f4141b6746",
-              "version": "1991 US HR remaster, black rectangular HR logo on back",
-              "format": "CD",
-              "discogs_url": "https://www.discogs.com/Queen-News-Of-The-World/release/8158486",
-              "release_date": "1991-02-12",
-              "countries": "USA",
-              "cat_numbers": {
-                "label": "Hollywood Records",
-                "cat_number": "HR-61037-2"
-              },
-              "matrix_runout": "DIDX-151206 1 IFPI L327 IFPI 7263",
-              "part_of_queen_collection": true
-            },
-            {
               "id": "69b0d9e9-6c86-4555-af5c-de1fc7234c55",
               "version": "HR 1991 remaster tape cassette",
               "format": "TC",
@@ -12008,6 +11994,20 @@
                 "cat_number": "HR-61037-4"
               },
               "comment": "Pressing Plant ID: SR (other version has AR.",
+              "part_of_queen_collection": true
+            },
+            {
+              "id": "e9479580-9938-4d1f-a612-35f4141b6746",
+              "version": "1991 US HR remaster, black rectangular HR logo on back",
+              "format": "CD",
+              "discogs_url": "https://www.discogs.com/Queen-News-Of-The-World/release/8158486",
+              "release_date": "1991-02-12",
+              "countries": "USA",
+              "cat_numbers": {
+                "label": "Hollywood Records",
+                "cat_number": "HR-61037-2"
+              },
+              "matrix_runout": "DIDX-151206 1 IFPI L327 IFPI 7263",
               "part_of_queen_collection": true
             },
             {
@@ -12238,22 +12238,6 @@
               "part_of_queen_collection": true
             },
             {
-              "id": "fe16769f-7950-43c1-84ba-4243e8ef1675",
-              "version": "Russian unofficial 94 LP",
-              "format": "LP",
-              "discogs_url": "https://www.discogs.com/Queen-The-Game/release/3589485",
-              "release_date": "1994",
-              "countries": "Russia",
-              "cat_numbers": {
-                "label": "Santa Records",
-                "cat_number": "П94 RAT 30754"
-              },
-              "matrix_runout": "RAT 30754 - 1 (Side A), RAT 30754 - 2 (Side B)",
-              "comment": "Alternative sleeve. Alternative sleeve. Alternative sleeve.",
-              "condition_problems": "Sleeve bottom slightly ruined",
-              "part_of_queen_collection": true
-            },
-            {
               "id": "81a73581-abae-49fe-8065-ec8a928023ec",
               "version": "Dutch 1994 remaster tape cassette",
               "format": "TC",
@@ -12278,6 +12262,22 @@
                 "cat_number": "0777 7 89496 2 6"
               },
               "matrix_runout": "789496 2 @ 4 1-1-23-NL",
+              "part_of_queen_collection": true
+            },
+            {
+              "id": "fe16769f-7950-43c1-84ba-4243e8ef1675",
+              "version": "Russian unofficial 94 LP",
+              "format": "LP",
+              "discogs_url": "https://www.discogs.com/Queen-The-Game/release/3589485",
+              "release_date": "1994",
+              "countries": "Russia",
+              "cat_numbers": {
+                "label": "Santa Records",
+                "cat_number": "П94 RAT 30754"
+              },
+              "matrix_runout": "RAT 30754 - 1 (Side A), RAT 30754 - 2 (Side B)",
+              "comment": "Alternative sleeve. Alternative sleeve. Alternative sleeve.",
+              "condition_problems": "Sleeve bottom slightly ruined",
               "part_of_queen_collection": true
             },
             {
@@ -12934,6 +12934,19 @@
               "part_of_queen_collection": true
             },
             {
+              "id": "3248f199-0807-40e9-9b1b-5dc21e5f9e6a",
+              "version": "EEC Tape cassette",
+              "format": "TC",
+              "discogs_url": "https://www.discogs.com/Queen-Innuendo/release/2954754",
+              "release_date": "1991",
+              "countries": "EEC",
+              "cat_numbers": {
+                "label": "Parlophone",
+                "cat_number": "268-795887-4"
+              },
+              "part_of_queen_collection": true
+            },
+            {
               "id": "d1cc687e-024d-4d64-b1c2-8086bc5a65c7",
               "version": "Dutch CD, box edition with 1991 Queen Calendar",
               "format": "CD",
@@ -12946,19 +12959,6 @@
               },
               "matrix_runout": "CDP 795887 2 00 @ 3:1:14",
               "comment": "Cat. number of CD itself is CDP 79 5887 2.",
-              "part_of_queen_collection": true
-            },
-            {
-              "id": "3248f199-0807-40e9-9b1b-5dc21e5f9e6a",
-              "version": "EEC Tape cassette",
-              "format": "TC",
-              "discogs_url": "https://www.discogs.com/Queen-Innuendo/release/2954754",
-              "release_date": "1991",
-              "countries": "EEC",
-              "cat_numbers": {
-                "label": "Parlophone",
-                "cat_number": "268-795887-4"
-              },
               "part_of_queen_collection": true
             },
             {
@@ -13057,6 +13057,20 @@
           "part_of_queen_collection": true,
           "releases": [
             {
+              "id": "0ba6cca4-b615-4f17-bcdf-231729236b09",
+              "version": "Original UK creamy vinyl LP",
+              "format": "LP",
+              "discogs_url": "https://www.discogs.com/Queen-Made-In-Heaven/release/803525",
+              "release_date": "1995-11-06",
+              "countries": "UK",
+              "cat_numbers": {
+                "label": "Parlophone",
+                "cat_number": "PCSD 167"
+              },
+              "matrix_runout": "PCSD 167 A-02-01-1 D (Side A), PCSD 167 B-02-01-1 D (Side B)",
+              "part_of_queen_collection": true
+            },
+            {
               "id": "134c765c-5d63-4d2f-9141-d110403409a3",
               "version": "Original UK Tape Cassette",
               "format": "TC",
@@ -13083,20 +13097,6 @@
               },
               "matrix_runout": "836088 2 ",
               "comment": "1:1:44 EMI SWINDON.",
-              "part_of_queen_collection": true
-            },
-            {
-              "id": "0ba6cca4-b615-4f17-bcdf-231729236b09",
-              "version": "Original UK creamy vinyl LP",
-              "format": "LP",
-              "discogs_url": "https://www.discogs.com/Queen-Made-In-Heaven/release/803525",
-              "release_date": "1995-11-06",
-              "countries": "UK",
-              "cat_numbers": {
-                "label": "Parlophone",
-                "cat_number": "PCSD 167"
-              },
-              "matrix_runout": "PCSD 167 A-02-01-1 D (Side A), PCSD 167 B-02-01-1 D (Side B)",
               "part_of_queen_collection": true
             },
             {
@@ -13204,6 +13204,19 @@
               "part_of_queen_collection": true
             },
             {
+              "id": "0fd3c17d-83d0-4442-8d54-a8b086e93cb8",
+              "version": "2018 EU Tape Cassette",
+              "format": "TC",
+              "discogs_url": "https://www.discogs.com/Queen-Bohemian-Rhapsody-The-Original-Soundtrack/release/12689813",
+              "release_date": "2018-10-19",
+              "countries": "EU",
+              "cat_numbers": {
+                "label": "Virgin EMI Records",
+                "cat_number": "602567995234"
+              },
+              "part_of_queen_collection": true
+            },
+            {
               "id": "ff24251c-1a32-436b-bc5f-14eb7ab7df98",
               "version": "Original EU 2LP",
               "format": "LP",
@@ -13216,19 +13229,6 @@
               },
               "matrix_runout": "BI48058-01 A2 6798873 MILES",
               "comment": "Includes Back To Black mp3 download voucher. ABBEY ROAD ½ SPEED.ROOM 30 (Side A), BI48058-01 B2 6798873 MILES.ABBEY ROAD ½ SPEED.ROOM 30 (Side B), BI48058-01 C2 6798875 MILES.ABBEY ROAD ½ SPEED.ROOM 30 (Side C), BI48058-01 D2 6798875 MILES.ABBEY ROAD ½ SPEED.ROOM 30 (Side D). .",
-              "part_of_queen_collection": true
-            },
-            {
-              "id": "0fd3c17d-83d0-4442-8d54-a8b086e93cb8",
-              "version": "2018 EU Tape Cassette",
-              "format": "TC",
-              "discogs_url": "https://www.discogs.com/Queen-Bohemian-Rhapsody-The-Original-Soundtrack/release/12689813",
-              "release_date": "2018-10-19",
-              "countries": "EU",
-              "cat_numbers": {
-                "label": "Virgin EMI Records",
-                "cat_number": "602567995234"
-              },
               "part_of_queen_collection": true
             }
           ]
@@ -13550,19 +13550,6 @@
           "part_of_queen_collection": true,
           "releases": [
             {
-              "id": "de4c271e-cda2-43ff-b66d-439735a09813",
-              "version": "Original 4LP Box",
-              "format": "LP",
-              "discogs_url": "https://www.discogs.com/Queen-Live-At-The-Rainbow-74/release/6055344",
-              "release_date": "2014-09-08",
-              "countries": "EU",
-              "cat_numbers": {
-                "label": "Virgin EMI Records",
-                "cat_number": "602537910748"
-              },
-              "part_of_queen_collection": true
-            },
-            {
               "id": "ae0b655b-06a0-4790-a2f7-4b9389fbfaf0",
               "version": "Original 2LP",
               "format": "LP",
@@ -13572,6 +13559,19 @@
               "cat_numbers": {
                 "label": "Virgin EMI Records",
                 "cat_number": "602537910717"
+              },
+              "part_of_queen_collection": true
+            },
+            {
+              "id": "de4c271e-cda2-43ff-b66d-439735a09813",
+              "version": "Original 4LP Box",
+              "format": "LP",
+              "discogs_url": "https://www.discogs.com/Queen-Live-At-The-Rainbow-74/release/6055344",
+              "release_date": "2014-09-08",
+              "countries": "EU",
+              "cat_numbers": {
+                "label": "Virgin EMI Records",
+                "cat_number": "602537910748"
               },
               "part_of_queen_collection": true
             }
@@ -13689,6 +13689,20 @@
               "part_of_queen_collection": true
             },
             {
+              "id": "14949c13-3704-4301-b2b8-e56539bc9ee6",
+              "version": "French Tape cassette (made for German market)",
+              "format": "TC",
+              "discogs_url": "https://www.discogs.com/Queen-Greatest-Hits/release/6905538",
+              "release_date": "1981",
+              "countries": "France",
+              "cat_numbers": {
+                "label": "EMI",
+                "cat_number": "264-7941114"
+              },
+              "comment": "Contains 'Under Pressure'",
+              "part_of_queen_collection": true
+            },
+            {
               "id": "b065d8df-9371-4cba-806b-c042add143c1",
               "name": "Grootste Hits",
               "version": "Dutch LP, later re-pressing with UP",
@@ -13715,20 +13729,6 @@
                 "cat_number": "X5E-564"
               },
               "matrix_runout": "X5E-564-A Q (Side A), X5E-564-B Q (Side B)",
-              "part_of_queen_collection": true
-            },
-            {
-              "id": "14949c13-3704-4301-b2b8-e56539bc9ee6",
-              "version": "French Tape cassette (made for German market)",
-              "format": "TC",
-              "discogs_url": "https://www.discogs.com/Queen-Greatest-Hits/release/6905538",
-              "release_date": "1981",
-              "countries": "France",
-              "cat_numbers": {
-                "label": "EMI",
-                "cat_number": "264-7941114"
-              },
-              "comment": "Contains 'Under Pressure'",
               "part_of_queen_collection": true
             },
             {
@@ -13804,6 +13804,19 @@
               "part_of_queen_collection": true
             },
             {
+              "id": "2d3065fe-6357-48a9-bf3b-257904ffe9f4",
+              "version": "Dutch 1994 remaster Tape cassette",
+              "format": "TC",
+              "discogs_url": "https://www.discogs.com/Queen-Greatest-Hits/release/2652624",
+              "release_date": "1994",
+              "countries": "Holland",
+              "cat_numbers": {
+                "label": "Parlophone",
+                "cat_number": "0777 7 89504 4 8"
+              },
+              "part_of_queen_collection": true
+            },
+            {
               "id": "c8f6d3a2-dd51-4b38-a86f-610e3bcc993c",
               "version": "Dutch 1994 Remaster CD",
               "format": "CD",
@@ -13816,19 +13829,6 @@
               },
               "matrix_runout": "789504 2 @ 1 1-7-5-NL",
               "comment": "Golden \"\"Digital Master Series\"\" sticker.",
-              "part_of_queen_collection": true
-            },
-            {
-              "id": "2d3065fe-6357-48a9-bf3b-257904ffe9f4",
-              "version": "Dutch 1994 remaster Tape cassette",
-              "format": "TC",
-              "discogs_url": "https://www.discogs.com/Queen-Greatest-Hits/release/2652624",
-              "release_date": "1994",
-              "countries": "Holland",
-              "cat_numbers": {
-                "label": "Parlophone",
-                "cat_number": "0777 7 89504 4 8"
-              },
               "part_of_queen_collection": true
             },
             {
@@ -13913,21 +13913,6 @@
           "part_of_queen_collection": true,
           "releases": [
             {
-              "id": "33c51471-fa62-4081-994a-8c4643c6f13d",
-              "name": "At The Beeb",
-              "version": "Original UK LP",
-              "format": "LP",
-              "discogs_url": "https://www.discogs.com/Queen-At-The-Beeb/release/1574512",
-              "release_date": "1989-12-04",
-              "countries": "UK",
-              "cat_numbers": {
-                "label": "Band Of Joy",
-                "cat_number": "BOJLP 001"
-              },
-              "matrix_runout": "BOJLP001A-1 * MB MAX (Side A), BOJLP001B-1 * CTS MAX (Side B)",
-              "part_of_queen_collection": true
-            },
-            {
               "id": "17a3cdcf-040a-47d5-87b2-ac31c92e1636",
               "name": "At The Beeb",
               "version": "Original UK CD",
@@ -13941,6 +13926,21 @@
               },
               "matrix_runout": "CDP 746413 2 AR",
               "comment": "@ 1 . 1-1-6-NLBOJCD001 10098461 03 % MADE IN U.K. BY PDO",
+              "part_of_queen_collection": true
+            },
+            {
+              "id": "33c51471-fa62-4081-994a-8c4643c6f13d",
+              "name": "At The Beeb",
+              "version": "Original UK LP",
+              "format": "LP",
+              "discogs_url": "https://www.discogs.com/Queen-At-The-Beeb/release/1574512",
+              "release_date": "1989-12-04",
+              "countries": "UK",
+              "cat_numbers": {
+                "label": "Band Of Joy",
+                "cat_number": "BOJLP 001"
+              },
+              "matrix_runout": "BOJLP001A-1 * MB MAX (Side A), BOJLP001B-1 * CTS MAX (Side B)",
               "part_of_queen_collection": true
             },
             {
@@ -13983,6 +13983,19 @@
           "part_of_queen_collection": true,
           "releases": [
             {
+              "id": "77303665-d133-4ba1-9167-0194bb6e91d8",
+              "version": "Original French Tape Cassette",
+              "format": "TC",
+              "discogs_url": "https://www.discogs.com/Queen-Greatest-Hits-II/release/6063705",
+              "release_date": "1991",
+              "countries": "France",
+              "cat_numbers": {
+                "label": "Parlophone",
+                "cat_number": "TCPMTV 2"
+              },
+              "part_of_queen_collection": true
+            },
+            {
               "id": "f19d25dd-0737-4920-a77c-5ade047e1e4f",
               "version": "European original 2LP, PMTV 2 version",
               "format": "LP",
@@ -14008,19 +14021,6 @@
                 "cat_number": "CDPMTV 2"
               },
               "matrix_runout": "CDP-7979712 12 A2 DADC AUSTRIA",
-              "part_of_queen_collection": true
-            },
-            {
-              "id": "77303665-d133-4ba1-9167-0194bb6e91d8",
-              "version": "Original French Tape Cassette",
-              "format": "TC",
-              "discogs_url": "https://www.discogs.com/Queen-Greatest-Hits-II/release/6063705",
-              "release_date": "1991",
-              "countries": "France",
-              "cat_numbers": {
-                "label": "Parlophone",
-                "cat_number": "TCPMTV 2"
-              },
               "part_of_queen_collection": true
             }
           ]
@@ -14068,21 +14068,6 @@
               "part_of_queen_collection": true
             },
             {
-              "id": "7729cc93-5ad3-45b7-b7e6-5832f9fb683c",
-              "version": "Dutch CD, uncensored release",
-              "format": "CD",
-              "discogs_url": "https://www.discogs.com/Queen-Queen-Rocks/release/498831",
-              "release_date": "1997",
-              "countries": "Holland",
-              "cat_numbers": {
-                "label": "Parlophone",
-                "cat_number": "7243 8 23091 2 3"
-              },
-              "matrix_runout": "EMI UDEN 8230912 @1 1-1-12-NL IFPI L046",
-              "comment": "Uncensored release i.e. angels on sleeve and CD naked.",
-              "part_of_queen_collection": true
-            },
-            {
               "id": "0ba4d62c-6030-498e-b41c-af0f19f0c571",
               "version": "UK CD, re-release with bird sleeve",
               "format": "CD",
@@ -14095,6 +14080,21 @@
               },
               "matrix_runout": "823091 2 ",
               "comment": "23:14 EMI SWINDON IFPI L042.",
+              "part_of_queen_collection": true
+            },
+            {
+              "id": "7729cc93-5ad3-45b7-b7e6-5832f9fb683c",
+              "version": "Dutch CD, uncensored release",
+              "format": "CD",
+              "discogs_url": "https://www.discogs.com/Queen-Queen-Rocks/release/498831",
+              "release_date": "1997",
+              "countries": "Holland",
+              "cat_numbers": {
+                "label": "Parlophone",
+                "cat_number": "7243 8 23091 2 3"
+              },
+              "matrix_runout": "EMI UDEN 8230912 @1 1-1-12-NL IFPI L046",
+              "comment": "Uncensored release i.e. angels on sleeve and CD naked.",
               "part_of_queen_collection": true
             },
             {
@@ -14389,20 +14389,6 @@
           "part_of_queen_collection": true,
           "releases": [
             {
-              "id": "8871a8df-8e2d-4e5a-a5d2-1982299e72cd",
-              "version": "European 2CD",
-              "format": "CD",
-              "discogs_url": "https://www.discogs.com/Queen-On-Air/release/9324953",
-              "release_date": "2016-11-04",
-              "countries": "EU",
-              "cat_numbers": {
-                "label": "Virgin EMI Records",
-                "cat_number": "602557082289"
-              },
-              "matrix_runout": "5708229 AG48517-01 manufactured by optimal media GmbH IFPI 8706 (CD1), 5708230 AG48517-02 manufactured by optimal media GmbH IFPI 8706 (CD2)",
-              "part_of_queen_collection": true
-            },
-            {
               "id": "04ab383c-ccda-4304-a577-339f2fe8943c",
               "version": "European 6CD Box",
               "format": "CD",
@@ -14414,6 +14400,20 @@
                 "cat_number": "602557082319"
               },
               "matrix_runout": "5708233 AG48532-01 manufactured by optimal media GmbH IFPI 9746 (CD1), 5708235 AG48533-01 manufactured by optimal media GmbH IFPI 9746 (CD2), 5708236 AG48534-01 manufactured by optimal media GmbH IFPI 9746 (CD3), 5708237 AG48535-01 manufactured by optimal media GmbH IFPI 9742 (CD4), 5708238 AG48536-01 manufactured by optimal media GmbH IFPI 9742 (CD5), 5708240 AG48537-01 manufactured by optimal media GmbH IFPI 9742 (CD6)",
+              "part_of_queen_collection": true
+            },
+            {
+              "id": "8871a8df-8e2d-4e5a-a5d2-1982299e72cd",
+              "version": "European 2CD",
+              "format": "CD",
+              "discogs_url": "https://www.discogs.com/Queen-On-Air/release/9324953",
+              "release_date": "2016-11-04",
+              "countries": "EU",
+              "cat_numbers": {
+                "label": "Virgin EMI Records",
+                "cat_number": "602557082289"
+              },
+              "matrix_runout": "5708229 AG48517-01 manufactured by optimal media GmbH IFPI 8706 (CD1), 5708230 AG48517-02 manufactured by optimal media GmbH IFPI 8706 (CD2)",
               "part_of_queen_collection": true
             }
           ]
@@ -14449,19 +14449,6 @@
           "part_of_queen_collection": true,
           "releases": [
             {
-              "id": "a2799686-95b4-418f-a5d2-4fb3c2ca46a9",
-              "version": "German 1992 unofficial tape cassette",
-              "format": "TC",
-              "discogs_url": "https://www.discogs.com/Queen-Live-USA/release/6428574",
-              "release_date": "1992",
-              "countries": "Germany",
-              "cat_numbers": {
-                "label": "Imtrat",
-                "cat_number": "imt 777.076"
-              },
-              "part_of_queen_collection": true
-            },
-            {
               "id": "71b5f24a-9089-427a-bbab-96a0e96d3412",
               "version": "German 1992 unofficial CD",
               "format": "CD",
@@ -14473,6 +14460,19 @@
                 "cat_number": "imt 900.076"
               },
               "matrix_runout": "A 201 3",
+              "part_of_queen_collection": true
+            },
+            {
+              "id": "a2799686-95b4-418f-a5d2-4fb3c2ca46a9",
+              "version": "German 1992 unofficial tape cassette",
+              "format": "TC",
+              "discogs_url": "https://www.discogs.com/Queen-Live-USA/release/6428574",
+              "release_date": "1992",
+              "countries": "Germany",
+              "cat_numbers": {
+                "label": "Imtrat",
+                "cat_number": "imt 777.076"
+              },
               "part_of_queen_collection": true
             }
           ]
@@ -14517,6 +14517,22 @@
           ]
         },
         {
+          "id": "2b92c945-aa1c-4d68-bf9a-ca655c3db681",
+          "name": "It's A Hard Life",
+          "part_of_queen_collection": true,
+          "releases": [
+            {
+              "id": "4c226570-13ef-447c-bdd8-54706d5d60b9",
+              "version": "Unofficial live tape cassette",
+              "format": "TC",
+              "cat_numbers": {
+                "cat_number": "30735"
+              },
+              "part_of_queen_collection": true
+            }
+          ]
+        },
+        {
           "id": "7e49e8ac-add8-4bc8-b536-ffd37be18df7",
           "name": "Live",
           "part_of_queen_collection": true,
@@ -14531,22 +14547,6 @@
                 "cat_number": "ES 2628"
               },
               "comment": "Contains tracks recorded live in japan, 1985 and live in 1986 (probably wembley).",
-              "part_of_queen_collection": true
-            }
-          ]
-        },
-        {
-          "id": "2b92c945-aa1c-4d68-bf9a-ca655c3db681",
-          "name": "It's A Hard Life",
-          "part_of_queen_collection": true,
-          "releases": [
-            {
-              "id": "4c226570-13ef-447c-bdd8-54706d5d60b9",
-              "version": "Unofficial live tape cassette",
-              "format": "TC",
-              "cat_numbers": {
-                "cat_number": "30735"
-              },
               "part_of_queen_collection": true
             }
           ]
@@ -14742,21 +14742,6 @@
               "picture_sleeve": false
             },
             {
-              "id": "a80a44cb-b251-40f5-9113-2921f3fde982",
-              "version": "Dutch 7''",
-              "format": "7''",
-              "discogs_url": "https://www.discogs.com/Queen-Killer-Queen/release/5434197",
-              "release_date": "1974",
-              "countries": "Holland",
-              "cat_numbers": {
-                "label": "EMI",
-                "cat_number": "5C 006-96060"
-              },
-              "matrix_runout": "5C006-96060-A//23751-1-Y (Side A), 5C006-96060-B//23752-1-Y (Side B)",
-              "part_of_queen_collection": true,
-              "jukebox_hole": true
-            },
-            {
               "id": "2614c2b7-0352-4012-bdb6-dc08166e9931",
               "version": "Belgium 7''",
               "format": "7''",
@@ -14769,6 +14754,21 @@
               },
               "matrix_runout": "C006- 96060 A FL'74 (Side A), C006- 96060 B FL'74 (Side B)",
               "comment": "Blue picture sleeve,",
+              "part_of_queen_collection": true,
+              "jukebox_hole": true
+            },
+            {
+              "id": "a80a44cb-b251-40f5-9113-2921f3fde982",
+              "version": "Dutch 7''",
+              "format": "7''",
+              "discogs_url": "https://www.discogs.com/Queen-Killer-Queen/release/5434197",
+              "release_date": "1974",
+              "countries": "Holland",
+              "cat_numbers": {
+                "label": "EMI",
+                "cat_number": "5C 006-96060"
+              },
+              "matrix_runout": "5C006-96060-A//23751-1-Y (Side A), 5C006-96060-B//23752-1-Y (Side B)",
               "part_of_queen_collection": true,
               "jukebox_hole": true
             },
@@ -15061,21 +15061,6 @@
           "part_of_queen_collection": true,
           "releases": [
             {
-              "id": "7d86e8ac-5308-4a5e-b226-12dd189934dc",
-              "version": "1977 Japanese 7''",
-              "format": "7''",
-              "discogs_url": "https://www.discogs.com/Queen-Tie-Your-Mother-Down/release/3819938",
-              "release_date": "1977",
-              "countries": "Japan",
-              "cat_numbers": {
-                "label": "Electra",
-                "cat_number": "P-193 E"
-              },
-              "matrix_runout": "P - 193E - X 2 1-A-12 〄 (Side A), P - 193E - 2 1 1-A-5 〄 (Side B)",
-              "part_of_queen_collection": true,
-              "jukebox_hole": true
-            },
-            {
               "id": "6b0a9ce2-ed12-4174-a2ca-bbf5d49e3700",
               "version": "1977 German 7''",
               "format": "7''",
@@ -15087,6 +15072,21 @@
                 "cat_number": "1C 006-98 819"
               },
               "matrix_runout": "98 819 A - 1 // Manufactured in Germany (Side A), 98 819 B - 1 // Manufactured in Germany (Side B)",
+              "part_of_queen_collection": true,
+              "jukebox_hole": true
+            },
+            {
+              "id": "7d86e8ac-5308-4a5e-b226-12dd189934dc",
+              "version": "1977 Japanese 7''",
+              "format": "7''",
+              "discogs_url": "https://www.discogs.com/Queen-Tie-Your-Mother-Down/release/3819938",
+              "release_date": "1977",
+              "countries": "Japan",
+              "cat_numbers": {
+                "label": "Electra",
+                "cat_number": "P-193 E"
+              },
+              "matrix_runout": "P - 193E - X 2 1-A-12 〄 (Side A), P - 193E - 2 1 1-A-5 〄 (Side B)",
               "part_of_queen_collection": true,
               "jukebox_hole": true
             }
@@ -15259,21 +15259,6 @@
               "picture_sleeve": false
             },
             {
-              "id": "c384bc1e-eb58-46b4-b1b7-083ee83cc833",
-              "version": "German 7''",
-              "format": "7''",
-              "discogs_url": "https://www.discogs.com/Queen-Bicycle-Race-Fat-Bottomed-Girls/release/617009",
-              "release_date": "1978",
-              "countries": "Germany",
-              "cat_numbers": {
-                "label": "EMI",
-                "cat_number": "1C 006-61 846"
-              },
-              "matrix_runout": "61 846-A-0 EMI-2870-A RTB STERLING (Side A), 61 846-B-0 EMI-2870-B RTB STERLING (Side B)",
-              "part_of_queen_collection": true,
-              "jukebox_hole": true
-            },
-            {
               "id": "67a25d8c-2b86-4f88-b637-e78108bb3e14",
               "version": "US 12'' promo",
               "format": "12''",
@@ -15289,6 +15274,21 @@
               "part_of_queen_collection": true,
               "picture_sleeve": false,
               "speed": 33
+            },
+            {
+              "id": "c384bc1e-eb58-46b4-b1b7-083ee83cc833",
+              "version": "German 7''",
+              "format": "7''",
+              "discogs_url": "https://www.discogs.com/Queen-Bicycle-Race-Fat-Bottomed-Girls/release/617009",
+              "release_date": "1978",
+              "countries": "Germany",
+              "cat_numbers": {
+                "label": "EMI",
+                "cat_number": "1C 006-61 846"
+              },
+              "matrix_runout": "61 846-A-0 EMI-2870-A RTB STERLING (Side A), 61 846-B-0 EMI-2870-B RTB STERLING (Side B)",
+              "part_of_queen_collection": true,
+              "jukebox_hole": true
             }
           ]
         },
@@ -15376,20 +15376,6 @@
               "part_of_queen_collection": true
             },
             {
-              "id": "5f8ea116-1041-4ff2-a8ac-1fac00f72cae",
-              "version": "Japanese 7''",
-              "format": "7''",
-              "discogs_url": "https://www.discogs.com/Queen-%E3%82%AF%E3%82%A4%E3%83%BC%E3%83%B3-%E6%84%9B%E3%81%A8%E3%81%84%E3%81%86%E5%90%8D%E3%81%AE%E6%AC%B2%E6%9C%9B-Crazy-Little-Thing-Called-Love/release/499780",
-              "release_date": "1979",
-              "countries": "Japan",
-              "cat_numbers": {
-                "label": "Electra",
-                "cat_number": "P-529E"
-              },
-              "matrix_runout": "〄 P-529E-1 1-A-3 ③ (Side A), P-529E-2 1-A-20 〄 (Side B)",
-              "part_of_queen_collection": true
-            },
-            {
               "id": "0206ede4-4a42-43aa-a4a9-30c4e181c21b",
               "version": "Original German 1979 12''",
               "format": "12''",
@@ -15417,6 +15403,20 @@
               "matrix_runout": "1-1 ES 46579 A-SP (Side A), 1-1 EM 46579 A-SP (Side B)",
               "part_of_queen_collection": true,
               "jukebox_hole": true
+            },
+            {
+              "id": "5f8ea116-1041-4ff2-a8ac-1fac00f72cae",
+              "version": "Japanese 7''",
+              "format": "7''",
+              "discogs_url": "https://www.discogs.com/Queen-%E3%82%AF%E3%82%A4%E3%83%BC%E3%83%B3-%E6%84%9B%E3%81%A8%E3%81%84%E3%81%86%E5%90%8D%E3%81%AE%E6%AC%B2%E6%9C%9B-Crazy-Little-Thing-Called-Love/release/499780",
+              "release_date": "1979",
+              "countries": "Japan",
+              "cat_numbers": {
+                "label": "Electra",
+                "cat_number": "P-529E"
+              },
+              "matrix_runout": "〄 P-529E-1 1-A-3 ③ (Side A), P-529E-2 1-A-20 〄 (Side B)",
+              "part_of_queen_collection": true
             },
             {
               "id": "9422350b-9871-4837-a014-0298102326c9",
@@ -15547,6 +15547,20 @@
           "part_of_queen_collection": true,
           "releases": [
             {
+              "id": "1709d442-fcf5-4bd9-80e7-b7f37d23bde7",
+              "version": "Swedish 7''",
+              "format": "7''",
+              "discogs_url": "https://www.discogs.com/release/750214-Queen-Another-One-Bites-The-Dust",
+              "release_date": "1980",
+              "countries": "Sweden",
+              "cat_numbers": {
+                "label": "EMI",
+                "cat_number": "7C 006-64060"
+              },
+              "matrix_runout": "7 C 006 64060 A Å (Side A), 7 C 006 64060 B Å (Side B)",
+              "part_of_queen_collection": true
+            },
+            {
               "id": "89ee8b72-bfef-4193-8e6b-5b83916d5184",
               "version": "German 1980 12''",
               "format": "12''",
@@ -15573,20 +15587,6 @@
                 "cat_number": "10C 006-64.060"
               },
               "matrix_runout": "006-064060-A 2 I L (Side A), 006-064060-B 2 I T (Side B)",
-              "part_of_queen_collection": true
-            },
-            {
-              "id": "1709d442-fcf5-4bd9-80e7-b7f37d23bde7",
-              "version": "Swedish 7''",
-              "format": "7''",
-              "discogs_url": "https://www.discogs.com/release/750214-Queen-Another-One-Bites-The-Dust",
-              "release_date": "1980",
-              "countries": "Sweden",
-              "cat_numbers": {
-                "label": "EMI",
-                "cat_number": "7C 006-64060"
-              },
-              "matrix_runout": "7 C 006 64060 A Å (Side A), 7 C 006 64060 B Å (Side B)",
               "part_of_queen_collection": true
             },
             {
@@ -15666,6 +15666,20 @@
               "part_of_queen_collection": true
             },
             {
+              "id": "14305e5f-d86e-44d9-8fc4-b3869290fcf2",
+              "version": "Spanish 7''",
+              "format": "7''",
+              "discogs_url": "https://www.discogs.com/Queen-Flash/release/4764361",
+              "release_date": "1980",
+              "countries": "Spain",
+              "cat_numbers": {
+                "label": "EMI",
+                "cat_number": "10C 006-064.205"
+              },
+              "matrix_runout": "006-064205-A II P 1 (Side A), 006-064205-B I P 1(Side B)",
+              "part_of_queen_collection": true
+            },
+            {
               "id": "f4363894-2de2-4f92-b78d-0c9878c87146",
               "version": "German 7'', Queen written in red on labels, cat.number on back in dark blue box on both occurrences",
               "format": "7''",
@@ -15679,20 +15693,6 @@
               "matrix_runout": "64205-A1 (Side A), 64205-B1 (Side B)",
               "comment": "Note: The entry on discogs has only one occurrence of a cat. number in a dark blue box - the center one. My copy also has one in a right upper corner (which is in bounded box in discogs version).",
               "part_of_queen_collection": true
-            },
-            {
-              "id": "14305e5f-d86e-44d9-8fc4-b3869290fcf2",
-              "version": "Spanish 7''",
-              "format": "7''",
-              "discogs_url": "https://www.discogs.com/Queen-Flash/release/4764361",
-              "release_date": "1980",
-              "countries": "Spain",
-              "cat_numbers": {
-                "label": "EMI",
-                "cat_number": "10C 006-064.205"
-              },
-              "matrix_runout": "006-064205-A II P 1 (Side A), 006-064205-B I P 1(Side B)",
-              "part_of_queen_collection": true
             }
           ]
         },
@@ -15703,6 +15703,20 @@
           "entry_artist_id": "4d43a6ce-c04b-4853-9b23-734de590bc5a",
           "part_of_queen_collection": true,
           "releases": [
+            {
+              "id": "985b5ce5-90bf-4ef6-bec5-b323081594d4",
+              "version": "Dutch 12''",
+              "format": "12''",
+              "discogs_url": "https://www.discogs.com/release/538451-Queen-David-Bowie-Under-Pressure",
+              "release_date": "1981",
+              "countries": "Holland",
+              "cat_numbers": {
+                "label": "EMI",
+                "cat_number": "1A 052Z-64626"
+              },
+              "matrix_runout": "64626ZA1 1 (Side A), 64626ZB1 4 1 (Side B)",
+              "part_of_queen_collection": true
+            },
             {
               "id": "aeba19a0-9626-405f-b801-a69c53b4e4bb",
               "version": "German 7'', black labels.",
@@ -15733,20 +15747,6 @@
               "jukebox_hole": true
             },
             {
-              "id": "985b5ce5-90bf-4ef6-bec5-b323081594d4",
-              "version": "Dutch 12''",
-              "format": "12''",
-              "discogs_url": "https://www.discogs.com/release/538451-Queen-David-Bowie-Under-Pressure",
-              "release_date": "1981",
-              "countries": "Holland",
-              "cat_numbers": {
-                "label": "EMI",
-                "cat_number": "1A 052Z-64626"
-              },
-              "matrix_runout": "64626ZA1 1 (Side A), 64626ZB1 4 1 (Side B)",
-              "part_of_queen_collection": true
-            },
-            {
               "id": "5495ade4-60ee-4ecb-8aad-073c45d55644",
               "version": "UK 1988 3''CD single",
               "format": "3''CD",
@@ -15769,21 +15769,6 @@
           "part_of_queen_collection": true,
           "releases": [
             {
-              "id": "44c8d6d5-c458-4c56-866e-d03c065b2df6",
-              "version": "US 7'', white \"censored\" sleeve, SP pressing",
-              "format": "7''",
-              "discogs_url": "https://www.discogs.com/Queen-Body-Language/release/6409407",
-              "release_date": "1982-04-19",
-              "countries": "USA",
-              "cat_numbers": {
-                "label": "Electra",
-                "cat_number": "E-47452"
-              },
-              "matrix_runout": "ES-47452-A-1SP 1-3 STERLING (Side A), ES-47452-B-2SP 1-1 STERLING (Side B)",
-              "part_of_queen_collection": true,
-              "jukebox_hole": true
-            },
-            {
               "id": "3d858103-3f30-430f-81e5-cde7abacd9c1",
               "version": "Original UK 7'', push-out-center, \"Queen\" written in black on front sleeve, mixed labels (see comment)",
               "format": "7''",
@@ -15800,18 +15785,19 @@
               "part_of_queen_collection": true
             },
             {
-              "id": "9528c6b9-41ea-48f2-a529-5f61d8d41146",
-              "version": "Dutch 7''",
+              "id": "44c8d6d5-c458-4c56-866e-d03c065b2df6",
+              "version": "US 7'', white \"censored\" sleeve, SP pressing",
               "format": "7''",
-              "discogs_url": "https://www.discogs.com/Queen-Body-Language/release/395469",
-              "release_date": "1982",
-              "countries": "Holland",
+              "discogs_url": "https://www.discogs.com/Queen-Body-Language/release/6409407",
+              "release_date": "1982-04-19",
+              "countries": "USA",
               "cat_numbers": {
-                "label": "EMI",
-                "cat_number": "1A 006-64788"
+                "label": "Electra",
+                "cat_number": "E-47452"
               },
-              "matrix_runout": "006 64788 A 3 (Side A), 006 64788 B 2 (Side B)",
-              "part_of_queen_collection": true
+              "matrix_runout": "ES-47452-A-1SP 1-3 STERLING (Side A), ES-47452-B-2SP 1-1 STERLING (Side B)",
+              "part_of_queen_collection": true,
+              "jukebox_hole": true
             },
             {
               "id": "28072022-0c26-4260-976a-737eca11dcff",
@@ -15844,6 +15830,20 @@
               "comment": "Both sides indicated as A sides.",
               "part_of_queen_collection": true,
               "speed": 33
+            },
+            {
+              "id": "9528c6b9-41ea-48f2-a529-5f61d8d41146",
+              "version": "Dutch 7''",
+              "format": "7''",
+              "discogs_url": "https://www.discogs.com/Queen-Body-Language/release/395469",
+              "release_date": "1982",
+              "countries": "Holland",
+              "cat_numbers": {
+                "label": "EMI",
+                "cat_number": "1A 006-64788"
+              },
+              "matrix_runout": "006 64788 A 3 (Side A), 006 64788 B 2 (Side B)",
+              "part_of_queen_collection": true
             }
           ]
         },
@@ -15906,20 +15906,6 @@
           "part_of_queen_collection": true,
           "releases": [
             {
-              "id": "86915c50-bd40-4521-9f4f-32a44f033f69",
-              "version": "UK 7''",
-              "format": "7''",
-              "discogs_url": "https://www.discogs.com/Queen-Back-Chat/release/1178987",
-              "release_date": "1982-08-09",
-              "countries": "UK",
-              "cat_numbers": {
-                "label": "EMI",
-                "cat_number": "EMI 5325"
-              },
-              "matrix_runout": "EMI 5325 A-2-1-1-1 NICKZ (Side A), EMI 5325 B-3-1-1-1 (Side B)",
-              "part_of_queen_collection": true
-            },
-            {
               "id": "7dad0815-836f-4d98-8c8c-6368eda7f15f",
               "version": "UK 12''",
               "format": "12''",
@@ -15931,6 +15917,20 @@
                 "cat_number": "12 EMI 5325"
               },
               "matrix_runout": "12 EMI 5325 A-1-1-1- NICKZ (side A), 12 EMI 5325 B-3-1-1-1 (side B), this is variant 3 on discogs",
+              "part_of_queen_collection": true
+            },
+            {
+              "id": "86915c50-bd40-4521-9f4f-32a44f033f69",
+              "version": "UK 7''",
+              "format": "7''",
+              "discogs_url": "https://www.discogs.com/Queen-Back-Chat/release/1178987",
+              "release_date": "1982-08-09",
+              "countries": "UK",
+              "cat_numbers": {
+                "label": "EMI",
+                "cat_number": "EMI 5325"
+              },
+              "matrix_runout": "EMI 5325 A-2-1-1-1 NICKZ (Side A), EMI 5325 B-3-1-1-1 (Side B)",
               "part_of_queen_collection": true
             },
             {
@@ -15974,20 +15974,6 @@
               "jukebox_hole": true
             },
             {
-              "id": "afab333d-8e6c-4379-8baf-4f48280fe7b9",
-              "version": "German 12'', lyrics on back, GEMA STEMRA on labels",
-              "format": "12''",
-              "discogs_url": "https://www.discogs.com/Queen-Radio-Ga-Ga/release/341892",
-              "release_date": "1984",
-              "countries": "Germany",
-              "cat_numbers": {
-                "label": "EMI",
-                "cat_number": "1C K 062 1655336"
-              },
-              "comment": "Printed in Germany, record itself 'made in EEC'.",
-              "part_of_queen_collection": true
-            },
-            {
               "id": "1cbc19e3-ad31-417c-9634-96d53f7471b5",
               "version": "Japanese 7''",
               "format": "7''",
@@ -16018,6 +16004,20 @@
               "jukebox_hole": true
             },
             {
+              "id": "afab333d-8e6c-4379-8baf-4f48280fe7b9",
+              "version": "German 12'', lyrics on back, GEMA STEMRA on labels",
+              "format": "12''",
+              "discogs_url": "https://www.discogs.com/Queen-Radio-Ga-Ga/release/341892",
+              "release_date": "1984",
+              "countries": "Germany",
+              "cat_numbers": {
+                "label": "EMI",
+                "cat_number": "1C K 062 1655336"
+              },
+              "comment": "Printed in Germany, record itself 'made in EEC'.",
+              "part_of_queen_collection": true
+            },
+            {
               "id": "f5c2d460-438c-4de4-859c-a3aba5048f02",
               "version": "UK 1988 3''CD",
               "format": "3''CD",
@@ -16040,20 +16040,6 @@
           "part_of_queen_collection": true,
           "releases": [
             {
-              "id": "4c791103-09cc-4aee-949c-57d8792294a0",
-              "version": "UK 7'', paper sleeve with Freddie, gold lettering and blue Injection labels",
-              "format": "7''",
-              "discogs_url": "https://www.discogs.com/Queen-I-Want-To-Break-Free/release/1545900",
-              "release_date": "1984-04-02",
-              "countries": "UK",
-              "cat_numbers": {
-                "label": "EMI",
-                "cat_number": "QUEEN 2"
-              },
-              "matrix_runout": "QUEEN 2A-5-1-Q-2-17 NICKZ Penthouse (Side A), QUEEN 2 B-5-1-Q-2-11 (Side B)",
-              "part_of_queen_collection": true
-            },
-            {
               "id": "3d2a0476-8bfa-4932-9bf0-fd3dcde1ae3f",
               "version": "UK 7'', paper sleeve with Roger, gold lettering and black push-out labels",
               "format": "7''",
@@ -16065,6 +16051,20 @@
                 "cat_number": "QUEEN 2"
               },
               "matrix_runout": "QUEEN 2 A-1-1-1-3 Nickz Penthouse (Side A), QUEEN 2 B-5-1-1-0 (Side B)",
+              "part_of_queen_collection": true
+            },
+            {
+              "id": "4c791103-09cc-4aee-949c-57d8792294a0",
+              "version": "UK 7'', paper sleeve with Freddie, gold lettering and blue Injection labels",
+              "format": "7''",
+              "discogs_url": "https://www.discogs.com/Queen-I-Want-To-Break-Free/release/1545900",
+              "release_date": "1984-04-02",
+              "countries": "UK",
+              "cat_numbers": {
+                "label": "EMI",
+                "cat_number": "QUEEN 2"
+              },
+              "matrix_runout": "QUEEN 2A-5-1-Q-2-17 NICKZ Penthouse (Side A), QUEEN 2 B-5-1-Q-2-11 (Side B)",
               "part_of_queen_collection": true
             },
             {
@@ -16147,6 +16147,23 @@
           "part_of_queen_collection": true,
           "releases": [
             {
+              "id": "48090355-c307-4971-81ab-37244a47d652",
+              "version": "UK 7'', silver injection labels, orignal sleeve",
+              "format": "7''",
+              "discogs_url": "https://www.discogs.com/release/3317964-Queen-Its-A-Hard-Life",
+              "release_date": "1984-07-16",
+              "countries": "UK",
+              "cat_numbers": {
+                "label": "EMI",
+                "cat_number": "QUEEN 3"
+              },
+              "matrix_runout": {
+                "Side A": "QUEEN 3 A-2-1-Q2-3- x1 NICKZ Penthouse",
+                "Side B": "QUEEN 3 B-2-1-Q2-3- 1 1 Penthouse"
+              },
+              "part_of_queen_collection": true
+            },
+            {
               "id": "69516d76-5e53-4515-98c1-34f06fa8c4e9",
               "version": "UK 12''",
               "format": "12''",
@@ -16169,23 +16186,6 @@
               "cat_numbers": {
                 "label": "EMI",
                 "cat_number": "12 QUEENP 3"
-              },
-              "part_of_queen_collection": true
-            },
-            {
-              "id": "48090355-c307-4971-81ab-37244a47d652",
-              "version": "UK 7'', silver injection labels, orignal sleeve",
-              "format": "7''",
-              "discogs_url": "https://www.discogs.com/release/3317964-Queen-Its-A-Hard-Life",
-              "release_date": "1984-07-16",
-              "countries": "UK",
-              "cat_numbers": {
-                "label": "EMI",
-                "cat_number": "QUEEN 3"
-              },
-              "matrix_runout": {
-                "Side A": "QUEEN 3 A-2-1-Q2-3- x1 NICKZ Penthouse",
-                "Side B": "QUEEN 3 B-2-1-Q2-3- 1 1 Penthouse"
               },
               "part_of_queen_collection": true
             },
@@ -16285,17 +16285,17 @@
           "part_of_queen_collection": true,
           "releases": [
             {
-              "id": "e6be0677-20c7-44f7-9156-63f83c100d15",
-              "version": "UK 7'', paper sleeve, lyrics on back, no inner sleeve",
+              "id": "2dcd69f1-96bd-4472-b6dc-61ff916c9736",
+              "version": "UK 7'', inner sleeve with lyrics",
               "format": "7''",
-              "discogs_url": "https://www.discogs.com/release/21833365-Queen-One-Vision",
+              "discogs_url": "https://www.discogs.com/release/3060903-Queen-One-Vision",
               "release_date": "1985-11-04",
               "countries": "UK",
               "cat_numbers": {
                 "label": "EMI",
                 "cat_number": "QUEEN 6"
               },
-              "matrix_runout": "QUEEN 6 EMI 5535 A-2U-1-1-0 (Side A), QUEEN 6 EMI 5535 B-1U-1-2-7 TownHouse (Side B)",
+              "matrix_runout": "QUEEN 6 EMI 5535 A-2U-1-1- х1 (Side A), QUEEN 6 EMI 5535 B-1U-1-3-3 TownHouse (Side B)",
               "part_of_queen_collection": true
             },
             {
@@ -16313,6 +16313,20 @@
               "part_of_queen_collection": true
             },
             {
+              "id": "e6be0677-20c7-44f7-9156-63f83c100d15",
+              "version": "UK 7'', paper sleeve, lyrics on back, no inner sleeve",
+              "format": "7''",
+              "discogs_url": "https://www.discogs.com/release/21833365-Queen-One-Vision",
+              "release_date": "1985-11-04",
+              "countries": "UK",
+              "cat_numbers": {
+                "label": "EMI",
+                "cat_number": "QUEEN 6"
+              },
+              "matrix_runout": "QUEEN 6 EMI 5535 A-2U-1-1-0 (Side A), QUEEN 6 EMI 5535 B-1U-1-2-7 TownHouse (Side B)",
+              "part_of_queen_collection": true
+            },
+            {
               "id": "ebcc90e2-6759-411c-86cf-9c923da02eb5",
               "version": "UK 12'', red inner sleeve with lyrics",
               "format": "12''",
@@ -16324,20 +16338,6 @@
                 "cat_number": "12 QUEEN 6"
               },
               "matrix_runout": "1̶̶̶2̶̶̶E̶̶̶M̶̶̶I̶̶̶ ̶ ̶5̶̶̶5̶̶̶3̶̶̶5̶̶̶ ̶ ̶A̶̶̶-̶̶̶1̶̶̶U̶̶̶-̶̶̶1̶̶̶-̶̶̶1̶̶̶⇀̶̶̶ 12 QUEEN 6 A-1U-1-1-x1 TOWNHOUSE (Side A), 1̶̶̶2̶̶̶E̶̶̶M̶̶̶I̶̶̶ ̶ ̶5̶̶̶5̶̶̶3̶̶̶5̶̶̶ ̶ ̶B̶̶̶-̶̶̶1̶̶̶U̶̶̶-̶̶̶1̶̶̶-̶̶̶1̶̶̶⇀̶̶̶ 12 QUEEN 6 B-1U-1-1-x TOWNHOUSE (Side B)",
-              "part_of_queen_collection": true
-            },
-            {
-              "id": "2dcd69f1-96bd-4472-b6dc-61ff916c9736",
-              "version": "UK 7'', inner sleeve with lyrics",
-              "format": "7''",
-              "discogs_url": "https://www.discogs.com/release/3060903-Queen-One-Vision",
-              "release_date": "1985-11-04",
-              "countries": "UK",
-              "cat_numbers": {
-                "label": "EMI",
-                "cat_number": "QUEEN 6"
-              },
-              "matrix_runout": "QUEEN 6 EMI 5535 A-2U-1-1- х1 (Side A), QUEEN 6 EMI 5535 B-1U-1-3-3 TownHouse (Side B)",
               "part_of_queen_collection": true
             },
             {
@@ -16385,20 +16385,6 @@
           "part_of_queen_collection": true,
           "releases": [
             {
-              "id": "f8c6a3f4-a300-4f7d-844a-d28590a9d472",
-              "version": "UK 12''",
-              "format": "12''",
-              "discogs_url": "https://www.discogs.com/Queen-A-Kind-Of-Magic-Extended-Version/release/961355",
-              "release_date": "1986-03-17",
-              "countries": "UK",
-              "cat_numbers": {
-                "label": "EMI",
-                "cat_number": "12 QUEEN 7"
-              },
-              "matrix_runout": "D 12 QUEEN 7 A-1-1-2-1 TOWNHOUSE KEV (Side A),  D 12 QUEEN 7 B-1-1-2-1 (Side B), this is a mix of variants 1 and 2 in discogs",
-              "part_of_queen_collection": true
-            },
-            {
               "id": "219cb2be-db27-49d1-8cf5-af125c645f0c",
               "version": "UK 7'', paper labels",
               "format": "7''",
@@ -16424,6 +16410,20 @@
                 "cat_number": "12 QUEENP 7"
               },
               "matrix_runout": "12 + QUEEN+P+7+A ORLAKE (Side A), 12 + QUEEN+P+7+B ORLAKE (Side B)",
+              "part_of_queen_collection": true
+            },
+            {
+              "id": "f8c6a3f4-a300-4f7d-844a-d28590a9d472",
+              "version": "UK 12''",
+              "format": "12''",
+              "discogs_url": "https://www.discogs.com/Queen-A-Kind-Of-Magic-Extended-Version/release/961355",
+              "release_date": "1986-03-17",
+              "countries": "UK",
+              "cat_numbers": {
+                "label": "EMI",
+                "cat_number": "12 QUEEN 7"
+              },
+              "matrix_runout": "D 12 QUEEN 7 A-1-1-2-1 TOWNHOUSE KEV (Side A),  D 12 QUEEN 7 B-1-1-2-1 (Side B), this is a mix of variants 1 and 2 in discogs",
               "part_of_queen_collection": true
             },
             {
@@ -16584,20 +16584,6 @@
           "part_of_queen_collection": true,
           "releases": [
             {
-              "id": "ccb02183-8e63-4f27-92e6-44aa6c6596a6",
-              "version": "UK 12''",
-              "format": "12''",
-              "discogs_url": "https://www.discogs.com/Queen-I-Want-It-All/release/977664",
-              "release_date": "1989-05-02",
-              "countries": "UK",
-              "cat_numbers": {
-                "label": "Parlophone",
-                "cat_number": "12 QUEEN 10"
-              },
-              "matrix_runout": "D 12QUEEN 10 A-1U-1-2 (Side A), D 12 QUEEN 10 B-3-1-2 (Side B), ths is variant 1 in discogs",
-              "part_of_queen_collection": true
-            },
-            {
               "id": "2dd28487-5c35-4661-aa92-97cdeffdb60d",
               "version": "UK 7'', card Sleeve, white paper labels",
               "format": "7''",
@@ -16625,6 +16611,20 @@
               },
               "matrix_runout": "203360-2 178941 01 % MADE IN U",
               "comment": "K. BY PDO.",
+              "part_of_queen_collection": true
+            },
+            {
+              "id": "ccb02183-8e63-4f27-92e6-44aa6c6596a6",
+              "version": "UK 12''",
+              "format": "12''",
+              "discogs_url": "https://www.discogs.com/Queen-I-Want-It-All/release/977664",
+              "release_date": "1989-05-02",
+              "countries": "UK",
+              "cat_numbers": {
+                "label": "Parlophone",
+                "cat_number": "12 QUEEN 10"
+              },
+              "matrix_runout": "D 12QUEEN 10 A-1U-1-2 (Side A), D 12 QUEEN 10 B-3-1-2 (Side B), ths is variant 1 in discogs",
               "part_of_queen_collection": true
             }
           ]
@@ -16823,6 +16823,20 @@
           "part_of_queen_collection": true,
           "releases": [
             {
+              "id": "64dae82c-89ad-4b0a-a84e-390840022db4",
+              "version": "UK 12''",
+              "format": "12''",
+              "discogs_url": "https://www.discogs.com/Queen-Innuendo-Explosive-Version/release/728762",
+              "release_date": "1991-01-14",
+              "countries": "UK",
+              "cat_numbers": {
+                "label": "Parlophone",
+                "cat_number": "12 QUEEN 16"
+              },
+              "matrix_runout": "D 12 QUEEN 16A-2U-1-1 TRY THIS NEEDLE BENDER TOWNHOUSE DMM (Side A), D 12 QUEEN 16B-2U-1- 1 TOWNHOUSE DMM, this is a mix of variants 1 and 2 in discogs",
+              "part_of_queen_collection": true
+            },
+            {
               "id": "7b5dae25-b329-4d56-a542-d36c6373b12d",
               "version": "Promo UK 12''",
               "format": "12''",
@@ -16835,20 +16849,6 @@
               },
               "matrix_runout": "s: D 12 QUEEN DJ 16 A-1U-1-1 Townhouse DMM on both sides, this value is incomplete in discogs",
               "comment": "Promo 12'' with album version of Innuendo on both sides, sides are not indicated. Label and cat. number not indicated, later deducted from",
-              "part_of_queen_collection": true
-            },
-            {
-              "id": "64dae82c-89ad-4b0a-a84e-390840022db4",
-              "version": "UK 12''",
-              "format": "12''",
-              "discogs_url": "https://www.discogs.com/Queen-Innuendo-Explosive-Version/release/728762",
-              "release_date": "1991-01-14",
-              "countries": "UK",
-              "cat_numbers": {
-                "label": "Parlophone",
-                "cat_number": "12 QUEEN 16"
-              },
-              "matrix_runout": "D 12 QUEEN 16A-2U-1-1 TRY THIS NEEDLE BENDER TOWNHOUSE DMM (Side A), D 12 QUEEN 16B-2U-1- 1 TOWNHOUSE DMM, this is a mix of variants 1 and 2 in discogs",
               "part_of_queen_collection": true
             },
             {
@@ -16866,20 +16866,6 @@
               "part_of_queen_collection": true
             },
             {
-              "id": "463bcf9f-fd5d-45de-8a4f-1d9b44b67fcd",
-              "version": "Dutch CD single",
-              "format": "CDS",
-              "discogs_url": "https://www.discogs.com/Queen-Innuendo/release/6646712",
-              "release_date": "1991",
-              "countries": "Holland",
-              "cat_numbers": {
-                "label": "Parlophone",
-                "cat_number": "20 4164 2"
-              },
-              "matrix_runout": "204164 2 AR @ 1-1-1",
-              "part_of_queen_collection": true
-            },
-            {
               "id": "42db5bb7-4ed2-45fe-bf11-312f65c7776f",
               "version": "UK 7'', paper labels",
               "format": "7''",
@@ -16891,6 +16877,20 @@
                 "cat_number": "QUEEN 16"
               },
               "matrix_runout": "QUEEN 16 A-2U-1-4 LYN 28162 D A (Side A), QUEEN 16 B-2U-1-4 LYN 28163 D B(Side B)",
+              "part_of_queen_collection": true
+            },
+            {
+              "id": "463bcf9f-fd5d-45de-8a4f-1d9b44b67fcd",
+              "version": "Dutch CD single",
+              "format": "CDS",
+              "discogs_url": "https://www.discogs.com/Queen-Innuendo/release/6646712",
+              "release_date": "1991",
+              "countries": "Holland",
+              "cat_numbers": {
+                "label": "Parlophone",
+                "cat_number": "20 4164 2"
+              },
+              "matrix_runout": "204164 2 AR @ 1-1-1",
               "part_of_queen_collection": true
             }
           ]
@@ -16916,10 +16916,10 @@
               "part_of_queen_collection": true
             },
             {
-              "id": "a2b8b56f-acfe-4bdd-a2f6-efbf3e8de88d",
-              "version": "US promo tape cassette",
+              "id": "250a964e-b2f3-43b4-9588-1711ff668916",
+              "version": "US tape cassette",
               "format": "TCC",
-              "discogs_url": "https://www.discogs.com/Queen-Headlong/release/10307922",
+              "discogs_url": "https://www.discogs.com/Queen-Headlong/release/5935751",
               "release_date": "1991-01-17",
               "countries": "USA",
               "cat_numbers": {
@@ -16930,10 +16930,10 @@
               "part_of_queen_collection": true
             },
             {
-              "id": "250a964e-b2f3-43b4-9588-1711ff668916",
-              "version": "US tape cassette",
+              "id": "a2b8b56f-acfe-4bdd-a2f6-efbf3e8de88d",
+              "version": "US promo tape cassette",
               "format": "TCC",
-              "discogs_url": "https://www.discogs.com/Queen-Headlong/release/5935751",
+              "discogs_url": "https://www.discogs.com/Queen-Headlong/release/10307922",
               "release_date": "1991-01-17",
               "countries": "USA",
               "cat_numbers": {
@@ -17082,21 +17082,6 @@
               "part_of_queen_collection": true
             },
             {
-              "id": "98f804be-e6b4-4cb3-845c-5fb2d824dff9",
-              "version": "European 7''",
-              "format": "7''",
-              "discogs_url": "https://www.discogs.com/Queen-The-Show-Must-Go-On/release/3105474",
-              "release_date": "1991",
-              "countries": "EEC",
-              "cat_numbers": {
-                "label": "Parlophone",
-                "cat_number": "016 20 4533 7"
-              },
-              "matrix_runout": "2045337-A1 (Side A), 2045337- B1 (Side B)",
-              "part_of_queen_collection": true,
-              "jukebox_hole": true
-            },
-            {
               "id": "41b24135-a89c-4eb5-bcad-9449ef41e157",
               "version": "Dutch CD single",
               "format": "CDS",
@@ -17110,6 +17095,21 @@
               "matrix_runout": "204533 2 @ 1 ",
               "comment": "1-1-16-NL.",
               "part_of_queen_collection": true
+            },
+            {
+              "id": "98f804be-e6b4-4cb3-845c-5fb2d824dff9",
+              "version": "European 7''",
+              "format": "7''",
+              "discogs_url": "https://www.discogs.com/Queen-The-Show-Must-Go-On/release/3105474",
+              "release_date": "1991",
+              "countries": "EEC",
+              "cat_numbers": {
+                "label": "Parlophone",
+                "cat_number": "016 20 4533 7"
+              },
+              "matrix_runout": "2045337-A1 (Side A), 2045337- B1 (Side B)",
+              "part_of_queen_collection": true,
+              "jukebox_hole": true
             }
           ]
         },
@@ -17233,17 +17233,18 @@
               "picture_sleeve": false
             },
             {
-              "id": "9e07a02f-fd4f-4844-88cc-c2dc8f9e8d77",
-              "version": "Dutch 4 track CD single",
+              "id": "3f3ef989-d0be-4316-9aac-d509fad4e0b1",
+              "version": "1 track promo CD, catalogue number CDDJHEAVEN 1",
               "format": "CDS",
-              "discogs_url": "https://www.discogs.com/Queen-Heaven-For-Everyone/release/585371",
+              "discogs_url": "https://www.discogs.com/release/558822-Queen-Heaven-For-Everyone",
               "release_date": "1995",
-              "countries": "Holland",
+              "countries": "EU",
               "cat_numbers": {
                 "label": "Parlophone",
-                "cat_number": "7243 8 82526 2 1"
+                "cat_number": "CDDJHEAVEN 1"
               },
-              "matrix_runout": "882526 @ 1 1-1-3-NL IFPI L041",
+              "matrix_runout": "CDDJ HEAVEN 1 ",
+              "comment": "Country of manufacture not indicated.  1 : 1 : 1 : EMI SWINDON.",
               "part_of_queen_collection": true
             },
             {
@@ -17261,18 +17262,17 @@
               "part_of_queen_collection": true
             },
             {
-              "id": "3f3ef989-d0be-4316-9aac-d509fad4e0b1",
-              "version": "1 track promo CD, catalogue number CDDJHEAVEN 1",
+              "id": "9e07a02f-fd4f-4844-88cc-c2dc8f9e8d77",
+              "version": "Dutch 4 track CD single",
               "format": "CDS",
-              "discogs_url": "https://www.discogs.com/release/558822-Queen-Heaven-For-Everyone",
+              "discogs_url": "https://www.discogs.com/Queen-Heaven-For-Everyone/release/585371",
               "release_date": "1995",
-              "countries": "EU",
+              "countries": "Holland",
               "cat_numbers": {
                 "label": "Parlophone",
-                "cat_number": "CDDJHEAVEN 1"
+                "cat_number": "7243 8 82526 2 1"
               },
-              "matrix_runout": "CDDJ HEAVEN 1 ",
-              "comment": "Country of manufacture not indicated.  1 : 1 : 1 : EMI SWINDON.",
+              "matrix_runout": "882526 @ 1 1-1-3-NL IFPI L041",
               "part_of_queen_collection": true
             }
           ]
@@ -17402,21 +17402,6 @@
           "part_of_queen_collection": true,
           "releases": [
             {
-              "id": "908683bc-0739-4fba-ae9b-5ba1fd75661e",
-              "version": "Dutch 4 track CD single",
-              "format": "CDS",
-              "discogs_url": "https://www.discogs.com/Queen-You-Dont-Fool-Me/release/435280",
-              "release_date": "1996-02-26",
-              "countries": "Holland",
-              "cat_numbers": {
-                "label": "Parlophone",
-                "cat_number": "7243 8 82768 2 5"
-              },
-              "matrix_runout": "882768 2 ",
-              "comment": "1 EMI SWINDON 1-1-3-NL ifpi 1538.",
-              "part_of_queen_collection": true
-            },
-            {
               "id": "0899a78d-5171-497d-b78a-e35c1ff34d94",
               "version": "Dutch 2 track cardboard sleeve CD single",
               "format": "CDS",
@@ -17429,6 +17414,21 @@
               },
               "matrix_runout": "FOOL MW 1 @ 1 ",
               "comment": "1-1-11-NL.",
+              "part_of_queen_collection": true
+            },
+            {
+              "id": "908683bc-0739-4fba-ae9b-5ba1fd75661e",
+              "version": "Dutch 4 track CD single",
+              "format": "CDS",
+              "discogs_url": "https://www.discogs.com/Queen-You-Dont-Fool-Me/release/435280",
+              "release_date": "1996-02-26",
+              "countries": "Holland",
+              "cat_numbers": {
+                "label": "Parlophone",
+                "cat_number": "7243 8 82768 2 5"
+              },
+              "matrix_runout": "882768 2 ",
+              "comment": "1 EMI SWINDON 1-1-3-NL ifpi 1538.",
               "part_of_queen_collection": true
             },
             {
@@ -17542,6 +17542,20 @@
               "part_of_queen_collection": true
             },
             {
+              "id": "90911df3-fab7-4c83-b726-d8a49fc30531",
+              "version": "Dutch 2 track CD single, cardboard sleeve",
+              "format": "CDS",
+              "discogs_url": "https://www.discogs.com/release/1777354-Queen-No-One-But-You-Only-The-Good-Die-Young",
+              "release_date": "1997",
+              "countries": "Holland",
+              "cat_numbers": {
+                "label": "Parlophone",
+                "cat_number": "7243 8 85003 2 6"
+              },
+              "matrix_runout": "EMI UDEN 8850032 @ 1 1-1-5-NL",
+              "part_of_queen_collection": true
+            },
+            {
               "id": "d2e17d09-394b-4e3e-bd44-f98f58a88f57",
               "version": "Dutch 4 track CD single",
               "format": "CDS",
@@ -17556,17 +17570,18 @@
               "part_of_queen_collection": true
             },
             {
-              "id": "90911df3-fab7-4c83-b726-d8a49fc30531",
-              "version": "Dutch 2 track CD single, cardboard sleeve",
-              "format": "CDS",
-              "discogs_url": "https://www.discogs.com/release/1777354-Queen-No-One-But-You-Only-The-Good-Die-Young",
-              "release_date": "1997",
-              "countries": "Holland",
+              "id": "483280f0-23b9-469e-89db-52630d77e664",
+              "name": "No-one But You / Tie Your Mother Down",
+              "version": "UK PD 7''",
+              "format": "7''",
+              "discogs_url": "https://www.discogs.com/Queen-No-One-But-You-Tie-Your-Mother-Down/release/1903438",
+              "release_date": "1998-01-05",
+              "countries": "UK",
               "cat_numbers": {
                 "label": "Parlophone",
-                "cat_number": "7243 8 85003 2 6"
+                "cat_number": "QUEEN PD 27"
               },
-              "matrix_runout": "EMI UDEN 8850032 @ 1 1-1-5-NL",
+              "matrix_runout": "QUEEN 27 A¹ OR (Side 1), QUEEN 27 AA¹ OR (Side 2)",
               "part_of_queen_collection": true
             },
             {
@@ -17583,21 +17598,6 @@
               },
               "matrix_runout": "885141 2 ",
               "comment": "1:1:5 EMI SWINDON. Contains postcard to subscribe for Queen news.",
-              "part_of_queen_collection": true
-            },
-            {
-              "id": "483280f0-23b9-469e-89db-52630d77e664",
-              "name": "No-one But You / Tie Your Mother Down",
-              "version": "UK PD 7''",
-              "format": "7''",
-              "discogs_url": "https://www.discogs.com/Queen-No-One-But-You-Tie-Your-Mother-Down/release/1903438",
-              "release_date": "1998-01-05",
-              "countries": "UK",
-              "cat_numbers": {
-                "label": "Parlophone",
-                "cat_number": "QUEEN PD 27"
-              },
-              "matrix_runout": "QUEEN 27 A¹ OR (Side 1), QUEEN 27 AA¹ OR (Side 2)",
               "part_of_queen_collection": true
             }
           ]
@@ -17662,6 +17662,20 @@
           "part_of_queen_collection": true,
           "releases": [
             {
+              "id": "2a1a796f-9964-4793-bc42-04d212a966a7",
+              "version": "UK PD 7''",
+              "format": "7''",
+              "discogs_url": "https://www.discogs.com/Queen-David-Bowie-Under-Pressure/release/597483",
+              "release_date": "1999-12-06",
+              "countries": "UK",
+              "cat_numbers": {
+                "label": "Parlophone",
+                "cat_number": "QUEENPD 28"
+              },
+              "matrix_runout": "QUEEN PD 28A FSV (Side A), QUEEN PD 28 B² (Side B)",
+              "part_of_queen_collection": true
+            },
+            {
               "id": "46484f1a-3b61-4574-914c-85072f55c159",
               "version": "UK Promo white label 12''",
               "format": "12''",
@@ -17677,17 +17691,18 @@
               "part_of_queen_collection": true
             },
             {
-              "id": "2a1a796f-9964-4793-bc42-04d212a966a7",
-              "version": "UK PD 7''",
-              "format": "7''",
-              "discogs_url": "https://www.discogs.com/Queen-David-Bowie-Under-Pressure/release/597483",
-              "release_date": "1999-12-06",
-              "countries": "UK",
+              "id": "18640e9b-b800-4d9b-8699-f0e64e71ae99",
+              "version": "EU CD single w/ Thank God It's Christmas and Bohemian Rhapsody",
+              "format": "CDS",
+              "discogs_url": "https://www.discogs.com/Queen-David-Bowie-Under-Pressure/release/1237096",
+              "release_date": "1999",
+              "countries": "EU",
               "cat_numbers": {
                 "label": "Parlophone",
-                "cat_number": "QUEENPD 28"
+                "cat_number": "7243 8 88033 2 8"
               },
-              "matrix_runout": "QUEEN PD 28A FSV (Side A), QUEEN PD 28 B² (Side B)",
+              "matrix_runout": "8880332 ",
+              "comment": "1 : 1 : 2 EMI SWINDON IFPI L041.",
               "part_of_queen_collection": true
             },
             {
@@ -17720,21 +17735,6 @@
               "matrix_runout": "888033 0 ",
               "comment": "1 : 1 : 13 EMI SWINDON IFPI 1442.",
               "part_of_queen_collection": true
-            },
-            {
-              "id": "18640e9b-b800-4d9b-8699-f0e64e71ae99",
-              "version": "EU CD single w/ Thank God It's Christmas and Bohemian Rhapsody",
-              "format": "CDS",
-              "discogs_url": "https://www.discogs.com/Queen-David-Bowie-Under-Pressure/release/1237096",
-              "release_date": "1999",
-              "countries": "EU",
-              "cat_numbers": {
-                "label": "Parlophone",
-                "cat_number": "7243 8 88033 2 8"
-              },
-              "matrix_runout": "8880332 ",
-              "comment": "1 : 1 : 2 EMI SWINDON IFPI L041.",
-              "part_of_queen_collection": true
             }
           ]
         },
@@ -17760,20 +17760,6 @@
               "part_of_queen_collection": true
             },
             {
-              "id": "f2bba02d-bfff-4d6b-880c-5050ae0bcadf",
-              "version": "EU CD single, 2003 issue",
-              "format": "CDS",
-              "discogs_url": "https://www.discogs.com/Queen-Vanguard-Flash-The-Official-Club-Mixes/release/110183",
-              "release_date": "2003-02-10",
-              "countries": "EU",
-              "cat_numbers": {
-                "label": "Virgin",
-                "cat_number": "724354694523"
-              },
-              "matrix_runout": "EMI UDEN 5469452 @ 1 1-1-5-NL IFPI L046",
-              "part_of_queen_collection": true
-            },
-            {
               "id": "3648dd42-4840-4f82-8ad9-2bd52da0ffa8",
               "name": "Flash More Official Club Mixes Limited Directors Edition",
               "version": "2002 EU enhanced CD single, Limited Directors Edition with red sleeve and digipak.",
@@ -17786,6 +17772,20 @@
                 "cat_number": "724354701900"
               },
               "matrix_runout": "EMI UDEN 5470190 @ 1 1-1-3 NL",
+              "part_of_queen_collection": true
+            },
+            {
+              "id": "f2bba02d-bfff-4d6b-880c-5050ae0bcadf",
+              "version": "EU CD single, 2003 issue",
+              "format": "CDS",
+              "discogs_url": "https://www.discogs.com/Queen-Vanguard-Flash-The-Official-Club-Mixes/release/110183",
+              "release_date": "2003-02-10",
+              "countries": "EU",
+              "cat_numbers": {
+                "label": "Virgin",
+                "cat_number": "724354694523"
+              },
+              "matrix_runout": "EMI UDEN 5469452 @ 1 1-1-5-NL IFPI L046",
               "part_of_queen_collection": true
             },
             {
@@ -17923,34 +17923,6 @@
           "part_of_queen_collection": true,
           "releases": [
             {
-              "id": "7ff9b21f-d272-44eb-8d28-db35ee66a9b6",
-              "version": "EU PD 7''",
-              "format": "7''",
-              "discogs_url": "https://www.discogs.com/Queen-Paul-Rodgers-C-lebrity/release/1610680",
-              "release_date": "2008-09-08",
-              "countries": "EU",
-              "cat_numbers": {
-                "label": "Parlophone",
-                "cat_number": "237 0097"
-              },
-              "matrix_runout": "BX42474-01 A1 KBI (Side A), BX42474-01 B1 (Side B)",
-              "part_of_queen_collection": true
-            },
-            {
-              "id": "ed7cd84f-1422-42d3-b2f6-735a9aa7b808",
-              "version": "2008 EU promo CD single",
-              "format": "CDS",
-              "discogs_url": "https://www.discogs.com/Queen-Paul-Rodgers-C-lebrity/release/3394663",
-              "release_date": "2008-09-08",
-              "countries": "EU",
-              "cat_numbers": {
-                "label": "Parlophone",
-                "cat_number": "50999-237009-2-5"
-              },
-              "matrix_runout": "Wmanufactured by optimal media production A841669-01 ifpi L571",
-              "part_of_queen_collection": true
-            },
-            {
               "id": "27dfcb9d-b418-4dd6-bd8d-a8f08e439a89",
               "version": "2008 EU 3 tracks + enchanced section CD single",
               "format": "CDS",
@@ -17978,6 +17950,34 @@
               },
               "matrix_runout": "WWW",
               "comment": "MEDIAMOTION.COM 2370102 @ 1 IFPI LW04.",
+              "part_of_queen_collection": true
+            },
+            {
+              "id": "7ff9b21f-d272-44eb-8d28-db35ee66a9b6",
+              "version": "EU PD 7''",
+              "format": "7''",
+              "discogs_url": "https://www.discogs.com/Queen-Paul-Rodgers-C-lebrity/release/1610680",
+              "release_date": "2008-09-08",
+              "countries": "EU",
+              "cat_numbers": {
+                "label": "Parlophone",
+                "cat_number": "237 0097"
+              },
+              "matrix_runout": "BX42474-01 A1 KBI (Side A), BX42474-01 B1 (Side B)",
+              "part_of_queen_collection": true
+            },
+            {
+              "id": "ed7cd84f-1422-42d3-b2f6-735a9aa7b808",
+              "version": "2008 EU promo CD single",
+              "format": "CDS",
+              "discogs_url": "https://www.discogs.com/Queen-Paul-Rodgers-C-lebrity/release/3394663",
+              "release_date": "2008-09-08",
+              "countries": "EU",
+              "cat_numbers": {
+                "label": "Parlophone",
+                "cat_number": "50999-237009-2-5"
+              },
+              "matrix_runout": "Wmanufactured by optimal media production A841669-01 ifpi L571",
               "part_of_queen_collection": true
             },
             {
@@ -18625,20 +18625,6 @@
           "part_of_queen_collection": true,
           "releases": [
             {
-              "id": "dfe5e9c4-bbcf-4250-b979-4e4cfff2e1c1",
-              "version": "EU CD + Bluray pack",
-              "format": "BD+CD",
-              "discogs_url": "https://www.discogs.com/Queen-Adam-Lambert-Live-Around-The-World/release/15975559",
-              "release_date": "2012-10-02",
-              "countries": "EU",
-              "cat_numbers": {
-                "label": "EMI",
-                "cat_number": "00602507394066"
-              },
-              "matrix_runout": "[Universal Logo] 00602507394110 A0103267205-0102 35 A00 (CD), A0103268940-A511 1000 2A00 (BD)",
-              "part_of_queen_collection": true
-            },
-            {
               "id": "dcc6f477-8321-46f7-a6c2-084db40e3d43",
               "version": "EU CD + DVD pack",
               "format": "CD+DVD",
@@ -18650,6 +18636,20 @@
                 "cat_number": "00602507369071"
               },
               "matrix_runout": "[Universal logo] 00602507369095 A0103267267-0102 12 A00 (CD), [Universal logo] 00602507369118-V2 A0103267225-A911 11 A00 (DVD)",
+              "part_of_queen_collection": true
+            },
+            {
+              "id": "dfe5e9c4-bbcf-4250-b979-4e4cfff2e1c1",
+              "version": "EU CD + Bluray pack",
+              "format": "BD+CD",
+              "discogs_url": "https://www.discogs.com/Queen-Adam-Lambert-Live-Around-The-World/release/15975559",
+              "release_date": "2012-10-02",
+              "countries": "EU",
+              "cat_numbers": {
+                "label": "EMI",
+                "cat_number": "00602507394066"
+              },
+              "matrix_runout": "[Universal Logo] 00602507394110 A0103267205-0102 35 A00 (CD), A0103268940-A511 1000 2A00 (BD)",
               "part_of_queen_collection": true
             }
           ]
@@ -19200,28 +19200,6 @@
           ]
         },
         {
-          "id": "7d2dcd63-c6fd-40f3-bbae-98918307d05e",
-          "name": "Greatest Flix II",
-          "release_date": "1991-10-28",
-          "part_of_queen_collection": true,
-          "releases": [
-            {
-              "id": "3d446e2b-ad61-4d65-a879-41fb45816aba",
-              "version": "UK VHS",
-              "format": "VHS",
-              "discogs_url": "https://www.discogs.com/release/3916220-Queen-Greatest-Flix-II",
-              "release_date": "1991-10-28",
-              "countries": "UK",
-              "cat_numbers": {
-                "label": "Picture Music International",
-                "cat_number": "VC 4112"
-              },
-              "comment": "Country of manufacture not indicated.",
-              "part_of_queen_collection": true
-            }
-          ]
-        },
-        {
           "id": "02a3d345-dc69-4326-9722-cf4599f64711",
           "name": "Box Of Flix/Greatest Flix I & II",
           "release_date": "1991-10-28",
@@ -19240,6 +19218,28 @@
                 "cat_number": "QDVD001"
               },
               "comment": "Double sided promo DVD. Numbered, my copy number 12678.",
+              "part_of_queen_collection": true
+            }
+          ]
+        },
+        {
+          "id": "7d2dcd63-c6fd-40f3-bbae-98918307d05e",
+          "name": "Greatest Flix II",
+          "release_date": "1991-10-28",
+          "part_of_queen_collection": true,
+          "releases": [
+            {
+              "id": "3d446e2b-ad61-4d65-a879-41fb45816aba",
+              "version": "UK VHS",
+              "format": "VHS",
+              "discogs_url": "https://www.discogs.com/release/3916220-Queen-Greatest-Flix-II",
+              "release_date": "1991-10-28",
+              "countries": "UK",
+              "cat_numbers": {
+                "label": "Picture Music International",
+                "cat_number": "VC 4112"
+              },
+              "comment": "Country of manufacture not indicated.",
               "part_of_queen_collection": true
             }
           ]
@@ -19437,28 +19437,6 @@
       ],
       "Video Documentary": [
         {
-          "id": "c4825d0a-d71f-46d2-bf51-e4c34e19ef52",
-          "name": "Magic Years Volume Two",
-          "release_date": "1987-11-30",
-          "part_of_queen_collection": true,
-          "releases": [
-            {
-              "id": "33335fc7-c89b-48a5-a540-bad0a7813821",
-              "version": "European VHS with German restrictions tag on back sleeve",
-              "format": "VHS",
-              "discogs_url": "https://www.discogs.com/Queen-Magic-Years-Volume-Two/release/15937385",
-              "release_date": "1987",
-              "countries": "EEC",
-              "cat_numbers": {
-                "label": "Picture Music International",
-                "cat_number": "MVP 99 1155 2"
-              },
-              "comment": "Country of manufacture not indicated.",
-              "part_of_queen_collection": true
-            }
-          ]
-        },
-        {
           "id": "03cd80e5-7472-4003-86dc-dac1d9ade424",
           "name": "Magic Years Volume One",
           "release_date": "1987-11-30",
@@ -19503,6 +19481,28 @@
           ]
         },
         {
+          "id": "c4825d0a-d71f-46d2-bf51-e4c34e19ef52",
+          "name": "Magic Years Volume Two",
+          "release_date": "1987-11-30",
+          "part_of_queen_collection": true,
+          "releases": [
+            {
+              "id": "33335fc7-c89b-48a5-a540-bad0a7813821",
+              "version": "European VHS with German restrictions tag on back sleeve",
+              "format": "VHS",
+              "discogs_url": "https://www.discogs.com/Queen-Magic-Years-Volume-Two/release/15937385",
+              "release_date": "1987",
+              "countries": "EEC",
+              "cat_numbers": {
+                "label": "Picture Music International",
+                "cat_number": "MVP 99 1155 2"
+              },
+              "comment": "Country of manufacture not indicated.",
+              "part_of_queen_collection": true
+            }
+          ]
+        },
+        {
           "id": "d2580f50-2257-4ae1-a72d-544615e75296",
           "name": "Champions Of The World",
           "release_date": "1995-11-06",
@@ -19539,20 +19539,6 @@
           "part_of_queen_collection": true,
           "releases": [
             {
-              "id": "cd226780-c0e3-4cb9-9b5a-54c70b9023a2",
-              "version": "2011 EU Blu-ray",
-              "format": "BD",
-              "discogs_url": "https://www.discogs.com/Queen-Days-Of-Our-Lives-The-Definitive-Documentary-Of-The-Worlds-Greatest-Rock-Band/release/3852839",
-              "release_date": "2011-11-28",
-              "countries": "EU",
-              "cat_numbers": {
-                "label": "Universal Music Group",
-                "cat_number": "VFD59512"
-              },
-              "matrix_runout": "54896692/00602527885148 D 21 54896693/00602527885148 DO 24",
-              "part_of_queen_collection": true
-            },
-            {
               "id": "6ee8a2ea-65f0-407b-b622-f590c30c91da",
               "version": "2011 EU DVD",
               "format": "DVD",
@@ -19564,6 +19550,20 @@
                 "cat_number": "0602527885131"
               },
               "matrix_runout": "Sony DADC [logo Universal] 00602527885131A A0103033632-A911 11 A00 Sony DADC 00602527885131 A0103033632-B911 33 A00",
+              "part_of_queen_collection": true
+            },
+            {
+              "id": "cd226780-c0e3-4cb9-9b5a-54c70b9023a2",
+              "version": "2011 EU Blu-ray",
+              "format": "BD",
+              "discogs_url": "https://www.discogs.com/Queen-Days-Of-Our-Lives-The-Definitive-Documentary-Of-The-Worlds-Greatest-Rock-Band/release/3852839",
+              "release_date": "2011-11-28",
+              "countries": "EU",
+              "cat_numbers": {
+                "label": "Universal Music Group",
+                "cat_number": "VFD59512"
+              },
+              "matrix_runout": "54896692/00602527885148 D 21 54896693/00602527885148 DO 24",
               "part_of_queen_collection": true
             },
             {
@@ -21882,17 +21882,18 @@
           "part_of_queen_collection": true,
           "releases": [
             {
-              "id": "bc37fa07-614d-44ab-8b2d-aaff2a11e7e1",
-              "version": "EU CD",
-              "format": "CD",
-              "discogs_url": "https://www.discogs.com/release/20434249-Roger-Taylor-Outsider",
+              "id": "09bd5ff4-b61d-46ab-be00-487df6b42863",
+              "version": "EU LP (black vinyl)",
+              "format": "LP",
+              "discogs_url": "https://www.discogs.com/release/20434522-Roger-Taylor-Outsider",
               "release_date": "2021-10-01",
               "countries": "EU",
               "cat_numbers": {
                 "label": "EMI",
-                "cat_number": "00602435807003"
+                "cat_number": "00602435807010"
               },
-              "matrix_runout": "(Universal Logo) 00602435807003 A0103339635-0101 15 A00",
+              "matrix_runout": "BL49900-01 A1 3580701 MH (Side A), BL49900-01 B1 3580701 (Side B)",
+              "comment": "Contains \"Back To Vinyl\" download card.",
               "part_of_queen_collection": true
             },
             {
@@ -21909,18 +21910,17 @@
               "part_of_queen_collection": true
             },
             {
-              "id": "09bd5ff4-b61d-46ab-be00-487df6b42863",
-              "version": "EU LP (black vinyl)",
-              "format": "LP",
-              "discogs_url": "https://www.discogs.com/release/20434522-Roger-Taylor-Outsider",
+              "id": "bc37fa07-614d-44ab-8b2d-aaff2a11e7e1",
+              "version": "EU CD",
+              "format": "CD",
+              "discogs_url": "https://www.discogs.com/release/20434249-Roger-Taylor-Outsider",
               "release_date": "2021-10-01",
               "countries": "EU",
               "cat_numbers": {
                 "label": "EMI",
-                "cat_number": "00602435807010"
+                "cat_number": "00602435807003"
               },
-              "matrix_runout": "BL49900-01 A1 3580701 MH (Side A), BL49900-01 B1 3580701 (Side B)",
-              "comment": "Contains \"Back To Vinyl\" download card.",
+              "matrix_runout": "(Universal Logo) 00602435807003 A0103339635-0101 15 A00",
               "part_of_queen_collection": true
             },
             {
@@ -21963,20 +21963,6 @@
           "part_of_queen_collection": true,
           "releases": [
             {
-              "id": "d361ef41-1867-40fa-a343-22ad07585b14",
-              "version": "EU CD",
-              "format": "CD",
-              "discogs_url": "https://www.discogs.com/release/24675911-Roger-Taylor-The-Outsider-Tour-Live",
-              "release_date": "2022-09-30",
-              "countries": "EU",
-              "cat_numbers": {
-                "label": "EMI",
-                "cat_number": "00602445455355"
-              },
-              "matrix_runout": "[Universal logo] 00602445691876 A0103403197-0102 13 A00 (CD1), [Universal logo] 00602445691869 A0103403198-0202 14 A00 (CD2)",
-              "part_of_queen_collection": true
-            },
-            {
               "id": "abb49c1f-0511-4573-9234-364f85e898c3",
               "version": "EU LP, transparent pink",
               "format": "LP",
@@ -21989,6 +21975,20 @@
               },
               "matrix_runout": "4545537 A -60295- Ⅰ MILES",
               "comment": "ABBEY ROAD. ROOM30. (Side A), 4545537 B -60295- Ⅰ MILES. ABBEY ROAD. ROOM30. (Side B), 4545538 A2 -60296- Ⅰ MILES. ABBEY ROAD. ROOM30. (Side C), 4545538 B -60296- Ⅰ MILES. ABBEY ROAD. ROOM30. (Side D).",
+              "part_of_queen_collection": true
+            },
+            {
+              "id": "d361ef41-1867-40fa-a343-22ad07585b14",
+              "version": "EU CD",
+              "format": "CD",
+              "discogs_url": "https://www.discogs.com/release/24675911-Roger-Taylor-The-Outsider-Tour-Live",
+              "release_date": "2022-09-30",
+              "countries": "EU",
+              "cat_numbers": {
+                "label": "EMI",
+                "cat_number": "00602445455355"
+              },
+              "matrix_runout": "[Universal logo] 00602445691876 A0103403197-0102 13 A00 (CD1), [Universal logo] 00602445691869 A0103403198-0202 14 A00 (CD2)",
               "part_of_queen_collection": true
             }
           ]
@@ -22166,6 +22166,21 @@
           "part_of_queen_collection": true,
           "releases": [
             {
+              "id": "0b774d89-f660-42f4-9864-1d50d83f706f",
+              "version": "UK 3-track promo 12''",
+              "format": "12''",
+              "discogs_url": "https://www.discogs.com/Roger-Taylor-Nazis-1994/release/4851360",
+              "release_date": "1994-05-03",
+              "countries": "UK",
+              "cat_numbers": {
+                "label": "Parlophone",
+                "cat_number": "NAZIS 4"
+              },
+              "matrix_runout": "12 RDJS 6379 A-1-1-1-1 D (Side A), 12 RDJS 6379 B-1-1-1-1 D (Side B)",
+              "comment": "Contains \"Beatwax\" competition sheet (the goal of the competition is to guess the name of the artist behind the record, which is not mentioned anywhere on the release).",
+              "part_of_queen_collection": true
+            },
+            {
               "id": "31589397-a5c0-4225-b03b-bebd79a6a41f",
               "version": "UK 7'', red vinyl, numbered ltd edition",
               "format": "7''",
@@ -22196,21 +22211,6 @@
               "part_of_queen_collection": true
             },
             {
-              "id": "0b774d89-f660-42f4-9864-1d50d83f706f",
-              "version": "UK 3-track promo 12''",
-              "format": "12''",
-              "discogs_url": "https://www.discogs.com/Roger-Taylor-Nazis-1994/release/4851360",
-              "release_date": "1994-05-03",
-              "countries": "UK",
-              "cat_numbers": {
-                "label": "Parlophone",
-                "cat_number": "NAZIS 4"
-              },
-              "matrix_runout": "12 RDJS 6379 A-1-1-1-1 D (Side A), 12 RDJS 6379 B-1-1-1-1 D (Side B)",
-              "comment": "Contains \"Beatwax\" competition sheet (the goal of the competition is to guess the name of the artist behind the record, which is not mentioned anywhere on the release).",
-              "part_of_queen_collection": true
-            },
-            {
               "id": "0148b8b3-689c-4b67-afd9-8f54377999d2",
               "version": "Dutch 4-track CD single",
               "format": "CDS",
@@ -22234,6 +22234,20 @@
           "part_of_queen_collection": true,
           "releases": [
             {
+              "id": "924ae7ec-2c9d-41b2-8ec0-ef11834f977f",
+              "version": "UK CD single",
+              "format": "CDS",
+              "discogs_url": "https://www.discogs.com/Roger-Taylor-Yoshiki-Foreign-Sand/release/1856346",
+              "release_date": "1994-09-19",
+              "countries": "UK",
+              "cat_numbers": {
+                "label": "Parlophone",
+                "cat_number": "CDR 6389"
+              },
+              "matrix_runout": "881593 2 4-1-3 EMI SWINDON ifpi 1406",
+              "part_of_queen_collection": true
+            },
+            {
               "id": "cb483596-bda8-4cab-9df9-e295dc75cc5d",
               "version": "UK ltd edition numbered blue vinyl 7''",
               "format": "7''",
@@ -22246,20 +22260,6 @@
               },
               "matrix_runout": "R+6389+A ORLAKE (Side A), R+6389+B ORLAKE (Side B)",
               "comment": "Numbered, my copy number 0801.",
-              "part_of_queen_collection": true
-            },
-            {
-              "id": "924ae7ec-2c9d-41b2-8ec0-ef11834f977f",
-              "version": "UK CD single",
-              "format": "CDS",
-              "discogs_url": "https://www.discogs.com/Roger-Taylor-Yoshiki-Foreign-Sand/release/1856346",
-              "release_date": "1994-09-19",
-              "countries": "UK",
-              "cat_numbers": {
-                "label": "Parlophone",
-                "cat_number": "CDR 6389"
-              },
-              "matrix_runout": "881593 2 4-1-3 EMI SWINDON ifpi 1406",
               "part_of_queen_collection": true
             }
           ]
@@ -22286,21 +22286,6 @@
               "part_of_queen_collection": true
             },
             {
-              "id": "de736929-3a3b-4e1e-b6db-e1d3341be1a7",
-              "version": "UK CD single",
-              "format": "CDS",
-              "discogs_url": "https://www.discogs.com/Roger-Taylor-Happiness/release/1874566",
-              "release_date": "1994-11-14",
-              "countries": "UK",
-              "cat_numbers": {
-                "label": "Parlophone",
-                "cat_number": "CDR 6399"
-              },
-              "matrix_runout": "881860 1-1-1 EMI SWINDON ifpi 1406",
-              "comment": "Promo copy.",
-              "part_of_queen_collection": true
-            },
-            {
               "id": "d9b82757-e405-4f81-8555-b4723431bb72",
               "version": "UK limited edition numbered green vinyl 7''",
               "format": "7''",
@@ -22314,6 +22299,21 @@
               "matrix_runout": "R-6399-A ORLAKE (Side A),  R-6399-B ORLAKE (Side B)",
               "comment": "Numbered, my copy number 2872.",
               "part_of_queen_collection": true
+            },
+            {
+              "id": "de736929-3a3b-4e1e-b6db-e1d3341be1a7",
+              "version": "UK CD single",
+              "format": "CDS",
+              "discogs_url": "https://www.discogs.com/Roger-Taylor-Happiness/release/1874566",
+              "release_date": "1994-11-14",
+              "countries": "UK",
+              "cat_numbers": {
+                "label": "Parlophone",
+                "cat_number": "CDR 6399"
+              },
+              "matrix_runout": "881860 1-1-1 EMI SWINDON ifpi 1406",
+              "comment": "Promo copy.",
+              "part_of_queen_collection": true
             }
           ]
         },
@@ -22323,35 +22323,6 @@
           "release_date": "1998-09-28",
           "part_of_queen_collection": true,
           "releases": [
-            {
-              "id": "5148b547-b461-404f-a8f2-391862bbaf9d",
-              "version": "EU ltd edition numbered orange vinyl 7''",
-              "format": "7''",
-              "discogs_url": "https://www.discogs.com/Roger-Taylor-Pressure-On/release/1832252",
-              "release_date": "1998-09-28",
-              "countries": "EU",
-              "cat_numbers": {
-                "label": "Parlophone",
-                "cat_number": "R 6507"
-              },
-              "matrix_runout": "R 6507 A-01-01- (Side A), R 6507 B-01-01- (Side B)",
-              "comment": "Numbered, my copy number 0499. B-side plays at 33RPM.",
-              "part_of_queen_collection": true
-            },
-            {
-              "id": "c1c84dc8-7eeb-4609-aecd-73f9911ec67e",
-              "version": "EU digipack CD single",
-              "format": "CDS",
-              "discogs_url": "https://www.discogs.com/Roger-Taylor-Pressure-On/release/1780754",
-              "release_date": "1998-09-28",
-              "countries": "EU",
-              "cat_numbers": {
-                "label": "Parlophone",
-                "cat_number": "CDR 6507"
-              },
-              "matrix_runout": "886123 2 2 : 1 : 3 : EMI SWINDON ifpi 1443",
-              "part_of_queen_collection": true
-            },
             {
               "id": "1ea84e49-e892-4610-a8af-8727cd01396e",
               "version": "1-track promo CD single",
@@ -22368,6 +22339,21 @@
               "part_of_queen_collection": true
             },
             {
+              "id": "5148b547-b461-404f-a8f2-391862bbaf9d",
+              "version": "EU ltd edition numbered orange vinyl 7''",
+              "format": "7''",
+              "discogs_url": "https://www.discogs.com/Roger-Taylor-Pressure-On/release/1832252",
+              "release_date": "1998-09-28",
+              "countries": "EU",
+              "cat_numbers": {
+                "label": "Parlophone",
+                "cat_number": "R 6507"
+              },
+              "matrix_runout": "R 6507 A-01-01- (Side A), R 6507 B-01-01- (Side B)",
+              "comment": "Numbered, my copy number 0499. B-side plays at 33RPM.",
+              "part_of_queen_collection": true
+            },
+            {
               "id": "6924adba-84b1-497e-a87a-3072f211b4fc",
               "version": "3-track promo CD single",
               "format": "CDS",
@@ -22380,6 +22366,20 @@
               },
               "matrix_runout": "EMI UDEN FIRE 1 @ 1 1-1-1-NL IFPI L047 ifpi 1581",
               "part_of_queen_collection": true
+            },
+            {
+              "id": "c1c84dc8-7eeb-4609-aecd-73f9911ec67e",
+              "version": "EU digipack CD single",
+              "format": "CDS",
+              "discogs_url": "https://www.discogs.com/Roger-Taylor-Pressure-On/release/1780754",
+              "release_date": "1998-09-28",
+              "countries": "EU",
+              "cat_numbers": {
+                "label": "Parlophone",
+                "cat_number": "CDR 6507"
+              },
+              "matrix_runout": "886123 2 2 : 1 : 3 : EMI SWINDON ifpi 1443",
+              "part_of_queen_collection": true
             }
           ]
         },
@@ -22389,22 +22389,6 @@
           "release_date": "1999-03-29",
           "part_of_queen_collection": true,
           "releases": [
-            {
-              "id": "ee9e66e9-9ac9-41a9-a1a1-d462522a2049",
-              "version": "EU ltd edition numbered PD 7''",
-              "format": "7''",
-              "discogs_url": "https://www.discogs.com/Roger-Taylor-Surrender/release/1867094",
-              "release_date": "1999-03-29",
-              "countries": "EU",
-              "cat_numbers": {
-                "label": "Parlophone",
-                "cat_number": "R 6517"
-              },
-              "matrix_runout": "R+6517+A ORLAKE(Side A), R+6517+B ORLAKE (Side B)",
-              "comment": "Numbered, my copy number 5756.",
-              "condition_problems": "Slightly damaged sleeve.",
-              "part_of_queen_collection": true
-            },
             {
               "id": "0612da70-dbd2-4e15-8b23-f2e9abf0e549",
               "version": "EU CD single Part 1, numbered limited edition",
@@ -22434,6 +22418,22 @@
               },
               "matrix_runout": "886888 0 ",
               "comment": "2 : 1: 1 EMI SWINDON ifpi 1447.",
+              "part_of_queen_collection": true
+            },
+            {
+              "id": "ee9e66e9-9ac9-41a9-a1a1-d462522a2049",
+              "version": "EU ltd edition numbered PD 7''",
+              "format": "7''",
+              "discogs_url": "https://www.discogs.com/Roger-Taylor-Surrender/release/1867094",
+              "release_date": "1999-03-29",
+              "countries": "EU",
+              "cat_numbers": {
+                "label": "Parlophone",
+                "cat_number": "R 6517"
+              },
+              "matrix_runout": "R+6517+A ORLAKE(Side A), R+6517+B ORLAKE (Side B)",
+              "comment": "Numbered, my copy number 5756.",
+              "condition_problems": "Slightly damaged sleeve.",
               "part_of_queen_collection": true
             }
           ]
@@ -23435,28 +23435,6 @@
           ]
         },
         {
-          "id": "7c76705f-bf96-432c-b31f-49fcb24c21eb",
-          "name": "Encino Man Music From The Original Motion Picture Soundtrack",
-          "release_date": "1992",
-          "part_of_queen_collection": true,
-          "releases": [
-            {
-              "id": "341bf66f-2e25-4fea-851c-f58548ba7d78",
-              "version": "US CD",
-              "format": "CD",
-              "discogs_url": "https://www.discogs.com/release/2413591-Various-Encino-Man-Music-From-The-Original-Motion-Picture-Soundtrack",
-              "release_date": "1992",
-              "countries": "USA",
-              "cat_numbers": {
-                "label": "Hollywood Records",
-                "cat_number": "HR-61330-2"
-              },
-              "matrix_runout": "2 61330-2 SRC=01 M2S6",
-              "part_of_queen_collection": true
-            }
-          ]
-        },
-        {
           "id": "6671ed3e-3551-45fb-a9e0-cac33f1d2d9d",
           "name": "Night And The City Music From Original Motion Picture Soundtrack",
           "release_date": "1992",
@@ -23474,6 +23452,28 @@
                 "cat_number": "0777 7 81230 2 6"
               },
               "matrix_runout": "781230 2 : 1 : 3 EMI SWINDON",
+              "part_of_queen_collection": true
+            }
+          ]
+        },
+        {
+          "id": "7c76705f-bf96-432c-b31f-49fcb24c21eb",
+          "name": "Encino Man Music From The Original Motion Picture Soundtrack",
+          "release_date": "1992",
+          "part_of_queen_collection": true,
+          "releases": [
+            {
+              "id": "341bf66f-2e25-4fea-851c-f58548ba7d78",
+              "version": "US CD",
+              "format": "CD",
+              "discogs_url": "https://www.discogs.com/release/2413591-Various-Encino-Man-Music-From-The-Original-Motion-Picture-Soundtrack",
+              "release_date": "1992",
+              "countries": "USA",
+              "cat_numbers": {
+                "label": "Hollywood Records",
+                "cat_number": "HR-61330-2"
+              },
+              "matrix_runout": "2 61330-2 SRC=01 M2S6",
               "part_of_queen_collection": true
             }
           ]
@@ -23843,29 +23843,6 @@
           ]
         },
         {
-          "id": "357a8577-bf43-45b5-8134-796c9a01b55c",
-          "name": "46664 Part 2 Long Walk To Freedom",
-          "release_date": "2004",
-          "part_of_queen_collection": true,
-          "releases": [
-            {
-              "id": "b0585ff0-9d2d-4cf9-9af3-65b6eeed64ef",
-              "version": "German CD",
-              "format": "CD",
-              "discogs_url": "https://www.discogs.com/Various-46664-Part-2-Long-Walk-To-Freedom/release/1209685",
-              "release_date": "2004-04-05",
-              "countries": "Germany",
-              "cat_numbers": {
-                "label": "Warner Strategic Marketing",
-                "cat_number": "5050467-2134-2-5"
-              },
-              "matrix_runout": "5050467213425",
-              "comment": "2 V01 IFPI L011 IFPI 05N7.",
-              "part_of_queen_collection": true
-            }
-          ]
-        },
-        {
           "id": "030ba0db-60d6-418c-8d3a-5c5e09c506e7",
           "name": "46664 Part 1 African Prayer",
           "release_date": "2004",
@@ -23905,6 +23882,29 @@
                 "cat_number": "R2-78924"
               },
               "matrix_runout": "Z24863 3 RZ 78924-2 03 M1S2",
+              "part_of_queen_collection": true
+            }
+          ]
+        },
+        {
+          "id": "357a8577-bf43-45b5-8134-796c9a01b55c",
+          "name": "46664 Part 2 Long Walk To Freedom",
+          "release_date": "2004",
+          "part_of_queen_collection": true,
+          "releases": [
+            {
+              "id": "b0585ff0-9d2d-4cf9-9af3-65b6eeed64ef",
+              "version": "German CD",
+              "format": "CD",
+              "discogs_url": "https://www.discogs.com/Various-46664-Part-2-Long-Walk-To-Freedom/release/1209685",
+              "release_date": "2004-04-05",
+              "countries": "Germany",
+              "cat_numbers": {
+                "label": "Warner Strategic Marketing",
+                "cat_number": "5050467-2134-2-5"
+              },
+              "matrix_runout": "5050467213425",
+              "comment": "2 V01 IFPI L011 IFPI 05N7.",
               "part_of_queen_collection": true
             }
           ]

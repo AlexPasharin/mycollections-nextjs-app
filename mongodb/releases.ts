@@ -47,6 +47,8 @@ export const upsertReleases = async (
   >((acc, artist) => ({ ...acc, [artist._id]: artist }), {});
 
   await queryReleasesCollection(async (releasesCollection) => {
+    let nothingWasDone = true;
+
     await Promise.all(
       newArtistsData.map(async (artist) => {
         try {
@@ -72,6 +74,8 @@ export const upsertReleases = async (
           } else {
             throw `Upserting artist with id ${_id} was not acknowledged :(`;
           }
+
+          nothingWasDone = false;
         } catch (e) {
           console.error(e);
 
@@ -79,6 +83,10 @@ export const upsertReleases = async (
         }
       })
     );
+
+    if (nothingWasDone) {
+      console.log("There were no new artist data to upsert");
+    }
   });
 };
 

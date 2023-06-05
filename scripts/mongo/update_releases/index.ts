@@ -1,4 +1,5 @@
 import {
+  ascend,
   fromPairs,
   groupBy,
   indexBy,
@@ -6,7 +7,9 @@ import {
   mapObjIndexed,
   omit,
   pipe,
+  prop,
   sortBy,
+  sortWith,
   toPairs,
 } from "ramda";
 import {
@@ -20,7 +23,7 @@ import {
 import { validateArtist } from "./validation/artists";
 import { validateEntries } from "./validation/entries";
 import { validateRelease } from "./validation/releases";
-import { DBEntryType } from "../../../types/entries";
+import { DBEntry2, DBEntryType } from "../../../types/entries";
 import { writeToJsonFile } from "../../utils";
 
 import {
@@ -108,11 +111,17 @@ Promise.all([
         {}
       );
 
+      const entriesMap = entries.reduce<Record<string, DBEntry2 | undefined>>(
+        (acc, e) => ({ ...acc, [e.id]: e }),
+        {}
+      );
+
       const labelSet = new Set(labels.map((l) => l.name));
 
       const validatedReleases = releases.map((release) => {
         const validatedRelease = validateRelease(
           release,
+          entriesMap,
           releaseIDSet,
           countriesMap,
           labelSet
@@ -213,19 +222,28 @@ Promise.all([
     console.error(e);
   });
 
-const sortByReleaseDate = <T extends { release_date?: string }>(entries: T[]) =>
-  sortBy(({ release_date }) => {
-    if (!release_date) {
-      return "2999";
-    }
+const sortByReleaseDate = <T extends { release_date?: string; id: string }>(
+  entries: T[]
+): T[] =>
+  sortWith(
+    [
+      ascend(({ release_date }) => {
+        if (!release_date) {
+          return "2999";
+        }
 
-    const dateMatch = release_date.match(
-      /^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?$/
-    )!; // we use this function only for values of release_date that confirm to this regex
+        const dateMatch = release_date.match(
+          /^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?$/
+        )!; // we use this function only for values of release_date that confirm to this regex
 
-    const year = dateMatch[1];
-    const month = dateMatch[2] || "12";
-    const day = dateMatch[3] || "31";
+        const year = dateMatch[1];
+        const month = dateMatch[2] || "12";
+        const day = dateMatch[3] || "31";
 
-    return `${year}-${month}-${day}`;
-  }, entries);
+        return `${year}-${month}-${day}`;
+      }),
+      // ascend((x) => x.id),
+      ascend(prop<string>("id")), // no idea why ramda types demand redundant <string> parameter, but does not work without it
+    ],
+    entries
+  );

@@ -1,4 +1,4 @@
-import type { DBRelease2 } from "../../../../types/entries";
+import type { DBEntry2, DBRelease2 } from "../../../../types/entries";
 import type { Result } from "../../../../types/utils";
 import {
   type MatrixRunout,
@@ -17,6 +17,7 @@ import { releaseDateIsValid } from "./release_date";
 
 export const validateRelease = (
   release: DBRelease2,
+  entriesSet: Record<string, DBEntry2 | undefined>,
   dbReleaseIDs: Set<string>,
   dbCountries: Record<string, string | undefined>,
   dbLabels: Set<string>
@@ -128,6 +129,28 @@ export const validateRelease = (
 
   if (stringPropsValidityCheck !== true) {
     return stringPropsValidityCheck;
+  }
+
+  const parentEntry =
+    entriesSet[releaseWithStringArrayFieldsValidated.entry_id]!; // parent entry must exist because DB checks for that
+
+  const { part_of_queen_collection, relation_to_queen } =
+    releaseWithStringArrayFieldsValidated;
+
+  if (parentEntry.part_of_queen_collection && !part_of_queen_collection) {
+    return {
+      errors: [
+        `If parent entry ${parentEntry.id} is a part of queen collection, also release ${releaseWithStringArrayFieldsValidated.id} should be`,
+      ],
+    };
+  }
+
+  if (!part_of_queen_collection && relation_to_queen) {
+    return {
+      errors: [
+        `Relation to queen should be null, if release is not a part of queen collection`,
+      ],
+    };
   }
 
   return removeNils({
