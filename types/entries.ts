@@ -20,6 +20,7 @@ export type DBEntry2 = {
   relation_to_queen: string | null;
   tags: unknown;
   parent_entries: unknown;
+  entry_artist_name: string | null;
 };
 
 export interface DBEntryType {
@@ -45,10 +46,10 @@ export interface DBRelease {
 export interface DBRelease2 {
   id: string;
   entry_id: string;
-  version: string;
-  discogs_url: string | null;
   name: string | null;
+  version: string;
   format: string;
+  discogs_url: string | null;
   release_date: string | null;
   countries: unknown;
   cat_numbers: unknown;
@@ -56,11 +57,11 @@ export interface DBRelease2 {
   comment: string | null;
   condition_problems: string | null;
   release_artist_id: string | null;
+  part_of_queen_collection: boolean | null;
+  relation_to_queen: string | null;
   tags: unknown;
   parent_releases: unknown;
   jukebox_hole: boolean | null;
   picture_sleeve: boolean | null;
   speed: unknown;
-  part_of_queen_collection: boolean | null;
-  relation_to_queen: string | null;
 }

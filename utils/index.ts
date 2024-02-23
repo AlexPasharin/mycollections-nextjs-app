@@ -17,6 +17,7 @@ export const removeNils = <T>(obj: T): NullableToOptional<T> =>
 
 // validate if a given object's "unknown" typed property specified by a given key is actually null or a non-empty array of non-empty strings
 // white spaces in the beginning or the end of any string are not allowed either
+// returns the original given object or "errors" object
 const validatePropIsNullOrNonEmptyArrOfNonEmptyStrings = <
   U extends string,
   T extends { [key in U]: unknown }
@@ -36,6 +37,7 @@ const validatePropIsNullOrNonEmptyArrOfNonEmptyStrings = <
       };
 };
 
+// returns the original given object or "errors" object
 export const validatePropsAreNullOrNonEmptyArrOfNonEmptyStrings = <
   U extends string,
   T extends { [key in U]: unknown }

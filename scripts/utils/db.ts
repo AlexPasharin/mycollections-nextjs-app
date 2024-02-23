@@ -9,6 +9,7 @@ import {
   DBRelease2,
 } from "../../types/entries";
 import { DBArtist2 } from "../../types/artists";
+import { connect } from "http2";
 
 dotenv.config();
 
@@ -73,3 +74,46 @@ function fetchAllRowsFromTable<T extends {}>(tableName: string) {
     return entries;
   };
 }
+
+export const updateEntries = async (
+  entries: Partial<DBEntry2> & { id: string }[]
+) => {
+  const connection = dbConnection();
+
+  await Promise.all(entries.map(updateEntry(connection)));
+
+  connection.destroy();
+};
+
+const updateEntry =
+  (connection: ReturnType<typeof dbConnection>) =>
+  (entry: Partial<DBEntry2> & { id: string }) =>
+    connection("entries_2")
+      .where({ id: entry.id })
+      .update(entry)
+      .catch(() => {
+        console.error(`Could not update entry ${entry.id}`);
+      });
+
+export const updateReleases = async (
+  releases: Partial<DBRelease2> & { id: string }[]
+) => {
+  const connection = dbConnection();
+
+  await Promise.all(releases.map(updateRelease(connection)));
+
+  connection.destroy();
+};
+
+const updateRelease =
+  (connection: ReturnType<typeof dbConnection>) =>
+  (release: Partial<DBRelease2> & { id: string }) =>
+    connection("releases_2")
+      .where({ id: release.id })
+      .update(release)
+      .then(() => `Succesfully updated ${release.id}`)
+      .catch((error) => {
+        console.error(`Could not update release ${release.id}`);
+        console.error(error);
+        console.log();
+      });

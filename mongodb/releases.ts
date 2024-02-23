@@ -70,7 +70,7 @@ export const upsertReleases = async (
               `Succesfully inserted a new artist with id ${upsertedId}`
             );
           } else if (acknowledged) {
-            console.log(`Succesfully updated artists with id ${_id}`);
+            console.log(`Succesfully updated artist with id ${_id}`);
           } else {
             throw `Upserting artist with id ${_id} was not acknowledged :(`;
           }

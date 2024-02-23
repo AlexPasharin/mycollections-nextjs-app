@@ -298,12 +298,12 @@ const ReleaseDetails = ({
       value: format,
     },
     { label: "Released", value: release_date },
-    {
-      label: typeof countries === "string" ? "Country" : "Countries",
-      value: countriesToString(countries),
-    },
-    ...processMatrixRunout(matrix_runout),
-    { label: "Speed", value: speed ? `${speed} RPM` : null },
+    // {
+    //   label: typeof countries === "string" ? "Country" : "Countries",
+    //   value: countriesToString(countries),
+    // },
+    // ...processMatrixRunout(matrix_runout),
+    // { label: "Speed", value: speed ? `${speed} RPM` : null },
     {
       label: "Comment",
       value: comment,
@@ -324,11 +324,11 @@ const ReleaseDetails = ({
           </a>
         </div>
       )}
-      {catNumbersInfo.map(([label, catNumbers]) => (
+      {/* {catNumbersInfo.map(([label, catNumbers]) => (
         <div key={label}>
           {label} - {catNumbers}
         </div>
-      ))}
+      ))} */}
       <table style={{ borderCollapse: "collapse" }}>
         <tbody>
           {tableRows.map(({ label, value }) => (
