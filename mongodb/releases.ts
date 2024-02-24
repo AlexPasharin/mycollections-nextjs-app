@@ -25,7 +25,11 @@ export const getArtistReleases = (artistName: string) =>
     collection.findOne({
       name: {
         $regex: new RegExp(
-          `^${artistName.replaceAll("+", "\\+").replaceAll("*", "\\*")}$`
+          `^${artistName
+            .replaceAll("+", "\\+")
+            .replaceAll("*", "\\*")
+            .replaceAll("(", "\\(")
+            .replaceAll(")", "\\)")}$`
         ),
         $options: "i",
       },
