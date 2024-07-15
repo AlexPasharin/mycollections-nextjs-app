@@ -1,13 +1,15 @@
-import { Result } from "../../../../types/utils";
+import type { NonEmptyStringArray, Result } from "../../types/utils";
 
 const days_in_month = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 const isLeapYear = (year: number) =>
   (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
 
-export const releaseDateIsValid = (dateString: string | null): Result<true> => {
+export default function validateReleaseDate(
+  dateString: string | null
+): Result<null> {
   if (dateString === null) {
-    return true;
+    return null;
   }
 
   const dateMatch = dateString.match(/^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?$/);
@@ -24,12 +26,12 @@ export const releaseDateIsValid = (dateString: string | null): Result<true> => {
   const month = Number(dateMatch[2]);
   const day = Number(dateMatch[3]);
 
+  let errors: string[] = [];
+
   if (month && (month < 1 || month > 12)) {
-    return {
-      errors: [
-        `release_date ${dateString} has incorect value ${month} for month`,
-      ],
-    };
+    errors.push(
+      `release_date ${dateString} has incorect value ${month} for month`
+    );
   }
 
   const daysInMonth =
@@ -38,10 +40,10 @@ export const releaseDateIsValid = (dateString: string | null): Result<true> => {
       : days_in_month[month];
 
   if (day && (day < 1 || day > daysInMonth)) {
-    return {
-      errors: [`release_date ${dateString} has incorect value ${day} for day `],
-    };
+    errors.push(
+      `release_date ${dateString} has incorect value ${day} for day `
+    );
   }
 
-  return true;
-};
+  return errors.length > 0 ? { errors: errors as NonEmptyStringArray } : null;
+}

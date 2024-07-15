@@ -36,21 +36,15 @@ export const getArtistReleases = (artistName: string) =>
     })
   );
 
-export const upsertReleases = async (
+export const upsertReleases = (
   newArtistsData: MongoArtist[],
   oldArtistsData: MongoArtist[]
-) => {
-  if (!newArtistsData.length) {
-    console.log("No artists to upsert");
+): Promise<void> =>
+  queryReleasesCollection(async (releasesCollection) => {
+    const oldDataMap = oldArtistsData.reduce<
+      Record<string, MongoArtist | undefined>
+    >((acc, artist) => ({ ...acc, [artist._id]: artist }), {});
 
-    return;
-  }
-
-  const oldDataMap = oldArtistsData.reduce<
-    Record<string, MongoArtist | undefined>
-  >((acc, artist) => ({ ...acc, [artist._id]: artist }), {});
-
-  await queryReleasesCollection(async (releasesCollection) => {
     let nothingWasDone = true;
 
     await Promise.all(
@@ -92,7 +86,6 @@ export const upsertReleases = async (
       console.log("There were no new artist data to upsert");
     }
   });
-};
 
 export const deleteArtists = (artists: { _id: string }[]) =>
   queryReleasesCollection(async (releasesCollection) => {

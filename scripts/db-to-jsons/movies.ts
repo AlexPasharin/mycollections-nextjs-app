@@ -1,7 +1,7 @@
 import { prop, sortBy } from "ramda";
 import { Movie } from "../../types/movies";
 import { writeToJsonFile } from "../utils";
-import { getMovies } from "../utils/db";
+import { getMovies } from "../../db";
 
 getMovies().then(async (dbMovies) => {
   const movies: Movie[] = sortBy(

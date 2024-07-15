@@ -12,215 +12,115 @@ import {
   sortWith,
   toPairs,
 } from "ramda";
-import {
-  getArtistsNew,
-  getEntries,
-  getReleases,
-  getCountries,
-  getEntryTypes,
-  getLabels,
-} from "../../utils/db";
-import { validateArtist } from "./validation/artists";
-import { validateEntries } from "./validation/entries";
-import { validateRelease } from "./validation/releases";
-import { DBEntry2, DBEntryType } from "../../../types/entries";
-import { writeToJsonFile } from "../../utils";
+import { DBEntryType } from "../../../types/entries";
 
 import {
   deleteArtists,
-  getAllReleases,
+  getAllReleases as getReleasesFromMongo,
   upsertReleases,
 } from "../../../mongodb/releases";
 
-import {
-  EnhancedEntry,
-  MongoArtist,
-  MongoEntry,
-} from "../../../types/mongo/releases";
+import { EnhancedEntry, MongoEntry } from "../../../types/mongo/releases";
+import validateDBArtists from "../../../db/validation/artists";
+import validateDBEntries from "../../../db/validation/entries";
+import { getEntries, getEntryTypes } from "../../../db";
+import validateDBReleases from "../../../db/validation/releases";
 
-Promise.all([
-  getArtistsNew(),
-  getEntries(),
-  getReleases(),
-  getCountries(),
-  getLabels(),
-  getEntryTypes(),
-  getAllReleases(),
-])
-  .then(
-    async ([
-      artists,
-      entries,
-      releases,
-      countries,
-      labels,
-      entryTypes,
-      mongoReleases,
-    ]) => {
-      const artistIDsSet = new Set(artists.map((a) => a.id));
+const updateReleases = async () => {
+  try {
+    // validate artists
+    const validatedArtists = await validateDBArtists();
 
-      let validatedArtists = artists.map((a) => {
-        const validatedArtist = validateArtist(a, artistIDsSet);
+    // validate entries
+    const entries = await getEntries();
+    const validatedEntries = await validateDBEntries(entries);
 
-        if ("errors" in validatedArtist) {
-          console.error(`Encountered validation errors on following artist:`);
-          console.error(JSON.stringify(a, null, 4));
-          console.error();
-          console.error("Errors encountered:");
-          validatedArtist.errors.forEach((e) => console.log(e));
+    // validate releases
+    const validatedReleases = await validateDBReleases(entries);
 
-          throw "Terminating";
-        }
-
-        return validatedArtist;
-      });
-
-      validatedArtists = sortBy(
-        (artist) => artist.name_for_sorting || artist.name,
-        validatedArtists
-      );
-
-      console.log(`Artists validated successfully`);
-
-      // validate entries
-
-      const entryIDSet = new Set(entries.map((a) => a.id));
-
-      let validatedEntries = entries.map((e) => {
-        const validatedEntry = validateEntries(e, entryIDSet);
-
-        if ("errors" in validatedEntry) {
-          console.error(`Encountered validation errors on following entry:`);
-          console.error(JSON.stringify(e, null, 4));
-          console.error();
-          console.error("Errors encountered:");
-          validatedEntry.errors.forEach((e) => console.log(e));
-
-          throw "Terminating";
-        }
-
-        return validatedEntry;
-      });
-
-      console.log(`Entries validated successfully`);
-
-      const releaseIDSet = new Set(releases.map((a) => a.id));
-
-      const countriesMap = countries.reduce<Record<string, string | undefined>>(
-        (acc, { id, name }) => ({ ...acc, [id]: name }),
-        {}
-      );
-
-      const entriesMap = entries.reduce<Record<string, DBEntry2 | undefined>>(
-        (acc, e) => ({ ...acc, [e.id]: e }),
-        {}
-      );
-
-      const labelSet = new Set(labels.map((l) => l.name));
-
-      const validatedReleases = releases.map((release) => {
-        const validatedRelease = validateRelease(
-          release,
-          entriesMap,
-          releaseIDSet,
-          countriesMap,
-          labelSet
-        );
-
-        if ("errors" in validatedRelease) {
-          console.error(`Encountered validation errors on following release:`);
-          console.error(JSON.stringify(release, null, 4));
-          console.error();
-          console.error("Errors encountered:");
-          validatedRelease.errors.forEach((e) => console.log(e));
-
-          throw "Terminating";
-        }
-
-        return validatedRelease;
-      });
-
-      console.log(`Releases validated successfully\n`);
-
-      const entriesGroupedByArtist = groupBy(
-        (e) => e.artist_id,
-        validatedEntries
-      );
-
-      const releasesGroupedByEntries = groupBy(
-        (r) => r.entry_id,
-        validatedReleases
-      );
-
-      const typesMap = mapObjIndexed(
-        (type: DBEntryType) => type.name,
-        indexBy((type) => type.id.toString(), entryTypes)
-      );
-
-      const enhancedArtists: MongoArtist[] = validatedArtists.map(
-        ({ id, ...artist }) => {
-          const mongoArtist = { _id: id, ...artist };
-
-          let artistEntries: EnhancedEntry[] | undefined =
-            entriesGroupedByArtist[id];
-
-          if (!artistEntries) {
-            return mongoArtist;
-          }
-
-          artistEntries = artistEntries.map((e) => {
-            const entryReleases = releasesGroupedByEntries[e.id];
-
-            return entryReleases
-              ? {
-                  ...e,
-                  releases: sortByReleaseDate(
-                    entryReleases.map((r) => omit(["entry_id"], r))
-                  ),
-                }
-              : e;
-          });
-
-          const artistEntriesGroupedByType = pipe(
-            groupBy((e) => e.type.toString()),
-            toPairs<EnhancedEntry[]>,
-            sortBy(([type]) => Number(type)),
-            map<[string, EnhancedEntry[]], [string, MongoEntry[]]>(
-              ([type, entries]) => [
-                typesMap[type],
-                sortByReleaseDate(
-                  entries.map((e) => omit(["artist_id", "type"], e))
-                ),
-              ]
-            ),
-            fromPairs
-          )(artistEntries);
-
-          return {
-            ...mongoArtist,
-            entries: artistEntriesGroupedByType,
-          };
-        }
-      );
-
-      await writeToJsonFile(enhancedArtists, "enhanced_artists", {
-        includeDebugCopy: false,
-        compress: false,
-      });
-
-      const artistsInMongoOnly = mongoReleases.filter(
-        ({ _id }) => !artistIDsSet.has(_id)
-      );
-
-      await deleteArtists(artistsInMongoOnly);
-      console.log();
-
-      await upsertReleases(enhancedArtists, mongoReleases);
+    if (!validatedArtists || !validatedEntries || !validatedReleases) {
+      return;
     }
-  )
-  .catch((e) => {
+
+    const artists = sortBy(
+      (artist) => artist.name_for_sorting || artist.name,
+      validatedArtists
+    );
+
+    const entriesGroupedByArtist = groupBy(
+      (e) => e.artist_id,
+      validatedEntries
+    );
+
+    const releasesGroupedByEntries = groupBy(
+      (r) => r.entry_id,
+      validatedReleases
+    );
+
+    const entryTypes = await getEntryTypes();
+
+    const typesMap = mapObjIndexed(
+      (type: DBEntryType) => type.name,
+      indexBy((type) => type.id.toString(), entryTypes)
+    );
+
+    const enhancedArtists = artists.map(({ id, ...artist }) => {
+      const mongoArtist = { _id: id, ...artist };
+
+      const artistEntries = (entriesGroupedByArtist[id] || []).map((e) => {
+        const entryReleases = releasesGroupedByEntries[e.id];
+
+        return entryReleases
+          ? {
+              ...e,
+              releases: sortByReleaseDate(
+                entryReleases.map((r) => omit(["entry_id"], r))
+              ),
+            }
+          : e;
+      });
+
+      if (!artistEntries.length) {
+        return mongoArtist;
+      }
+
+      const artistEntriesGroupedByType = pipe(
+        groupBy((e) => e.type.toString()),
+        toPairs<EnhancedEntry[]>,
+        sortBy(([type]) => Number(type)),
+        map<[string, EnhancedEntry[]], [string, MongoEntry[]]>(
+          ([type, entries]) => [
+            typesMap[type],
+            sortByReleaseDate(
+              entries.map((e) => omit(["artist_id", "type"], e))
+            ),
+          ]
+        ),
+        fromPairs
+      )(artistEntries);
+
+      return {
+        ...mongoArtist,
+        entries: artistEntriesGroupedByType,
+      };
+    });
+
+    const artistIDsSet = new Set(enhancedArtists.map(({ _id }) => _id));
+
+    const mongoReleases = await getReleasesFromMongo();
+
+    const artistsInMongoOnly = mongoReleases.filter(
+      ({ _id }) => !artistIDsSet.has(_id)
+    );
+
+    await deleteArtists(artistsInMongoOnly);
+    console.log();
+
+    await upsertReleases(enhancedArtists, mongoReleases);
+  } catch (e) {
     console.error(e);
-  });
+  }
+};
 
 const sortByReleaseDate = <T extends { release_date?: string; id: string }>(
   entries: T[]
@@ -242,8 +142,9 @@ const sortByReleaseDate = <T extends { release_date?: string; id: string }>(
 
         return `${year}-${month}-${day}`;
       }),
-      // ascend((x) => x.id),
       ascend(prop<string>("id")), // no idea why ramda types demand redundant <string> parameter, but does not work without it
     ],
     entries
   );
+
+updateReleases();

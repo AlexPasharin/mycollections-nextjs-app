@@ -8,7 +8,9 @@ export type NullableToOptional<T> = {
   [K in NullableKeys<T>]?: NonNullable<T[K]>;
 };
 
-export type Result<T> = T | { errors: string[] };
-
 export type NonEmptyArray<T> = [T, ...T[]];
 export type NonEmptyStringArray = NonEmptyArray<string>;
+
+export type Result<T> = T | { errors: NonEmptyStringArray };
+
+export type ID = string;

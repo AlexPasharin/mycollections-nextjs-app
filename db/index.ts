@@ -1,15 +1,8 @@
 import * as dotenv from "dotenv";
 import knex from "knex";
-import { DBMovie } from "../../types/movies";
-import {
-  DBEntryType,
-  type DBEntry,
-  DBRelease,
-  DBEntry2,
-  DBRelease2,
-} from "../../types/entries";
-import { DBArtist2 } from "../../types/artists";
-import { connect } from "http2";
+import { DBMovie } from "../types/movies";
+import { DBEntryType, DBEntry2, DBRelease2 } from "../types/entries";
+import { DBArtist } from "../types/artists";
 
 dotenv.config();
 
@@ -22,46 +15,14 @@ export const dbConnection = () =>
     },
   });
 
-export const getArtists = fetchAllRowsFromTable<DBArtist2>("artists");
-
-export const getArtistsNew = fetchAllRowsFromTable<DBArtist2>("artists_2");
-
-export const getQueenEntries = fetchAllRowsFromTable<DBEntry>("entries");
+export const getArtists = fetchAllRowsFromTable<DBArtist>("artists_2");
 export const getEntries = fetchAllRowsFromTable<DBEntry2>("entries_2");
-
-export const getFormats = fetchAllRowsFromTable("formats");
-
 export const getEntryTypes = fetchAllRowsFromTable<DBEntryType>("types");
-
-export const getQueenReleases = fetchAllRowsFromTable<DBRelease>("releases");
-
 export const getReleases = fetchAllRowsFromTable<DBRelease2>("releases_2");
-
 export const getCountries = fetchAllRowsFromTable<{ id: string; name: string }>(
   "countries"
 );
-
 export const getLabels = fetchAllRowsFromTable<{ name: string }>("labels");
-
-interface NonQueenRelease {
-  id: number;
-  name: string;
-  format: string;
-  comment?: string;
-  discogs_url?: string;
-}
-
-interface NonQueenDBRelease
-  extends Omit<NonQueenRelease, "discogs_url" | "comment"> {
-  artist_name: string;
-  index_by: string | null;
-  discogs_url: string | null;
-  comment: string | null;
-}
-
-export const getNonQueenEntries =
-  fetchAllRowsFromTable<NonQueenDBRelease>("non_queen");
-
 export const getMovies = fetchAllRowsFromTable<DBMovie>("movies");
 
 function fetchAllRowsFromTable<T extends {}>(tableName: string) {
@@ -111,9 +72,39 @@ const updateRelease =
     connection("releases_2")
       .where({ id: release.id })
       .update(release)
-      .then(() => `Succesfully updated ${release.id}`)
+      .then(() => console.log(`Succesfully updated ${release.id}`))
       .catch((error) => {
         console.error(`Could not update release ${release.id}`);
         console.error(error);
         console.log();
       });
+
+export const insertReleases = async (releases: Partial<DBRelease2>[]) => {
+  const connection = dbConnection();
+
+  await connection("releases_2")
+    .insert(releases)
+    .then(() => console.log(`Succesfully insert new releases into DB`))
+    .catch((error) => {
+      console.error(`Could not insert new releases`);
+      console.error(error);
+      console.log();
+    });
+
+  connection.destroy();
+};
+
+export const insertEntries = async (entries: Partial<DBEntry2>[]) => {
+  const connection = dbConnection();
+
+  await connection("entries_2")
+    .insert(entries)
+    .then(() => console.log(`Succesfully insert new entries into DB`))
+    .catch((error) => {
+      console.error(`Could not insert new entries`);
+      console.error(error);
+      console.log();
+    });
+
+  connection.destroy();
+};

@@ -1,14 +1,7 @@
-export interface DBEntry {
-  id: number;
-  name: string;
-  release_date: string | null;
-  type: number;
-  artist_id: number;
-  entry_artist_id: number | null;
-}
+import type { ID } from "types/utils";
 
 export type DBEntry2 = {
-  id: string;
+  id: ID;
   name: string;
   type: number;
   release_date: string | null;
@@ -28,23 +21,8 @@ export interface DBEntryType {
   name: string;
 }
 
-export interface DBRelease {
-  id: number;
-  entry_id: number;
-  version: string;
-  discogs_url: string | null;
-  name: string | null;
-  format: string;
-  release_date: string | null;
-  country: string | null;
-  label: string | null;
-  cat_number: string | null;
-  comment: string | null;
-  condition_problems: string | null;
-}
-
 export interface DBRelease2 {
-  id: string;
+  id: ID;
   entry_id: string;
   name: string | null;
   version: string;
