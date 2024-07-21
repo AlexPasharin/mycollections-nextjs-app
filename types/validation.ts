@@ -97,6 +97,7 @@ export enum MatrixRunoutDigitalKeys {
   CD8 = "CD8",
   CD9 = "CD9",
   CD10 = "CD10",
+  "3''CD" = "3''CD",
   DVD = "DVD",
   DVD1 = "DVD1",
   DVD2 = "DVD2",
@@ -105,9 +106,7 @@ export enum MatrixRunoutDigitalKeys {
   BD = "BD",
   BD1 = "BD1",
   BD2 = "BD2",
-  "3''CD" = "3''CD",
   "4HD_BD" = "4HD_BD",
-  "mirrored" = "mirrored",
 }
 
 type MatrixRunoutVinylKeyValue =
@@ -123,7 +122,8 @@ export type MatrixRunout =
       [key in MatrixRunoutDigitalKeys]?:
         | string
         | { mirrored: string; normal?: string };
-    } & { LP?: MatrixRunoutVinylKeyValue });
+    } & { LP?: MatrixRunoutVinylKeyValue })
+  | { mirrored: string };
 
 export type Speed = 33 | { "Side B": 33 } | { "Disk 2": 33 };
 

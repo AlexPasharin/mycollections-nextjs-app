@@ -2,6 +2,7 @@ import OptionalTableRow from "./ OptionalTableRow";
 import type { Release, TableRowInfo } from "./types";
 
 import {
+  CatNumbersObjType,
   MatrixRunout,
   StringOrStringArray,
   ValidCatNumbersObject,
@@ -46,10 +47,10 @@ const ReleaseDetails = ({
       value: format,
     },
     { label: "Released", value: release_date },
-    // {
-    //   label: typeof countries === "string" ? "Country" : "Countries",
-    //   value: countriesToString(countries),
-    // },
+    {
+      label: typeof countries === "string" ? "Country" : "Countries",
+      value: countriesToString(countries),
+    },
     // ...processMatrixRunout(matrix_runout),
     // { label: "Speed", value: speed ? `${speed} RPM` : null },
     {
@@ -72,11 +73,11 @@ const ReleaseDetails = ({
           </a>
         </div>
       )}
-      {/* {catNumbersInfo.map(([label, catNumbers]) => (
+      {catNumbersInfo.map(([label, catNumbers]) => (
         <div key={label}>
           {label} - {catNumbers}
         </div>
-      ))} */}
+      ))}
       <table style={{ borderCollapse: "collapse" }}>
         <tbody>
           {tableRows.map(({ label, value }) => (
@@ -92,7 +93,20 @@ const ReleaseDetails = ({
 
 export default ReleaseDetails;
 
-const processCatNumberObject = (
+const processCatNumbersObject = (
+  catNumbersObject: string | CatNumbersObjType
+) => {
+  if (typeof catNumbersObject === "string") {
+    return catNumbersObject;
+  }
+  if (Array.isArray(catNumbersObject)) {
+    return catNumbersObject.join(", ");
+  }
+
+  return `in UK: ${catNumbersObject["in UK"]}, in Europe: ${catNumbersObject["in Europe"]}`;
+};
+
+const processLabelsAndCatNumbers = (
   catNumbersObject: ValidCatNumbersObject
 ): [string, string][] => {
   const labels =
@@ -106,11 +120,9 @@ const processCatNumberObject = (
     "cat_number" in catNumbersObject
       ? catNumbersObject.cat_number
       : "cat_numbers" in catNumbersObject
-      ? Array.isArray(catNumbersObject.cat_numbers)
-        ? catNumbersObject.cat_numbers.join(", ")
-        : "in UK" in catNumbersObject.cat_numbers
-        ? `in UK: ${catNumbersObject.cat_numbers["in UK"]}, in Europe: ${catNumbersObject.cat_numbers["in Europe"]}`
-        : "" // TODO: missing case of CD/slipcase properties
+      ? "CD" in catNumbersObject.cat_numbers
+        ? `CD: ${catNumbersObject.cat_numbers.CD}, slipcase: ${catNumbersObject.cat_numbers.slipcase}`
+        : processCatNumbersObject(catNumbersObject.cat_numbers)
       : "(no catalogue number)";
 
   return labels.map((l) => [l, catNumbers]);
@@ -123,11 +135,11 @@ const processCatNumbers = (
     return [];
   }
 
-  if (Array.isArray(catNumbers)) {
-    return catNumbers.map(processCatNumberObject).flat();
+  if (!Array.isArray(catNumbers)) {
+    catNumbers = [catNumbers];
   }
 
-  return processCatNumberObject(catNumbers);
+  return catNumbers.map(processLabelsAndCatNumbers).flat();
 };
 
 // const processMatrixRunout = (
