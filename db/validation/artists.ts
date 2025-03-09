@@ -9,13 +9,13 @@ export default async function validateDBArtists(): Promise<
   const validatedArtists = validateArtists(artists);
 
   if ("errors" in validatedArtists) {
-    console.error(`Encountered following errors validating artists:\n`);
+    console.error("Encountered following errors validating artists:\n");
     validatedArtists.errors.forEach((e) => console.error(e));
 
     return null;
   }
 
-  console.log(`Artists validated successfully`);
+  console.info("Artists validated successfully");
 
   return validatedArtists;
 }

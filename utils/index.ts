@@ -112,11 +112,11 @@ const isNonEmptyArrOfNonEmptyStrings = (
 ): val is NonEmptyStringArray =>
   Array.isArray(val) && arrayIsNonEmpty(val) && val.every(isNonEmptyString);
 
-// returns true if given value or is a non-empty string without whitespace characters in the beginning or the end
+// returns true if given value is null or is a non-empty string without whitespace characters in the beginning or the end
 const isNonEmptyIfString = (str: string | null): boolean =>
   str === null || isNonEmpty(str);
 
-export const isNonEmpty = (str: string) => !!str && str.trim() === str;
+export const isNonEmpty = (str: string) => !!str && !/\s/.test(str.at(0) as string) &&  !/\s/.test(str.at(-1) as string)
 
 // returns true iff obj[key] is either null or a non-empty array of strings and each string in that array do not contain white space in the beginning or the end
 const isNullOrNonEmptyArrOfNonEmptyStrings = (

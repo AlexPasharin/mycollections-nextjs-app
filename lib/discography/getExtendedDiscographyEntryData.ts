@@ -2,8 +2,7 @@ import fs from "fs";
 import path from "path";
 import showdown from "showdown";
 
-import { pathToFileURL } from "url";
-import * as ts from "typescript";
+import ts from "typescript";
 
 import type {
   Composition,
@@ -26,16 +25,12 @@ export default async function getExtendedDiscographyEntryData({
   entryType: string;
 }): Promise<ExtendedDiscographyEntryData | null> {
   try {
-    const textContentsDirectory = path.join(
+    const textContentFilePath = path.join(
       process.cwd(),
       "textcontents",
       artist.toLowerCase(),
       "discography",
-      entryType
-    );
-
-    const textContentFilePath = path.join(
-      textContentsDirectory,
+      entryType,
       `${entryName}.md`
     );
 
@@ -83,7 +78,7 @@ export default async function getExtendedDiscographyEntryData({
             name: versionName ? `${name} (${versionName})` : name,
             releases,
             artist:
-              trackArtist && trackArtist.toLowerCase() !== artist.toLowerCase()
+              trackArtist.toLowerCase() !== artist.toLowerCase()
                 ? trackArtist
                 : null,
           };

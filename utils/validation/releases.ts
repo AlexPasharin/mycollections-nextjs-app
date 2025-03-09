@@ -4,7 +4,6 @@ import type {
   Speed,
   ValidatedCatNumbers,
   ValidatedCountriesType,
-  ValidatedDBEntry,
   ValidatedDBRelease,
 } from "../../types/validation";
 
@@ -23,7 +22,7 @@ import validateMatrixRunout from "./matrixRunout";
 
 export default function validateReleases(
   releases: DBRelease2[],
-  entries: readonly ValidatedDBEntry[] | DBEntry2[],
+  entries: DBEntry2[],
   countries: { id: string; name: string }[],
   labels: string[]
 ): Result<ValidatedDBRelease[]> {
@@ -32,9 +31,10 @@ export default function validateReleases(
     {}
   );
 
-  const entriesMap = entries.reduce<
-    Record<string, ValidatedDBEntry | DBEntry2 | undefined>
-  >((acc, entry) => ({ ...acc, [entry.id]: entry }), {});
+  const entriesMap = entries.reduce<Record<string, DBEntry2 | undefined>>(
+    (acc, entry) => ({ ...acc, [entry.id]: entry }),
+    {}
+  );
 
   const labelSet = new Set(labels);
 
@@ -46,7 +46,7 @@ export default function validateReleases(
 export const validateRelease = (
   release: DBRelease2,
   releaseIDs: Set<ID>,
-  entriesMap: Record<string, ValidatedDBEntry | DBEntry2 | undefined>,
+  entriesMap: Record<string, DBEntry2 | undefined>,
   countries: Record<string, string | undefined>,
   dbLabels: Set<string>
 ): Result<ValidatedDBRelease> => {

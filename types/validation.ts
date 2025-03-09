@@ -31,11 +31,15 @@ export type ValidatedDBArtist = NullableToOptional<
   other_names?: NonEmptyStringArray;
 };
 
-export type ValidatedDBEntry = NullableToOptional<
-  Omit<DBEntry2, "tags" | "parent_entries">
+export type ValidatedDBEntry = Omit<DBEntry2, "tags" | "parent_entries"> & {
+  entry_artist?: string;
+  tags: NonEmptyStringArray | null;
+  parent_entries: NonEmptyStringArray | null;
+};
+
+export type Entry = NullableToOptional<
+  Omit<ValidatedDBEntry, "entry_artist_id">
 > & {
-  tags?: NonEmptyStringArray;
-  parent_entries?: NonEmptyStringArray;
   part_of_queen_collection?: true;
 };
 

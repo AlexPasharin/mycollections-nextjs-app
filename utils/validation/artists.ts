@@ -23,15 +23,13 @@ const validateArtist = (
 ): Result<ValidatedDBArtist> => {
   let errors: string[] = [];
 
-  // "name" and "name_for_sortings" fields' values must be null or a non-empty array of non-empty strings
+  // "name" and "name_for_sorting" fields' values must be null or properly trimmed non-empty strings
   const stringPropsValidityCheck = validatePropsAreNonEmptyIfStrings(artist, [
     "name",
     "name_for_sorting",
   ]);
 
-  if (stringPropsValidityCheck !== null) {
-    errors.push(...stringPropsValidityCheck.errors);
-  }
+  errors.push(...(stringPropsValidityCheck?.errors || []));
 
   // "other_names" and "parent_artists" fields' values must be null or a non-empty array of non-empty strings
   const artistWithStringArrayFieldsValidated =

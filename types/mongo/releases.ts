@@ -1,10 +1,6 @@
-import {
-  ValidatedDBArtist,
-  ValidatedDBEntry,
-  ValidatedDBRelease,
-} from "../validation";
+import { Entry, ValidatedDBArtist, ValidatedDBRelease } from "../validation";
 
-export type EnhancedEntry = ValidatedDBEntry & {
+export type EnhancedEntry = Entry & {
   releases?: Omit<ValidatedDBRelease, "entry_id">[];
 };
 

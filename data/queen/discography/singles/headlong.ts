@@ -10,9 +10,9 @@ const data: DiscographyEntryData = {
         { id: `headlong-us-edit`, releases: `Hollywood Record releases` },
         {
           id: `headlong`,
-          releases: `not Hollywood Record cassette or 2010 "Singles collection 4" CD`,
+          releases: `not Hollywood Record cassette, UK (and possibly other countries') 7" or 2010 "Singles collection 4" CD`,
         },
-        { id: `headlong-lp-edit`, releases: `2010 "Singles collection 4" CD` },
+        { id: `headlong-lp-edit`, releases: `UK (and possibly other countries') 7", 2010 "Singles collection 4" CD` },
       ],
     },
     {
@@ -95,15 +95,15 @@ const data: DiscographyEntryData = {
     {
       tracks: [
         {
-          index: "A",
-          track: `headlong`,
+          indexes: ["A", 1],
+          track: `headlong-lp-edit`,
         },
         {
-          index: "B",
+          indexes: ["B", 2],
           track: `agp`,
         },
       ],
-      releases: `Original 1991 Parlophone 7" (except for France and Australia)`,
+      releases: [`UK (and possibly other countries') 7''`, `2010 "Singles collection 4" CD`],
     },
     {
       tracks: [
@@ -216,17 +216,7 @@ const data: DiscographyEntryData = {
       ],
       releases: `Japanese CD`,
     },
-    {
-      tracks: [
-        {
-          track: `headlong-lp-edit`,
-        },
-        {
-          track: `agp`,
-        },
-      ],
-      releases: `2010 "Singles collection 4" CD`,
-    },
+
   ],
 };
 

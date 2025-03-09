@@ -75,12 +75,8 @@ const QueenCollectionArtist: NextPage<Props> = ({
                 </h3>
               </summary>
               <ul style={{ marginLeft: "24px" }}>
-                {typeEntries.map((entry) => (
-                  <Entry
-                    key={entry.id}
-                    entry={entry}
-                    debugReleases={debugReleases}
-                  />
+                {typeEntries.map(({ id, ...entry }) => (
+                  <Entry key={id} entry={entry} debugReleases={debugReleases} />
                 ))}
               </ul>
             </details>

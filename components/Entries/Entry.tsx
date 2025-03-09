@@ -8,12 +8,23 @@ const Entry = ({
   entry,
   debugReleases,
 }: {
-  entry: MongoEntry;
+  entry: Omit<MongoEntry, "id">;
   debugReleases: boolean;
 }) => {
   const [showReleases, setShowReleases] = useState(debugReleases);
 
-  const { name, releases, release_date } = entry;
+  const {
+    name,
+    entry_artist_name,
+    comment,
+    discogs_url,
+    release_date,
+    tags,
+    parent_entries,
+    releases,
+    relation_to_queen,
+    part_of_queen_collection,
+  } = entry;
 
   return (
     <li style={{ borderBottom: "solid 1px lightgrey" }}>

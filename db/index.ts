@@ -4,9 +4,11 @@ import { DBMovie } from "../types/movies";
 import { DBEntryType, DBEntry2, DBRelease2 } from "../types/entries";
 import { DBArtist } from "../types/artists";
 
+import pc from "picocolors";
+
 dotenv.config();
 
-export const dbConnection = () =>
+const dbConnection = () =>
   knex({
     client: "pg",
     connection: {
@@ -15,8 +17,58 @@ export const dbConnection = () =>
     },
   });
 
-export const getArtists = fetchAllRowsFromTable<DBArtist>("artists_2");
-export const getEntries = fetchAllRowsFromTable<DBEntry2>("entries_2");
+type Connection = ReturnType<typeof dbConnection>;
+
+const useConnection = async <T>(cb: (c: Connection) => Promise<T>) => {
+  try {
+    const connection = dbConnection();
+
+    const result = await cb(connection);
+
+    connection.destroy();
+
+    return result;
+  } catch (e) {
+    if (
+      e !== null &&
+      typeof e === "object" &&
+      "code" in e &&
+      e.code === "ECONNREFUSED"
+    ) {
+      console.error(
+        pc.red("Database connection error! Make sure database is up. Exiting.")
+      );
+      process.exit(1);
+    }
+
+    throw e;
+  }
+};
+
+const fetchAllRowsFromTable =
+  <T extends {}>(tableName: string) =>
+  () =>
+    useConnection((c) => c<T>(tableName).select());
+
+let artists: DBArtist[];
+
+export const getArtists = async (useCache?: boolean) => {
+  if (!useCache || !artists) {
+    artists = await fetchAllRowsFromTable<DBArtist>("artists_2")();
+  }
+
+  return artists;
+};
+
+let entries: DBEntry2[];
+
+export const getEntries = async (useCache?: boolean) => {
+  if (!useCache || !entries) {
+    entries = await fetchAllRowsFromTable<DBEntry2>("entries_2")();
+  }
+
+  return entries;
+};
 export const getEntryTypes = fetchAllRowsFromTable<DBEntryType>("types");
 export const getReleases = fetchAllRowsFromTable<DBRelease2>("releases_2");
 export const getCountries = fetchAllRowsFromTable<{ id: string; name: string }>(
@@ -25,26 +77,37 @@ export const getCountries = fetchAllRowsFromTable<{ id: string; name: string }>(
 export const getLabels = fetchAllRowsFromTable<{ name: string }>("labels");
 export const getMovies = fetchAllRowsFromTable<DBMovie>("movies");
 
-function fetchAllRowsFromTable<T extends {}>(tableName: string) {
-  return async () => {
-    const connection = dbConnection();
-    const entries = await connection<T>(tableName).select();
-
-    connection.destroy();
-
-    return entries;
-  };
-}
-
 export const updateEntries = async (
   entries: Partial<DBEntry2> & { id: string }[]
-) => {
-  const connection = dbConnection();
+) => useConnection((c) => Promise.all(entries.map(updateEntry(c))));
 
-  await Promise.all(entries.map(updateEntry(connection)));
+export const updateReleases = async (
+  releases: Partial<DBRelease2> & { id: string }[]
+) => useConnection((c) => Promise.all(releases.map(updateRelease(c))));
 
-  connection.destroy();
-};
+export const insertReleases = async (releases: Partial<DBRelease2>[]) =>
+  useConnection((c) =>
+    c("releases_2")
+      .insert(releases)
+      .then(() => console.log(`Succesfully insert new releases into DB`))
+      .catch((error) => {
+        console.error(`Could not insert new releases`);
+        console.error(error);
+        console.log();
+      })
+  );
+
+export const insertEntries = async (entries: Partial<DBEntry2>[]) =>
+  useConnection((c) =>
+    c("entries_2")
+      .insert(entries)
+      .then(() => console.log(`Succesfully insert new entries into DB`))
+      .catch((error) => {
+        console.error(`Could not insert new entries`);
+        console.error(error);
+        console.log();
+      })
+  );
 
 const updateEntry =
   (connection: ReturnType<typeof dbConnection>) =>
@@ -55,16 +118,6 @@ const updateEntry =
       .catch(() => {
         console.error(`Could not update entry ${entry.id}`);
       });
-
-export const updateReleases = async (
-  releases: Partial<DBRelease2> & { id: string }[]
-) => {
-  const connection = dbConnection();
-
-  await Promise.all(releases.map(updateRelease(connection)));
-
-  connection.destroy();
-};
 
 const updateRelease =
   (connection: ReturnType<typeof dbConnection>) =>
@@ -78,33 +131,3 @@ const updateRelease =
         console.error(error);
         console.log();
       });
-
-export const insertReleases = async (releases: Partial<DBRelease2>[]) => {
-  const connection = dbConnection();
-
-  await connection("releases_2")
-    .insert(releases)
-    .then(() => console.log(`Succesfully insert new releases into DB`))
-    .catch((error) => {
-      console.error(`Could not insert new releases`);
-      console.error(error);
-      console.log();
-    });
-
-  connection.destroy();
-};
-
-export const insertEntries = async (entries: Partial<DBEntry2>[]) => {
-  const connection = dbConnection();
-
-  await connection("entries_2")
-    .insert(entries)
-    .then(() => console.log(`Succesfully insert new entries into DB`))
-    .catch((error) => {
-      console.error(`Could not insert new entries`);
-      console.error(error);
-      console.log();
-    });
-
-  connection.destroy();
-};

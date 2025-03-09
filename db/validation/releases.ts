@@ -1,15 +1,12 @@
-import { getCountries, getEntries, getLabels, getReleases } from "../index";
-import type {
-  ValidatedDBEntry,
-  ValidatedDBRelease,
-} from "../../types/validation";
+import { getCountries, getLabels, getReleases } from "../index";
+import type { ValidatedDBRelease } from "../../types/validation";
 import validateReleases from "../../utils/validation/releases";
 import { DBEntry2 } from "../../types/entries";
 
 export default async function validateDBReleases(
   entries: DBEntry2[]
 ): Promise<ValidatedDBRelease[] | null> {
-  let [releases, countries, labels] = await Promise.all([
+  const [releases, countries, labels] = await Promise.all([
     getReleases(),
     getCountries(),
     getLabels(),

@@ -1,12 +1,13 @@
-import { getEntries } from "../index";
 import validateEntries from "../../utils/validation/entries";
-import type { ValidatedDBEntry } from "../../types/validation";
-import { DBEntry2 } from "../../types/entries";
+import type { Entry } from "../../types/validation";
+import { getArtists, getEntries } from "../../db";
 
-export default async function validateDBEntries(
-  entries: DBEntry2[]
-): Promise<ValidatedDBEntry[] | null> {
-  const validatedEntries = validateEntries(entries);
+export default async function validateDBEntries(): Promise<Entry[] | null> {
+  const [artists, entries] = await Promise.all([
+    getArtists(true),
+    getEntries(true),
+  ]);
+  const validatedEntries = validateEntries(artists, entries);
 
   if ("errors" in validatedEntries) {
     console.error(`Encountered following errors validating entries:\n`);
