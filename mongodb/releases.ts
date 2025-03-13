@@ -96,7 +96,7 @@ export const deleteArtists = (artists: { _id: string }[]) =>
     }
 
     const idsToDelete = artists.map((a) => a._id);
-    console.log({ idsToDelete });
+    console.log("Artists to delete:", { idsToDelete });
     console.log(`Attempting to delete ${idsToDelete.length} documents...`);
 
     const { deletedCount } = await releasesCollection.deleteMany({
@@ -104,7 +104,7 @@ export const deleteArtists = (artists: { _id: string }[]) =>
     });
 
     console.log(
-      `Succesfully deleted ${deletedCount} documents from "music_collection.artists" collection`
+      `Successfully deleted ${deletedCount} documents from "music_collection.artists" collection`
     );
 
     if (idsToDelete.length !== deletedCount) {

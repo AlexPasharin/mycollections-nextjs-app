@@ -21,12 +21,14 @@ async function addNewSingleFileSkeletons(artistName: string) {
     .map((str) => str.trim())
     .filter(Boolean);
 
-  if (!names.length) {
+  const firstName = names[0];
+
+  if (!firstName) {
     console.error("NO ARGUMENTS GIVEN, ABORTING");
     process.exit(1);
   }
 
-  const singleName = names[0].toLowerCase();
+  const singleName = firstName.toLowerCase();
 
   const textContentsFilePath = `${process.cwd()}/textcontents/queen/discography/singles/${singleName}.md`;
   const singleDataFilePath = `${process.cwd()}/data/queen/discography/singles/${singleName}.ts`;

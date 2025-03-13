@@ -47,26 +47,22 @@ const validateCatNumbersObj = (
     return { errors: [`${prefix} is not an object`] };
   }
 
-  const keys = Object.keys(value).sort();
+  const keys = Object.keys(value);
 
-  if (
-    (keys.length === 1 &&
-      !/cat_number(s?)/.test(keys[0]) &&
-      !/label(s?)/.test(keys[0])) ||
-    keys.length < 1 ||
-    keys.length > 2 ||
-    (keys.length === 2 &&
-      !/cat_number(s?)/.test(keys[0]) &&
-      !/label(s?)/.test(keys[1]))
-  ) {
+  const keysAreValid =
+    keys.length <= 2 &&
+    keys[0] &&
+    ((keyIsCatNumbers(keys[0]) && (!keys[1] || keyIsLabels(keys[1]))) ||
+      (keyIsLabels(keys[0]) && (!keys[1] || keyIsCatNumbers(keys[1]))));
+
+  if (!keysAreValid)
     return {
       errors: [
         `${prefix} is an object, but does not have a required shape (only optional properties 'label(s)' and 'cat_number(s)' are allowed and at least one is required)`,
       ],
     };
-  }
 
-  let errors: string[] = [];
+  const errors: string[] = [];
 
   if ("label" in value && !isNonEmptyString(value.label)) {
     errors.push(
@@ -198,3 +194,7 @@ const validateCatNumbersObjectShape = (
 
   return value as CatNumbersObjType; // verified above
 };
+
+const keyIsCatNumbers = (key: string): boolean => /^cat_number(s?)$/.test(key);
+
+const keyIsLabels = (key: string): boolean => /^label(s?)$/.test(key);

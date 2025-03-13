@@ -67,7 +67,7 @@ const updateReleases = async () => {
     const enhancedArtists = artists.map(({ id, ...artist }) => {
       const mongoArtist = { _id: id, ...artist };
 
-      const artistEntries = entriesGroupedByArtist[id].map((e) => {
+      const artistEntries = entriesGroupedByArtist[id]?.map((e) => {
         const entryReleases = releasesGroupedByEntries[e.id];
 
         return entryReleases
@@ -80,7 +80,7 @@ const updateReleases = async () => {
           : e;
       });
 
-      if (!artistEntries.length) {
+      if (!artistEntries?.length) {
         return mongoArtist;
       }
 
@@ -90,7 +90,7 @@ const updateReleases = async () => {
         sortBy(([type]) => Number(type)),
         map<[string, EnhancedEntry[]], [string, MongoEntry[]]>(
           ([type, entries]) => [
-            typesMap[type],
+            typesMap![type],
             sortByReleaseDate(
               entries.map((e) => omit(["artist_id", "type"], e))
             ),

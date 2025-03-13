@@ -15,10 +15,6 @@ export function fixCompositions() {
 
   const inputDir = [process.cwd(), "data", "compositions"];
 
-  // const inputDirectory = fs.mkdirSync(
-  //   path.join()
-  // );
-
   console.log(compositionFiles);
 
   compositionFiles.forEach((fileName) => {
@@ -27,7 +23,7 @@ export function fixCompositions() {
     });
     let lines = content.split("\n");
 
-    if (!lines[0].length) {
+    if (!lines[0]?.length) {
       lines = lines.slice(1);
     }
 
