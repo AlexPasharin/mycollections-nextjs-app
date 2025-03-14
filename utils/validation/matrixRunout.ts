@@ -57,7 +57,7 @@ export default function validateMatrixRunout(
   ) => {
     const match = key.match(regex);
 
-    if (match) {
+    if (match?.[1]) {
       keyDigits.push(transformtionFn(match[1]));
     }
   };

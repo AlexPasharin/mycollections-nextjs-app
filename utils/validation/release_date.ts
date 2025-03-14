@@ -1,6 +1,8 @@
 import type { NonEmptyStringArray, Result } from "../../types/utils";
 
-const days_in_month = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+const days_in_month = [
+  0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31,
+] as const;
 
 const isLeapYear = (year: number) =>
   (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
@@ -30,7 +32,7 @@ export default function validateReleaseDate(
 
   if (month && (month < 1 || month > 12)) {
     errors.push(
-      `release_date ${dateString} has incorect value ${month} for month`
+      `release_date ${dateString} has incorrect value ${month} for month`
     );
   }
 
@@ -39,9 +41,9 @@ export default function validateReleaseDate(
       ? days_in_month[month] + 1
       : days_in_month[month];
 
-  if (day && (day < 1 || day > daysInMonth)) {
+  if (day && (day < 1 || day > daysInMonth!)) {
     errors.push(
-      `release_date ${dateString} has incorect value ${day} for day `
+      `release_date ${dateString} has incorrect value ${day} for day `
     );
   }
 
