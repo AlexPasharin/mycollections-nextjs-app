@@ -74,12 +74,12 @@ function processCompositionName(compositionName: string): {
   const compositionNameWords = compositionName.split(" ");
 
   const compositionNameCapitalized = compositionNameWords
-    .map((str) => str[0].toUpperCase() + str.slice(1).toLowerCase())
+    .map((str) => (str[0] ?? "").toUpperCase() + str.slice(1).toLowerCase())
     .join(" ");
 
   const compositionID =
     compositionNameWords.length > 1
-      ? compositionNameWords.map((str) => str[0].toLowerCase()).join("")
+      ? compositionNameWords.map((str) => (str[0] ?? "").toLowerCase()).join("")
       : compositionName.toLowerCase();
 
   return {

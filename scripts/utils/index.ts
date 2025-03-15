@@ -92,7 +92,7 @@ export async function readJSONFromFile(fileName: string) {
 }
 
 function promptForYes(question: string): Promise<boolean> {
-  return prompt(question).then((input) => input[0].toLowerCase() === "y");
+  return prompt(question).then((input) => input[0]?.toLowerCase() === "y");
 }
 
 function prompt(question: string): Promise<string> {
