@@ -11,12 +11,12 @@ export default function validateMatrixRunout(
   value: unknown
 ): Result<{ matrixRunout: MatrixRunout | null }> {
   if (value === null) {
-    return { matrixRunout: value };
+    return { value: { matrixRunout: value } };
   }
 
   if (typeof value === "string") {
     return isNonEmpty(value)
-      ? { matrixRunout: value }
+      ? { value: { matrixRunout: value } }
       : {
           errors: [
             `"matrix_runout" is a string, but not non-empty wihout empty spaces in the beginning or the end`,
@@ -175,7 +175,7 @@ export default function validateMatrixRunout(
     return { errors };
   }
 
-  return { matrixRunout: value as MatrixRunout };
+  return { value: { matrixRunout: value as MatrixRunout } };
 }
 
 const digitalMatrixRunoutKeyValueIsCorrect = (value: unknown): boolean => {

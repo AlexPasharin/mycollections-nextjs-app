@@ -41,7 +41,7 @@ export const validatePropsAreNullOrNonEmptyArrOfNonEmptyStrings = <
   }
 
   // "as" assertion is needed because this implementation cannot verify the correct type
-  return obj as Result<T & { [key in U]: NonEmptyStringArray | null }>;
+  return { value: obj as T & { [key in U]: NonEmptyStringArray | null } };
 };
 
 export const validatePropsAreNonEmptyIfStrings = <
@@ -50,19 +50,17 @@ export const validatePropsAreNonEmptyIfStrings = <
 >(
   obj: T,
   keys: U[]
-): Result<null> => {
+): NonEmptyStringArray | null => {
   const keysWithWrongTypeOfValue = keys.filter(
     (key) => !isNonEmptyIfString(obj[key])
   );
 
   if (arrayIsNonEmpty(keysWithWrongTypeOfValue)) {
-    return {
-      errors: map(
-        keysWithWrongTypeOfValue,
-        (key) =>
-          `"${key}" cannot be an empty string or contain whitespace characters in the beginning or the end`
-      ),
-    };
+    return map(
+      keysWithWrongTypeOfValue,
+      (key) =>
+        `"${key}" cannot be an empty string or contain whitespace characters in the beginning or the end`
+    );
   }
 
   return null;
@@ -91,8 +89,8 @@ export function flattenResults<T extends object>(
     };
   }
 
-  // TS is smart enough to understand resultsWithErrors above have type {errors: NonEmptyStringArray}, but it cannot now that if resultsWithErrors is empty, all results have type T, so we need an "as" assertion
-  return results as Array<T>;
+  // TS is smart enough to understand resultsWithErrors above have type {errors: NonEmptyStringArray}, but it cannot now that if resultsWithErrors is empty, all results have type { value: T }, so we need an "as" assertion
+  return { value: results.map((r) => (r as { value: T }).value) };
 }
 
 export const objHasKeys = <U extends string>(
@@ -116,7 +114,8 @@ const isNonEmptyArrOfNonEmptyStrings = (
 const isNonEmptyIfString = (str: string | null): boolean =>
   str === null || isNonEmpty(str);
 
-export const isNonEmpty = (str: string) => !!str && !/\s/.test(str.at(0) as string) &&  !/\s/.test(str.at(-1) as string)
+export const isNonEmpty = (str: string) =>
+  !!str && !/\s/.test(str.at(0) as string) && !/\s/.test(str.at(-1) as string);
 
 // returns true iff obj[key] is either null or a non-empty array of strings and each string in that array do not contain white space in the beginning or the end
 const isNullOrNonEmptyArrOfNonEmptyStrings = (

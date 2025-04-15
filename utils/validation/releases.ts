@@ -52,10 +52,12 @@ export const validateRelease = (
 ): Result<ValidatedDBRelease> => {
   let errors: string[] = [];
 
-  const releaseDateValidityCheck = validateReleaseDate(release.release_date);
+  const releaseDateValidityCheckErrors = validateReleaseDate(
+    release.release_date
+  );
 
-  if (releaseDateValidityCheck) {
-    errors.push(...releaseDateValidityCheck.errors);
+  if (releaseDateValidityCheckErrors) {
+    errors.push(...releaseDateValidityCheckErrors);
   }
 
   let releaseCountries: ValidatedCountriesType | null = null;
@@ -68,7 +70,7 @@ export const validateRelease = (
   if ("errors" in countriesFieldValidationResult) {
     errors.push(...countriesFieldValidationResult.errors);
   } else {
-    releaseCountries = countriesFieldValidationResult.countries;
+    releaseCountries = countriesFieldValidationResult.value.countries;
   }
 
   let parent_releases: NonEmptyStringArray | null = null;
@@ -83,11 +85,12 @@ export const validateRelease = (
   if ("errors" in releaseWithStringArrayFieldsValidated) {
     errors.push(...releaseWithStringArrayFieldsValidated.errors);
   } else {
-    parent_releases = releaseWithStringArrayFieldsValidated.parent_releases;
+    parent_releases =
+      releaseWithStringArrayFieldsValidated.value.parent_releases;
   }
 
   if (parent_releases) {
-    // every value in "parent_entries" array must correspong to an actual release in the database
+    // every value in "parent_entries" array must correspond to an actual release in the database
     const nonValidParentEntries = parent_releases.filter(
       (pa) => !releaseIDs.has(pa)
     );
@@ -106,14 +109,14 @@ export const validateRelease = (
   if (verifiedCatNumbers && "errors" in verifiedCatNumbers) {
     errors.push(...verifiedCatNumbers.errors);
   } else {
-    catNumbers = verifiedCatNumbers;
+    catNumbers = verifiedCatNumbers.value;
 
     // verify that all labels mentioned in "cat_numbers" are in database
-    const releaseLabels = extractLabels(verifiedCatNumbers);
+    const releaseLabels = extractLabels(catNumbers);
     const releaseLabelsNotInDB = releaseLabels.filter((l) => !dbLabels.has(l));
 
     errors.push(
-      ...releaseLabelsNotInDB.map((l) => `Label ${l} not found in DB`)
+      ...releaseLabelsNotInDB.map((l) => `Label "${l}" not found in DB`)
     );
   }
 
@@ -133,17 +136,20 @@ export const validateRelease = (
     speed = release.speed;
   }
 
-  const stringPropsValidityCheck = validatePropsAreNonEmptyIfStrings(release, [
-    "name",
-    "version",
-    "discogs_url",
-    "comment",
-    "condition_problems",
-    "relation_to_queen",
-  ]);
+  const stringPropsValidityCheckErrors = validatePropsAreNonEmptyIfStrings(
+    release,
+    [
+      "name",
+      "version",
+      "discogs_url",
+      "comment",
+      "condition_problems",
+      "relation_to_queen",
+    ]
+  );
 
-  if (stringPropsValidityCheck) {
-    errors.push(...stringPropsValidityCheck.errors);
+  if (stringPropsValidityCheckErrors) {
+    errors.push(...stringPropsValidityCheckErrors);
   }
 
   const parentEntry = entriesMap[release.entry_id];
@@ -168,18 +174,20 @@ export const validateRelease = (
     };
   }
 
-  return removeNils({
-    ...release,
-    countries: releaseCountries,
-    parent_releases,
-    cat_numbers: catNumbers,
-    matrix_runout: null,
-    tags: null,
-    speed: speed,
-    part_of_queen_collection: release.part_of_queen_collection || null,
-    jukebox_hole: release.jukebox_hole || null,
-    picture_sleeve: release.picture_sleeve ? null : release.picture_sleeve,
-  });
+  return {
+    value: removeNils({
+      ...release,
+      countries: releaseCountries,
+      parent_releases,
+      cat_numbers: catNumbers,
+      matrix_runout: null,
+      tags: null,
+      speed: speed,
+      part_of_queen_collection: release.part_of_queen_collection || null,
+      jukebox_hole: release.jukebox_hole || null,
+      picture_sleeve: release.picture_sleeve ? null : release.picture_sleeve,
+    }),
+  };
 };
 
 const extractLabels = (cat_numbers: ValidatedCatNumbers | null): string[] => {

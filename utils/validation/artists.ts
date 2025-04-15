@@ -24,12 +24,14 @@ const validateArtist = (
   let errors: string[] = [];
 
   // "name" and "name_for_sorting" fields' values must be null or properly trimmed non-empty strings
-  const stringPropsValidityCheck = validatePropsAreNonEmptyIfStrings(artist, [
-    "name",
-    "name_for_sorting",
-  ]);
+  const stringPropsValidityCheckErrors = validatePropsAreNonEmptyIfStrings(
+    artist,
+    ["name", "name_for_sorting"]
+  );
 
-  errors.push(...(stringPropsValidityCheck?.errors || []));
+  if (stringPropsValidityCheckErrors) {
+    errors.push(...stringPropsValidityCheckErrors);
+  }
 
   // "other_names" and "parent_artists" fields' values must be null or a non-empty array of non-empty strings
   const artistWithStringArrayFieldsValidated =
@@ -43,7 +45,7 @@ const validateArtist = (
   if ("errors" in artistWithStringArrayFieldsValidated) {
     errors.push(...artistWithStringArrayFieldsValidated.errors);
   } else {
-    parent_artists = artistWithStringArrayFieldsValidated.parent_artists;
+    parent_artists = artistWithStringArrayFieldsValidated.value.parent_artists;
   }
 
   if (parent_artists) {
@@ -65,6 +67,9 @@ const validateArtist = (
       errors: map(errors, (e) => `Artist ${artist.id}: ${e}`),
     };
   }
+  if ("errors" in artistWithStringArrayFieldsValidated) {
+    return artistWithStringArrayFieldsValidated;
+  }
 
-  return removeNils(artistWithStringArrayFieldsValidated);
+  return { value: removeNils(artistWithStringArrayFieldsValidated.value) };
 };

@@ -18,5 +18,5 @@ export default async function validateDBEntries(): Promise<Entry[] | null> {
 
   console.log(`Entries validated successfully`);
 
-  return validatedEntries;
+  return validatedEntries.value;
 }

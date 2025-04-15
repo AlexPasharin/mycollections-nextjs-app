@@ -17,5 +17,5 @@ export default async function validateDBArtists(): Promise<
 
   console.info("Artists validated successfully");
 
-  return validatedArtists;
+  return validatedArtists.value;
 }

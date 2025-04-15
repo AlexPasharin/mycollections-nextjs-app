@@ -52,7 +52,7 @@ const fetchAllRowsFromTable =
 
 let artists: DBArtist[];
 
-export const getArtists = async (useCache?: boolean) => {
+export const getArtists = async (useCache = false) => {
   if (!useCache || !artists) {
     artists = await fetchAllRowsFromTable<DBArtist>("artists_2")();
   }

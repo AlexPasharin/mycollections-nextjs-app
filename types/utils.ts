@@ -11,6 +11,6 @@ export type NullableToOptional<T> = {
 export type NonEmptyArray<T> = [T, ...T[]];
 export type NonEmptyStringArray = NonEmptyArray<string>;
 
-export type Result<T> = T | { errors: NonEmptyStringArray };
+export type Result<T> = { value: T } | { errors: NonEmptyStringArray };
 
 export type ID = string;

@@ -1,4 +1,5 @@
-import type { NonEmptyStringArray, Result } from "../../types/utils";
+import { arrayIsNonEmpty } from "../../utils";
+import type { NonEmptyStringArray } from "../../types/utils";
 
 const days_in_month = [
   0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31,
@@ -9,7 +10,7 @@ const isLeapYear = (year: number) =>
 
 export default function validateReleaseDate(
   dateString: string | null
-): Result<null> {
+): NonEmptyStringArray | null {
   if (dateString === null) {
     return null;
   }
@@ -17,11 +18,9 @@ export default function validateReleaseDate(
   const dateMatch = dateString.match(/^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?$/);
 
   if (!dateMatch) {
-    return {
-      errors: [
-        `release_date ${dateString} does not have a required format YYYY(-MM)(-DD)`,
-      ],
-    };
+    return [
+      `release_date ${dateString} does not have a required format YYYY(-MM)(-DD)`,
+    ];
   }
 
   const year = Number(dateMatch[1]);
@@ -47,5 +46,5 @@ export default function validateReleaseDate(
     );
   }
 
-  return errors.length > 0 ? { errors: errors as NonEmptyStringArray } : null;
+  return arrayIsNonEmpty(errors) ? errors : null;
 }

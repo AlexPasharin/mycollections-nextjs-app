@@ -28,5 +28,5 @@ export default async function validateDBReleases(
 
   console.log(`Releases validated successfully`);
 
-  return validatedReleases;
+  return validatedReleases.value;
 }

@@ -19,7 +19,7 @@ export default function validateCatNumbers(
   value: unknown
 ): Result<ValidatedCatNumbers | null> {
   if (value === null) {
-    return null;
+    return { value: null };
   }
 
   if (Array.isArray(value)) {
@@ -140,7 +140,7 @@ const validateCatNumbersObj = (
     return { errors };
   }
 
-  return value as ValidCatNumbersObject; // verified above
+  return { value: value as ValidCatNumbersObject }; // verified above
 };
 
 const validateCatNumbersShape = (
@@ -149,7 +149,7 @@ const validateCatNumbersShape = (
 ): Result<string | CatNumbersObjType> => {
   if (typeof value === "string") {
     return isNonEmpty(value)
-      ? value
+      ? { value }
       : {
           errors: [
             `${prefix} is a string, but not non-empty wihout empty spaces in the beginning or the end`,
@@ -192,7 +192,7 @@ const validateCatNumbersObjectShape = (
     return { errors };
   }
 
-  return value as CatNumbersObjType; // verified above
+  return { value: value as CatNumbersObjType }; // verified above
 };
 
 const keyIsCatNumbers = (key: string): boolean => /^cat_number(s?)$/.test(key);

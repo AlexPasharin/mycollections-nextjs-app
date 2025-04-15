@@ -10,7 +10,7 @@ export default function validateCountries(
   countries: Record<string, string | undefined>
 ): Result<{ countries: ValidatedCountriesType | null }> {
   if (value === null) {
-    return { countries: null };
+    return { value: { countries: null } };
   }
 
   let errors: string[] = [];
@@ -63,9 +63,11 @@ export default function validateCountries(
 
       if ("countries" in cdPropValue && "countries" in slipcasePropValue) {
         return {
-          countries: {
-            CD: cdPropValue.countries,
-            slipcase: slipcasePropValue.countries,
+          value: {
+            countries: {
+              CD: cdPropValue.countries,
+              slipcase: slipcasePropValue.countries,
+            } as any,
           },
         };
       }
@@ -132,13 +134,13 @@ const validateCountriesFieldAsStringOrArrayOfStrings = (
     if (countriesResolvedErrors.length) {
       errors.push(...countriesResolvedErrors.map(({ error }) => error));
     } else if (!errors.length) {
-      return { countries: countriesResolved as NonEmptyStringArray }; // we know from above that in this clause this assertion must be true
+      return { value: { countries: countriesResolved as NonEmptyStringArray } }; // we know from above that in this clause this assertion must be true
     }
   } else if (typeof value === "string") {
     const countryResolved = countries[value];
 
     if (typeof countryResolved === "string") {
-      return { countries: countryResolved };
+      return { value: { countries: countryResolved } };
     }
 
     errors.push(
@@ -180,13 +182,16 @@ const validateObjPropsAsStringOrArrayOfStrings = <U extends string>(
   }
 
   return {
-    countries: results.reduce(
-      (acc, { result, propName }) => ({
-        ...acc,
-        [propName]: (result as { countries: NonEmptyStringArray }).countries,
-      }),
-      {}
-    ) as Record<U, StringOrStringArray>,
+    value: {
+      countries: results.reduce(
+        (acc, { result, propName }) => ({
+          ...acc,
+          [propName]: (result as { value: { countries: NonEmptyStringArray } })
+            .value.countries,
+        }),
+        {}
+      ) as Record<U, StringOrStringArray>,
+    },
   };
 };
 

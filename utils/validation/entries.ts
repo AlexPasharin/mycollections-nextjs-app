@@ -32,23 +32,22 @@ const validateEntry = (
   let errors: string[] = [];
 
   // "name", "comment", "discogs_url", "relation_to_queen", "entry_artist_name" must be non-empty not contain white space characters in the beginning and in the end
-  const stringPropsValidityCheck = validatePropsAreNonEmptyIfStrings(entry, [
-    "name",
-    "comment",
-    "discogs_url",
-    "relation_to_queen",
-    "entry_artist_name",
-  ]);
+  const stringPropsValidityCheckErrors = validatePropsAreNonEmptyIfStrings(
+    entry,
+    ["name", "comment", "discogs_url", "relation_to_queen", "entry_artist_name"]
+  );
 
-  if (stringPropsValidityCheck) {
-    errors.push(...stringPropsValidityCheck.errors);
+  if (stringPropsValidityCheckErrors) {
+    errors.push(...stringPropsValidityCheckErrors);
   }
 
   // release_date must be valid
-  const releaseDateValidityCheck = validateReleaseDate(entry.release_date);
+  const releaseDateValidityCheckErrors = validateReleaseDate(
+    entry.release_date
+  );
 
-  if (releaseDateValidityCheck) {
-    errors.push(...releaseDateValidityCheck.errors);
+  if (releaseDateValidityCheckErrors) {
+    errors.push(...releaseDateValidityCheckErrors);
   }
 
   // if entry is not a part of queen_collection, "relation_to_queen" must be null
@@ -71,7 +70,7 @@ const validateEntry = (
     errors.push(...entryWithStringArrayFieldsValidated.errors);
   } else {
     const { artist_id, parent_entries, entry_artist_id, entry_artist_name } =
-      entryWithStringArrayFieldsValidated;
+      entryWithStringArrayFieldsValidated.value;
 
     if (parent_entries) {
       // every value in "parent_entries" array must correspond to an actual entry in the database
@@ -93,7 +92,8 @@ const validateEntry = (
     } else if (entry_artist_id) {
       const entry_artist = artists.get(entry_artist_id)!; // Since we assume this values come from database, entry_artist cannot be undefined
 
-      entryWithStringArrayFieldsValidated.entry_artist = entry_artist.name;
+      entryWithStringArrayFieldsValidated.value.entry_artist =
+        entry_artist.name;
     }
 
     if (entry_artist_name) {
@@ -116,9 +116,15 @@ const validateEntry = (
     };
   }
 
-  return removeNils({
-    ...entryWithStringArrayFieldsValidated,
-    part_of_queen_collection: part_of_queen_collection || null, // we keep the value of "part_of_queen_collection" only if it is true, to save space on the resulting data
-    entry_artist_id: null,
-  });
+  if ("errors" in entryWithStringArrayFieldsValidated) {
+    return entryWithStringArrayFieldsValidated;
+  }
+
+  return {
+    value: removeNils({
+      ...entryWithStringArrayFieldsValidated.value,
+      part_of_queen_collection: part_of_queen_collection || null, // we keep the value of "part_of_queen_collection" only if it is true, to save space on the resulting data
+      entry_artist_id: null,
+    }),
+  };
 };

@@ -80,7 +80,7 @@ const updateReleases = async () => {
           : e;
       });
 
-      if (!artistEntries?.length) {
+      if (!artistEntries) {
         return mongoArtist;
       }
 
@@ -90,7 +90,7 @@ const updateReleases = async () => {
         sortBy(([type]) => Number(type)),
         map<[string, EnhancedEntry[]], [string, MongoEntry[]]>(
           ([type, entries]) => [
-            typesMap![type],
+            typesMap[type]!, // we know that entry for type should exist
             sortByReleaseDate(
               entries.map((e) => omit(["artist_id", "type"], e))
             ),
