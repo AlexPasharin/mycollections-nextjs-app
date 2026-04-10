@@ -89,7 +89,7 @@ export function flattenResults<T extends object>(
     };
   }
 
-  // TS is smart enough to understand resultsWithErrors above have type {errors: NonEmptyStringArray}, but it cannot now that if resultsWithErrors is empty, all results have type { value: T }, so we need an "as" assertion
+  // TS is smart enough to understand resultsWithErrors above have type { errors: NonEmptyStringArray }, but it cannot now that if resultsWithErrors is empty, all results have type { value: T }, so we need an "as" assertion
   return { value: results.map((r) => (r as { value: T }).value) };
 }
 

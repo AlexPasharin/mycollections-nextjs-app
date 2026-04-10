@@ -9,18 +9,18 @@ import {
 export type StringOrStringArray = string | NonEmptyStringArray;
 export type CountriesObjectType =
   | {
+    "made in": StringOrStringArray;
+    "printed in": StringOrStringArray;
+  }
+  | {
+    CD: {
       "made in": StringOrStringArray;
       "printed in": StringOrStringArray;
-    }
-  | {
-      CD: {
-        "made in": StringOrStringArray;
-        "printed in": StringOrStringArray;
-      };
-      slipcase: {
-        "printed in": StringOrStringArray;
-      };
     };
+    slipcase: {
+      "printed in": StringOrStringArray;
+    };
+  };
 
 export type ValidatedCountriesType = StringOrStringArray | CountriesObjectType;
 
@@ -47,20 +47,20 @@ type LabelsType = { label: string } | { labels: NonEmptyStringArray };
 export type CatNumbersObjType =
   | NonEmptyStringArray
   | {
-      "in UK": string | NonEmptyStringArray;
-      "in Europe": string | NonEmptyStringArray;
-    };
+    "in UK": string | NonEmptyStringArray;
+    "in Europe": string | NonEmptyStringArray;
+  };
 
 type CatNumbersType =
   | { cat_number: string }
   | {
-      cat_numbers:
-        | CatNumbersObjType
-        | {
-            CD: string | CatNumbersObjType;
-            slipcase: string | CatNumbersObjType;
-          };
+    cat_numbers:
+    | CatNumbersObjType
+    | {
+      CD: string | CatNumbersObjType;
+      slipcase: string | CatNumbersObjType;
     };
+  };
 
 export type ValidCatNumbersObject =
   | (LabelsType & CatNumbersType)
@@ -117,17 +117,21 @@ type MatrixRunoutVinylKeyValue =
   | string
   | { etched: string; stamped?: string; comment?: string };
 
+type MatrixRunoutVinyl = {
+  [key in MatrixRunoutVinylKeys]?: MatrixRunoutVinylKeyValue;
+}
+
+type MatrixRunoutDigitalValue = string
+  | { mirrored: string; normal?: string };
+
+type MatrixRunoutDigital = ({
+  [key in MatrixRunoutDigitalKeys]?: MatrixRunoutDigitalValue
+} & { LP?: MatrixRunoutVinyl })
+
 export type MatrixRunout =
-  | string
-  | {
-      [key in MatrixRunoutVinylKeys]?: MatrixRunoutVinylKeyValue;
-    }
-  | ({
-      [key in MatrixRunoutDigitalKeys]?:
-        | string
-        | { mirrored: string; normal?: string };
-    } & { LP?: MatrixRunoutVinylKeyValue })
-  | { mirrored: string };
+  | MatrixRunoutDigitalValue
+  | MatrixRunoutVinyl
+  | MatrixRunoutDigital
 
 export type Speed = 33 | { "Side B": 33 } | { "Disk 2": 33 };
 
