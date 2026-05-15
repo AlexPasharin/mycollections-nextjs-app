@@ -1,0 +1,232 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+/// This model contains an expression index which requires additional setup for migrations. Visit https://pris.ly/d/expression-indexes for more info.
+model alternative_artist_names {
+  name_id                 String                    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name                    String
+  artist_id               String                    @db.Uuid
+  artists                 artists                   @relation(fields: [artist_id], references: [artist_id])
+  musical_entries_artists musical_entries_artists[]
+
+  @@unique([name, artist_id])
+}
+
+/// This model contains an expression index which requires additional setup for migrations. Visit https://pris.ly/d/expression-indexes for more info.
+model alternative_musical_entry_names {
+  name_id          String             @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name             String
+  entry_id         String             @db.Uuid
+  musical_entries  musical_entries    @relation(fields: [entry_id], references: [entry_id])
+  musical_releases musical_releases[]
+
+  @@unique([name, entry_id])
+}
+
+/// This model contains an expression index which requires additional setup for migrations. Visit https://pris.ly/d/expression-indexes for more info.
+model artists {
+  artist_id                                               String                     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name                                                    String
+  name_for_sorting                                        String?
+  part_of_queen_family                                    Boolean                    @default(false)
+  type                                                    ArtistType
+  alternative_artist_names                                alternative_artist_names[]
+  musical_entries_artists                                 musical_entries_artists[]
+  parent_artists_parent_artists_child_artist_idToartists  parent_artists[]           @relation("parent_artists_child_artist_idToartists")
+  parent_artists_parent_artists_parent_artist_idToartists parent_artists[]           @relation("parent_artists_parent_artist_idToartists")
+}
+
+model countries {
+  code_name String @id
+  name      String @unique
+}
+
+model formats_of_releases {
+  release_id       String           @db.Uuid
+  format_id        String           @db.Uuid
+  jukebox_hole     Boolean          @default(false)
+  picture_sleeve   Boolean          @default(true)
+  speed            Json?
+  amount           Int
+  id               String           @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  releases_formats releases_formats @relation(fields: [format_id], references: [format_id])
+  musical_releases musical_releases @relation(fields: [release_id], references: [release_id])
+
+  @@unique([release_id, format_id, jukebox_hole, picture_sleeve, speed])
+}
+
+model labels {
+  label_id String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name     String @unique
+}
+
+/// This model contains an expression index which requires additional setup for migrations. Visit https://pris.ly/d/expression-indexes for more info.
+model musical_entries {
+  entry_id                                                                       String                            @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  main_name                                                                      String
+  original_release_date                                                          String?
+  comment                                                                        String?
+  discogs_url                                                                    String?
+  relation_to_queen                                                              String?
+  part_of_queen_collection                                                       Boolean                           @default(false)
+  alternative_musical_entry_names                                                alternative_musical_entry_names[]
+  musical_entries_artists                                                        musical_entries_artists[]
+  musical_entries_tags                                                           musical_entries_tags[]
+  musical_releases                                                               musical_releases[]
+  parent_musical_entries_parent_musical_entries_child_entry_idTomusical_entries  parent_musical_entries[]          @relation("parent_musical_entries_child_entry_idTomusical_entries")
+  parent_musical_entries_parent_musical_entries_parent_entry_idTomusical_entries parent_musical_entries[]          @relation("parent_musical_entries_parent_entry_idTomusical_entries")
+  types_of_musical_entries                                                       types_of_musical_entries[]
+}
+
+model musical_entries_artists {
+  entry_id                            String                                @db.Uuid
+  artist_id                           String                                @db.Uuid
+  is_entries_main_artist              Boolean?                              @default(true)
+  entry_artist_name_id                String?                               @db.Uuid
+  id                                  String                                @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  artists                             artists                               @relation(fields: [artist_id], references: [artist_id])
+  alternative_artist_names            alternative_artist_names?             @relation(fields: [entry_artist_name_id], references: [name_id])
+  musical_entries                     musical_entries                       @relation(fields: [entry_id], references: [entry_id])
+  musical_release_alternative_artists musical_release_alternative_artists[]
+
+  @@unique([entry_id, artist_id, entry_artist_name_id])
+}
+
+model musical_entries_tags {
+  entry_id        String          @db.Uuid
+  tag_id          String          @db.Uuid
+  musical_entries musical_entries @relation(fields: [entry_id], references: [entry_id])
+  tags            tags            @relation(fields: [tag_id], references: [tag_id])
+
+  @@id([entry_id, tag_id])
+}
+
+model musical_entry_types {
+  entry_type_id            String                     @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name                     String                     @unique
+  comment                  String?
+  types_of_musical_entries types_of_musical_entries[]
+}
+
+model musical_release_alternative_artists {
+  release_id              String                  @db.Uuid
+  entry_artist_id         String                  @db.Uuid
+  id                      String                  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  musical_entries_artists musical_entries_artists @relation(fields: [entry_artist_id], references: [id])
+  musical_releases        musical_releases        @relation(fields: [release_id], references: [release_id])
+}
+
+model musical_releases {
+  release_id                                                                          String                                @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  release_version                                                                     String
+  release_date                                                                        String?
+  discogs_url                                                                         String?
+  countries                                                                           Json?
+  catalogue_numbers                                                                   Json?
+  matrix_runout                                                                       Json?
+  comment                                                                             String?
+  condition_problems                                                                  String?
+  part_of_queen_collection                                                            Boolean                               @default(false)
+  relation_to_queen                                                                   String?
+  entry_id                                                                            String                                @db.Uuid
+  release_alternative_name_id                                                         String?                               @db.Uuid
+  formats_of_releases                                                                 formats_of_releases[]
+  musical_release_alternative_artists                                                 musical_release_alternative_artists[]
+  musical_entries                                                                     musical_entries                       @relation(fields: [entry_id], references: [entry_id])
+  alternative_musical_entry_names                                                     alternative_musical_entry_names?      @relation(fields: [release_alternative_name_id], references: [name_id])
+  musical_releases_tags                                                               musical_releases_tags[]
+  parent_musical_releases_parent_musical_releases_child_release_idTomusical_releases  parent_musical_releases[]             @relation("parent_musical_releases_child_release_idTomusical_releases")
+  parent_musical_releases_parent_musical_releases_parent_release_idTomusical_releases parent_musical_releases[]             @relation("parent_musical_releases_parent_release_idTomusical_releases")
+
+  @@index([catalogue_numbers], type: Gin)
+  @@index([countries], type: Gin)
+}
+
+model musical_releases_tags {
+  release_id       String           @db.Uuid
+  tag_id           String           @db.Uuid
+  musical_releases musical_releases @relation(fields: [release_id], references: [release_id])
+  tags             tags             @relation(fields: [tag_id], references: [tag_id])
+
+  @@id([release_id, tag_id])
+}
+
+model parent_artists {
+  parent_artist_id                                 String  @db.Uuid
+  child_artist_id                                  String  @db.Uuid
+  artists_parent_artists_child_artist_idToartists  artists @relation("parent_artists_child_artist_idToartists", fields: [child_artist_id], references: [artist_id])
+  artists_parent_artists_parent_artist_idToartists artists @relation("parent_artists_parent_artist_idToartists", fields: [parent_artist_id], references: [artist_id])
+
+  @@id([parent_artist_id, child_artist_id])
+}
+
+model parent_musical_entries {
+  child_entry_id                                                          String          @db.Uuid
+  parent_entry_id                                                         String          @db.Uuid
+  musical_entries_parent_musical_entries_child_entry_idTomusical_entries  musical_entries @relation("parent_musical_entries_child_entry_idTomusical_entries", fields: [child_entry_id], references: [entry_id])
+  musical_entries_parent_musical_entries_parent_entry_idTomusical_entries musical_entries @relation("parent_musical_entries_parent_entry_idTomusical_entries", fields: [parent_entry_id], references: [entry_id])
+
+  @@id([parent_entry_id, child_entry_id])
+}
+
+model parent_musical_releases {
+  child_release_id                                                             String           @db.Uuid
+  parent_release_id                                                            String           @db.Uuid
+  musical_releases_parent_musical_releases_child_release_idTomusical_releases  musical_releases @relation("parent_musical_releases_child_release_idTomusical_releases", fields: [child_release_id], references: [release_id])
+  musical_releases_parent_musical_releases_parent_release_idTomusical_releases musical_releases @relation("parent_musical_releases_parent_release_idTomusical_releases", fields: [parent_release_id], references: [release_id])
+
+  @@id([parent_release_id, child_release_id])
+}
+
+model releases_formats {
+  format_id           String                @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  short_name          String                @unique
+  description         String                @unique
+  has_sides           Boolean
+  default_speed       VINYL_SPEED?
+  formats_of_releases formats_of_releases[]
+}
+
+model tags {
+  tag_id                String                  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  tag                   String                  @unique
+  musical_entries_tags  musical_entries_tags[]
+  musical_releases_tags musical_releases_tags[]
+}
+
+model types_of_musical_entries {
+  entry_id            String              @db.Uuid
+  type_id             String              @db.Uuid
+  musical_entries     musical_entries     @relation(fields: [entry_id], references: [entry_id])
+  musical_entry_types musical_entry_types @relation(fields: [type_id], references: [entry_type_id])
+
+  @@id([entry_id, type_id])
+}
+
+enum ArtistType {
+  BAND
+  ARTIST
+  ORCHESTRA
+  DUET
+  SHOW_CAST
+  COMPOSER
+  SONG_WRITER
+  SONG_WRITER_TEAM
+  DIRECTOR
+  SERIES_CREATOR
+  COLLABORATION
+  CHOREOGRAPHER
+  CONDUCTOR
+  VARIOUS_ARTISTS
+}
+
+enum VINYL_SPEED {
+  SPEED_33
+  SPEED_45
+}
