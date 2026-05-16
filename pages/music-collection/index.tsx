@@ -3,7 +3,7 @@ import { sortBy } from "ramda";
 import Link from "next/link";
 import { useState } from "react";
 
-import BackButton from "components/BackButton";
+import LinkButton from "components/LinkButton";
 import type { artists as Artist } from "generated/prisma/client";
 
 
@@ -23,8 +23,8 @@ export default function MusicCollection({ artists }: Props) {
 
   return (
     <main>
-      <BackButton text="Back to main page" />
-      <h1>Music Collection 2</h1>
+      <LinkButton text="Back to main page" href="/" />
+      <h1>Music Collection (New implementation, under construction)</h1>
       <h2>Choose An Artist</h2>
       <input
         style={{ height: "30px", width: "300px", fontSize: "1.2em" }}
@@ -60,7 +60,7 @@ const ArtistRow = ({ artist }: { artist: Artist }) => {
       }}
     >
       <Link
-        href={`/music/${name.toLowerCase()}`}
+        href={`/music-collection/${encodeURIComponent(name)}`}
         style={{
           textDecoration: "none",
           fontSize: "1.5em",
@@ -82,6 +82,7 @@ const ArtistRow = ({ artist }: { artist: Artist }) => {
 export const getStaticProps: GetStaticProps<{
   artists: Artist[]
 }> = async () => {
+  // dynamic import to mitigate possibility of server side code "leaking" into the client side
   const { getArtists } = await import("db/prisma");
 
   return {
