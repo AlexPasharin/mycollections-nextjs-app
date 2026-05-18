@@ -113,17 +113,17 @@ const processLabelsAndCatNumbers = (
     "labels" in catNumbersObject
       ? catNumbersObject.labels
       : "label" in catNumbersObject
-      ? [catNumbersObject.label]
-      : ["(no label)"];
+        ? [catNumbersObject.label]
+        : ["(no label)"];
 
   const catNumbers =
     "cat_number" in catNumbersObject
       ? catNumbersObject.cat_number
       : "cat_numbers" in catNumbersObject
-      ? "CD" in catNumbersObject.cat_numbers
-        ? `CD: ${catNumbersObject.cat_numbers.CD}, slipcase: ${catNumbersObject.cat_numbers.slipcase}`
-        : processCatNumbersObject(catNumbersObject.cat_numbers)
-      : "(no catalogue number)";
+        ? "CD" in catNumbersObject.cat_numbers
+          ? `CD: ${catNumbersObject.cat_numbers.CD}, slipcase: ${catNumbersObject.cat_numbers.slipcase}`
+          : processCatNumbersObject(catNumbersObject.cat_numbers)
+        : "(no catalogue number)";
 
   return labels.map((l) => [l, catNumbers]);
 };

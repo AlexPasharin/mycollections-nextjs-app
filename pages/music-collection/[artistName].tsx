@@ -7,8 +7,8 @@ import {
 import { isEmpty } from "ramda";
 import { useState } from "react";
 
-import Entry from "components/Entries/Entry";
-import type { musical_entries as MusicalEntry } from "generated/prisma/client";
+import Entry from "components/MusicalCollection/Entry";
+import type { ArtistEntry } from "db/prisma";
 import LinkButton from "components/LinkButton";
 
 type Props = Omit<InferGetStaticPropsType<typeof getStaticProps>, "pageTitle">;
@@ -75,17 +75,10 @@ const QueenCollectionArtist: NextPage<Props> = ({
                   </h3>
                 </summary>
                 <ul style={{ marginLeft: "24px" }}>
-                  {entries.map(({ entry_id, ...entry }) => (
+                  {entries.map((entry) => (
                     <Entry
-                      key={entry_id}
-                      entry={{
-                        ...entry,
-                        name: entry.main_name,
-                        comment: entry.comment ?? undefined,
-                        discogs_url: entry.discogs_url ?? undefined,
-                        relation_to_queen: entry.relation_to_queen ?? undefined,
-                        part_of_queen_collection: entry.part_of_queen_collection ? entry.part_of_queen_collection : undefined,
-                      }}
+                      key={entry.entry_id}
+                      entry={entry}
                       debugReleases={debugReleases} />
                   ))}
                 </ul>
@@ -117,8 +110,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export default QueenCollectionArtist;
 
 type EntryType = string
-type Entry = MusicalEntry
-type ArtistEntries = { type: EntryType, entries: Entry[] }[]
+type ArtistEntries = { type: EntryType, entries: ArtistEntry[] }[]
 
 export const getStaticProps: GetStaticProps<{
   artistName: string;
@@ -149,12 +141,10 @@ export const getStaticProps: GetStaticProps<{
 
   const artistName = artist.name;
 
-  const entriesMap = artistEntries.reduce<Record<EntryType, Entry[]>>((acc, entry) => {
+  const entriesMap = artistEntries.reduce<Record<EntryType, ArtistEntry[]>>((acc, entry) => {
     const { types_of_musical_entries, ...rest } = entry;
-
-    types_of_musical_entries.forEach(({ musical_entry_types }) => {
+    entry.types_of_musical_entries.forEach(({ musical_entry_types }) => {
       const entryType = musical_entry_types.name;
-
       acc[entryType] = [...(acc[entryType] ?? []), rest];
     });
 
