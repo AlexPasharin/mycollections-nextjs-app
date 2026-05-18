@@ -2,7 +2,6 @@ import OptionalTableRow from "./OptionalTableRow";
 import type { ArtistEntryRelease } from "db/prisma";
 import type { TableRowInfo } from "./types";
 
-
 const ReleaseDetails = ({
   release,
 }: {
@@ -19,11 +18,9 @@ const ReleaseDetails = ({
     comment,
     condition_problems,
     musical_releases_tags,
-    // release_artist_id,
     part_of_queen_collection,
     relation_to_queen,
-    // tags,
-    // parent_releases,
+
   } = release;
 
   const formats = formats_of_releases
@@ -50,8 +47,6 @@ const ReleaseDetails = ({
       label: typeof countries === "string" ? "Country" : "Countries",
       value: countriesToString(countries),
     },
-    // ...processMatrixRunout(matrix_runout),
-    // { label: "Speed", value: speed ? `${speed} RPM` : null },
     { label: "Part of Queen collection", value: part_of_queen_collection ? "Yes" : null },
     { label: "Relation to Queen", value: relation_to_queen },
     {
@@ -66,8 +61,6 @@ const ReleaseDetails = ({
       label: "Matrix / runout",
       value: matrix_runout ? typeof matrix_runout === "string" ? matrix_runout : JSON.stringify(matrix_runout, null, 4) : null,
     },
-
-    // { label: "Tags", value: tags?.join(", ") },
   ];
 
   return (
@@ -154,23 +147,6 @@ const processCatNumbers = (
 
   return catNumbersArray.map(processLabelsAndCatNumbers).flat();
 };
-
-// const processMatrixRunout = (
-//   matrixRunout: MatrixRunout | undefined
-// ): TableRowInfo[] => {
-//   if (!matrixRunout) {
-//     return [];
-//   }
-
-//   if (typeof matrixRunout === "string") {
-//     return [{ label: "Matrix / runout", value: matrixRunout }];
-//   }
-
-//   return Object.entries(matrixRunout).map(([key, value]) => ({
-//     label: `Matrix / runout (${key})`,
-//     value,
-//   }));
-// };
 
 const countriesToString = (
   countries:
