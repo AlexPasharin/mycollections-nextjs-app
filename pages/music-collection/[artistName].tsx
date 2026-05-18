@@ -8,7 +8,7 @@ import { isEmpty } from "ramda";
 import { useState } from "react";
 
 import Entry from "components/MusicalCollection/Entry";
-import type { musical_entries as MusicalEntry } from "generated/prisma/client";
+import type { ArtistEntry } from "db/prisma";
 import LinkButton from "components/LinkButton";
 
 type Props = Omit<InferGetStaticPropsType<typeof getStaticProps>, "pageTitle">;
@@ -110,7 +110,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export default QueenCollectionArtist;
 
 type EntryType = string
-type ArtistEntries = { type: EntryType, entries: MusicalEntry[] }[]
+type ArtistEntries = { type: EntryType, entries: ArtistEntry[] }[]
 
 export const getStaticProps: GetStaticProps<{
   artistName: string;
@@ -141,12 +141,10 @@ export const getStaticProps: GetStaticProps<{
 
   const artistName = artist.name;
 
-  const entriesMap = artistEntries.reduce<Record<EntryType, MusicalEntry[]>>((acc, entry) => {
+  const entriesMap = artistEntries.reduce<Record<EntryType, ArtistEntry[]>>((acc, entry) => {
     const { types_of_musical_entries, ...rest } = entry;
-
-    types_of_musical_entries.forEach(({ musical_entry_types }) => {
+    entry.types_of_musical_entries.forEach(({ musical_entry_types }) => {
       const entryType = musical_entry_types.name;
-
       acc[entryType] = [...(acc[entryType] ?? []), rest];
     });
 

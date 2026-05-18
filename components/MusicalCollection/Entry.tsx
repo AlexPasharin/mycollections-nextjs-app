@@ -1,14 +1,14 @@
 import { useState } from "react";
 
-import Releases from "components/Releases";
+import Releases from "components/MusicalCollection/Releases";
 
-import type { musical_entries as MusicalEntry } from "generated/prisma/client";
+import type { ArtistEntry } from "db/prisma";
 
 const Entry = ({
   entry,
   debugReleases,
 }: {
-  entry: MusicalEntry;
+  entry: ArtistEntry;
   debugReleases: boolean;
 }) => {
   const [showReleases, setShowReleases] = useState(debugReleases);
@@ -16,6 +16,7 @@ const Entry = ({
   const {
     main_name,
     original_release_date,
+    musical_releases,
   } = entry;
 
   return (
@@ -30,7 +31,7 @@ const Entry = ({
         </p>
       </div>
       {showReleases && (
-        <Releases releases={[]} debugReleases={debugReleases} />
+        <Releases releases={musical_releases} debugReleases={debugReleases} />
       )}
     </li>
   );
