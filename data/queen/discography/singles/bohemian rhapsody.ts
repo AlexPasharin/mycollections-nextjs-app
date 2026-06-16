@@ -96,6 +96,7 @@ const data: DiscographyEntryData = {
         '2008 "Singles collection 1" CD single',
         '2015 12" reissue',
         '2019 Record Store Day colored 7" re-issue',
+        '2025 50th Anniversary 7" and 12" re-issues',
       ],
     },
     {
@@ -227,6 +228,29 @@ const data: DiscographyEntryData = {
         { index: "B", track: "nih-odeon-soundcheck" },
       ],
       releases: '2015 12", part of 2015 "A Night At The Odeon" Box',
+    },
+    {
+      tracks: [
+        {
+          index: "A1",
+          track: "br-stand-along",
+        },
+        {
+          index: "B1",
+          track: "iilwmc-single",
+        },
+        {
+          index: "A2",
+          track: "br-stand-along",
+        },
+        {
+          index: "B2",
+          track: "iilwmc-single",
+        },
+      ],
+      releases: [
+        '2025 50th Anniversary TC single',
+      ],
     },
   ],
 };

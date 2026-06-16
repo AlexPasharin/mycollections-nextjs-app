@@ -25,3 +25,5 @@ The 2008 "Singles Collection" CD single used the picture sleeve from the 1978 UK
 On 27 November 2015 the original single was re-released on 12" to celebrate its 40th Anniversary. For some reason this issue used the original Italian picture sleeve, however, the photo of the band was mirror-reversed for some reason. Also a 1 track promo CD was issued, that one had the original UK picture sleeve.
 
 On 13 April 2019 original 7" single was reissued on colored purple/yellow vinyl for Record Store Day, with a new, "Bohemian Rhapsody" movie related, picture sleeve.
+
+On 31 October 2025 the original single was re-released on 7", 12" and cassette (!) to celebrate its 50th Anniversary in EU (all 3 formats), US (12") and Japan (7" and 12"). All releases (except for cassette) use blue vinyl, and there was also a 12" picture disc release in EU. 7" and cassette used original UK picture sleeve, while 12" used the new picture sleeve.
