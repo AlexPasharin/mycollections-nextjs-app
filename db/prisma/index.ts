@@ -1,5 +1,6 @@
 import type {
   artists as Artist,
+  alternative_artist_names as AlternativeArtistName,
   musical_entries as MusicalEntry,
   types_of_musical_entries as TypesOfMusicalEntries,
   musical_releases as MusicalRelease,
@@ -12,7 +13,23 @@ import type {
 } from "generated/prisma/client";
 import { prisma } from "./client";
 
-export const getArtists = async (): Promise<Artist[]> => prisma.artists.findMany();
+export type ArtistWithAlternativeNames = Artist & {
+  alternative_artist_names: AlternativeArtistName[];
+};
+
+export async function getArtists(): Promise<Artist[]>;
+export async function getArtists(options: {
+  includeAlternativeNames: true;
+}): Promise<ArtistWithAlternativeNames[]>;
+export async function getArtists(options?: {
+  includeAlternativeNames?: boolean;
+}): Promise<Artist[] | ArtistWithAlternativeNames[]> {
+  return prisma.artists.findMany({
+    include: options?.includeAlternativeNames
+      ? { alternative_artist_names: true }
+      : undefined,
+  });
+}
 
 export const getArtistByName = async (artistName: string): Promise<Artist | null> => prisma.artists.findFirst({
   where: {
