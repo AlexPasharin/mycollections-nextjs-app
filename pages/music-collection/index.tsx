@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 import LinkButton from "components/LinkButton";
-import type { artists as Artist } from "generated/prisma/client";
+import type { ArtistWithAlternativeNames } from "db/prisma";
 
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
@@ -13,10 +13,15 @@ export default function MusicCollection({ artists }: Props) {
   const [query, setQuery] = useState("");
 
   const trimmedQuery = query.trim();
+  const queryLower = trimmedQuery.toLowerCase();
   const filteredArtists = trimmedQuery
-    ? artists.filter((a) =>
-      a.name.toLowerCase().includes(trimmedQuery.toLowerCase())
-    )
+    ? artists.filter(
+        (a) =>
+          a.name.toLowerCase().includes(queryLower) ||
+          a.alternative_artist_names.some((alt) =>
+            alt.name.toLowerCase().includes(queryLower)
+          )
+      )
     : artists;
 
   const showArtistList = filteredArtists.length > 0;
@@ -47,8 +52,8 @@ export default function MusicCollection({ artists }: Props) {
   );
 }
 
-const ArtistRow = ({ artist }: { artist: Artist }) => {
-  const { name } = artist;
+const ArtistRow = ({ artist }: { artist: ArtistWithAlternativeNames }) => {
+  const { name, alternative_artist_names } = artist;
 
   const [nameBoldPart, nameSecondPart] = extractName(artist);
 
@@ -75,19 +80,24 @@ const ArtistRow = ({ artist }: { artist: Artist }) => {
         </span>
         <span style={{ opacity: 0.7 }}>{nameSecondPart}</span>
       </Link>
+      {alternative_artist_names.length > 0 && (
+        <div style={{ opacity: 0.6, fontSize: "0.95em" }}>
+          aka {alternative_artist_names.map((alt) => alt.name).join(", ")}
+        </div>
+      )}
     </div>
   );
 };
 
 export const getStaticProps: GetStaticProps<{
-  artists: Artist[]
+  artists: ArtistWithAlternativeNames[];
 }> = async () => {
   // dynamic import to mitigate possibility of server side code "leaking" into the client side
   const { getArtists } = await import("db/prisma");
 
   return {
     props: {
-      artists: await getArtists().then(
+      artists: await getArtists({ includeAlternativeNames: true }).then(
         sortBy((a) => a.name_for_sorting ?? a.name)
       ),
       pageTitle: "My Music Collection - Artists",
@@ -95,7 +105,9 @@ export const getStaticProps: GetStaticProps<{
   };
 };
 
-const extractName = (artist: Artist): [string] | [string, string] => {
+const extractName = (
+  artist: ArtistWithAlternativeNames
+): [string] | [string, string] => {
   const { name, name_for_sorting } = artist;
 
   if (!name_for_sorting) {
