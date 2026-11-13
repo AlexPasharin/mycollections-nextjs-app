@@ -14,14 +14,15 @@ export default function MusicCollection({ artists }: Props) {
 
   const trimmedQuery = query.trim();
   const queryLower = trimmedQuery.toLowerCase();
+
   const filteredArtists = trimmedQuery
     ? artists.filter(
-        (a) =>
-          a.name.toLowerCase().includes(queryLower) ||
-          a.alternative_artist_names.some((alt) =>
-            alt.name.toLowerCase().includes(queryLower)
-          )
-      )
+      (a) =>
+        matchByText(a.name, queryLower) ||
+        a.alternative_artist_names.some((alt) =>
+          matchByText(alt.name, queryLower)
+        )
+    )
     : artists;
 
   const showArtistList = filteredArtists.length > 0;
@@ -128,3 +129,5 @@ const extractName = (
 
   return [name_for_sorting];
 };
+
+const matchByText = (text: string, query: string) => text.toLowerCase().includes(query.toLowerCase());
