@@ -8,6 +8,7 @@ import type {
   formats_of_releases as FormatsOfReleases,
   releases_formats as ReleasesFormat,
   alternative_musical_entry_names as AlternativeMusicalEntryName,
+  musical_entries_tags as MusicalEntriesTag,
   musical_releases_tags as MusicalReleasesTag,
   tags as Tag,
 } from "generated/prisma/client";
@@ -17,19 +18,16 @@ export type ArtistWithAlternativeNames = Artist & {
   alternative_artist_names: AlternativeArtistName[];
 };
 
-export async function getArtists(): Promise<Artist[]>;
-export async function getArtists(options: {
-  includeAlternativeNames: true;
-}): Promise<ArtistWithAlternativeNames[]>;
-export async function getArtists(options?: {
-  includeAlternativeNames?: boolean;
-}): Promise<Artist[] | ArtistWithAlternativeNames[]> {
-  return prisma.artists.findMany({
-    include: options?.includeAlternativeNames
-      ? { alternative_artist_names: true }
-      : undefined,
+export const getAllArtists = async (): Promise<ArtistWithAlternativeNames[]> =>
+  prisma.artists.findMany({
+    include: { alternative_artist_names: true },
   });
-}
+
+export const getArtistNames = async (): Promise<Array<Pick<Artist, "name">>> =>
+  prisma.artists.findMany({
+    select: { name: true },
+  });
+
 
 export const getArtistByName = async (artistName: string): Promise<Artist | null> => prisma.artists.findFirst({
   where: {
@@ -45,6 +43,8 @@ export type ArtistEntryRelease = MusicalRelease & {
 }
 
 export type ArtistEntry = MusicalEntry & {
+  alternative_musical_entry_names: AlternativeMusicalEntryName[];
+  musical_entries_tags: Array<MusicalEntriesTag & { tags: Tag }>;
   musical_releases: Array<ArtistEntryRelease>;
 }
 
@@ -60,6 +60,8 @@ export const getArtistEntries = async (artistId: string) => prisma.musical_entri
     original_release_date: "asc",
   },
   include: {
+    alternative_musical_entry_names: true,
+    musical_entries_tags: { include: { tags: true } },
     types_of_musical_entries: {
       include: {
         musical_entry_types: true,

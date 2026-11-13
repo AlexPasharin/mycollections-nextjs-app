@@ -7,14 +7,17 @@ import {
 import { isEmpty } from "ramda";
 import { useState } from "react";
 
+import CollectionBadge from "components/MusicalCollection/CollectionBadge";
 import Entry from "components/MusicalCollection/Entry";
 import type { ArtistEntry } from "db/prisma";
 import LinkButton from "components/LinkButton";
+import { matchByText } from "utils";
 
 type Props = Omit<InferGetStaticPropsType<typeof getStaticProps>, "pageTitle">;
 
 const QueenCollectionArtist: NextPage<Props> = ({
   artistName,
+  partOfQueenFamily,
   entries,
   debugReleases, // this "opens up" all hidden details on releases already on build stage, thus making sure no runtime errors will occur at least on data representation after deployment
 }) => {
@@ -26,9 +29,14 @@ const QueenCollectionArtist: NextPage<Props> = ({
 
   const filteredEntries = trimmedQuery
     ? entries.reduce<ArtistEntries>((acc, { type, entries }) => {
-      const filteredTypeEntries = entries.filter((e) =>
-        e.main_name.toLowerCase().includes(trimmedQuery)
+      const filteredTypeEntries = entries.filter(
+        (e) =>
+          matchByText(e.main_name, trimmedQuery) ||
+          e.alternative_musical_entry_names.some((alt) =>
+            matchByText(alt.name, trimmedQuery)
+          )
       );
+
 
       return filteredTypeEntries.length
         ? [...acc, { type, entries: filteredTypeEntries }]
@@ -44,6 +52,9 @@ const QueenCollectionArtist: NextPage<Props> = ({
       <h1>Music Collection</h1>
       <h2>
         <span style={{ color: "red" }}>{artistName}</span>
+        {partOfQueenFamily && (
+          <CollectionBadge label="part of queen family" />
+        )}
       </h2>
       {noEntries ? (
         <div
@@ -79,8 +90,11 @@ const QueenCollectionArtist: NextPage<Props> = ({
                     <Entry
                       key={entry.entry_id}
                       entry={entry}
-                      debugReleases={debugReleases} />
+                      debugReleases={debugReleases}
+                      hideQueenCollectionBadge={partOfQueenFamily}
+                    />
                   ))}
+
                 </ul>
               </details>
             )
@@ -93,13 +107,14 @@ const QueenCollectionArtist: NextPage<Props> = ({
 
 export const getStaticPaths: GetStaticPaths = async () => {
   // dynamic import to mitigate possibility of server side code "leaking" into the client side
-  const { getArtists } = await import("db/prisma");
+  const { getArtistNames } = await import("db/prisma");
 
-  const paths = (await getArtists()).map(({ name }) => ({
+  const paths = (await getArtistNames()).map(({ name }) => ({
     params: {
       artistName: name,
     },
   }));
+
 
   return {
     paths,
@@ -114,6 +129,7 @@ type ArtistEntries = { type: EntryType, entries: ArtistEntry[] }[]
 
 export const getStaticProps: GetStaticProps<{
   artistName: string;
+  partOfQueenFamily: boolean;
   entries: ArtistEntries;
   pageTitle: string;
   debugReleases: boolean;
@@ -140,6 +156,7 @@ export const getStaticProps: GetStaticProps<{
   const artistEntries = await getArtistEntries(artist.artist_id);
 
   const artistName = artist.name;
+  const partOfQueenFamily = artist.part_of_queen_family;
 
   const entriesMap = artistEntries.reduce<Record<EntryType, ArtistEntry[]>>((acc, entry) => {
     const { types_of_musical_entries, ...rest } = entry;
@@ -154,6 +171,7 @@ export const getStaticProps: GetStaticProps<{
   return {
     props: {
       artistName,
+      partOfQueenFamily,
       entries: Object.entries(entriesMap).sort((a, b) => a[0].localeCompare(b[0])).map(([type, entries]) => ({ type, entries })),
       pageTitle: `Music Collection - Entries by Artist ${artistName}`,
       debugReleases: !!process.env.DEBUG_RELEASES,
