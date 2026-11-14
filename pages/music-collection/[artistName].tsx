@@ -9,7 +9,7 @@ import { useState } from "react";
 
 import CollectionBadge from "components/MusicalCollection/CollectionBadge";
 import Entry from "components/MusicalCollection/Entry";
-import type { ArtistEntry } from "db/prisma";
+import type { ArtistEntry, ArtistWithAlternativeNames } from "db/prisma";
 import LinkButton from "components/LinkButton";
 import { matchByText } from "utils";
 
@@ -18,6 +18,7 @@ type Props = Omit<InferGetStaticPropsType<typeof getStaticProps>, "pageTitle">;
 const QueenCollectionArtist: NextPage<Props> = ({
   artistName,
   partOfQueenFamily,
+  alternativeArtistNames,
   entries,
   debugReleases, // this "opens up" all hidden details on releases already on build stage, thus making sure no runtime errors will occur at least on data representation after deployment
 }) => {
@@ -56,6 +57,15 @@ const QueenCollectionArtist: NextPage<Props> = ({
           <CollectionBadge label="part of queen family" />
         )}
       </h2>
+      {alternativeArtistNames.length > 0 && (
+        <div style={{ marginBottom: "10px" }}>
+          {alternativeArtistNames.map((alt) => (
+            <div key={alt.name_id} style={{ opacity: 0.6, fontSize: "0.95em" }}>
+              also known as {alt.name}
+            </div>
+          ))}
+        </div>
+      )}
       {noEntries ? (
         <div
           style={{
@@ -118,7 +128,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false,
+    // needed so alt-name URLs can hit getStaticProps and redirect to the canonical artist page
+    fallback: "blocking",
   };
 };
 
@@ -130,6 +141,7 @@ type ArtistEntries = { type: EntryType, entries: ArtistEntry[] }[]
 export const getStaticProps: GetStaticProps<{
   artistName: string;
   partOfQueenFamily: boolean;
+  alternativeArtistNames: ArtistWithAlternativeNames["alternative_artist_names"];
   entries: ArtistEntries;
   pageTitle: string;
   debugReleases: boolean;
@@ -143,11 +155,27 @@ export const getStaticProps: GetStaticProps<{
   }
 
   // dynamic import to mitigate possibility of server side code "leaking" into the client side
-  const { getArtistByName, getArtistEntries } = await import("db/prisma");
+  const {
+    getArtistByName,
+    getArtistNameByAlternativeName,
+    getArtistEntries,
+  } = await import("db/prisma");
 
   const artist = await getArtistByName(artistNameParam);
 
   if (!artist) {
+    const canonicalName =
+      await getArtistNameByAlternativeName(artistNameParam);
+
+    if (canonicalName) {
+      return {
+        redirect: {
+          destination: `/music-collection/${encodeURIComponent(canonicalName)}`,
+          permanent: true,
+        },
+      };
+    }
+
     return {
       notFound: true,
     };
@@ -157,6 +185,7 @@ export const getStaticProps: GetStaticProps<{
 
   const artistName = artist.name;
   const partOfQueenFamily = artist.part_of_queen_family;
+  const alternativeArtistNames = artist.alternative_artist_names;
 
   const entriesMap = artistEntries.reduce<Record<EntryType, ArtistEntry[]>>((acc, entry) => {
     const { types_of_musical_entries, ...rest } = entry;
@@ -172,6 +201,7 @@ export const getStaticProps: GetStaticProps<{
     props: {
       artistName,
       partOfQueenFamily,
+      alternativeArtistNames,
       entries: Object.entries(entriesMap).sort((a, b) => a[0].localeCompare(b[0])).map(([type, entries]) => ({ type, entries })),
       pageTitle: `Music Collection - Entries by Artist ${artistName}`,
       debugReleases: !!process.env.DEBUG_RELEASES,

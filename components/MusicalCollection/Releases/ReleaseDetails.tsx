@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import OptionalTableRow from "./OptionalTableRow";
 import type { ArtistEntryRelease } from "db/prisma";
 import type { TableRowInfo } from "./types";
@@ -20,7 +22,7 @@ const ReleaseDetails = ({
     musical_releases_tags,
     part_of_queen_collection,
     relation_to_queen,
-
+    child_releases,
   } = release;
 
   const formats = formats_of_releases
@@ -84,6 +86,34 @@ const ReleaseDetails = ({
           ))}
         </tbody>
       </table>
+      {child_releases.length > 0 && (
+        <div style={{ marginTop: "12px" }}>
+          <div style={{ fontWeight: "bold", marginBottom: "4px" }}>
+            Child releases:
+          </div>
+          <ul style={{ margin: 0, paddingLeft: "20px" }}>
+            {child_releases.map((child, index) => {
+              const label = `${child.releaseArtistName ? `${child.releaseArtistName} - ` : ""}${child.displayName} (${child.release_version})`;
+
+              return (
+                <li key={`${child.displayName}-${child.release_version}-${index}`}>
+                  {child.releaseArtistName ? (
+                    <Link
+                      href={`/music-collection/${encodeURIComponent(child.releaseArtistName)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {label}
+                    </Link>
+                  ) : (
+                    label
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )}
     </div>
   );
 };

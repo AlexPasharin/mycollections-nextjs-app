@@ -134,11 +134,11 @@ const ArtistRow = ({ artist }: { artist: ArtistWithAlternativeNames }) => {
           <CollectionBadge label="part of queen family" />
         )}
       </Link>
-      {alternative_artist_names.length > 0 && (
-        <div style={{ opacity: 0.6, fontSize: "0.95em" }}>
-          aka {alternative_artist_names.map((alt) => alt.name).join(", ")}
+      {alternative_artist_names.map((alt) => (
+        <div key={alt.name_id} style={{ opacity: 0.6, fontSize: "0.95em" }}>
+          also known as {alt.name}
         </div>
-      )}
+      ))}
     </div>
   );
 };
