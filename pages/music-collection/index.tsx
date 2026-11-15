@@ -6,13 +6,14 @@ import { useMemo, useState } from "react";
 import CollectionBadge from "components/MusicalCollection/CollectionBadge";
 import LinkButton from "components/LinkButton";
 import type { ArtistWithAlternativeNames } from "db/prisma";
+import { useUrlQueryParam } from "hooks/useUrlQueryParam";
 import { matchByText } from "utils";
 
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 export default function MusicCollection({ artists }: Props) {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useUrlQueryParam("query");
   const [queenFamilyOnly, setQueenFamilyOnly] = useState(false);
 
   const artistsToShow = useMemo(

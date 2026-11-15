@@ -1,0 +1,27 @@
+---
+description: Put public exports first; keep file-local helpers below them
+globs: **/*.{ts,tsx}
+alwaysApply: false
+---
+
+# Module export order
+
+In TypeScript/JavaScript modules, put **public exports near the top** (after imports). Keep **file-local helpers and utilities below** the exported API.
+
+```typescript
+import { something } from "somewhere";
+
+const MAX_RETRIES = 3;
+
+export const publicApi = () => {
+  return helper(MAX_RETRIES);
+};
+
+const helper = (retries: number) => {
+  // local only
+};
+```
+
+- Do not bury exported functions under a long block of private helpers.
+- Private `const` helpers after exports are fine: they are only *called* at runtime, after the module has finished initializing.
+- Exception: file-local **non-function** constants named in `SCREAMING_SNAKE_CASE` may stay above exports (with other top-level constants). This rule is about helper *functions*, not those constants.

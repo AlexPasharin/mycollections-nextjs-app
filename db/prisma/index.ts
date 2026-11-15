@@ -54,6 +54,7 @@ export const getArtistNameByAlternativeName = async (
 export type ArtistEntryChildRelease = {
   release_version: string;
   displayName: string;
+  entryMainName: string;
   releaseArtistName: string | null;
 };
 
@@ -146,6 +147,7 @@ export const getArtistEntries = async (artistId: string) => {
               displayName:
                 child.alternative_musical_entry_names?.name ??
                 child.musical_entries.main_name,
+              entryMainName: child.musical_entries.main_name,
               releaseArtistName: releaseArtist?.artists.name ?? null,
             };
           }

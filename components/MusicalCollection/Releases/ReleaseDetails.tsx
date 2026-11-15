@@ -99,7 +99,7 @@ const ReleaseDetails = ({
                 <li key={`${child.displayName}-${child.release_version}-${index}`}>
                   {child.releaseArtistName ? (
                     <Link
-                      href={`/music-collection/${encodeURIComponent(child.releaseArtistName)}`}
+                      href={`/music-collection/${encodeURIComponent(child.releaseArtistName)}?query=${encodeURIComponent(child.entryMainName)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >

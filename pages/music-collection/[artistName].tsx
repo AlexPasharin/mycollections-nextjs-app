@@ -12,6 +12,7 @@ import Entry from "components/MusicalCollection/Entry";
 import type { ArtistEntry, ArtistWithAlternativeNames } from "db/prisma";
 import LinkButton from "components/LinkButton";
 import { matchByText } from "utils";
+import { useUrlQueryParam } from "hooks/useUrlQueryParam";
 
 type Props = Omit<InferGetStaticPropsType<typeof getStaticProps>, "pageTitle">;
 
@@ -22,7 +23,7 @@ const QueenCollectionArtist: NextPage<Props> = ({
   entries,
   debugReleases, // this "opens up" all hidden details on releases already on build stage, thus making sure no runtime errors will occur at least on data representation after deployment
 }) => {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useUrlQueryParam("query");
 
   const noEntries = isEmpty(entries)
 
