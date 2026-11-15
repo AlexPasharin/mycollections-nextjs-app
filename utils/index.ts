@@ -1,5 +1,3 @@
-import { readJson } from "fs-extra";
-import { join } from "path";
 import { complement, equals, isNil, pickBy } from "ramda";
 
 import {
@@ -8,9 +6,6 @@ import {
   NullableToOptional,
   Result,
 } from "../types/utils";
-
-export const getJSONData = <T = unknown>(path: string): Promise<T> =>
-  readJson(join("data", `${path}.json`));
 
 // removes from the object all keys whose value if null or undefined
 export const removeNils = <T>(obj: T): NullableToOptional<T> =>
@@ -116,6 +111,9 @@ const isNonEmptyIfString = (str: string | null): boolean =>
 
 export const isNonEmpty = (str: string) =>
   !!str && !/\s/.test(str.at(0) as string) && !/\s/.test(str.at(-1) as string);
+
+export const matchByText = (text: string, query: string) =>
+  text.toLowerCase().includes(query.toLowerCase());
 
 // returns true iff obj[key] is either null or a non-empty array of strings and each string in that array do not contain white space in the beginning or the end
 const isNullOrNonEmptyArrOfNonEmptyStrings = (

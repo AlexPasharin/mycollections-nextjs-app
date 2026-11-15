@@ -2,7 +2,7 @@ import { ChangeEventHandler, useState } from "react";
 
 import type { GetStaticProps } from "next";
 
-import { getJSONData } from "utils";
+import { getJSONData } from "utils/server";
 
 import type { Movie } from "types/movies";
 
