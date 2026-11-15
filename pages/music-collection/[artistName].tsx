@@ -5,7 +5,6 @@ import {
   NextPage,
 } from "next";
 import { isEmpty } from "ramda";
-import { useState } from "react";
 
 import CollectionBadge from "components/MusicalCollection/CollectionBadge";
 import Entry from "components/MusicalCollection/Entry";
